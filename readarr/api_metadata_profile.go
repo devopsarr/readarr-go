@@ -22,29 +22,29 @@ import (
 
 // MetadataProfileApiService MetadataProfileApi service
 type MetadataProfileApiService service
-type ApiCreateApiV1MetadataprofileRequest struct {
+type ApiCreateApiV1MetadataProfileRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileApiService
 	metadataProfileResource *MetadataProfileResource
 }
 
-func (r ApiCreateApiV1MetadataprofileRequest) MetadataProfileResource(metadataProfileResource MetadataProfileResource) ApiCreateApiV1MetadataprofileRequest {
+func (r ApiCreateApiV1MetadataProfileRequest) MetadataProfileResource(metadataProfileResource MetadataProfileResource) ApiCreateApiV1MetadataProfileRequest {
 	r.metadataProfileResource = &metadataProfileResource
 	return r
 }
 
-func (r ApiCreateApiV1MetadataprofileRequest) Execute() (*MetadataProfileResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1MetadataprofileExecute(r)
+func (r ApiCreateApiV1MetadataProfileRequest) Execute() (*MetadataProfileResource, *http.Response, error) {
+	return r.ApiService.CreateApiV1MetadataProfileExecute(r)
 }
 
 /*
-CreateApiV1Metadataprofile Method for CreateApiV1Metadataprofile
+CreateApiV1MetadataProfile Method for CreateApiV1MetadataProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1MetadataprofileRequest
+ @return ApiCreateApiV1MetadataProfileRequest
 */
-func (a *MetadataProfileApiService) CreateApiV1Metadataprofile(ctx context.Context) ApiCreateApiV1MetadataprofileRequest {
-	return ApiCreateApiV1MetadataprofileRequest{
+func (a *MetadataProfileApiService) CreateApiV1MetadataProfile(ctx context.Context) ApiCreateApiV1MetadataProfileRequest {
+	return ApiCreateApiV1MetadataProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *MetadataProfileApiService) CreateApiV1Metadataprofile(ctx context.Conte
 
 // Execute executes the request
 //  @return MetadataProfileResource
-func (a *MetadataProfileApiService) CreateApiV1MetadataprofileExecute(r ApiCreateApiV1MetadataprofileRequest) (*MetadataProfileResource, *http.Response, error) {
+func (a *MetadataProfileApiService) CreateApiV1MetadataProfileExecute(r ApiCreateApiV1MetadataProfileRequest) (*MetadataProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *MetadataProfileApiService) CreateApiV1MetadataprofileExecute(r ApiCreat
 		localVarReturnValue  *MetadataProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileApiService.CreateApiV1Metadataprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileApiService.CreateApiV1MetadataProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,25 +126,25 @@ func (a *MetadataProfileApiService) CreateApiV1MetadataprofileExecute(r ApiCreat
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1MetadataprofileRequest struct {
+type ApiDeleteApiV1MetadataProfileRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1MetadataprofileRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1MetadataprofileExecute(r)
+func (r ApiDeleteApiV1MetadataProfileRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteApiV1MetadataProfileExecute(r)
 }
 
 /*
-DeleteApiV1Metadataprofile Method for DeleteApiV1Metadataprofile
+DeleteApiV1MetadataProfile Method for DeleteApiV1MetadataProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1MetadataprofileRequest
+ @return ApiDeleteApiV1MetadataProfileRequest
 */
-func (a *MetadataProfileApiService) DeleteApiV1Metadataprofile(ctx context.Context, id int32) ApiDeleteApiV1MetadataprofileRequest {
-	return ApiDeleteApiV1MetadataprofileRequest{
+func (a *MetadataProfileApiService) DeleteApiV1MetadataProfile(ctx context.Context, id int32) ApiDeleteApiV1MetadataProfileRequest {
+	return ApiDeleteApiV1MetadataProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -152,14 +152,14 @@ func (a *MetadataProfileApiService) DeleteApiV1Metadataprofile(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *MetadataProfileApiService) DeleteApiV1MetadataprofileExecute(r ApiDeleteApiV1MetadataprofileRequest) (*http.Response, error) {
+func (a *MetadataProfileApiService) DeleteApiV1MetadataProfileExecute(r ApiDeleteApiV1MetadataProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileApiService.DeleteApiV1Metadataprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileApiService.DeleteApiV1MetadataProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -215,25 +215,25 @@ func (a *MetadataProfileApiService) DeleteApiV1MetadataprofileExecute(r ApiDelet
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1MetadataprofileByIdRequest struct {
+type ApiGetApiV1MetadataProfileByIdRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileApiService
 	id int32
 }
 
-func (r ApiGetApiV1MetadataprofileByIdRequest) Execute() (*MetadataProfileResource, *http.Response, error) {
-	return r.ApiService.GetApiV1MetadataprofileByIdExecute(r)
+func (r ApiGetApiV1MetadataProfileByIdRequest) Execute() (*MetadataProfileResource, *http.Response, error) {
+	return r.ApiService.GetApiV1MetadataProfileByIdExecute(r)
 }
 
 /*
-GetApiV1MetadataprofileById Method for GetApiV1MetadataprofileById
+GetApiV1MetadataProfileById Method for GetApiV1MetadataProfileById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1MetadataprofileByIdRequest
+ @return ApiGetApiV1MetadataProfileByIdRequest
 */
-func (a *MetadataProfileApiService) GetApiV1MetadataprofileById(ctx context.Context, id int32) ApiGetApiV1MetadataprofileByIdRequest {
-	return ApiGetApiV1MetadataprofileByIdRequest{
+func (a *MetadataProfileApiService) GetApiV1MetadataProfileById(ctx context.Context, id int32) ApiGetApiV1MetadataProfileByIdRequest {
+	return ApiGetApiV1MetadataProfileByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -242,7 +242,7 @@ func (a *MetadataProfileApiService) GetApiV1MetadataprofileById(ctx context.Cont
 
 // Execute executes the request
 //  @return MetadataProfileResource
-func (a *MetadataProfileApiService) GetApiV1MetadataprofileByIdExecute(r ApiGetApiV1MetadataprofileByIdRequest) (*MetadataProfileResource, *http.Response, error) {
+func (a *MetadataProfileApiService) GetApiV1MetadataProfileByIdExecute(r ApiGetApiV1MetadataProfileByIdRequest) (*MetadataProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -250,7 +250,7 @@ func (a *MetadataProfileApiService) GetApiV1MetadataprofileByIdExecute(r ApiGetA
 		localVarReturnValue  *MetadataProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileApiService.GetApiV1MetadataprofileById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileApiService.GetApiV1MetadataProfileById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -315,23 +315,23 @@ func (a *MetadataProfileApiService) GetApiV1MetadataprofileByIdExecute(r ApiGetA
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1MetadataprofileRequest struct {
+type ApiListApiV1MetadataProfileRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileApiService
 }
 
-func (r ApiListApiV1MetadataprofileRequest) Execute() ([]*MetadataProfileResource, *http.Response, error) {
-	return r.ApiService.ListApiV1MetadataprofileExecute(r)
+func (r ApiListApiV1MetadataProfileRequest) Execute() ([]*MetadataProfileResource, *http.Response, error) {
+	return r.ApiService.ListApiV1MetadataProfileExecute(r)
 }
 
 /*
-ListApiV1Metadataprofile Method for ListApiV1Metadataprofile
+ListApiV1MetadataProfile Method for ListApiV1MetadataProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1MetadataprofileRequest
+ @return ApiListApiV1MetadataProfileRequest
 */
-func (a *MetadataProfileApiService) ListApiV1Metadataprofile(ctx context.Context) ApiListApiV1MetadataprofileRequest {
-	return ApiListApiV1MetadataprofileRequest{
+func (a *MetadataProfileApiService) ListApiV1MetadataProfile(ctx context.Context) ApiListApiV1MetadataProfileRequest {
+	return ApiListApiV1MetadataProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -339,7 +339,7 @@ func (a *MetadataProfileApiService) ListApiV1Metadataprofile(ctx context.Context
 
 // Execute executes the request
 //  @return []MetadataProfileResource
-func (a *MetadataProfileApiService) ListApiV1MetadataprofileExecute(r ApiListApiV1MetadataprofileRequest) ([]*MetadataProfileResource, *http.Response, error) {
+func (a *MetadataProfileApiService) ListApiV1MetadataProfileExecute(r ApiListApiV1MetadataProfileRequest) ([]*MetadataProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -347,7 +347,7 @@ func (a *MetadataProfileApiService) ListApiV1MetadataprofileExecute(r ApiListApi
 		localVarReturnValue  []*MetadataProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileApiService.ListApiV1Metadataprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileApiService.ListApiV1MetadataProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -411,31 +411,31 @@ func (a *MetadataProfileApiService) ListApiV1MetadataprofileExecute(r ApiListApi
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1MetadataprofileRequest struct {
+type ApiUpdateApiV1MetadataProfileRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileApiService
 	id string
 	metadataProfileResource *MetadataProfileResource
 }
 
-func (r ApiUpdateApiV1MetadataprofileRequest) MetadataProfileResource(metadataProfileResource MetadataProfileResource) ApiUpdateApiV1MetadataprofileRequest {
+func (r ApiUpdateApiV1MetadataProfileRequest) MetadataProfileResource(metadataProfileResource MetadataProfileResource) ApiUpdateApiV1MetadataProfileRequest {
 	r.metadataProfileResource = &metadataProfileResource
 	return r
 }
 
-func (r ApiUpdateApiV1MetadataprofileRequest) Execute() (*MetadataProfileResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1MetadataprofileExecute(r)
+func (r ApiUpdateApiV1MetadataProfileRequest) Execute() (*MetadataProfileResource, *http.Response, error) {
+	return r.ApiService.UpdateApiV1MetadataProfileExecute(r)
 }
 
 /*
-UpdateApiV1Metadataprofile Method for UpdateApiV1Metadataprofile
+UpdateApiV1MetadataProfile Method for UpdateApiV1MetadataProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1MetadataprofileRequest
+ @return ApiUpdateApiV1MetadataProfileRequest
 */
-func (a *MetadataProfileApiService) UpdateApiV1Metadataprofile(ctx context.Context, id string) ApiUpdateApiV1MetadataprofileRequest {
-	return ApiUpdateApiV1MetadataprofileRequest{
+func (a *MetadataProfileApiService) UpdateApiV1MetadataProfile(ctx context.Context, id string) ApiUpdateApiV1MetadataProfileRequest {
+	return ApiUpdateApiV1MetadataProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -444,7 +444,7 @@ func (a *MetadataProfileApiService) UpdateApiV1Metadataprofile(ctx context.Conte
 
 // Execute executes the request
 //  @return MetadataProfileResource
-func (a *MetadataProfileApiService) UpdateApiV1MetadataprofileExecute(r ApiUpdateApiV1MetadataprofileRequest) (*MetadataProfileResource, *http.Response, error) {
+func (a *MetadataProfileApiService) UpdateApiV1MetadataProfileExecute(r ApiUpdateApiV1MetadataProfileRequest) (*MetadataProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -452,7 +452,7 @@ func (a *MetadataProfileApiService) UpdateApiV1MetadataprofileExecute(r ApiUpdat
 		localVarReturnValue  *MetadataProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileApiService.UpdateApiV1Metadataprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileApiService.UpdateApiV1MetadataProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

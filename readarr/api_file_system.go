@@ -21,7 +21,7 @@ import (
 
 // FileSystemApiService FileSystemApi service
 type FileSystemApiService service
-type ApiGetApiV1FilesystemRequest struct {
+type ApiGetApiV1FileSystemRequest struct {
 	ctx context.Context
 	ApiService *FileSystemApiService
 	path *string
@@ -29,47 +29,47 @@ type ApiGetApiV1FilesystemRequest struct {
 	allowFoldersWithoutTrailingSlashes *bool
 }
 
-func (r ApiGetApiV1FilesystemRequest) Path(path string) ApiGetApiV1FilesystemRequest {
+func (r ApiGetApiV1FileSystemRequest) Path(path string) ApiGetApiV1FileSystemRequest {
 	r.path = &path
 	return r
 }
 
-func (r ApiGetApiV1FilesystemRequest) IncludeFiles(includeFiles bool) ApiGetApiV1FilesystemRequest {
+func (r ApiGetApiV1FileSystemRequest) IncludeFiles(includeFiles bool) ApiGetApiV1FileSystemRequest {
 	r.includeFiles = &includeFiles
 	return r
 }
 
-func (r ApiGetApiV1FilesystemRequest) AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes bool) ApiGetApiV1FilesystemRequest {
+func (r ApiGetApiV1FileSystemRequest) AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes bool) ApiGetApiV1FileSystemRequest {
 	r.allowFoldersWithoutTrailingSlashes = &allowFoldersWithoutTrailingSlashes
 	return r
 }
 
-func (r ApiGetApiV1FilesystemRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1FilesystemExecute(r)
+func (r ApiGetApiV1FileSystemRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetApiV1FileSystemExecute(r)
 }
 
 /*
-GetApiV1Filesystem Method for GetApiV1Filesystem
+GetApiV1FileSystem Method for GetApiV1FileSystem
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1FilesystemRequest
+ @return ApiGetApiV1FileSystemRequest
 */
-func (a *FileSystemApiService) GetApiV1Filesystem(ctx context.Context) ApiGetApiV1FilesystemRequest {
-	return ApiGetApiV1FilesystemRequest{
+func (a *FileSystemApiService) GetApiV1FileSystem(ctx context.Context) ApiGetApiV1FileSystemRequest {
+	return ApiGetApiV1FileSystemRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *FileSystemApiService) GetApiV1FilesystemExecute(r ApiGetApiV1FilesystemRequest) (*http.Response, error) {
+func (a *FileSystemApiService) GetApiV1FileSystemExecute(r ApiGetApiV1FileSystemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileSystemApiService.GetApiV1Filesystem")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileSystemApiService.GetApiV1FileSystem")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -133,43 +133,43 @@ func (a *FileSystemApiService) GetApiV1FilesystemExecute(r ApiGetApiV1Filesystem
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1FilesystemMediafilesRequest struct {
+type ApiGetApiV1FileSystemMediafilesRequest struct {
 	ctx context.Context
 	ApiService *FileSystemApiService
 	path *string
 }
 
-func (r ApiGetApiV1FilesystemMediafilesRequest) Path(path string) ApiGetApiV1FilesystemMediafilesRequest {
+func (r ApiGetApiV1FileSystemMediafilesRequest) Path(path string) ApiGetApiV1FileSystemMediafilesRequest {
 	r.path = &path
 	return r
 }
 
-func (r ApiGetApiV1FilesystemMediafilesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1FilesystemMediafilesExecute(r)
+func (r ApiGetApiV1FileSystemMediafilesRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetApiV1FileSystemMediafilesExecute(r)
 }
 
 /*
-GetApiV1FilesystemMediafiles Method for GetApiV1FilesystemMediafiles
+GetApiV1FileSystemMediafiles Method for GetApiV1FileSystemMediafiles
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1FilesystemMediafilesRequest
+ @return ApiGetApiV1FileSystemMediafilesRequest
 */
-func (a *FileSystemApiService) GetApiV1FilesystemMediafiles(ctx context.Context) ApiGetApiV1FilesystemMediafilesRequest {
-	return ApiGetApiV1FilesystemMediafilesRequest{
+func (a *FileSystemApiService) GetApiV1FileSystemMediafiles(ctx context.Context) ApiGetApiV1FileSystemMediafilesRequest {
+	return ApiGetApiV1FileSystemMediafilesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *FileSystemApiService) GetApiV1FilesystemMediafilesExecute(r ApiGetApiV1FilesystemMediafilesRequest) (*http.Response, error) {
+func (a *FileSystemApiService) GetApiV1FileSystemMediafilesExecute(r ApiGetApiV1FileSystemMediafilesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileSystemApiService.GetApiV1FilesystemMediafiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileSystemApiService.GetApiV1FileSystemMediafiles")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -227,43 +227,43 @@ func (a *FileSystemApiService) GetApiV1FilesystemMediafilesExecute(r ApiGetApiV1
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1FilesystemTypeRequest struct {
+type ApiGetApiV1FileSystemTypeRequest struct {
 	ctx context.Context
 	ApiService *FileSystemApiService
 	path *string
 }
 
-func (r ApiGetApiV1FilesystemTypeRequest) Path(path string) ApiGetApiV1FilesystemTypeRequest {
+func (r ApiGetApiV1FileSystemTypeRequest) Path(path string) ApiGetApiV1FileSystemTypeRequest {
 	r.path = &path
 	return r
 }
 
-func (r ApiGetApiV1FilesystemTypeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1FilesystemTypeExecute(r)
+func (r ApiGetApiV1FileSystemTypeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetApiV1FileSystemTypeExecute(r)
 }
 
 /*
-GetApiV1FilesystemType Method for GetApiV1FilesystemType
+GetApiV1FileSystemType Method for GetApiV1FileSystemType
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1FilesystemTypeRequest
+ @return ApiGetApiV1FileSystemTypeRequest
 */
-func (a *FileSystemApiService) GetApiV1FilesystemType(ctx context.Context) ApiGetApiV1FilesystemTypeRequest {
-	return ApiGetApiV1FilesystemTypeRequest{
+func (a *FileSystemApiService) GetApiV1FileSystemType(ctx context.Context) ApiGetApiV1FileSystemTypeRequest {
+	return ApiGetApiV1FileSystemTypeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *FileSystemApiService) GetApiV1FilesystemTypeExecute(r ApiGetApiV1FilesystemTypeRequest) (*http.Response, error) {
+func (a *FileSystemApiService) GetApiV1FileSystemTypeExecute(r ApiGetApiV1FileSystemTypeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileSystemApiService.GetApiV1FilesystemType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileSystemApiService.GetApiV1FileSystemType")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListApiV1Manualimport**](ManualImportApi.md#ListApiV1Manualimport) | **Get** /api/v1/manualimport | 
-[**PutApiV1Manualimport**](ManualImportApi.md#PutApiV1Manualimport) | **Put** /api/v1/manualimport | 
+[**ListApiV1ManualImport**](ManualImportApi.md#ListApiV1ManualImport) | **Get** /api/v1/manualimport | 
+[**PutApiV1ManualImport**](ManualImportApi.md#PutApiV1ManualImport) | **Put** /api/v1/manualimport | 
 
 
 
-## ListApiV1Manualimport
+## ListApiV1ManualImport
 
-> []ManualImportResource ListApiV1Manualimport(ctx).Folder(folder).DownloadId(downloadId).AuthorId(authorId).FilterExistingFiles(filterExistingFiles).ReplaceExistingFiles(replaceExistingFiles).Execute()
+> []ManualImportResource ListApiV1ManualImport(ctx).Folder(folder).DownloadId(downloadId).AuthorId(authorId).FilterExistingFiles(filterExistingFiles).ReplaceExistingFiles(replaceExistingFiles).Execute()
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualImportApi.ListApiV1Manualimport(context.Background()).Folder(folder).DownloadId(downloadId).AuthorId(authorId).FilterExistingFiles(filterExistingFiles).ReplaceExistingFiles(replaceExistingFiles).Execute()
+    resp, r, err := apiClient.ManualImportApi.ListApiV1ManualImport(context.Background()).Folder(folder).DownloadId(downloadId).AuthorId(authorId).FilterExistingFiles(filterExistingFiles).ReplaceExistingFiles(replaceExistingFiles).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ManualImportApi.ListApiV1Manualimport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ManualImportApi.ListApiV1ManualImport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Manualimport`: []ManualImportResource
-    fmt.Fprintf(os.Stdout, "Response from `ManualImportApi.ListApiV1Manualimport`: %v\n", resp)
+    // response from `ListApiV1ManualImport`: []ManualImportResource
+    fmt.Fprintf(os.Stdout, "Response from `ManualImportApi.ListApiV1ManualImport`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1ManualimportRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListApiV1ManualImportRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -81,9 +81,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PutApiV1Manualimport
+## PutApiV1ManualImport
 
-> PutApiV1Manualimport(ctx).ManualImportResource(manualImportResource).Execute()
+> PutApiV1ManualImport(ctx).ManualImportResource(manualImportResource).Execute()
 
 
 
@@ -104,9 +104,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualImportApi.PutApiV1Manualimport(context.Background()).ManualImportResource(manualImportResource).Execute()
+    resp, r, err := apiClient.ManualImportApi.PutApiV1ManualImport(context.Background()).ManualImportResource(manualImportResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ManualImportApi.PutApiV1Manualimport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ManualImportApi.PutApiV1ManualImport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -118,7 +118,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutApiV1ManualimportRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutApiV1ManualImportRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

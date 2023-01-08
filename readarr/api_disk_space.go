@@ -21,23 +21,23 @@ import (
 
 // DiskSpaceApiService DiskSpaceApi service
 type DiskSpaceApiService service
-type ApiListApiV1DiskspaceRequest struct {
+type ApiListApiV1DiskSpaceRequest struct {
 	ctx context.Context
 	ApiService *DiskSpaceApiService
 }
 
-func (r ApiListApiV1DiskspaceRequest) Execute() ([]*DiskSpaceResource, *http.Response, error) {
-	return r.ApiService.ListApiV1DiskspaceExecute(r)
+func (r ApiListApiV1DiskSpaceRequest) Execute() ([]*DiskSpaceResource, *http.Response, error) {
+	return r.ApiService.ListApiV1DiskSpaceExecute(r)
 }
 
 /*
-ListApiV1Diskspace Method for ListApiV1Diskspace
+ListApiV1DiskSpace Method for ListApiV1DiskSpace
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1DiskspaceRequest
+ @return ApiListApiV1DiskSpaceRequest
 */
-func (a *DiskSpaceApiService) ListApiV1Diskspace(ctx context.Context) ApiListApiV1DiskspaceRequest {
-	return ApiListApiV1DiskspaceRequest{
+func (a *DiskSpaceApiService) ListApiV1DiskSpace(ctx context.Context) ApiListApiV1DiskSpaceRequest {
+	return ApiListApiV1DiskSpaceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -45,7 +45,7 @@ func (a *DiskSpaceApiService) ListApiV1Diskspace(ctx context.Context) ApiListApi
 
 // Execute executes the request
 //  @return []DiskSpaceResource
-func (a *DiskSpaceApiService) ListApiV1DiskspaceExecute(r ApiListApiV1DiskspaceRequest) ([]*DiskSpaceResource, *http.Response, error) {
+func (a *DiskSpaceApiService) ListApiV1DiskSpaceExecute(r ApiListApiV1DiskSpaceRequest) ([]*DiskSpaceResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *DiskSpaceApiService) ListApiV1DiskspaceExecute(r ApiListApiV1DiskspaceR
 		localVarReturnValue  []*DiskSpaceResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DiskSpaceApiService.ListApiV1Diskspace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DiskSpaceApiService.ListApiV1DiskSpace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

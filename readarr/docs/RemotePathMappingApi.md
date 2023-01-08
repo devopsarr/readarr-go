@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Remotepathmapping**](RemotePathMappingApi.md#CreateApiV1Remotepathmapping) | **Post** /api/v1/remotepathmapping | 
-[**DeleteApiV1Remotepathmapping**](RemotePathMappingApi.md#DeleteApiV1Remotepathmapping) | **Delete** /api/v1/remotepathmapping/{id} | 
-[**GetApiV1RemotepathmappingById**](RemotePathMappingApi.md#GetApiV1RemotepathmappingById) | **Get** /api/v1/remotepathmapping/{id} | 
-[**ListApiV1Remotepathmapping**](RemotePathMappingApi.md#ListApiV1Remotepathmapping) | **Get** /api/v1/remotepathmapping | 
-[**UpdateApiV1Remotepathmapping**](RemotePathMappingApi.md#UpdateApiV1Remotepathmapping) | **Put** /api/v1/remotepathmapping/{id} | 
+[**CreateApiV1RemotePathMapping**](RemotePathMappingApi.md#CreateApiV1RemotePathMapping) | **Post** /api/v1/remotepathmapping | 
+[**DeleteApiV1RemotePathMapping**](RemotePathMappingApi.md#DeleteApiV1RemotePathMapping) | **Delete** /api/v1/remotepathmapping/{id} | 
+[**GetApiV1RemotePathMappingById**](RemotePathMappingApi.md#GetApiV1RemotePathMappingById) | **Get** /api/v1/remotepathmapping/{id} | 
+[**ListApiV1RemotePathMapping**](RemotePathMappingApi.md#ListApiV1RemotePathMapping) | **Get** /api/v1/remotepathmapping | 
+[**UpdateApiV1RemotePathMapping**](RemotePathMappingApi.md#UpdateApiV1RemotePathMapping) | **Put** /api/v1/remotepathmapping/{id} | 
 
 
 
-## CreateApiV1Remotepathmapping
+## CreateApiV1RemotePathMapping
 
-> RemotePathMappingResource CreateApiV1Remotepathmapping(ctx).RemotePathMappingResource(remotePathMappingResource).Execute()
+> RemotePathMappingResource CreateApiV1RemotePathMapping(ctx).RemotePathMappingResource(remotePathMappingResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RemotePathMappingApi.CreateApiV1Remotepathmapping(context.Background()).RemotePathMappingResource(remotePathMappingResource).Execute()
+    resp, r, err := apiClient.RemotePathMappingApi.CreateApiV1RemotePathMapping(context.Background()).RemotePathMappingResource(remotePathMappingResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RemotePathMappingApi.CreateApiV1Remotepathmapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RemotePathMappingApi.CreateApiV1RemotePathMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Remotepathmapping`: RemotePathMappingResource
-    fmt.Fprintf(os.Stdout, "Response from `RemotePathMappingApi.CreateApiV1Remotepathmapping`: %v\n", resp)
+    // response from `CreateApiV1RemotePathMapping`: RemotePathMappingResource
+    fmt.Fprintf(os.Stdout, "Response from `RemotePathMappingApi.CreateApiV1RemotePathMapping`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1RemotepathmappingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateApiV1RemotePathMappingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Remotepathmapping
+## DeleteApiV1RemotePathMapping
 
-> DeleteApiV1Remotepathmapping(ctx, id).Execute()
+> DeleteApiV1RemotePathMapping(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RemotePathMappingApi.DeleteApiV1Remotepathmapping(context.Background(), id).Execute()
+    resp, r, err := apiClient.RemotePathMappingApi.DeleteApiV1RemotePathMapping(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RemotePathMappingApi.DeleteApiV1Remotepathmapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RemotePathMappingApi.DeleteApiV1RemotePathMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1RemotepathmappingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteApiV1RemotePathMappingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1RemotepathmappingById
+## GetApiV1RemotePathMappingById
 
-> RemotePathMappingResource GetApiV1RemotepathmappingById(ctx, id).Execute()
+> RemotePathMappingResource GetApiV1RemotePathMappingById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RemotePathMappingApi.GetApiV1RemotepathmappingById(context.Background(), id).Execute()
+    resp, r, err := apiClient.RemotePathMappingApi.GetApiV1RemotePathMappingById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RemotePathMappingApi.GetApiV1RemotepathmappingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RemotePathMappingApi.GetApiV1RemotePathMappingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1RemotepathmappingById`: RemotePathMappingResource
-    fmt.Fprintf(os.Stdout, "Response from `RemotePathMappingApi.GetApiV1RemotepathmappingById`: %v\n", resp)
+    // response from `GetApiV1RemotePathMappingById`: RemotePathMappingResource
+    fmt.Fprintf(os.Stdout, "Response from `RemotePathMappingApi.GetApiV1RemotePathMappingById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1RemotepathmappingByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiV1RemotePathMappingByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1Remotepathmapping
+## ListApiV1RemotePathMapping
 
-> []RemotePathMappingResource ListApiV1Remotepathmapping(ctx).Execute()
+> []RemotePathMappingResource ListApiV1RemotePathMapping(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RemotePathMappingApi.ListApiV1Remotepathmapping(context.Background()).Execute()
+    resp, r, err := apiClient.RemotePathMappingApi.ListApiV1RemotePathMapping(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RemotePathMappingApi.ListApiV1Remotepathmapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RemotePathMappingApi.ListApiV1RemotePathMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Remotepathmapping`: []RemotePathMappingResource
-    fmt.Fprintf(os.Stdout, "Response from `RemotePathMappingApi.ListApiV1Remotepathmapping`: %v\n", resp)
+    // response from `ListApiV1RemotePathMapping`: []RemotePathMappingResource
+    fmt.Fprintf(os.Stdout, "Response from `RemotePathMappingApi.ListApiV1RemotePathMapping`: %v\n", resp)
 }
 ```
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1RemotepathmappingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListApiV1RemotePathMappingRequest struct via the builder pattern
 
 
 ### Return type
@@ -269,9 +269,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Remotepathmapping
+## UpdateApiV1RemotePathMapping
 
-> RemotePathMappingResource UpdateApiV1Remotepathmapping(ctx, id).RemotePathMappingResource(remotePathMappingResource).Execute()
+> RemotePathMappingResource UpdateApiV1RemotePathMapping(ctx, id).RemotePathMappingResource(remotePathMappingResource).Execute()
 
 
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RemotePathMappingApi.UpdateApiV1Remotepathmapping(context.Background(), id).RemotePathMappingResource(remotePathMappingResource).Execute()
+    resp, r, err := apiClient.RemotePathMappingApi.UpdateApiV1RemotePathMapping(context.Background(), id).RemotePathMappingResource(remotePathMappingResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RemotePathMappingApi.UpdateApiV1Remotepathmapping``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RemotePathMappingApi.UpdateApiV1RemotePathMapping``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Remotepathmapping`: RemotePathMappingResource
-    fmt.Fprintf(os.Stdout, "Response from `RemotePathMappingApi.UpdateApiV1Remotepathmapping`: %v\n", resp)
+    // response from `UpdateApiV1RemotePathMapping`: RemotePathMappingResource
+    fmt.Fprintf(os.Stdout, "Response from `RemotePathMappingApi.UpdateApiV1RemotePathMapping`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1RemotepathmappingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateApiV1RemotePathMappingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

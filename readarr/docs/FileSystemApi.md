@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1Filesystem**](FileSystemApi.md#GetApiV1Filesystem) | **Get** /api/v1/filesystem | 
-[**GetApiV1FilesystemMediafiles**](FileSystemApi.md#GetApiV1FilesystemMediafiles) | **Get** /api/v1/filesystem/mediafiles | 
-[**GetApiV1FilesystemType**](FileSystemApi.md#GetApiV1FilesystemType) | **Get** /api/v1/filesystem/type | 
+[**GetApiV1FileSystem**](FileSystemApi.md#GetApiV1FileSystem) | **Get** /api/v1/filesystem | 
+[**GetApiV1FileSystemMediafiles**](FileSystemApi.md#GetApiV1FileSystemMediafiles) | **Get** /api/v1/filesystem/mediafiles | 
+[**GetApiV1FileSystemType**](FileSystemApi.md#GetApiV1FileSystemType) | **Get** /api/v1/filesystem/type | 
 
 
 
-## GetApiV1Filesystem
+## GetApiV1FileSystem
 
-> GetApiV1Filesystem(ctx).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
+> GetApiV1FileSystem(ctx).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
 
 
 
@@ -35,9 +35,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FileSystemApi.GetApiV1Filesystem(context.Background()).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
+    resp, r, err := apiClient.FileSystemApi.GetApiV1FileSystem(context.Background()).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `FileSystemApi.GetApiV1Filesystem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `FileSystemApi.GetApiV1FileSystem``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -49,7 +49,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1FilesystemRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiV1FileSystemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1FilesystemMediafiles
+## GetApiV1FileSystemMediafiles
 
-> GetApiV1FilesystemMediafiles(ctx).Path(path).Execute()
+> GetApiV1FileSystemMediafiles(ctx).Path(path).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FileSystemApi.GetApiV1FilesystemMediafiles(context.Background()).Path(path).Execute()
+    resp, r, err := apiClient.FileSystemApi.GetApiV1FileSystemMediafiles(context.Background()).Path(path).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `FileSystemApi.GetApiV1FilesystemMediafiles``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `FileSystemApi.GetApiV1FileSystemMediafiles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -113,7 +113,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1FilesystemMediafilesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiV1FileSystemMediafilesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -138,9 +138,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1FilesystemType
+## GetApiV1FileSystemType
 
-> GetApiV1FilesystemType(ctx).Path(path).Execute()
+> GetApiV1FileSystemType(ctx).Path(path).Execute()
 
 
 
@@ -161,9 +161,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FileSystemApi.GetApiV1FilesystemType(context.Background()).Path(path).Execute()
+    resp, r, err := apiClient.FileSystemApi.GetApiV1FileSystemType(context.Background()).Path(path).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `FileSystemApi.GetApiV1FilesystemType``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `FileSystemApi.GetApiV1FileSystemType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,7 +175,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1FilesystemTypeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiV1FileSystemTypeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

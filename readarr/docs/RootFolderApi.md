@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Rootfolder**](RootFolderApi.md#CreateApiV1Rootfolder) | **Post** /api/v1/rootfolder | 
-[**DeleteApiV1Rootfolder**](RootFolderApi.md#DeleteApiV1Rootfolder) | **Delete** /api/v1/rootfolder/{id} | 
-[**GetApiV1RootfolderById**](RootFolderApi.md#GetApiV1RootfolderById) | **Get** /api/v1/rootfolder/{id} | 
-[**ListApiV1Rootfolder**](RootFolderApi.md#ListApiV1Rootfolder) | **Get** /api/v1/rootfolder | 
-[**UpdateApiV1Rootfolder**](RootFolderApi.md#UpdateApiV1Rootfolder) | **Put** /api/v1/rootfolder/{id} | 
+[**CreateApiV1RootFolder**](RootFolderApi.md#CreateApiV1RootFolder) | **Post** /api/v1/rootfolder | 
+[**DeleteApiV1RootFolder**](RootFolderApi.md#DeleteApiV1RootFolder) | **Delete** /api/v1/rootfolder/{id} | 
+[**GetApiV1RootFolderById**](RootFolderApi.md#GetApiV1RootFolderById) | **Get** /api/v1/rootfolder/{id} | 
+[**ListApiV1RootFolder**](RootFolderApi.md#ListApiV1RootFolder) | **Get** /api/v1/rootfolder | 
+[**UpdateApiV1RootFolder**](RootFolderApi.md#UpdateApiV1RootFolder) | **Put** /api/v1/rootfolder/{id} | 
 
 
 
-## CreateApiV1Rootfolder
+## CreateApiV1RootFolder
 
-> RootFolderResource CreateApiV1Rootfolder(ctx).RootFolderResource(rootFolderResource).Execute()
+> RootFolderResource CreateApiV1RootFolder(ctx).RootFolderResource(rootFolderResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootFolderApi.CreateApiV1Rootfolder(context.Background()).RootFolderResource(rootFolderResource).Execute()
+    resp, r, err := apiClient.RootFolderApi.CreateApiV1RootFolder(context.Background()).RootFolderResource(rootFolderResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootFolderApi.CreateApiV1Rootfolder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootFolderApi.CreateApiV1RootFolder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Rootfolder`: RootFolderResource
-    fmt.Fprintf(os.Stdout, "Response from `RootFolderApi.CreateApiV1Rootfolder`: %v\n", resp)
+    // response from `CreateApiV1RootFolder`: RootFolderResource
+    fmt.Fprintf(os.Stdout, "Response from `RootFolderApi.CreateApiV1RootFolder`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1RootfolderRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateApiV1RootFolderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Rootfolder
+## DeleteApiV1RootFolder
 
-> DeleteApiV1Rootfolder(ctx, id).Execute()
+> DeleteApiV1RootFolder(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootFolderApi.DeleteApiV1Rootfolder(context.Background(), id).Execute()
+    resp, r, err := apiClient.RootFolderApi.DeleteApiV1RootFolder(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootFolderApi.DeleteApiV1Rootfolder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootFolderApi.DeleteApiV1RootFolder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1RootfolderRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteApiV1RootFolderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1RootfolderById
+## GetApiV1RootFolderById
 
-> RootFolderResource GetApiV1RootfolderById(ctx, id).Execute()
+> RootFolderResource GetApiV1RootFolderById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootFolderApi.GetApiV1RootfolderById(context.Background(), id).Execute()
+    resp, r, err := apiClient.RootFolderApi.GetApiV1RootFolderById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootFolderApi.GetApiV1RootfolderById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootFolderApi.GetApiV1RootFolderById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1RootfolderById`: RootFolderResource
-    fmt.Fprintf(os.Stdout, "Response from `RootFolderApi.GetApiV1RootfolderById`: %v\n", resp)
+    // response from `GetApiV1RootFolderById`: RootFolderResource
+    fmt.Fprintf(os.Stdout, "Response from `RootFolderApi.GetApiV1RootFolderById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1RootfolderByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiV1RootFolderByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1Rootfolder
+## ListApiV1RootFolder
 
-> []RootFolderResource ListApiV1Rootfolder(ctx).Execute()
+> []RootFolderResource ListApiV1RootFolder(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootFolderApi.ListApiV1Rootfolder(context.Background()).Execute()
+    resp, r, err := apiClient.RootFolderApi.ListApiV1RootFolder(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootFolderApi.ListApiV1Rootfolder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootFolderApi.ListApiV1RootFolder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Rootfolder`: []RootFolderResource
-    fmt.Fprintf(os.Stdout, "Response from `RootFolderApi.ListApiV1Rootfolder`: %v\n", resp)
+    // response from `ListApiV1RootFolder`: []RootFolderResource
+    fmt.Fprintf(os.Stdout, "Response from `RootFolderApi.ListApiV1RootFolder`: %v\n", resp)
 }
 ```
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1RootfolderRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListApiV1RootFolderRequest struct via the builder pattern
 
 
 ### Return type
@@ -269,9 +269,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Rootfolder
+## UpdateApiV1RootFolder
 
-> RootFolderResource UpdateApiV1Rootfolder(ctx, id).RootFolderResource(rootFolderResource).Execute()
+> RootFolderResource UpdateApiV1RootFolder(ctx, id).RootFolderResource(rootFolderResource).Execute()
 
 
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RootFolderApi.UpdateApiV1Rootfolder(context.Background(), id).RootFolderResource(rootFolderResource).Execute()
+    resp, r, err := apiClient.RootFolderApi.UpdateApiV1RootFolder(context.Background(), id).RootFolderResource(rootFolderResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RootFolderApi.UpdateApiV1Rootfolder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RootFolderApi.UpdateApiV1RootFolder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Rootfolder`: RootFolderResource
-    fmt.Fprintf(os.Stdout, "Response from `RootFolderApi.UpdateApiV1Rootfolder`: %v\n", resp)
+    // response from `UpdateApiV1RootFolder`: RootFolderResource
+    fmt.Fprintf(os.Stdout, "Response from `RootFolderApi.UpdateApiV1RootFolder`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1RootfolderRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateApiV1RootFolderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

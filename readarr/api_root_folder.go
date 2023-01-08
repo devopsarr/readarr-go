@@ -22,29 +22,29 @@ import (
 
 // RootFolderApiService RootFolderApi service
 type RootFolderApiService service
-type ApiCreateApiV1RootfolderRequest struct {
+type ApiCreateApiV1RootFolderRequest struct {
 	ctx context.Context
 	ApiService *RootFolderApiService
 	rootFolderResource *RootFolderResource
 }
 
-func (r ApiCreateApiV1RootfolderRequest) RootFolderResource(rootFolderResource RootFolderResource) ApiCreateApiV1RootfolderRequest {
+func (r ApiCreateApiV1RootFolderRequest) RootFolderResource(rootFolderResource RootFolderResource) ApiCreateApiV1RootFolderRequest {
 	r.rootFolderResource = &rootFolderResource
 	return r
 }
 
-func (r ApiCreateApiV1RootfolderRequest) Execute() (*RootFolderResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1RootfolderExecute(r)
+func (r ApiCreateApiV1RootFolderRequest) Execute() (*RootFolderResource, *http.Response, error) {
+	return r.ApiService.CreateApiV1RootFolderExecute(r)
 }
 
 /*
-CreateApiV1Rootfolder Method for CreateApiV1Rootfolder
+CreateApiV1RootFolder Method for CreateApiV1RootFolder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1RootfolderRequest
+ @return ApiCreateApiV1RootFolderRequest
 */
-func (a *RootFolderApiService) CreateApiV1Rootfolder(ctx context.Context) ApiCreateApiV1RootfolderRequest {
-	return ApiCreateApiV1RootfolderRequest{
+func (a *RootFolderApiService) CreateApiV1RootFolder(ctx context.Context) ApiCreateApiV1RootFolderRequest {
+	return ApiCreateApiV1RootFolderRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *RootFolderApiService) CreateApiV1Rootfolder(ctx context.Context) ApiCre
 
 // Execute executes the request
 //  @return RootFolderResource
-func (a *RootFolderApiService) CreateApiV1RootfolderExecute(r ApiCreateApiV1RootfolderRequest) (*RootFolderResource, *http.Response, error) {
+func (a *RootFolderApiService) CreateApiV1RootFolderExecute(r ApiCreateApiV1RootFolderRequest) (*RootFolderResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *RootFolderApiService) CreateApiV1RootfolderExecute(r ApiCreateApiV1Root
 		localVarReturnValue  *RootFolderResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderApiService.CreateApiV1Rootfolder")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderApiService.CreateApiV1RootFolder")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,25 +126,25 @@ func (a *RootFolderApiService) CreateApiV1RootfolderExecute(r ApiCreateApiV1Root
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1RootfolderRequest struct {
+type ApiDeleteApiV1RootFolderRequest struct {
 	ctx context.Context
 	ApiService *RootFolderApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1RootfolderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1RootfolderExecute(r)
+func (r ApiDeleteApiV1RootFolderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteApiV1RootFolderExecute(r)
 }
 
 /*
-DeleteApiV1Rootfolder Method for DeleteApiV1Rootfolder
+DeleteApiV1RootFolder Method for DeleteApiV1RootFolder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1RootfolderRequest
+ @return ApiDeleteApiV1RootFolderRequest
 */
-func (a *RootFolderApiService) DeleteApiV1Rootfolder(ctx context.Context, id int32) ApiDeleteApiV1RootfolderRequest {
-	return ApiDeleteApiV1RootfolderRequest{
+func (a *RootFolderApiService) DeleteApiV1RootFolder(ctx context.Context, id int32) ApiDeleteApiV1RootFolderRequest {
+	return ApiDeleteApiV1RootFolderRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -152,14 +152,14 @@ func (a *RootFolderApiService) DeleteApiV1Rootfolder(ctx context.Context, id int
 }
 
 // Execute executes the request
-func (a *RootFolderApiService) DeleteApiV1RootfolderExecute(r ApiDeleteApiV1RootfolderRequest) (*http.Response, error) {
+func (a *RootFolderApiService) DeleteApiV1RootFolderExecute(r ApiDeleteApiV1RootFolderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderApiService.DeleteApiV1Rootfolder")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderApiService.DeleteApiV1RootFolder")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -215,25 +215,25 @@ func (a *RootFolderApiService) DeleteApiV1RootfolderExecute(r ApiDeleteApiV1Root
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1RootfolderByIdRequest struct {
+type ApiGetApiV1RootFolderByIdRequest struct {
 	ctx context.Context
 	ApiService *RootFolderApiService
 	id int32
 }
 
-func (r ApiGetApiV1RootfolderByIdRequest) Execute() (*RootFolderResource, *http.Response, error) {
-	return r.ApiService.GetApiV1RootfolderByIdExecute(r)
+func (r ApiGetApiV1RootFolderByIdRequest) Execute() (*RootFolderResource, *http.Response, error) {
+	return r.ApiService.GetApiV1RootFolderByIdExecute(r)
 }
 
 /*
-GetApiV1RootfolderById Method for GetApiV1RootfolderById
+GetApiV1RootFolderById Method for GetApiV1RootFolderById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1RootfolderByIdRequest
+ @return ApiGetApiV1RootFolderByIdRequest
 */
-func (a *RootFolderApiService) GetApiV1RootfolderById(ctx context.Context, id int32) ApiGetApiV1RootfolderByIdRequest {
-	return ApiGetApiV1RootfolderByIdRequest{
+func (a *RootFolderApiService) GetApiV1RootFolderById(ctx context.Context, id int32) ApiGetApiV1RootFolderByIdRequest {
+	return ApiGetApiV1RootFolderByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -242,7 +242,7 @@ func (a *RootFolderApiService) GetApiV1RootfolderById(ctx context.Context, id in
 
 // Execute executes the request
 //  @return RootFolderResource
-func (a *RootFolderApiService) GetApiV1RootfolderByIdExecute(r ApiGetApiV1RootfolderByIdRequest) (*RootFolderResource, *http.Response, error) {
+func (a *RootFolderApiService) GetApiV1RootFolderByIdExecute(r ApiGetApiV1RootFolderByIdRequest) (*RootFolderResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -250,7 +250,7 @@ func (a *RootFolderApiService) GetApiV1RootfolderByIdExecute(r ApiGetApiV1Rootfo
 		localVarReturnValue  *RootFolderResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderApiService.GetApiV1RootfolderById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderApiService.GetApiV1RootFolderById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -315,23 +315,23 @@ func (a *RootFolderApiService) GetApiV1RootfolderByIdExecute(r ApiGetApiV1Rootfo
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1RootfolderRequest struct {
+type ApiListApiV1RootFolderRequest struct {
 	ctx context.Context
 	ApiService *RootFolderApiService
 }
 
-func (r ApiListApiV1RootfolderRequest) Execute() ([]*RootFolderResource, *http.Response, error) {
-	return r.ApiService.ListApiV1RootfolderExecute(r)
+func (r ApiListApiV1RootFolderRequest) Execute() ([]*RootFolderResource, *http.Response, error) {
+	return r.ApiService.ListApiV1RootFolderExecute(r)
 }
 
 /*
-ListApiV1Rootfolder Method for ListApiV1Rootfolder
+ListApiV1RootFolder Method for ListApiV1RootFolder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1RootfolderRequest
+ @return ApiListApiV1RootFolderRequest
 */
-func (a *RootFolderApiService) ListApiV1Rootfolder(ctx context.Context) ApiListApiV1RootfolderRequest {
-	return ApiListApiV1RootfolderRequest{
+func (a *RootFolderApiService) ListApiV1RootFolder(ctx context.Context) ApiListApiV1RootFolderRequest {
+	return ApiListApiV1RootFolderRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -339,7 +339,7 @@ func (a *RootFolderApiService) ListApiV1Rootfolder(ctx context.Context) ApiListA
 
 // Execute executes the request
 //  @return []RootFolderResource
-func (a *RootFolderApiService) ListApiV1RootfolderExecute(r ApiListApiV1RootfolderRequest) ([]*RootFolderResource, *http.Response, error) {
+func (a *RootFolderApiService) ListApiV1RootFolderExecute(r ApiListApiV1RootFolderRequest) ([]*RootFolderResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -347,7 +347,7 @@ func (a *RootFolderApiService) ListApiV1RootfolderExecute(r ApiListApiV1Rootfold
 		localVarReturnValue  []*RootFolderResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderApiService.ListApiV1Rootfolder")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderApiService.ListApiV1RootFolder")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -411,31 +411,31 @@ func (a *RootFolderApiService) ListApiV1RootfolderExecute(r ApiListApiV1Rootfold
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1RootfolderRequest struct {
+type ApiUpdateApiV1RootFolderRequest struct {
 	ctx context.Context
 	ApiService *RootFolderApiService
 	id string
 	rootFolderResource *RootFolderResource
 }
 
-func (r ApiUpdateApiV1RootfolderRequest) RootFolderResource(rootFolderResource RootFolderResource) ApiUpdateApiV1RootfolderRequest {
+func (r ApiUpdateApiV1RootFolderRequest) RootFolderResource(rootFolderResource RootFolderResource) ApiUpdateApiV1RootFolderRequest {
 	r.rootFolderResource = &rootFolderResource
 	return r
 }
 
-func (r ApiUpdateApiV1RootfolderRequest) Execute() (*RootFolderResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1RootfolderExecute(r)
+func (r ApiUpdateApiV1RootFolderRequest) Execute() (*RootFolderResource, *http.Response, error) {
+	return r.ApiService.UpdateApiV1RootFolderExecute(r)
 }
 
 /*
-UpdateApiV1Rootfolder Method for UpdateApiV1Rootfolder
+UpdateApiV1RootFolder Method for UpdateApiV1RootFolder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1RootfolderRequest
+ @return ApiUpdateApiV1RootFolderRequest
 */
-func (a *RootFolderApiService) UpdateApiV1Rootfolder(ctx context.Context, id string) ApiUpdateApiV1RootfolderRequest {
-	return ApiUpdateApiV1RootfolderRequest{
+func (a *RootFolderApiService) UpdateApiV1RootFolder(ctx context.Context, id string) ApiUpdateApiV1RootFolderRequest {
+	return ApiUpdateApiV1RootFolderRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -444,7 +444,7 @@ func (a *RootFolderApiService) UpdateApiV1Rootfolder(ctx context.Context, id str
 
 // Execute executes the request
 //  @return RootFolderResource
-func (a *RootFolderApiService) UpdateApiV1RootfolderExecute(r ApiUpdateApiV1RootfolderRequest) (*RootFolderResource, *http.Response, error) {
+func (a *RootFolderApiService) UpdateApiV1RootFolderExecute(r ApiUpdateApiV1RootFolderRequest) (*RootFolderResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -452,7 +452,7 @@ func (a *RootFolderApiService) UpdateApiV1RootfolderExecute(r ApiUpdateApiV1Root
 		localVarReturnValue  *RootFolderResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderApiService.UpdateApiV1Rootfolder")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderApiService.UpdateApiV1RootFolder")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListApiV1Diskspace**](DiskSpaceApi.md#ListApiV1Diskspace) | **Get** /api/v1/diskspace | 
+[**ListApiV1DiskSpace**](DiskSpaceApi.md#ListApiV1DiskSpace) | **Get** /api/v1/diskspace | 
 
 
 
-## ListApiV1Diskspace
+## ListApiV1DiskSpace
 
-> []DiskSpaceResource ListApiV1Diskspace(ctx).Execute()
+> []DiskSpaceResource ListApiV1DiskSpace(ctx).Execute()
 
 
 
@@ -30,13 +30,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DiskSpaceApi.ListApiV1Diskspace(context.Background()).Execute()
+    resp, r, err := apiClient.DiskSpaceApi.ListApiV1DiskSpace(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DiskSpaceApi.ListApiV1Diskspace``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DiskSpaceApi.ListApiV1DiskSpace``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Diskspace`: []DiskSpaceResource
-    fmt.Fprintf(os.Stdout, "Response from `DiskSpaceApi.ListApiV1Diskspace`: %v\n", resp)
+    // response from `ListApiV1DiskSpace`: []DiskSpaceResource
+    fmt.Fprintf(os.Stdout, "Response from `DiskSpaceApi.ListApiV1DiskSpace`: %v\n", resp)
 }
 ```
 
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1DiskspaceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListApiV1DiskSpaceRequest struct via the builder pattern
 
 
 ### Return type

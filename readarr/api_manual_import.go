@@ -21,7 +21,7 @@ import (
 
 // ManualImportApiService ManualImportApi service
 type ManualImportApiService service
-type ApiListApiV1ManualimportRequest struct {
+type ApiListApiV1ManualImportRequest struct {
 	ctx context.Context
 	ApiService *ManualImportApiService
 	folder *string
@@ -31,43 +31,43 @@ type ApiListApiV1ManualimportRequest struct {
 	replaceExistingFiles *bool
 }
 
-func (r ApiListApiV1ManualimportRequest) Folder(folder string) ApiListApiV1ManualimportRequest {
+func (r ApiListApiV1ManualImportRequest) Folder(folder string) ApiListApiV1ManualImportRequest {
 	r.folder = &folder
 	return r
 }
 
-func (r ApiListApiV1ManualimportRequest) DownloadId(downloadId string) ApiListApiV1ManualimportRequest {
+func (r ApiListApiV1ManualImportRequest) DownloadId(downloadId string) ApiListApiV1ManualImportRequest {
 	r.downloadId = &downloadId
 	return r
 }
 
-func (r ApiListApiV1ManualimportRequest) AuthorId(authorId int32) ApiListApiV1ManualimportRequest {
+func (r ApiListApiV1ManualImportRequest) AuthorId(authorId int32) ApiListApiV1ManualImportRequest {
 	r.authorId = &authorId
 	return r
 }
 
-func (r ApiListApiV1ManualimportRequest) FilterExistingFiles(filterExistingFiles bool) ApiListApiV1ManualimportRequest {
+func (r ApiListApiV1ManualImportRequest) FilterExistingFiles(filterExistingFiles bool) ApiListApiV1ManualImportRequest {
 	r.filterExistingFiles = &filterExistingFiles
 	return r
 }
 
-func (r ApiListApiV1ManualimportRequest) ReplaceExistingFiles(replaceExistingFiles bool) ApiListApiV1ManualimportRequest {
+func (r ApiListApiV1ManualImportRequest) ReplaceExistingFiles(replaceExistingFiles bool) ApiListApiV1ManualImportRequest {
 	r.replaceExistingFiles = &replaceExistingFiles
 	return r
 }
 
-func (r ApiListApiV1ManualimportRequest) Execute() ([]*ManualImportResource, *http.Response, error) {
-	return r.ApiService.ListApiV1ManualimportExecute(r)
+func (r ApiListApiV1ManualImportRequest) Execute() ([]*ManualImportResource, *http.Response, error) {
+	return r.ApiService.ListApiV1ManualImportExecute(r)
 }
 
 /*
-ListApiV1Manualimport Method for ListApiV1Manualimport
+ListApiV1ManualImport Method for ListApiV1ManualImport
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1ManualimportRequest
+ @return ApiListApiV1ManualImportRequest
 */
-func (a *ManualImportApiService) ListApiV1Manualimport(ctx context.Context) ApiListApiV1ManualimportRequest {
-	return ApiListApiV1ManualimportRequest{
+func (a *ManualImportApiService) ListApiV1ManualImport(ctx context.Context) ApiListApiV1ManualImportRequest {
+	return ApiListApiV1ManualImportRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -75,7 +75,7 @@ func (a *ManualImportApiService) ListApiV1Manualimport(ctx context.Context) ApiL
 
 // Execute executes the request
 //  @return []ManualImportResource
-func (a *ManualImportApiService) ListApiV1ManualimportExecute(r ApiListApiV1ManualimportRequest) ([]*ManualImportResource, *http.Response, error) {
+func (a *ManualImportApiService) ListApiV1ManualImportExecute(r ApiListApiV1ManualImportRequest) ([]*ManualImportResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -83,7 +83,7 @@ func (a *ManualImportApiService) ListApiV1ManualimportExecute(r ApiListApiV1Manu
 		localVarReturnValue  []*ManualImportResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportApiService.ListApiV1Manualimport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportApiService.ListApiV1ManualImport")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -162,43 +162,43 @@ func (a *ManualImportApiService) ListApiV1ManualimportExecute(r ApiListApiV1Manu
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiPutApiV1ManualimportRequest struct {
+type ApiPutApiV1ManualImportRequest struct {
 	ctx context.Context
 	ApiService *ManualImportApiService
 	manualImportResource *[]ManualImportResource
 }
 
-func (r ApiPutApiV1ManualimportRequest) ManualImportResource(manualImportResource []ManualImportResource) ApiPutApiV1ManualimportRequest {
+func (r ApiPutApiV1ManualImportRequest) ManualImportResource(manualImportResource []ManualImportResource) ApiPutApiV1ManualImportRequest {
 	r.manualImportResource = &manualImportResource
 	return r
 }
 
-func (r ApiPutApiV1ManualimportRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PutApiV1ManualimportExecute(r)
+func (r ApiPutApiV1ManualImportRequest) Execute() (*http.Response, error) {
+	return r.ApiService.PutApiV1ManualImportExecute(r)
 }
 
 /*
-PutApiV1Manualimport Method for PutApiV1Manualimport
+PutApiV1ManualImport Method for PutApiV1ManualImport
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPutApiV1ManualimportRequest
+ @return ApiPutApiV1ManualImportRequest
 */
-func (a *ManualImportApiService) PutApiV1Manualimport(ctx context.Context) ApiPutApiV1ManualimportRequest {
-	return ApiPutApiV1ManualimportRequest{
+func (a *ManualImportApiService) PutApiV1ManualImport(ctx context.Context) ApiPutApiV1ManualImportRequest {
+	return ApiPutApiV1ManualImportRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ManualImportApiService) PutApiV1ManualimportExecute(r ApiPutApiV1ManualimportRequest) (*http.Response, error) {
+func (a *ManualImportApiService) PutApiV1ManualImportExecute(r ApiPutApiV1ManualImportRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportApiService.PutApiV1Manualimport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportApiService.PutApiV1ManualImport")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

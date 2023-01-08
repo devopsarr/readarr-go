@@ -22,29 +22,29 @@ import (
 
 // ReleaseProfileApiService ReleaseProfileApi service
 type ReleaseProfileApiService service
-type ApiCreateApiV1ReleaseprofileRequest struct {
+type ApiCreateApiV1ReleaseProfileRequest struct {
 	ctx context.Context
 	ApiService *ReleaseProfileApiService
 	releaseProfileResource *ReleaseProfileResource
 }
 
-func (r ApiCreateApiV1ReleaseprofileRequest) ReleaseProfileResource(releaseProfileResource ReleaseProfileResource) ApiCreateApiV1ReleaseprofileRequest {
+func (r ApiCreateApiV1ReleaseProfileRequest) ReleaseProfileResource(releaseProfileResource ReleaseProfileResource) ApiCreateApiV1ReleaseProfileRequest {
 	r.releaseProfileResource = &releaseProfileResource
 	return r
 }
 
-func (r ApiCreateApiV1ReleaseprofileRequest) Execute() (*ReleaseProfileResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1ReleaseprofileExecute(r)
+func (r ApiCreateApiV1ReleaseProfileRequest) Execute() (*ReleaseProfileResource, *http.Response, error) {
+	return r.ApiService.CreateApiV1ReleaseProfileExecute(r)
 }
 
 /*
-CreateApiV1Releaseprofile Method for CreateApiV1Releaseprofile
+CreateApiV1ReleaseProfile Method for CreateApiV1ReleaseProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1ReleaseprofileRequest
+ @return ApiCreateApiV1ReleaseProfileRequest
 */
-func (a *ReleaseProfileApiService) CreateApiV1Releaseprofile(ctx context.Context) ApiCreateApiV1ReleaseprofileRequest {
-	return ApiCreateApiV1ReleaseprofileRequest{
+func (a *ReleaseProfileApiService) CreateApiV1ReleaseProfile(ctx context.Context) ApiCreateApiV1ReleaseProfileRequest {
+	return ApiCreateApiV1ReleaseProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *ReleaseProfileApiService) CreateApiV1Releaseprofile(ctx context.Context
 
 // Execute executes the request
 //  @return ReleaseProfileResource
-func (a *ReleaseProfileApiService) CreateApiV1ReleaseprofileExecute(r ApiCreateApiV1ReleaseprofileRequest) (*ReleaseProfileResource, *http.Response, error) {
+func (a *ReleaseProfileApiService) CreateApiV1ReleaseProfileExecute(r ApiCreateApiV1ReleaseProfileRequest) (*ReleaseProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ReleaseProfileApiService) CreateApiV1ReleaseprofileExecute(r ApiCreateA
 		localVarReturnValue  *ReleaseProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.CreateApiV1Releaseprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.CreateApiV1ReleaseProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,25 +126,25 @@ func (a *ReleaseProfileApiService) CreateApiV1ReleaseprofileExecute(r ApiCreateA
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1ReleaseprofileRequest struct {
+type ApiDeleteApiV1ReleaseProfileRequest struct {
 	ctx context.Context
 	ApiService *ReleaseProfileApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1ReleaseprofileRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1ReleaseprofileExecute(r)
+func (r ApiDeleteApiV1ReleaseProfileRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteApiV1ReleaseProfileExecute(r)
 }
 
 /*
-DeleteApiV1Releaseprofile Method for DeleteApiV1Releaseprofile
+DeleteApiV1ReleaseProfile Method for DeleteApiV1ReleaseProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1ReleaseprofileRequest
+ @return ApiDeleteApiV1ReleaseProfileRequest
 */
-func (a *ReleaseProfileApiService) DeleteApiV1Releaseprofile(ctx context.Context, id int32) ApiDeleteApiV1ReleaseprofileRequest {
-	return ApiDeleteApiV1ReleaseprofileRequest{
+func (a *ReleaseProfileApiService) DeleteApiV1ReleaseProfile(ctx context.Context, id int32) ApiDeleteApiV1ReleaseProfileRequest {
+	return ApiDeleteApiV1ReleaseProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -152,14 +152,14 @@ func (a *ReleaseProfileApiService) DeleteApiV1Releaseprofile(ctx context.Context
 }
 
 // Execute executes the request
-func (a *ReleaseProfileApiService) DeleteApiV1ReleaseprofileExecute(r ApiDeleteApiV1ReleaseprofileRequest) (*http.Response, error) {
+func (a *ReleaseProfileApiService) DeleteApiV1ReleaseProfileExecute(r ApiDeleteApiV1ReleaseProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.DeleteApiV1Releaseprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.DeleteApiV1ReleaseProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -215,25 +215,25 @@ func (a *ReleaseProfileApiService) DeleteApiV1ReleaseprofileExecute(r ApiDeleteA
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1ReleaseprofileByIdRequest struct {
+type ApiGetApiV1ReleaseProfileByIdRequest struct {
 	ctx context.Context
 	ApiService *ReleaseProfileApiService
 	id int32
 }
 
-func (r ApiGetApiV1ReleaseprofileByIdRequest) Execute() (*ReleaseProfileResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ReleaseprofileByIdExecute(r)
+func (r ApiGetApiV1ReleaseProfileByIdRequest) Execute() (*ReleaseProfileResource, *http.Response, error) {
+	return r.ApiService.GetApiV1ReleaseProfileByIdExecute(r)
 }
 
 /*
-GetApiV1ReleaseprofileById Method for GetApiV1ReleaseprofileById
+GetApiV1ReleaseProfileById Method for GetApiV1ReleaseProfileById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1ReleaseprofileByIdRequest
+ @return ApiGetApiV1ReleaseProfileByIdRequest
 */
-func (a *ReleaseProfileApiService) GetApiV1ReleaseprofileById(ctx context.Context, id int32) ApiGetApiV1ReleaseprofileByIdRequest {
-	return ApiGetApiV1ReleaseprofileByIdRequest{
+func (a *ReleaseProfileApiService) GetApiV1ReleaseProfileById(ctx context.Context, id int32) ApiGetApiV1ReleaseProfileByIdRequest {
+	return ApiGetApiV1ReleaseProfileByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -242,7 +242,7 @@ func (a *ReleaseProfileApiService) GetApiV1ReleaseprofileById(ctx context.Contex
 
 // Execute executes the request
 //  @return ReleaseProfileResource
-func (a *ReleaseProfileApiService) GetApiV1ReleaseprofileByIdExecute(r ApiGetApiV1ReleaseprofileByIdRequest) (*ReleaseProfileResource, *http.Response, error) {
+func (a *ReleaseProfileApiService) GetApiV1ReleaseProfileByIdExecute(r ApiGetApiV1ReleaseProfileByIdRequest) (*ReleaseProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -250,7 +250,7 @@ func (a *ReleaseProfileApiService) GetApiV1ReleaseprofileByIdExecute(r ApiGetApi
 		localVarReturnValue  *ReleaseProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.GetApiV1ReleaseprofileById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.GetApiV1ReleaseProfileById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -315,23 +315,23 @@ func (a *ReleaseProfileApiService) GetApiV1ReleaseprofileByIdExecute(r ApiGetApi
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1ReleaseprofileRequest struct {
+type ApiListApiV1ReleaseProfileRequest struct {
 	ctx context.Context
 	ApiService *ReleaseProfileApiService
 }
 
-func (r ApiListApiV1ReleaseprofileRequest) Execute() ([]*ReleaseProfileResource, *http.Response, error) {
-	return r.ApiService.ListApiV1ReleaseprofileExecute(r)
+func (r ApiListApiV1ReleaseProfileRequest) Execute() ([]*ReleaseProfileResource, *http.Response, error) {
+	return r.ApiService.ListApiV1ReleaseProfileExecute(r)
 }
 
 /*
-ListApiV1Releaseprofile Method for ListApiV1Releaseprofile
+ListApiV1ReleaseProfile Method for ListApiV1ReleaseProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1ReleaseprofileRequest
+ @return ApiListApiV1ReleaseProfileRequest
 */
-func (a *ReleaseProfileApiService) ListApiV1Releaseprofile(ctx context.Context) ApiListApiV1ReleaseprofileRequest {
-	return ApiListApiV1ReleaseprofileRequest{
+func (a *ReleaseProfileApiService) ListApiV1ReleaseProfile(ctx context.Context) ApiListApiV1ReleaseProfileRequest {
+	return ApiListApiV1ReleaseProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -339,7 +339,7 @@ func (a *ReleaseProfileApiService) ListApiV1Releaseprofile(ctx context.Context) 
 
 // Execute executes the request
 //  @return []ReleaseProfileResource
-func (a *ReleaseProfileApiService) ListApiV1ReleaseprofileExecute(r ApiListApiV1ReleaseprofileRequest) ([]*ReleaseProfileResource, *http.Response, error) {
+func (a *ReleaseProfileApiService) ListApiV1ReleaseProfileExecute(r ApiListApiV1ReleaseProfileRequest) ([]*ReleaseProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -347,7 +347,7 @@ func (a *ReleaseProfileApiService) ListApiV1ReleaseprofileExecute(r ApiListApiV1
 		localVarReturnValue  []*ReleaseProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.ListApiV1Releaseprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.ListApiV1ReleaseProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -411,31 +411,31 @@ func (a *ReleaseProfileApiService) ListApiV1ReleaseprofileExecute(r ApiListApiV1
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1ReleaseprofileRequest struct {
+type ApiUpdateApiV1ReleaseProfileRequest struct {
 	ctx context.Context
 	ApiService *ReleaseProfileApiService
 	id string
 	releaseProfileResource *ReleaseProfileResource
 }
 
-func (r ApiUpdateApiV1ReleaseprofileRequest) ReleaseProfileResource(releaseProfileResource ReleaseProfileResource) ApiUpdateApiV1ReleaseprofileRequest {
+func (r ApiUpdateApiV1ReleaseProfileRequest) ReleaseProfileResource(releaseProfileResource ReleaseProfileResource) ApiUpdateApiV1ReleaseProfileRequest {
 	r.releaseProfileResource = &releaseProfileResource
 	return r
 }
 
-func (r ApiUpdateApiV1ReleaseprofileRequest) Execute() (*ReleaseProfileResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1ReleaseprofileExecute(r)
+func (r ApiUpdateApiV1ReleaseProfileRequest) Execute() (*ReleaseProfileResource, *http.Response, error) {
+	return r.ApiService.UpdateApiV1ReleaseProfileExecute(r)
 }
 
 /*
-UpdateApiV1Releaseprofile Method for UpdateApiV1Releaseprofile
+UpdateApiV1ReleaseProfile Method for UpdateApiV1ReleaseProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1ReleaseprofileRequest
+ @return ApiUpdateApiV1ReleaseProfileRequest
 */
-func (a *ReleaseProfileApiService) UpdateApiV1Releaseprofile(ctx context.Context, id string) ApiUpdateApiV1ReleaseprofileRequest {
-	return ApiUpdateApiV1ReleaseprofileRequest{
+func (a *ReleaseProfileApiService) UpdateApiV1ReleaseProfile(ctx context.Context, id string) ApiUpdateApiV1ReleaseProfileRequest {
+	return ApiUpdateApiV1ReleaseProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -444,7 +444,7 @@ func (a *ReleaseProfileApiService) UpdateApiV1Releaseprofile(ctx context.Context
 
 // Execute executes the request
 //  @return ReleaseProfileResource
-func (a *ReleaseProfileApiService) UpdateApiV1ReleaseprofileExecute(r ApiUpdateApiV1ReleaseprofileRequest) (*ReleaseProfileResource, *http.Response, error) {
+func (a *ReleaseProfileApiService) UpdateApiV1ReleaseProfileExecute(r ApiUpdateApiV1ReleaseProfileRequest) (*ReleaseProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -452,7 +452,7 @@ func (a *ReleaseProfileApiService) UpdateApiV1ReleaseprofileExecute(r ApiUpdateA
 		localVarReturnValue  *ReleaseProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.UpdateApiV1Releaseprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.UpdateApiV1ReleaseProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

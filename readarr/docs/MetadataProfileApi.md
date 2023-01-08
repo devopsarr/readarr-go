@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Metadataprofile**](MetadataProfileApi.md#CreateApiV1Metadataprofile) | **Post** /api/v1/metadataprofile | 
-[**DeleteApiV1Metadataprofile**](MetadataProfileApi.md#DeleteApiV1Metadataprofile) | **Delete** /api/v1/metadataprofile/{id} | 
-[**GetApiV1MetadataprofileById**](MetadataProfileApi.md#GetApiV1MetadataprofileById) | **Get** /api/v1/metadataprofile/{id} | 
-[**ListApiV1Metadataprofile**](MetadataProfileApi.md#ListApiV1Metadataprofile) | **Get** /api/v1/metadataprofile | 
-[**UpdateApiV1Metadataprofile**](MetadataProfileApi.md#UpdateApiV1Metadataprofile) | **Put** /api/v1/metadataprofile/{id} | 
+[**CreateApiV1MetadataProfile**](MetadataProfileApi.md#CreateApiV1MetadataProfile) | **Post** /api/v1/metadataprofile | 
+[**DeleteApiV1MetadataProfile**](MetadataProfileApi.md#DeleteApiV1MetadataProfile) | **Delete** /api/v1/metadataprofile/{id} | 
+[**GetApiV1MetadataProfileById**](MetadataProfileApi.md#GetApiV1MetadataProfileById) | **Get** /api/v1/metadataprofile/{id} | 
+[**ListApiV1MetadataProfile**](MetadataProfileApi.md#ListApiV1MetadataProfile) | **Get** /api/v1/metadataprofile | 
+[**UpdateApiV1MetadataProfile**](MetadataProfileApi.md#UpdateApiV1MetadataProfile) | **Put** /api/v1/metadataprofile/{id} | 
 
 
 
-## CreateApiV1Metadataprofile
+## CreateApiV1MetadataProfile
 
-> MetadataProfileResource CreateApiV1Metadataprofile(ctx).MetadataProfileResource(metadataProfileResource).Execute()
+> MetadataProfileResource CreateApiV1MetadataProfile(ctx).MetadataProfileResource(metadataProfileResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataProfileApi.CreateApiV1Metadataprofile(context.Background()).MetadataProfileResource(metadataProfileResource).Execute()
+    resp, r, err := apiClient.MetadataProfileApi.CreateApiV1MetadataProfile(context.Background()).MetadataProfileResource(metadataProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileApi.CreateApiV1Metadataprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileApi.CreateApiV1MetadataProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Metadataprofile`: MetadataProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataProfileApi.CreateApiV1Metadataprofile`: %v\n", resp)
+    // response from `CreateApiV1MetadataProfile`: MetadataProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataProfileApi.CreateApiV1MetadataProfile`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1MetadataprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateApiV1MetadataProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Metadataprofile
+## DeleteApiV1MetadataProfile
 
-> DeleteApiV1Metadataprofile(ctx, id).Execute()
+> DeleteApiV1MetadataProfile(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataProfileApi.DeleteApiV1Metadataprofile(context.Background(), id).Execute()
+    resp, r, err := apiClient.MetadataProfileApi.DeleteApiV1MetadataProfile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileApi.DeleteApiV1Metadataprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileApi.DeleteApiV1MetadataProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1MetadataprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteApiV1MetadataProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1MetadataprofileById
+## GetApiV1MetadataProfileById
 
-> MetadataProfileResource GetApiV1MetadataprofileById(ctx, id).Execute()
+> MetadataProfileResource GetApiV1MetadataProfileById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataProfileApi.GetApiV1MetadataprofileById(context.Background(), id).Execute()
+    resp, r, err := apiClient.MetadataProfileApi.GetApiV1MetadataProfileById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileApi.GetApiV1MetadataprofileById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileApi.GetApiV1MetadataProfileById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1MetadataprofileById`: MetadataProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataProfileApi.GetApiV1MetadataprofileById`: %v\n", resp)
+    // response from `GetApiV1MetadataProfileById`: MetadataProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataProfileApi.GetApiV1MetadataProfileById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1MetadataprofileByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetApiV1MetadataProfileByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1Metadataprofile
+## ListApiV1MetadataProfile
 
-> []MetadataProfileResource ListApiV1Metadataprofile(ctx).Execute()
+> []MetadataProfileResource ListApiV1MetadataProfile(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataProfileApi.ListApiV1Metadataprofile(context.Background()).Execute()
+    resp, r, err := apiClient.MetadataProfileApi.ListApiV1MetadataProfile(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileApi.ListApiV1Metadataprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileApi.ListApiV1MetadataProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Metadataprofile`: []MetadataProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataProfileApi.ListApiV1Metadataprofile`: %v\n", resp)
+    // response from `ListApiV1MetadataProfile`: []MetadataProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataProfileApi.ListApiV1MetadataProfile`: %v\n", resp)
 }
 ```
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1MetadataprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListApiV1MetadataProfileRequest struct via the builder pattern
 
 
 ### Return type
@@ -269,9 +269,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Metadataprofile
+## UpdateApiV1MetadataProfile
 
-> MetadataProfileResource UpdateApiV1Metadataprofile(ctx, id).MetadataProfileResource(metadataProfileResource).Execute()
+> MetadataProfileResource UpdateApiV1MetadataProfile(ctx, id).MetadataProfileResource(metadataProfileResource).Execute()
 
 
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataProfileApi.UpdateApiV1Metadataprofile(context.Background(), id).MetadataProfileResource(metadataProfileResource).Execute()
+    resp, r, err := apiClient.MetadataProfileApi.UpdateApiV1MetadataProfile(context.Background(), id).MetadataProfileResource(metadataProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileApi.UpdateApiV1Metadataprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileApi.UpdateApiV1MetadataProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Metadataprofile`: MetadataProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataProfileApi.UpdateApiV1Metadataprofile`: %v\n", resp)
+    // response from `UpdateApiV1MetadataProfile`: MetadataProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataProfileApi.UpdateApiV1MetadataProfile`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1MetadataprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateApiV1MetadataProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
