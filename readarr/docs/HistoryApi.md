@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1HistoryFailed**](HistoryApi.md#CreateApiV1HistoryFailed) | **Post** /api/v1/history/failed | 
-[**GetApiV1History**](HistoryApi.md#GetApiV1History) | **Get** /api/v1/history | 
-[**ListApiV1HistoryAuthor**](HistoryApi.md#ListApiV1HistoryAuthor) | **Get** /api/v1/history/author | 
-[**ListApiV1HistorySince**](HistoryApi.md#ListApiV1HistorySince) | **Get** /api/v1/history/since | 
+[**CreateHistoryFailed**](HistoryApi.md#CreateHistoryFailed) | **Post** /api/v1/history/failed | 
+[**GetHistory**](HistoryApi.md#GetHistory) | **Get** /api/v1/history | 
+[**ListHistoryAuthor**](HistoryApi.md#ListHistoryAuthor) | **Get** /api/v1/history/author | 
+[**ListHistorySince**](HistoryApi.md#ListHistorySince) | **Get** /api/v1/history/since | 
 
 
 
-## CreateApiV1HistoryFailed
+## CreateHistoryFailed
 
-> CreateApiV1HistoryFailed(ctx).Body(body).Execute()
+> CreateHistoryFailed(ctx).Body(body).Execute()
 
 
 
@@ -34,9 +34,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.CreateApiV1HistoryFailed(context.Background()).Body(body).Execute()
+    resp, r, err := apiClient.HistoryApi.CreateHistoryFailed(context.Background()).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.CreateApiV1HistoryFailed``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.CreateHistoryFailed``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1HistoryFailedRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateHistoryFailedRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -73,9 +73,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1History
+## GetHistory
 
-> HistoryResourcePagingResource GetApiV1History(ctx).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+> HistoryResourcePagingResource GetHistory(ctx).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
 
 
 
@@ -97,13 +97,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.GetApiV1History(context.Background()).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+    resp, r, err := apiClient.HistoryApi.GetHistory(context.Background()).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.GetApiV1History``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.GetHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1History`: HistoryResourcePagingResource
-    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.GetApiV1History`: %v\n", resp)
+    // response from `GetHistory`: HistoryResourcePagingResource
+    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.GetHistory`: %v\n", resp)
 }
 ```
 
@@ -113,7 +113,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1HistoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetHistoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -139,9 +139,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1HistoryAuthor
+## ListHistoryAuthor
 
-> []HistoryResource ListApiV1HistoryAuthor(ctx).AuthorId(authorId).BookId(bookId).EventType(eventType).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+> []HistoryResource ListHistoryAuthor(ctx).AuthorId(authorId).BookId(bookId).EventType(eventType).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
 
 
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.ListApiV1HistoryAuthor(context.Background()).AuthorId(authorId).BookId(bookId).EventType(eventType).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+    resp, r, err := apiClient.HistoryApi.ListHistoryAuthor(context.Background()).AuthorId(authorId).BookId(bookId).EventType(eventType).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListApiV1HistoryAuthor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListHistoryAuthor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1HistoryAuthor`: []HistoryResource
-    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListApiV1HistoryAuthor`: %v\n", resp)
+    // response from `ListHistoryAuthor`: []HistoryResource
+    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListHistoryAuthor`: %v\n", resp)
 }
 ```
 
@@ -182,7 +182,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1HistoryAuthorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListHistoryAuthorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -211,9 +211,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1HistorySince
+## ListHistorySince
 
-> []HistoryResource ListApiV1HistorySince(ctx).Date(date).EventType(eventType).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+> []HistoryResource ListHistorySince(ctx).Date(date).EventType(eventType).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
 
 
 
@@ -238,13 +238,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.ListApiV1HistorySince(context.Background()).Date(date).EventType(eventType).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+    resp, r, err := apiClient.HistoryApi.ListHistorySince(context.Background()).Date(date).EventType(eventType).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListApiV1HistorySince``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListHistorySince``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1HistorySince`: []HistoryResource
-    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListApiV1HistorySince`: %v\n", resp)
+    // response from `ListHistorySince`: []HistoryResource
+    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListHistorySince`: %v\n", resp)
 }
 ```
 
@@ -254,7 +254,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1HistorySinceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListHistorySinceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -22,25 +22,25 @@ import (
 
 // LanguageApiService LanguageApi service
 type LanguageApiService service
-type ApiGetApiV1LanguageByIdRequest struct {
+type ApiGetLanguageByIdRequest struct {
 	ctx context.Context
 	ApiService *LanguageApiService
 	id int32
 }
 
-func (r ApiGetApiV1LanguageByIdRequest) Execute() (*LanguageResource, *http.Response, error) {
-	return r.ApiService.GetApiV1LanguageByIdExecute(r)
+func (r ApiGetLanguageByIdRequest) Execute() (*LanguageResource, *http.Response, error) {
+	return r.ApiService.GetLanguageByIdExecute(r)
 }
 
 /*
-GetApiV1LanguageById Method for GetApiV1LanguageById
+GetLanguageById Method for GetLanguageById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1LanguageByIdRequest
+ @return ApiGetLanguageByIdRequest
 */
-func (a *LanguageApiService) GetApiV1LanguageById(ctx context.Context, id int32) ApiGetApiV1LanguageByIdRequest {
-	return ApiGetApiV1LanguageByIdRequest{
+func (a *LanguageApiService) GetLanguageById(ctx context.Context, id int32) ApiGetLanguageByIdRequest {
+	return ApiGetLanguageByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -49,7 +49,7 @@ func (a *LanguageApiService) GetApiV1LanguageById(ctx context.Context, id int32)
 
 // Execute executes the request
 //  @return LanguageResource
-func (a *LanguageApiService) GetApiV1LanguageByIdExecute(r ApiGetApiV1LanguageByIdRequest) (*LanguageResource, *http.Response, error) {
+func (a *LanguageApiService) GetLanguageByIdExecute(r ApiGetLanguageByIdRequest) (*LanguageResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -57,7 +57,7 @@ func (a *LanguageApiService) GetApiV1LanguageByIdExecute(r ApiGetApiV1LanguageBy
 		localVarReturnValue  *LanguageResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageApiService.GetApiV1LanguageById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageApiService.GetLanguageById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -122,23 +122,23 @@ func (a *LanguageApiService) GetApiV1LanguageByIdExecute(r ApiGetApiV1LanguageBy
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1LanguageRequest struct {
+type ApiListLanguageRequest struct {
 	ctx context.Context
 	ApiService *LanguageApiService
 }
 
-func (r ApiListApiV1LanguageRequest) Execute() ([]*LanguageResource, *http.Response, error) {
-	return r.ApiService.ListApiV1LanguageExecute(r)
+func (r ApiListLanguageRequest) Execute() ([]*LanguageResource, *http.Response, error) {
+	return r.ApiService.ListLanguageExecute(r)
 }
 
 /*
-ListApiV1Language Method for ListApiV1Language
+ListLanguage Method for ListLanguage
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1LanguageRequest
+ @return ApiListLanguageRequest
 */
-func (a *LanguageApiService) ListApiV1Language(ctx context.Context) ApiListApiV1LanguageRequest {
-	return ApiListApiV1LanguageRequest{
+func (a *LanguageApiService) ListLanguage(ctx context.Context) ApiListLanguageRequest {
+	return ApiListLanguageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -146,7 +146,7 @@ func (a *LanguageApiService) ListApiV1Language(ctx context.Context) ApiListApiV1
 
 // Execute executes the request
 //  @return []LanguageResource
-func (a *LanguageApiService) ListApiV1LanguageExecute(r ApiListApiV1LanguageRequest) ([]*LanguageResource, *http.Response, error) {
+func (a *LanguageApiService) ListLanguageExecute(r ApiListLanguageRequest) ([]*LanguageResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -154,7 +154,7 @@ func (a *LanguageApiService) ListApiV1LanguageExecute(r ApiListApiV1LanguageRequ
 		localVarReturnValue  []*LanguageResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageApiService.ListApiV1Language")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageApiService.ListLanguage")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -21,29 +21,29 @@ import (
 
 // SeriesApiService SeriesApi service
 type SeriesApiService service
-type ApiListApiV1SeriesRequest struct {
+type ApiListSeriesRequest struct {
 	ctx context.Context
 	ApiService *SeriesApiService
 	authorId *int32
 }
 
-func (r ApiListApiV1SeriesRequest) AuthorId(authorId int32) ApiListApiV1SeriesRequest {
+func (r ApiListSeriesRequest) AuthorId(authorId int32) ApiListSeriesRequest {
 	r.authorId = &authorId
 	return r
 }
 
-func (r ApiListApiV1SeriesRequest) Execute() ([]*SeriesResource, *http.Response, error) {
-	return r.ApiService.ListApiV1SeriesExecute(r)
+func (r ApiListSeriesRequest) Execute() ([]*SeriesResource, *http.Response, error) {
+	return r.ApiService.ListSeriesExecute(r)
 }
 
 /*
-ListApiV1Series Method for ListApiV1Series
+ListSeries Method for ListSeries
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1SeriesRequest
+ @return ApiListSeriesRequest
 */
-func (a *SeriesApiService) ListApiV1Series(ctx context.Context) ApiListApiV1SeriesRequest {
-	return ApiListApiV1SeriesRequest{
+func (a *SeriesApiService) ListSeries(ctx context.Context) ApiListSeriesRequest {
+	return ApiListSeriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -51,7 +51,7 @@ func (a *SeriesApiService) ListApiV1Series(ctx context.Context) ApiListApiV1Seri
 
 // Execute executes the request
 //  @return []SeriesResource
-func (a *SeriesApiService) ListApiV1SeriesExecute(r ApiListApiV1SeriesRequest) ([]*SeriesResource, *http.Response, error) {
+func (a *SeriesApiService) ListSeriesExecute(r ApiListSeriesRequest) ([]*SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -59,7 +59,7 @@ func (a *SeriesApiService) ListApiV1SeriesExecute(r ApiListApiV1SeriesRequest) (
 		localVarReturnValue  []*SeriesResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesApiService.ListApiV1Series")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesApiService.ListSeries")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

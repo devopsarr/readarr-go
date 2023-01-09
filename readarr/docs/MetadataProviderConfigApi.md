@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1ConfigMetadataprovider**](MetadataProviderConfigApi.md#GetApiV1ConfigMetadataprovider) | **Get** /api/v1/config/metadataprovider | 
-[**GetApiV1ConfigMetadataproviderById**](MetadataProviderConfigApi.md#GetApiV1ConfigMetadataproviderById) | **Get** /api/v1/config/metadataprovider/{id} | 
-[**UpdateApiV1ConfigMetadataprovider**](MetadataProviderConfigApi.md#UpdateApiV1ConfigMetadataprovider) | **Put** /api/v1/config/metadataprovider/{id} | 
+[**GetMetadataProviderConfig**](MetadataProviderConfigApi.md#GetMetadataProviderConfig) | **Get** /api/v1/config/metadataprovider | 
+[**GetMetadataProviderConfigById**](MetadataProviderConfigApi.md#GetMetadataProviderConfigById) | **Get** /api/v1/config/metadataprovider/{id} | 
+[**UpdateMetadataProviderConfig**](MetadataProviderConfigApi.md#UpdateMetadataProviderConfig) | **Put** /api/v1/config/metadataprovider/{id} | 
 
 
 
-## GetApiV1ConfigMetadataprovider
+## GetMetadataProviderConfig
 
-> MetadataProviderConfigResource GetApiV1ConfigMetadataprovider(ctx).Execute()
+> MetadataProviderConfigResource GetMetadataProviderConfig(ctx).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataProviderConfigApi.GetApiV1ConfigMetadataprovider(context.Background()).Execute()
+    resp, r, err := apiClient.MetadataProviderConfigApi.GetMetadataProviderConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProviderConfigApi.GetApiV1ConfigMetadataprovider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProviderConfigApi.GetMetadataProviderConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigMetadataprovider`: MetadataProviderConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataProviderConfigApi.GetApiV1ConfigMetadataprovider`: %v\n", resp)
+    // response from `GetMetadataProviderConfig`: MetadataProviderConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataProviderConfigApi.GetMetadataProviderConfig`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigMetadataproviderRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMetadataProviderConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1ConfigMetadataproviderById
+## GetMetadataProviderConfigById
 
-> MetadataProviderConfigResource GetApiV1ConfigMetadataproviderById(ctx, id).Execute()
+> MetadataProviderConfigResource GetMetadataProviderConfigById(ctx, id).Execute()
 
 
 
@@ -92,13 +92,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataProviderConfigApi.GetApiV1ConfigMetadataproviderById(context.Background(), id).Execute()
+    resp, r, err := apiClient.MetadataProviderConfigApi.GetMetadataProviderConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProviderConfigApi.GetApiV1ConfigMetadataproviderById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProviderConfigApi.GetMetadataProviderConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigMetadataproviderById`: MetadataProviderConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataProviderConfigApi.GetApiV1ConfigMetadataproviderById`: %v\n", resp)
+    // response from `GetMetadataProviderConfigById`: MetadataProviderConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataProviderConfigApi.GetMetadataProviderConfigById`: %v\n", resp)
 }
 ```
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigMetadataproviderByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMetadataProviderConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -137,9 +137,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1ConfigMetadataprovider
+## UpdateMetadataProviderConfig
 
-> MetadataProviderConfigResource UpdateApiV1ConfigMetadataprovider(ctx, id).MetadataProviderConfigResource(metadataProviderConfigResource).Execute()
+> MetadataProviderConfigResource UpdateMetadataProviderConfig(ctx, id).MetadataProviderConfigResource(metadataProviderConfigResource).Execute()
 
 
 
@@ -161,13 +161,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataProviderConfigApi.UpdateApiV1ConfigMetadataprovider(context.Background(), id).MetadataProviderConfigResource(metadataProviderConfigResource).Execute()
+    resp, r, err := apiClient.MetadataProviderConfigApi.UpdateMetadataProviderConfig(context.Background(), id).MetadataProviderConfigResource(metadataProviderConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProviderConfigApi.UpdateApiV1ConfigMetadataprovider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProviderConfigApi.UpdateMetadataProviderConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1ConfigMetadataprovider`: MetadataProviderConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataProviderConfigApi.UpdateApiV1ConfigMetadataprovider`: %v\n", resp)
+    // response from `UpdateMetadataProviderConfig`: MetadataProviderConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataProviderConfigApi.UpdateMetadataProviderConfig`: %v\n", resp)
 }
 ```
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1ConfigMetadataproviderRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateMetadataProviderConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

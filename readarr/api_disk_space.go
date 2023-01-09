@@ -21,23 +21,23 @@ import (
 
 // DiskSpaceApiService DiskSpaceApi service
 type DiskSpaceApiService service
-type ApiListApiV1DiskSpaceRequest struct {
+type ApiListDiskSpaceRequest struct {
 	ctx context.Context
 	ApiService *DiskSpaceApiService
 }
 
-func (r ApiListApiV1DiskSpaceRequest) Execute() ([]*DiskSpaceResource, *http.Response, error) {
-	return r.ApiService.ListApiV1DiskSpaceExecute(r)
+func (r ApiListDiskSpaceRequest) Execute() ([]*DiskSpaceResource, *http.Response, error) {
+	return r.ApiService.ListDiskSpaceExecute(r)
 }
 
 /*
-ListApiV1DiskSpace Method for ListApiV1DiskSpace
+ListDiskSpace Method for ListDiskSpace
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1DiskSpaceRequest
+ @return ApiListDiskSpaceRequest
 */
-func (a *DiskSpaceApiService) ListApiV1DiskSpace(ctx context.Context) ApiListApiV1DiskSpaceRequest {
-	return ApiListApiV1DiskSpaceRequest{
+func (a *DiskSpaceApiService) ListDiskSpace(ctx context.Context) ApiListDiskSpaceRequest {
+	return ApiListDiskSpaceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -45,7 +45,7 @@ func (a *DiskSpaceApiService) ListApiV1DiskSpace(ctx context.Context) ApiListApi
 
 // Execute executes the request
 //  @return []DiskSpaceResource
-func (a *DiskSpaceApiService) ListApiV1DiskSpaceExecute(r ApiListApiV1DiskSpaceRequest) ([]*DiskSpaceResource, *http.Response, error) {
+func (a *DiskSpaceApiService) ListDiskSpaceExecute(r ApiListDiskSpaceRequest) ([]*DiskSpaceResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *DiskSpaceApiService) ListApiV1DiskSpaceExecute(r ApiListApiV1DiskSpaceR
 		localVarReturnValue  []*DiskSpaceResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DiskSpaceApiService.ListApiV1DiskSpace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DiskSpaceApiService.ListDiskSpace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

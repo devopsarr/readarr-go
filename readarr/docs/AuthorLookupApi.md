@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1AuthorLookup**](AuthorLookupApi.md#GetApiV1AuthorLookup) | **Get** /api/v1/author/lookup | 
+[**GetAuthorLookup**](AuthorLookupApi.md#GetAuthorLookup) | **Get** /api/v1/author/lookup | 
 
 
 
-## GetApiV1AuthorLookup
+## GetAuthorLookup
 
-> GetApiV1AuthorLookup(ctx).Term(term).Execute()
+> GetAuthorLookup(ctx).Term(term).Execute()
 
 
 
@@ -31,9 +31,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorLookupApi.GetApiV1AuthorLookup(context.Background()).Term(term).Execute()
+    resp, r, err := apiClient.AuthorLookupApi.GetAuthorLookup(context.Background()).Term(term).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthorLookupApi.GetApiV1AuthorLookup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthorLookupApi.GetAuthorLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -45,7 +45,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1AuthorLookupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAuthorLookupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

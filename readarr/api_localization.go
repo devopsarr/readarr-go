@@ -21,23 +21,23 @@ import (
 
 // LocalizationApiService LocalizationApi service
 type LocalizationApiService service
-type ApiGetApiV1LocalizationRequest struct {
+type ApiGetLocalizationRequest struct {
 	ctx context.Context
 	ApiService *LocalizationApiService
 }
 
-func (r ApiGetApiV1LocalizationRequest) Execute() (string, *http.Response, error) {
-	return r.ApiService.GetApiV1LocalizationExecute(r)
+func (r ApiGetLocalizationRequest) Execute() (string, *http.Response, error) {
+	return r.ApiService.GetLocalizationExecute(r)
 }
 
 /*
-GetApiV1Localization Method for GetApiV1Localization
+GetLocalization Method for GetLocalization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1LocalizationRequest
+ @return ApiGetLocalizationRequest
 */
-func (a *LocalizationApiService) GetApiV1Localization(ctx context.Context) ApiGetApiV1LocalizationRequest {
-	return ApiGetApiV1LocalizationRequest{
+func (a *LocalizationApiService) GetLocalization(ctx context.Context) ApiGetLocalizationRequest {
+	return ApiGetLocalizationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -45,7 +45,7 @@ func (a *LocalizationApiService) GetApiV1Localization(ctx context.Context) ApiGe
 
 // Execute executes the request
 //  @return string
-func (a *LocalizationApiService) GetApiV1LocalizationExecute(r ApiGetApiV1LocalizationRequest) (string, *http.Response, error) {
+func (a *LocalizationApiService) GetLocalizationExecute(r ApiGetLocalizationRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *LocalizationApiService) GetApiV1LocalizationExecute(r ApiGetApiV1Locali
 		localVarReturnValue  string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationApiService.GetApiV1Localization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationApiService.GetLocalization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -23,29 +23,29 @@ import (
 
 // BookApiService BookApi service
 type BookApiService service
-type ApiCreateApiV1BookRequest struct {
+type ApiCreateBookRequest struct {
 	ctx context.Context
 	ApiService *BookApiService
 	bookResource *BookResource
 }
 
-func (r ApiCreateApiV1BookRequest) BookResource(bookResource BookResource) ApiCreateApiV1BookRequest {
+func (r ApiCreateBookRequest) BookResource(bookResource BookResource) ApiCreateBookRequest {
 	r.bookResource = &bookResource
 	return r
 }
 
-func (r ApiCreateApiV1BookRequest) Execute() (*BookResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1BookExecute(r)
+func (r ApiCreateBookRequest) Execute() (*BookResource, *http.Response, error) {
+	return r.ApiService.CreateBookExecute(r)
 }
 
 /*
-CreateApiV1Book Method for CreateApiV1Book
+CreateBook Method for CreateBook
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1BookRequest
+ @return ApiCreateBookRequest
 */
-func (a *BookApiService) CreateApiV1Book(ctx context.Context) ApiCreateApiV1BookRequest {
-	return ApiCreateApiV1BookRequest{
+func (a *BookApiService) CreateBook(ctx context.Context) ApiCreateBookRequest {
+	return ApiCreateBookRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -53,7 +53,7 @@ func (a *BookApiService) CreateApiV1Book(ctx context.Context) ApiCreateApiV1Book
 
 // Execute executes the request
 //  @return BookResource
-func (a *BookApiService) CreateApiV1BookExecute(r ApiCreateApiV1BookRequest) (*BookResource, *http.Response, error) {
+func (a *BookApiService) CreateBookExecute(r ApiCreateBookRequest) (*BookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -61,7 +61,7 @@ func (a *BookApiService) CreateApiV1BookExecute(r ApiCreateApiV1BookRequest) (*B
 		localVarReturnValue  *BookResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.CreateApiV1Book")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.CreateBook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -127,25 +127,25 @@ func (a *BookApiService) CreateApiV1BookExecute(r ApiCreateApiV1BookRequest) (*B
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1BookRequest struct {
+type ApiDeleteBookRequest struct {
 	ctx context.Context
 	ApiService *BookApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1BookRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1BookExecute(r)
+func (r ApiDeleteBookRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBookExecute(r)
 }
 
 /*
-DeleteApiV1Book Method for DeleteApiV1Book
+DeleteBook Method for DeleteBook
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1BookRequest
+ @return ApiDeleteBookRequest
 */
-func (a *BookApiService) DeleteApiV1Book(ctx context.Context, id int32) ApiDeleteApiV1BookRequest {
-	return ApiDeleteApiV1BookRequest{
+func (a *BookApiService) DeleteBook(ctx context.Context, id int32) ApiDeleteBookRequest {
+	return ApiDeleteBookRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -153,14 +153,14 @@ func (a *BookApiService) DeleteApiV1Book(ctx context.Context, id int32) ApiDelet
 }
 
 // Execute executes the request
-func (a *BookApiService) DeleteApiV1BookExecute(r ApiDeleteApiV1BookRequest) (*http.Response, error) {
+func (a *BookApiService) DeleteBookExecute(r ApiDeleteBookRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.DeleteApiV1Book")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.DeleteBook")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -216,25 +216,25 @@ func (a *BookApiService) DeleteApiV1BookExecute(r ApiDeleteApiV1BookRequest) (*h
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1BookByIdRequest struct {
+type ApiGetBookByIdRequest struct {
 	ctx context.Context
 	ApiService *BookApiService
 	id int32
 }
 
-func (r ApiGetApiV1BookByIdRequest) Execute() (*BookResource, *http.Response, error) {
-	return r.ApiService.GetApiV1BookByIdExecute(r)
+func (r ApiGetBookByIdRequest) Execute() (*BookResource, *http.Response, error) {
+	return r.ApiService.GetBookByIdExecute(r)
 }
 
 /*
-GetApiV1BookById Method for GetApiV1BookById
+GetBookById Method for GetBookById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1BookByIdRequest
+ @return ApiGetBookByIdRequest
 */
-func (a *BookApiService) GetApiV1BookById(ctx context.Context, id int32) ApiGetApiV1BookByIdRequest {
-	return ApiGetApiV1BookByIdRequest{
+func (a *BookApiService) GetBookById(ctx context.Context, id int32) ApiGetBookByIdRequest {
+	return ApiGetBookByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -243,7 +243,7 @@ func (a *BookApiService) GetApiV1BookById(ctx context.Context, id int32) ApiGetA
 
 // Execute executes the request
 //  @return BookResource
-func (a *BookApiService) GetApiV1BookByIdExecute(r ApiGetApiV1BookByIdRequest) (*BookResource, *http.Response, error) {
+func (a *BookApiService) GetBookByIdExecute(r ApiGetBookByIdRequest) (*BookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -251,7 +251,7 @@ func (a *BookApiService) GetApiV1BookByIdExecute(r ApiGetApiV1BookByIdRequest) (
 		localVarReturnValue  *BookResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.GetApiV1BookById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.GetBookById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -316,7 +316,7 @@ func (a *BookApiService) GetApiV1BookByIdExecute(r ApiGetApiV1BookByIdRequest) (
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1BookRequest struct {
+type ApiListBookRequest struct {
 	ctx context.Context
 	ApiService *BookApiService
 	authorId *int32
@@ -325,38 +325,38 @@ type ApiListApiV1BookRequest struct {
 	includeAllAuthorBooks *bool
 }
 
-func (r ApiListApiV1BookRequest) AuthorId(authorId int32) ApiListApiV1BookRequest {
+func (r ApiListBookRequest) AuthorId(authorId int32) ApiListBookRequest {
 	r.authorId = &authorId
 	return r
 }
 
-func (r ApiListApiV1BookRequest) BookIds(bookIds []int32) ApiListApiV1BookRequest {
+func (r ApiListBookRequest) BookIds(bookIds []int32) ApiListBookRequest {
 	r.bookIds = &bookIds
 	return r
 }
 
-func (r ApiListApiV1BookRequest) TitleSlug(titleSlug string) ApiListApiV1BookRequest {
+func (r ApiListBookRequest) TitleSlug(titleSlug string) ApiListBookRequest {
 	r.titleSlug = &titleSlug
 	return r
 }
 
-func (r ApiListApiV1BookRequest) IncludeAllAuthorBooks(includeAllAuthorBooks bool) ApiListApiV1BookRequest {
+func (r ApiListBookRequest) IncludeAllAuthorBooks(includeAllAuthorBooks bool) ApiListBookRequest {
 	r.includeAllAuthorBooks = &includeAllAuthorBooks
 	return r
 }
 
-func (r ApiListApiV1BookRequest) Execute() ([]*BookResource, *http.Response, error) {
-	return r.ApiService.ListApiV1BookExecute(r)
+func (r ApiListBookRequest) Execute() ([]*BookResource, *http.Response, error) {
+	return r.ApiService.ListBookExecute(r)
 }
 
 /*
-ListApiV1Book Method for ListApiV1Book
+ListBook Method for ListBook
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1BookRequest
+ @return ApiListBookRequest
 */
-func (a *BookApiService) ListApiV1Book(ctx context.Context) ApiListApiV1BookRequest {
-	return ApiListApiV1BookRequest{
+func (a *BookApiService) ListBook(ctx context.Context) ApiListBookRequest {
+	return ApiListBookRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -364,7 +364,7 @@ func (a *BookApiService) ListApiV1Book(ctx context.Context) ApiListApiV1BookRequ
 
 // Execute executes the request
 //  @return []BookResource
-func (a *BookApiService) ListApiV1BookExecute(r ApiListApiV1BookRequest) ([]*BookResource, *http.Response, error) {
+func (a *BookApiService) ListBookExecute(r ApiListBookRequest) ([]*BookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -372,7 +372,7 @@ func (a *BookApiService) ListApiV1BookExecute(r ApiListApiV1BookRequest) ([]*Boo
 		localVarReturnValue  []*BookResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.ListApiV1Book")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.ListBook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -456,43 +456,43 @@ func (a *BookApiService) ListApiV1BookExecute(r ApiListApiV1BookRequest) ([]*Boo
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiPutApiV1BookMonitorRequest struct {
+type ApiPutBookMonitorRequest struct {
 	ctx context.Context
 	ApiService *BookApiService
 	booksMonitoredResource *BooksMonitoredResource
 }
 
-func (r ApiPutApiV1BookMonitorRequest) BooksMonitoredResource(booksMonitoredResource BooksMonitoredResource) ApiPutApiV1BookMonitorRequest {
+func (r ApiPutBookMonitorRequest) BooksMonitoredResource(booksMonitoredResource BooksMonitoredResource) ApiPutBookMonitorRequest {
 	r.booksMonitoredResource = &booksMonitoredResource
 	return r
 }
 
-func (r ApiPutApiV1BookMonitorRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PutApiV1BookMonitorExecute(r)
+func (r ApiPutBookMonitorRequest) Execute() (*http.Response, error) {
+	return r.ApiService.PutBookMonitorExecute(r)
 }
 
 /*
-PutApiV1BookMonitor Method for PutApiV1BookMonitor
+PutBookMonitor Method for PutBookMonitor
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPutApiV1BookMonitorRequest
+ @return ApiPutBookMonitorRequest
 */
-func (a *BookApiService) PutApiV1BookMonitor(ctx context.Context) ApiPutApiV1BookMonitorRequest {
-	return ApiPutApiV1BookMonitorRequest{
+func (a *BookApiService) PutBookMonitor(ctx context.Context) ApiPutBookMonitorRequest {
+	return ApiPutBookMonitorRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BookApiService) PutApiV1BookMonitorExecute(r ApiPutApiV1BookMonitorRequest) (*http.Response, error) {
+func (a *BookApiService) PutBookMonitorExecute(r ApiPutBookMonitorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.PutApiV1BookMonitor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.PutBookMonitor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -549,31 +549,31 @@ func (a *BookApiService) PutApiV1BookMonitorExecute(r ApiPutApiV1BookMonitorRequ
 
 	return localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1BookRequest struct {
+type ApiUpdateBookRequest struct {
 	ctx context.Context
 	ApiService *BookApiService
 	id string
 	bookResource *BookResource
 }
 
-func (r ApiUpdateApiV1BookRequest) BookResource(bookResource BookResource) ApiUpdateApiV1BookRequest {
+func (r ApiUpdateBookRequest) BookResource(bookResource BookResource) ApiUpdateBookRequest {
 	r.bookResource = &bookResource
 	return r
 }
 
-func (r ApiUpdateApiV1BookRequest) Execute() (*BookResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1BookExecute(r)
+func (r ApiUpdateBookRequest) Execute() (*BookResource, *http.Response, error) {
+	return r.ApiService.UpdateBookExecute(r)
 }
 
 /*
-UpdateApiV1Book Method for UpdateApiV1Book
+UpdateBook Method for UpdateBook
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1BookRequest
+ @return ApiUpdateBookRequest
 */
-func (a *BookApiService) UpdateApiV1Book(ctx context.Context, id string) ApiUpdateApiV1BookRequest {
-	return ApiUpdateApiV1BookRequest{
+func (a *BookApiService) UpdateBook(ctx context.Context, id string) ApiUpdateBookRequest {
+	return ApiUpdateBookRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -582,7 +582,7 @@ func (a *BookApiService) UpdateApiV1Book(ctx context.Context, id string) ApiUpda
 
 // Execute executes the request
 //  @return BookResource
-func (a *BookApiService) UpdateApiV1BookExecute(r ApiUpdateApiV1BookRequest) (*BookResource, *http.Response, error) {
+func (a *BookApiService) UpdateBookExecute(r ApiUpdateBookRequest) (*BookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -590,7 +590,7 @@ func (a *BookApiService) UpdateApiV1BookExecute(r ApiUpdateApiV1BookRequest) (*B
 		localVarReturnValue  *BookResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.UpdateApiV1Book")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.UpdateBook")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

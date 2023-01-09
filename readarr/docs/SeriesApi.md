@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListApiV1Series**](SeriesApi.md#ListApiV1Series) | **Get** /api/v1/series | 
+[**ListSeries**](SeriesApi.md#ListSeries) | **Get** /api/v1/series | 
 
 
 
-## ListApiV1Series
+## ListSeries
 
-> []SeriesResource ListApiV1Series(ctx).AuthorId(authorId).Execute()
+> []SeriesResource ListSeries(ctx).AuthorId(authorId).Execute()
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SeriesApi.ListApiV1Series(context.Background()).AuthorId(authorId).Execute()
+    resp, r, err := apiClient.SeriesApi.ListSeries(context.Background()).AuthorId(authorId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SeriesApi.ListApiV1Series``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SeriesApi.ListSeries``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Series`: []SeriesResource
-    fmt.Fprintf(os.Stdout, "Response from `SeriesApi.ListApiV1Series`: %v\n", resp)
+    // response from `ListSeries`: []SeriesResource
+    fmt.Fprintf(os.Stdout, "Response from `SeriesApi.ListSeries`: %v\n", resp)
 }
 ```
 
@@ -47,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1SeriesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSeriesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

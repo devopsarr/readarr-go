@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteApiV1AuthorEditor**](AuthorEditorApi.md#DeleteApiV1AuthorEditor) | **Delete** /api/v1/author/editor | 
-[**PutApiV1AuthorEditor**](AuthorEditorApi.md#PutApiV1AuthorEditor) | **Put** /api/v1/author/editor | 
+[**DeleteAuthorEditor**](AuthorEditorApi.md#DeleteAuthorEditor) | **Delete** /api/v1/author/editor | 
+[**PutAuthorEditor**](AuthorEditorApi.md#PutAuthorEditor) | **Put** /api/v1/author/editor | 
 
 
 
-## DeleteApiV1AuthorEditor
+## DeleteAuthorEditor
 
-> DeleteApiV1AuthorEditor(ctx).AuthorEditorResource(authorEditorResource).Execute()
+> DeleteAuthorEditor(ctx).AuthorEditorResource(authorEditorResource).Execute()
 
 
 
@@ -32,9 +32,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorEditorApi.DeleteApiV1AuthorEditor(context.Background()).AuthorEditorResource(authorEditorResource).Execute()
+    resp, r, err := apiClient.AuthorEditorApi.DeleteAuthorEditor(context.Background()).AuthorEditorResource(authorEditorResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthorEditorApi.DeleteApiV1AuthorEditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthorEditorApi.DeleteAuthorEditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -46,7 +46,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1AuthorEditorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAuthorEditorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -71,9 +71,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PutApiV1AuthorEditor
+## PutAuthorEditor
 
-> PutApiV1AuthorEditor(ctx).AuthorEditorResource(authorEditorResource).Execute()
+> PutAuthorEditor(ctx).AuthorEditorResource(authorEditorResource).Execute()
 
 
 
@@ -94,9 +94,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorEditorApi.PutApiV1AuthorEditor(context.Background()).AuthorEditorResource(authorEditorResource).Execute()
+    resp, r, err := apiClient.AuthorEditorApi.PutAuthorEditor(context.Background()).AuthorEditorResource(authorEditorResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthorEditorApi.PutApiV1AuthorEditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthorEditorApi.PutAuthorEditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -108,7 +108,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutApiV1AuthorEditorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutAuthorEditorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

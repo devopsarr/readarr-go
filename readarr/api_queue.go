@@ -22,7 +22,7 @@ import (
 
 // QueueApiService QueueApi service
 type QueueApiService service
-type ApiDeleteApiV1QueueRequest struct {
+type ApiDeleteQueueRequest struct {
 	ctx context.Context
 	ApiService *QueueApiService
 	id int32
@@ -31,34 +31,34 @@ type ApiDeleteApiV1QueueRequest struct {
 	skipReDownload *bool
 }
 
-func (r ApiDeleteApiV1QueueRequest) RemoveFromClient(removeFromClient bool) ApiDeleteApiV1QueueRequest {
+func (r ApiDeleteQueueRequest) RemoveFromClient(removeFromClient bool) ApiDeleteQueueRequest {
 	r.removeFromClient = &removeFromClient
 	return r
 }
 
-func (r ApiDeleteApiV1QueueRequest) Blacklist(blacklist bool) ApiDeleteApiV1QueueRequest {
+func (r ApiDeleteQueueRequest) Blacklist(blacklist bool) ApiDeleteQueueRequest {
 	r.blacklist = &blacklist
 	return r
 }
 
-func (r ApiDeleteApiV1QueueRequest) SkipReDownload(skipReDownload bool) ApiDeleteApiV1QueueRequest {
+func (r ApiDeleteQueueRequest) SkipReDownload(skipReDownload bool) ApiDeleteQueueRequest {
 	r.skipReDownload = &skipReDownload
 	return r
 }
 
-func (r ApiDeleteApiV1QueueRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1QueueExecute(r)
+func (r ApiDeleteQueueRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteQueueExecute(r)
 }
 
 /*
-DeleteApiV1Queue Method for DeleteApiV1Queue
+DeleteQueue Method for DeleteQueue
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1QueueRequest
+ @return ApiDeleteQueueRequest
 */
-func (a *QueueApiService) DeleteApiV1Queue(ctx context.Context, id int32) ApiDeleteApiV1QueueRequest {
-	return ApiDeleteApiV1QueueRequest{
+func (a *QueueApiService) DeleteQueue(ctx context.Context, id int32) ApiDeleteQueueRequest {
+	return ApiDeleteQueueRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -66,14 +66,14 @@ func (a *QueueApiService) DeleteApiV1Queue(ctx context.Context, id int32) ApiDel
 }
 
 // Execute executes the request
-func (a *QueueApiService) DeleteApiV1QueueExecute(r ApiDeleteApiV1QueueRequest) (*http.Response, error) {
+func (a *QueueApiService) DeleteQueueExecute(r ApiDeleteQueueRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueApiService.DeleteApiV1Queue")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueApiService.DeleteQueue")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -138,7 +138,7 @@ func (a *QueueApiService) DeleteApiV1QueueExecute(r ApiDeleteApiV1QueueRequest) 
 
 	return localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1QueueBulkRequest struct {
+type ApiDeleteQueueBulkRequest struct {
 	ctx context.Context
 	ApiService *QueueApiService
 	removeFromClient *bool
@@ -147,52 +147,52 @@ type ApiDeleteApiV1QueueBulkRequest struct {
 	queueBulkResource *QueueBulkResource
 }
 
-func (r ApiDeleteApiV1QueueBulkRequest) RemoveFromClient(removeFromClient bool) ApiDeleteApiV1QueueBulkRequest {
+func (r ApiDeleteQueueBulkRequest) RemoveFromClient(removeFromClient bool) ApiDeleteQueueBulkRequest {
 	r.removeFromClient = &removeFromClient
 	return r
 }
 
-func (r ApiDeleteApiV1QueueBulkRequest) Blacklist(blacklist bool) ApiDeleteApiV1QueueBulkRequest {
+func (r ApiDeleteQueueBulkRequest) Blacklist(blacklist bool) ApiDeleteQueueBulkRequest {
 	r.blacklist = &blacklist
 	return r
 }
 
-func (r ApiDeleteApiV1QueueBulkRequest) SkipReDownload(skipReDownload bool) ApiDeleteApiV1QueueBulkRequest {
+func (r ApiDeleteQueueBulkRequest) SkipReDownload(skipReDownload bool) ApiDeleteQueueBulkRequest {
 	r.skipReDownload = &skipReDownload
 	return r
 }
 
-func (r ApiDeleteApiV1QueueBulkRequest) QueueBulkResource(queueBulkResource QueueBulkResource) ApiDeleteApiV1QueueBulkRequest {
+func (r ApiDeleteQueueBulkRequest) QueueBulkResource(queueBulkResource QueueBulkResource) ApiDeleteQueueBulkRequest {
 	r.queueBulkResource = &queueBulkResource
 	return r
 }
 
-func (r ApiDeleteApiV1QueueBulkRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1QueueBulkExecute(r)
+func (r ApiDeleteQueueBulkRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteQueueBulkExecute(r)
 }
 
 /*
-DeleteApiV1QueueBulk Method for DeleteApiV1QueueBulk
+DeleteQueueBulk Method for DeleteQueueBulk
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteApiV1QueueBulkRequest
+ @return ApiDeleteQueueBulkRequest
 */
-func (a *QueueApiService) DeleteApiV1QueueBulk(ctx context.Context) ApiDeleteApiV1QueueBulkRequest {
-	return ApiDeleteApiV1QueueBulkRequest{
+func (a *QueueApiService) DeleteQueueBulk(ctx context.Context) ApiDeleteQueueBulkRequest {
+	return ApiDeleteQueueBulkRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *QueueApiService) DeleteApiV1QueueBulkExecute(r ApiDeleteApiV1QueueBulkRequest) (*http.Response, error) {
+func (a *QueueApiService) DeleteQueueBulkExecute(r ApiDeleteQueueBulkRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueApiService.DeleteApiV1QueueBulk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueApiService.DeleteQueueBulk")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -258,7 +258,7 @@ func (a *QueueApiService) DeleteApiV1QueueBulkExecute(r ApiDeleteApiV1QueueBulkR
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1QueueRequest struct {
+type ApiGetQueueRequest struct {
 	ctx context.Context
 	ApiService *QueueApiService
 	includeUnknownAuthorItems *bool
@@ -266,33 +266,33 @@ type ApiGetApiV1QueueRequest struct {
 	includeBook *bool
 }
 
-func (r ApiGetApiV1QueueRequest) IncludeUnknownAuthorItems(includeUnknownAuthorItems bool) ApiGetApiV1QueueRequest {
+func (r ApiGetQueueRequest) IncludeUnknownAuthorItems(includeUnknownAuthorItems bool) ApiGetQueueRequest {
 	r.includeUnknownAuthorItems = &includeUnknownAuthorItems
 	return r
 }
 
-func (r ApiGetApiV1QueueRequest) IncludeAuthor(includeAuthor bool) ApiGetApiV1QueueRequest {
+func (r ApiGetQueueRequest) IncludeAuthor(includeAuthor bool) ApiGetQueueRequest {
 	r.includeAuthor = &includeAuthor
 	return r
 }
 
-func (r ApiGetApiV1QueueRequest) IncludeBook(includeBook bool) ApiGetApiV1QueueRequest {
+func (r ApiGetQueueRequest) IncludeBook(includeBook bool) ApiGetQueueRequest {
 	r.includeBook = &includeBook
 	return r
 }
 
-func (r ApiGetApiV1QueueRequest) Execute() (*QueueResourcePagingResource, *http.Response, error) {
-	return r.ApiService.GetApiV1QueueExecute(r)
+func (r ApiGetQueueRequest) Execute() (*QueueResourcePagingResource, *http.Response, error) {
+	return r.ApiService.GetQueueExecute(r)
 }
 
 /*
-GetApiV1Queue Method for GetApiV1Queue
+GetQueue Method for GetQueue
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1QueueRequest
+ @return ApiGetQueueRequest
 */
-func (a *QueueApiService) GetApiV1Queue(ctx context.Context) ApiGetApiV1QueueRequest {
-	return ApiGetApiV1QueueRequest{
+func (a *QueueApiService) GetQueue(ctx context.Context) ApiGetQueueRequest {
+	return ApiGetQueueRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -300,7 +300,7 @@ func (a *QueueApiService) GetApiV1Queue(ctx context.Context) ApiGetApiV1QueueReq
 
 // Execute executes the request
 //  @return QueueResourcePagingResource
-func (a *QueueApiService) GetApiV1QueueExecute(r ApiGetApiV1QueueRequest) (*QueueResourcePagingResource, *http.Response, error) {
+func (a *QueueApiService) GetQueueExecute(r ApiGetQueueRequest) (*QueueResourcePagingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -308,7 +308,7 @@ func (a *QueueApiService) GetApiV1QueueExecute(r ApiGetApiV1QueueRequest) (*Queu
 		localVarReturnValue  *QueueResourcePagingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueApiService.GetApiV1Queue")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueApiService.GetQueue")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -381,25 +381,25 @@ func (a *QueueApiService) GetApiV1QueueExecute(r ApiGetApiV1QueueRequest) (*Queu
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetApiV1QueueByIdRequest struct {
+type ApiGetQueueByIdRequest struct {
 	ctx context.Context
 	ApiService *QueueApiService
 	id int32
 }
 
-func (r ApiGetApiV1QueueByIdRequest) Execute() (*QueueResource, *http.Response, error) {
-	return r.ApiService.GetApiV1QueueByIdExecute(r)
+func (r ApiGetQueueByIdRequest) Execute() (*QueueResource, *http.Response, error) {
+	return r.ApiService.GetQueueByIdExecute(r)
 }
 
 /*
-GetApiV1QueueById Method for GetApiV1QueueById
+GetQueueById Method for GetQueueById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1QueueByIdRequest
+ @return ApiGetQueueByIdRequest
 */
-func (a *QueueApiService) GetApiV1QueueById(ctx context.Context, id int32) ApiGetApiV1QueueByIdRequest {
-	return ApiGetApiV1QueueByIdRequest{
+func (a *QueueApiService) GetQueueById(ctx context.Context, id int32) ApiGetQueueByIdRequest {
+	return ApiGetQueueByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -408,7 +408,7 @@ func (a *QueueApiService) GetApiV1QueueById(ctx context.Context, id int32) ApiGe
 
 // Execute executes the request
 //  @return QueueResource
-func (a *QueueApiService) GetApiV1QueueByIdExecute(r ApiGetApiV1QueueByIdRequest) (*QueueResource, *http.Response, error) {
+func (a *QueueApiService) GetQueueByIdExecute(r ApiGetQueueByIdRequest) (*QueueResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -416,7 +416,7 @@ func (a *QueueApiService) GetApiV1QueueByIdExecute(r ApiGetApiV1QueueByIdRequest
 		localVarReturnValue  *QueueResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueApiService.GetApiV1QueueById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueApiService.GetQueueById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

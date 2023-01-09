@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteApiV1Queue**](QueueApi.md#DeleteApiV1Queue) | **Delete** /api/v1/queue/{id} | 
-[**DeleteApiV1QueueBulk**](QueueApi.md#DeleteApiV1QueueBulk) | **Delete** /api/v1/queue/bulk | 
-[**GetApiV1Queue**](QueueApi.md#GetApiV1Queue) | **Get** /api/v1/queue | 
-[**GetApiV1QueueById**](QueueApi.md#GetApiV1QueueById) | **Get** /api/v1/queue/{id} | 
+[**DeleteQueue**](QueueApi.md#DeleteQueue) | **Delete** /api/v1/queue/{id} | 
+[**DeleteQueueBulk**](QueueApi.md#DeleteQueueBulk) | **Delete** /api/v1/queue/bulk | 
+[**GetQueue**](QueueApi.md#GetQueue) | **Get** /api/v1/queue | 
+[**GetQueueById**](QueueApi.md#GetQueueById) | **Get** /api/v1/queue/{id} | 
 
 
 
-## DeleteApiV1Queue
+## DeleteQueue
 
-> DeleteApiV1Queue(ctx, id).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).Execute()
+> DeleteQueue(ctx, id).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).Execute()
 
 
 
@@ -37,9 +37,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueApi.DeleteApiV1Queue(context.Background(), id).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).Execute()
+    resp, r, err := apiClient.QueueApi.DeleteQueue(context.Background(), id).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.DeleteApiV1Queue``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.DeleteQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1QueueRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteQueueRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -83,9 +83,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1QueueBulk
+## DeleteQueueBulk
 
-> DeleteApiV1QueueBulk(ctx).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).QueueBulkResource(queueBulkResource).Execute()
+> DeleteQueueBulk(ctx).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).QueueBulkResource(queueBulkResource).Execute()
 
 
 
@@ -109,9 +109,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueApi.DeleteApiV1QueueBulk(context.Background()).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).QueueBulkResource(queueBulkResource).Execute()
+    resp, r, err := apiClient.QueueApi.DeleteQueueBulk(context.Background()).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).QueueBulkResource(queueBulkResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.DeleteApiV1QueueBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.DeleteQueueBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -123,7 +123,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1QueueBulkRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteQueueBulkRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -151,9 +151,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1Queue
+## GetQueue
 
-> QueueResourcePagingResource GetApiV1Queue(ctx).IncludeUnknownAuthorItems(includeUnknownAuthorItems).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+> QueueResourcePagingResource GetQueue(ctx).IncludeUnknownAuthorItems(includeUnknownAuthorItems).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
 
 
 
@@ -176,13 +176,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueApi.GetApiV1Queue(context.Background()).IncludeUnknownAuthorItems(includeUnknownAuthorItems).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+    resp, r, err := apiClient.QueueApi.GetQueue(context.Background()).IncludeUnknownAuthorItems(includeUnknownAuthorItems).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.GetApiV1Queue``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.GetQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1Queue`: QueueResourcePagingResource
-    fmt.Fprintf(os.Stdout, "Response from `QueueApi.GetApiV1Queue`: %v\n", resp)
+    // response from `GetQueue`: QueueResourcePagingResource
+    fmt.Fprintf(os.Stdout, "Response from `QueueApi.GetQueue`: %v\n", resp)
 }
 ```
 
@@ -192,7 +192,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1QueueRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetQueueRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -219,9 +219,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1QueueById
+## GetQueueById
 
-> QueueResource GetApiV1QueueById(ctx, id).Execute()
+> QueueResource GetQueueById(ctx, id).Execute()
 
 
 
@@ -242,13 +242,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueApi.GetApiV1QueueById(context.Background(), id).Execute()
+    resp, r, err := apiClient.QueueApi.GetQueueById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.GetApiV1QueueById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.GetQueueById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1QueueById`: QueueResource
-    fmt.Fprintf(os.Stdout, "Response from `QueueApi.GetApiV1QueueById`: %v\n", resp)
+    // response from `GetQueueById`: QueueResource
+    fmt.Fprintf(os.Stdout, "Response from `QueueApi.GetQueueById`: %v\n", resp)
 }
 ```
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1QueueByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetQueueByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

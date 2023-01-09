@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1ConfigIndexer**](IndexerConfigApi.md#GetApiV1ConfigIndexer) | **Get** /api/v1/config/indexer | 
-[**GetApiV1ConfigIndexerById**](IndexerConfigApi.md#GetApiV1ConfigIndexerById) | **Get** /api/v1/config/indexer/{id} | 
-[**UpdateApiV1ConfigIndexer**](IndexerConfigApi.md#UpdateApiV1ConfigIndexer) | **Put** /api/v1/config/indexer/{id} | 
+[**GetIndexerConfig**](IndexerConfigApi.md#GetIndexerConfig) | **Get** /api/v1/config/indexer | 
+[**GetIndexerConfigById**](IndexerConfigApi.md#GetIndexerConfigById) | **Get** /api/v1/config/indexer/{id} | 
+[**UpdateIndexerConfig**](IndexerConfigApi.md#UpdateIndexerConfig) | **Put** /api/v1/config/indexer/{id} | 
 
 
 
-## GetApiV1ConfigIndexer
+## GetIndexerConfig
 
-> IndexerConfigResource GetApiV1ConfigIndexer(ctx).Execute()
+> IndexerConfigResource GetIndexerConfig(ctx).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerConfigApi.GetApiV1ConfigIndexer(context.Background()).Execute()
+    resp, r, err := apiClient.IndexerConfigApi.GetIndexerConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.GetApiV1ConfigIndexer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.GetIndexerConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigIndexer`: IndexerConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.GetApiV1ConfigIndexer`: %v\n", resp)
+    // response from `GetIndexerConfig`: IndexerConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.GetIndexerConfig`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigIndexerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetIndexerConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1ConfigIndexerById
+## GetIndexerConfigById
 
-> IndexerConfigResource GetApiV1ConfigIndexerById(ctx, id).Execute()
+> IndexerConfigResource GetIndexerConfigById(ctx, id).Execute()
 
 
 
@@ -92,13 +92,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerConfigApi.GetApiV1ConfigIndexerById(context.Background(), id).Execute()
+    resp, r, err := apiClient.IndexerConfigApi.GetIndexerConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.GetApiV1ConfigIndexerById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.GetIndexerConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigIndexerById`: IndexerConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.GetApiV1ConfigIndexerById`: %v\n", resp)
+    // response from `GetIndexerConfigById`: IndexerConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.GetIndexerConfigById`: %v\n", resp)
 }
 ```
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigIndexerByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetIndexerConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -137,9 +137,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1ConfigIndexer
+## UpdateIndexerConfig
 
-> IndexerConfigResource UpdateApiV1ConfigIndexer(ctx, id).IndexerConfigResource(indexerConfigResource).Execute()
+> IndexerConfigResource UpdateIndexerConfig(ctx, id).IndexerConfigResource(indexerConfigResource).Execute()
 
 
 
@@ -161,13 +161,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerConfigApi.UpdateApiV1ConfigIndexer(context.Background(), id).IndexerConfigResource(indexerConfigResource).Execute()
+    resp, r, err := apiClient.IndexerConfigApi.UpdateIndexerConfig(context.Background(), id).IndexerConfigResource(indexerConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.UpdateApiV1ConfigIndexer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.UpdateIndexerConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1ConfigIndexer`: IndexerConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.UpdateApiV1ConfigIndexer`: %v\n", resp)
+    // response from `UpdateIndexerConfig`: IndexerConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.UpdateIndexerConfig`: %v\n", resp)
 }
 ```
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1ConfigIndexerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateIndexerConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

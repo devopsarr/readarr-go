@@ -22,23 +22,23 @@ import (
 
 // NamingConfigApiService NamingConfigApi service
 type NamingConfigApiService service
-type ApiGetApiV1ConfigNamingRequest struct {
+type ApiGetNamingConfigRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigApiService
 }
 
-func (r ApiGetApiV1ConfigNamingRequest) Execute() (*NamingConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigNamingExecute(r)
+func (r ApiGetNamingConfigRequest) Execute() (*NamingConfigResource, *http.Response, error) {
+	return r.ApiService.GetNamingConfigExecute(r)
 }
 
 /*
-GetApiV1ConfigNaming Method for GetApiV1ConfigNaming
+GetNamingConfig Method for GetNamingConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1ConfigNamingRequest
+ @return ApiGetNamingConfigRequest
 */
-func (a *NamingConfigApiService) GetApiV1ConfigNaming(ctx context.Context) ApiGetApiV1ConfigNamingRequest {
-	return ApiGetApiV1ConfigNamingRequest{
+func (a *NamingConfigApiService) GetNamingConfig(ctx context.Context) ApiGetNamingConfigRequest {
+	return ApiGetNamingConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *NamingConfigApiService) GetApiV1ConfigNaming(ctx context.Context) ApiGe
 
 // Execute executes the request
 //  @return NamingConfigResource
-func (a *NamingConfigApiService) GetApiV1ConfigNamingExecute(r ApiGetApiV1ConfigNamingRequest) (*NamingConfigResource, *http.Response, error) {
+func (a *NamingConfigApiService) GetNamingConfigExecute(r ApiGetNamingConfigRequest) (*NamingConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *NamingConfigApiService) GetApiV1ConfigNamingExecute(r ApiGetApiV1Config
 		localVarReturnValue  *NamingConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.GetApiV1ConfigNaming")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.GetNamingConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -118,25 +118,25 @@ func (a *NamingConfigApiService) GetApiV1ConfigNamingExecute(r ApiGetApiV1Config
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetApiV1ConfigNamingByIdRequest struct {
+type ApiGetNamingConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigApiService
 	id int32
 }
 
-func (r ApiGetApiV1ConfigNamingByIdRequest) Execute() (*NamingConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigNamingByIdExecute(r)
+func (r ApiGetNamingConfigByIdRequest) Execute() (*NamingConfigResource, *http.Response, error) {
+	return r.ApiService.GetNamingConfigByIdExecute(r)
 }
 
 /*
-GetApiV1ConfigNamingById Method for GetApiV1ConfigNamingById
+GetNamingConfigById Method for GetNamingConfigById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1ConfigNamingByIdRequest
+ @return ApiGetNamingConfigByIdRequest
 */
-func (a *NamingConfigApiService) GetApiV1ConfigNamingById(ctx context.Context, id int32) ApiGetApiV1ConfigNamingByIdRequest {
-	return ApiGetApiV1ConfigNamingByIdRequest{
+func (a *NamingConfigApiService) GetNamingConfigById(ctx context.Context, id int32) ApiGetNamingConfigByIdRequest {
+	return ApiGetNamingConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -145,7 +145,7 @@ func (a *NamingConfigApiService) GetApiV1ConfigNamingById(ctx context.Context, i
 
 // Execute executes the request
 //  @return NamingConfigResource
-func (a *NamingConfigApiService) GetApiV1ConfigNamingByIdExecute(r ApiGetApiV1ConfigNamingByIdRequest) (*NamingConfigResource, *http.Response, error) {
+func (a *NamingConfigApiService) GetNamingConfigByIdExecute(r ApiGetNamingConfigByIdRequest) (*NamingConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -153,7 +153,7 @@ func (a *NamingConfigApiService) GetApiV1ConfigNamingByIdExecute(r ApiGetApiV1Co
 		localVarReturnValue  *NamingConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.GetApiV1ConfigNamingById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.GetNamingConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -218,7 +218,7 @@ func (a *NamingConfigApiService) GetApiV1ConfigNamingByIdExecute(r ApiGetApiV1Co
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetApiV1ConfigNamingExamplesRequest struct {
+type ApiGetNamingConfigExamplesRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigApiService
 	renameBooks *bool
@@ -235,92 +235,92 @@ type ApiGetApiV1ConfigNamingExamplesRequest struct {
 	resourceName *string
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) RenameBooks(renameBooks bool) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) RenameBooks(renameBooks bool) ApiGetNamingConfigExamplesRequest {
 	r.renameBooks = &renameBooks
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) ReplaceIllegalCharacters(replaceIllegalCharacters bool) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) ReplaceIllegalCharacters(replaceIllegalCharacters bool) ApiGetNamingConfigExamplesRequest {
 	r.replaceIllegalCharacters = &replaceIllegalCharacters
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) StandardBookFormat(standardBookFormat string) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) StandardBookFormat(standardBookFormat string) ApiGetNamingConfigExamplesRequest {
 	r.standardBookFormat = &standardBookFormat
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) AuthorFolderFormat(authorFolderFormat string) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) AuthorFolderFormat(authorFolderFormat string) ApiGetNamingConfigExamplesRequest {
 	r.authorFolderFormat = &authorFolderFormat
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) IncludeAuthorName(includeAuthorName bool) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) IncludeAuthorName(includeAuthorName bool) ApiGetNamingConfigExamplesRequest {
 	r.includeAuthorName = &includeAuthorName
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) IncludeBookTitle(includeBookTitle bool) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) IncludeBookTitle(includeBookTitle bool) ApiGetNamingConfigExamplesRequest {
 	r.includeBookTitle = &includeBookTitle
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) IncludeQuality(includeQuality bool) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) IncludeQuality(includeQuality bool) ApiGetNamingConfigExamplesRequest {
 	r.includeQuality = &includeQuality
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) ReplaceSpaces(replaceSpaces bool) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) ReplaceSpaces(replaceSpaces bool) ApiGetNamingConfigExamplesRequest {
 	r.replaceSpaces = &replaceSpaces
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) Separator(separator string) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) Separator(separator string) ApiGetNamingConfigExamplesRequest {
 	r.separator = &separator
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) NumberStyle(numberStyle string) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) NumberStyle(numberStyle string) ApiGetNamingConfigExamplesRequest {
 	r.numberStyle = &numberStyle
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) Id(id int32) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) Id(id int32) ApiGetNamingConfigExamplesRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) ResourceName(resourceName string) ApiGetApiV1ConfigNamingExamplesRequest {
+func (r ApiGetNamingConfigExamplesRequest) ResourceName(resourceName string) ApiGetNamingConfigExamplesRequest {
 	r.resourceName = &resourceName
 	return r
 }
 
-func (r ApiGetApiV1ConfigNamingExamplesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1ConfigNamingExamplesExecute(r)
+func (r ApiGetNamingConfigExamplesRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetNamingConfigExamplesExecute(r)
 }
 
 /*
-GetApiV1ConfigNamingExamples Method for GetApiV1ConfigNamingExamples
+GetNamingConfigExamples Method for GetNamingConfigExamples
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1ConfigNamingExamplesRequest
+ @return ApiGetNamingConfigExamplesRequest
 */
-func (a *NamingConfigApiService) GetApiV1ConfigNamingExamples(ctx context.Context) ApiGetApiV1ConfigNamingExamplesRequest {
-	return ApiGetApiV1ConfigNamingExamplesRequest{
+func (a *NamingConfigApiService) GetNamingConfigExamples(ctx context.Context) ApiGetNamingConfigExamplesRequest {
+	return ApiGetNamingConfigExamplesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *NamingConfigApiService) GetApiV1ConfigNamingExamplesExecute(r ApiGetApiV1ConfigNamingExamplesRequest) (*http.Response, error) {
+func (a *NamingConfigApiService) GetNamingConfigExamplesExecute(r ApiGetNamingConfigExamplesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.GetApiV1ConfigNamingExamples")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.GetNamingConfigExamples")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -411,31 +411,31 @@ func (a *NamingConfigApiService) GetApiV1ConfigNamingExamplesExecute(r ApiGetApi
 
 	return localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1ConfigNamingRequest struct {
+type ApiUpdateNamingConfigRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigApiService
 	id string
 	namingConfigResource *NamingConfigResource
 }
 
-func (r ApiUpdateApiV1ConfigNamingRequest) NamingConfigResource(namingConfigResource NamingConfigResource) ApiUpdateApiV1ConfigNamingRequest {
+func (r ApiUpdateNamingConfigRequest) NamingConfigResource(namingConfigResource NamingConfigResource) ApiUpdateNamingConfigRequest {
 	r.namingConfigResource = &namingConfigResource
 	return r
 }
 
-func (r ApiUpdateApiV1ConfigNamingRequest) Execute() (*NamingConfigResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1ConfigNamingExecute(r)
+func (r ApiUpdateNamingConfigRequest) Execute() (*NamingConfigResource, *http.Response, error) {
+	return r.ApiService.UpdateNamingConfigExecute(r)
 }
 
 /*
-UpdateApiV1ConfigNaming Method for UpdateApiV1ConfigNaming
+UpdateNamingConfig Method for UpdateNamingConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1ConfigNamingRequest
+ @return ApiUpdateNamingConfigRequest
 */
-func (a *NamingConfigApiService) UpdateApiV1ConfigNaming(ctx context.Context, id string) ApiUpdateApiV1ConfigNamingRequest {
-	return ApiUpdateApiV1ConfigNamingRequest{
+func (a *NamingConfigApiService) UpdateNamingConfig(ctx context.Context, id string) ApiUpdateNamingConfigRequest {
+	return ApiUpdateNamingConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -444,7 +444,7 @@ func (a *NamingConfigApiService) UpdateApiV1ConfigNaming(ctx context.Context, id
 
 // Execute executes the request
 //  @return NamingConfigResource
-func (a *NamingConfigApiService) UpdateApiV1ConfigNamingExecute(r ApiUpdateApiV1ConfigNamingRequest) (*NamingConfigResource, *http.Response, error) {
+func (a *NamingConfigApiService) UpdateNamingConfigExecute(r ApiUpdateNamingConfigRequest) (*NamingConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -452,7 +452,7 @@ func (a *NamingConfigApiService) UpdateApiV1ConfigNamingExecute(r ApiUpdateApiV1
 		localVarReturnValue  *NamingConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.UpdateApiV1ConfigNaming")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.UpdateNamingConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

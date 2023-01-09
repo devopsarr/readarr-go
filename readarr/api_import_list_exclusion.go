@@ -22,29 +22,29 @@ import (
 
 // ImportListExclusionApiService ImportListExclusionApi service
 type ImportListExclusionApiService service
-type ApiCreateApiV1ImportListExclusionRequest struct {
+type ApiCreateImportListExclusionRequest struct {
 	ctx context.Context
 	ApiService *ImportListExclusionApiService
 	importListExclusionResource *ImportListExclusionResource
 }
 
-func (r ApiCreateApiV1ImportListExclusionRequest) ImportListExclusionResource(importListExclusionResource ImportListExclusionResource) ApiCreateApiV1ImportListExclusionRequest {
+func (r ApiCreateImportListExclusionRequest) ImportListExclusionResource(importListExclusionResource ImportListExclusionResource) ApiCreateImportListExclusionRequest {
 	r.importListExclusionResource = &importListExclusionResource
 	return r
 }
 
-func (r ApiCreateApiV1ImportListExclusionRequest) Execute() (*ImportListExclusionResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1ImportListExclusionExecute(r)
+func (r ApiCreateImportListExclusionRequest) Execute() (*ImportListExclusionResource, *http.Response, error) {
+	return r.ApiService.CreateImportListExclusionExecute(r)
 }
 
 /*
-CreateApiV1ImportListExclusion Method for CreateApiV1ImportListExclusion
+CreateImportListExclusion Method for CreateImportListExclusion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1ImportListExclusionRequest
+ @return ApiCreateImportListExclusionRequest
 */
-func (a *ImportListExclusionApiService) CreateApiV1ImportListExclusion(ctx context.Context) ApiCreateApiV1ImportListExclusionRequest {
-	return ApiCreateApiV1ImportListExclusionRequest{
+func (a *ImportListExclusionApiService) CreateImportListExclusion(ctx context.Context) ApiCreateImportListExclusionRequest {
+	return ApiCreateImportListExclusionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *ImportListExclusionApiService) CreateApiV1ImportListExclusion(ctx conte
 
 // Execute executes the request
 //  @return ImportListExclusionResource
-func (a *ImportListExclusionApiService) CreateApiV1ImportListExclusionExecute(r ApiCreateApiV1ImportListExclusionRequest) (*ImportListExclusionResource, *http.Response, error) {
+func (a *ImportListExclusionApiService) CreateImportListExclusionExecute(r ApiCreateImportListExclusionRequest) (*ImportListExclusionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ImportListExclusionApiService) CreateApiV1ImportListExclusionExecute(r 
 		localVarReturnValue  *ImportListExclusionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionApiService.CreateApiV1ImportListExclusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionApiService.CreateImportListExclusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,25 +126,25 @@ func (a *ImportListExclusionApiService) CreateApiV1ImportListExclusionExecute(r 
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1ImportListExclusionRequest struct {
+type ApiDeleteImportListExclusionRequest struct {
 	ctx context.Context
 	ApiService *ImportListExclusionApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1ImportListExclusionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1ImportListExclusionExecute(r)
+func (r ApiDeleteImportListExclusionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteImportListExclusionExecute(r)
 }
 
 /*
-DeleteApiV1ImportListExclusion Method for DeleteApiV1ImportListExclusion
+DeleteImportListExclusion Method for DeleteImportListExclusion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1ImportListExclusionRequest
+ @return ApiDeleteImportListExclusionRequest
 */
-func (a *ImportListExclusionApiService) DeleteApiV1ImportListExclusion(ctx context.Context, id int32) ApiDeleteApiV1ImportListExclusionRequest {
-	return ApiDeleteApiV1ImportListExclusionRequest{
+func (a *ImportListExclusionApiService) DeleteImportListExclusion(ctx context.Context, id int32) ApiDeleteImportListExclusionRequest {
+	return ApiDeleteImportListExclusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -152,14 +152,14 @@ func (a *ImportListExclusionApiService) DeleteApiV1ImportListExclusion(ctx conte
 }
 
 // Execute executes the request
-func (a *ImportListExclusionApiService) DeleteApiV1ImportListExclusionExecute(r ApiDeleteApiV1ImportListExclusionRequest) (*http.Response, error) {
+func (a *ImportListExclusionApiService) DeleteImportListExclusionExecute(r ApiDeleteImportListExclusionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionApiService.DeleteApiV1ImportListExclusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionApiService.DeleteImportListExclusion")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -215,25 +215,25 @@ func (a *ImportListExclusionApiService) DeleteApiV1ImportListExclusionExecute(r 
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1ImportListExclusionByIdRequest struct {
+type ApiGetImportListExclusionByIdRequest struct {
 	ctx context.Context
 	ApiService *ImportListExclusionApiService
 	id int32
 }
 
-func (r ApiGetApiV1ImportListExclusionByIdRequest) Execute() (*ImportListExclusionResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ImportListExclusionByIdExecute(r)
+func (r ApiGetImportListExclusionByIdRequest) Execute() (*ImportListExclusionResource, *http.Response, error) {
+	return r.ApiService.GetImportListExclusionByIdExecute(r)
 }
 
 /*
-GetApiV1ImportListExclusionById Method for GetApiV1ImportListExclusionById
+GetImportListExclusionById Method for GetImportListExclusionById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1ImportListExclusionByIdRequest
+ @return ApiGetImportListExclusionByIdRequest
 */
-func (a *ImportListExclusionApiService) GetApiV1ImportListExclusionById(ctx context.Context, id int32) ApiGetApiV1ImportListExclusionByIdRequest {
-	return ApiGetApiV1ImportListExclusionByIdRequest{
+func (a *ImportListExclusionApiService) GetImportListExclusionById(ctx context.Context, id int32) ApiGetImportListExclusionByIdRequest {
+	return ApiGetImportListExclusionByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -242,7 +242,7 @@ func (a *ImportListExclusionApiService) GetApiV1ImportListExclusionById(ctx cont
 
 // Execute executes the request
 //  @return ImportListExclusionResource
-func (a *ImportListExclusionApiService) GetApiV1ImportListExclusionByIdExecute(r ApiGetApiV1ImportListExclusionByIdRequest) (*ImportListExclusionResource, *http.Response, error) {
+func (a *ImportListExclusionApiService) GetImportListExclusionByIdExecute(r ApiGetImportListExclusionByIdRequest) (*ImportListExclusionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -250,7 +250,7 @@ func (a *ImportListExclusionApiService) GetApiV1ImportListExclusionByIdExecute(r
 		localVarReturnValue  *ImportListExclusionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionApiService.GetApiV1ImportListExclusionById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionApiService.GetImportListExclusionById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -315,23 +315,23 @@ func (a *ImportListExclusionApiService) GetApiV1ImportListExclusionByIdExecute(r
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1ImportListExclusionRequest struct {
+type ApiListImportListExclusionRequest struct {
 	ctx context.Context
 	ApiService *ImportListExclusionApiService
 }
 
-func (r ApiListApiV1ImportListExclusionRequest) Execute() ([]*ImportListExclusionResource, *http.Response, error) {
-	return r.ApiService.ListApiV1ImportListExclusionExecute(r)
+func (r ApiListImportListExclusionRequest) Execute() ([]*ImportListExclusionResource, *http.Response, error) {
+	return r.ApiService.ListImportListExclusionExecute(r)
 }
 
 /*
-ListApiV1ImportListExclusion Method for ListApiV1ImportListExclusion
+ListImportListExclusion Method for ListImportListExclusion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1ImportListExclusionRequest
+ @return ApiListImportListExclusionRequest
 */
-func (a *ImportListExclusionApiService) ListApiV1ImportListExclusion(ctx context.Context) ApiListApiV1ImportListExclusionRequest {
-	return ApiListApiV1ImportListExclusionRequest{
+func (a *ImportListExclusionApiService) ListImportListExclusion(ctx context.Context) ApiListImportListExclusionRequest {
+	return ApiListImportListExclusionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -339,7 +339,7 @@ func (a *ImportListExclusionApiService) ListApiV1ImportListExclusion(ctx context
 
 // Execute executes the request
 //  @return []ImportListExclusionResource
-func (a *ImportListExclusionApiService) ListApiV1ImportListExclusionExecute(r ApiListApiV1ImportListExclusionRequest) ([]*ImportListExclusionResource, *http.Response, error) {
+func (a *ImportListExclusionApiService) ListImportListExclusionExecute(r ApiListImportListExclusionRequest) ([]*ImportListExclusionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -347,7 +347,7 @@ func (a *ImportListExclusionApiService) ListApiV1ImportListExclusionExecute(r Ap
 		localVarReturnValue  []*ImportListExclusionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionApiService.ListApiV1ImportListExclusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionApiService.ListImportListExclusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -411,31 +411,31 @@ func (a *ImportListExclusionApiService) ListApiV1ImportListExclusionExecute(r Ap
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1ImportListExclusionRequest struct {
+type ApiUpdateImportListExclusionRequest struct {
 	ctx context.Context
 	ApiService *ImportListExclusionApiService
 	id string
 	importListExclusionResource *ImportListExclusionResource
 }
 
-func (r ApiUpdateApiV1ImportListExclusionRequest) ImportListExclusionResource(importListExclusionResource ImportListExclusionResource) ApiUpdateApiV1ImportListExclusionRequest {
+func (r ApiUpdateImportListExclusionRequest) ImportListExclusionResource(importListExclusionResource ImportListExclusionResource) ApiUpdateImportListExclusionRequest {
 	r.importListExclusionResource = &importListExclusionResource
 	return r
 }
 
-func (r ApiUpdateApiV1ImportListExclusionRequest) Execute() (*ImportListExclusionResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1ImportListExclusionExecute(r)
+func (r ApiUpdateImportListExclusionRequest) Execute() (*ImportListExclusionResource, *http.Response, error) {
+	return r.ApiService.UpdateImportListExclusionExecute(r)
 }
 
 /*
-UpdateApiV1ImportListExclusion Method for UpdateApiV1ImportListExclusion
+UpdateImportListExclusion Method for UpdateImportListExclusion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1ImportListExclusionRequest
+ @return ApiUpdateImportListExclusionRequest
 */
-func (a *ImportListExclusionApiService) UpdateApiV1ImportListExclusion(ctx context.Context, id string) ApiUpdateApiV1ImportListExclusionRequest {
-	return ApiUpdateApiV1ImportListExclusionRequest{
+func (a *ImportListExclusionApiService) UpdateImportListExclusion(ctx context.Context, id string) ApiUpdateImportListExclusionRequest {
+	return ApiUpdateImportListExclusionRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -444,7 +444,7 @@ func (a *ImportListExclusionApiService) UpdateApiV1ImportListExclusion(ctx conte
 
 // Execute executes the request
 //  @return ImportListExclusionResource
-func (a *ImportListExclusionApiService) UpdateApiV1ImportListExclusionExecute(r ApiUpdateApiV1ImportListExclusionRequest) (*ImportListExclusionResource, *http.Response, error) {
+func (a *ImportListExclusionApiService) UpdateImportListExclusionExecute(r ApiUpdateImportListExclusionRequest) (*ImportListExclusionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -452,7 +452,7 @@ func (a *ImportListExclusionApiService) UpdateApiV1ImportListExclusionExecute(r 
 		localVarReturnValue  *ImportListExclusionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionApiService.UpdateApiV1ImportListExclusion")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionApiService.UpdateImportListExclusion")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

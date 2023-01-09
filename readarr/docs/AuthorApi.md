@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Author**](AuthorApi.md#CreateApiV1Author) | **Post** /api/v1/author | 
-[**DeleteApiV1Author**](AuthorApi.md#DeleteApiV1Author) | **Delete** /api/v1/author/{id} | 
-[**GetApiV1AuthorById**](AuthorApi.md#GetApiV1AuthorById) | **Get** /api/v1/author/{id} | 
-[**ListApiV1Author**](AuthorApi.md#ListApiV1Author) | **Get** /api/v1/author | 
-[**UpdateApiV1Author**](AuthorApi.md#UpdateApiV1Author) | **Put** /api/v1/author/{id} | 
+[**CreateAuthor**](AuthorApi.md#CreateAuthor) | **Post** /api/v1/author | 
+[**DeleteAuthor**](AuthorApi.md#DeleteAuthor) | **Delete** /api/v1/author/{id} | 
+[**GetAuthorById**](AuthorApi.md#GetAuthorById) | **Get** /api/v1/author/{id} | 
+[**ListAuthor**](AuthorApi.md#ListAuthor) | **Get** /api/v1/author | 
+[**UpdateAuthor**](AuthorApi.md#UpdateAuthor) | **Put** /api/v1/author/{id} | 
 
 
 
-## CreateApiV1Author
+## CreateAuthor
 
-> AuthorResource CreateApiV1Author(ctx).AuthorResource(authorResource).Execute()
+> AuthorResource CreateAuthor(ctx).AuthorResource(authorResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorApi.CreateApiV1Author(context.Background()).AuthorResource(authorResource).Execute()
+    resp, r, err := apiClient.AuthorApi.CreateAuthor(context.Background()).AuthorResource(authorResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.CreateApiV1Author``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.CreateAuthor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Author`: AuthorResource
-    fmt.Fprintf(os.Stdout, "Response from `AuthorApi.CreateApiV1Author`: %v\n", resp)
+    // response from `CreateAuthor`: AuthorResource
+    fmt.Fprintf(os.Stdout, "Response from `AuthorApi.CreateAuthor`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1AuthorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAuthorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Author
+## DeleteAuthor
 
-> DeleteApiV1Author(ctx, id).Execute()
+> DeleteAuthor(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorApi.DeleteApiV1Author(context.Background(), id).Execute()
+    resp, r, err := apiClient.AuthorApi.DeleteAuthor(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.DeleteApiV1Author``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.DeleteAuthor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1AuthorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAuthorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1AuthorById
+## GetAuthorById
 
-> AuthorResource GetApiV1AuthorById(ctx, id).Execute()
+> AuthorResource GetAuthorById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorApi.GetApiV1AuthorById(context.Background(), id).Execute()
+    resp, r, err := apiClient.AuthorApi.GetAuthorById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.GetApiV1AuthorById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.GetAuthorById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1AuthorById`: AuthorResource
-    fmt.Fprintf(os.Stdout, "Response from `AuthorApi.GetApiV1AuthorById`: %v\n", resp)
+    // response from `GetAuthorById`: AuthorResource
+    fmt.Fprintf(os.Stdout, "Response from `AuthorApi.GetAuthorById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1AuthorByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAuthorByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1Author
+## ListAuthor
 
-> []AuthorResource ListApiV1Author(ctx).Execute()
+> []AuthorResource ListAuthor(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorApi.ListApiV1Author(context.Background()).Execute()
+    resp, r, err := apiClient.AuthorApi.ListAuthor(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.ListApiV1Author``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.ListAuthor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Author`: []AuthorResource
-    fmt.Fprintf(os.Stdout, "Response from `AuthorApi.ListApiV1Author`: %v\n", resp)
+    // response from `ListAuthor`: []AuthorResource
+    fmt.Fprintf(os.Stdout, "Response from `AuthorApi.ListAuthor`: %v\n", resp)
 }
 ```
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1AuthorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListAuthorRequest struct via the builder pattern
 
 
 ### Return type
@@ -269,9 +269,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Author
+## UpdateAuthor
 
-> AuthorResource UpdateApiV1Author(ctx, id).AuthorResource(authorResource).Execute()
+> AuthorResource UpdateAuthor(ctx, id).AuthorResource(authorResource).Execute()
 
 
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorApi.UpdateApiV1Author(context.Background(), id).AuthorResource(authorResource).Execute()
+    resp, r, err := apiClient.AuthorApi.UpdateAuthor(context.Background(), id).AuthorResource(authorResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.UpdateApiV1Author``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.UpdateAuthor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Author`: AuthorResource
-    fmt.Fprintf(os.Stdout, "Response from `AuthorApi.UpdateApiV1Author`: %v\n", resp)
+    // response from `UpdateAuthor`: AuthorResource
+    fmt.Fprintf(os.Stdout, "Response from `AuthorApi.UpdateAuthor`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1AuthorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateAuthorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

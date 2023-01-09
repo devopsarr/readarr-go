@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Book**](BookApi.md#CreateApiV1Book) | **Post** /api/v1/book | 
-[**DeleteApiV1Book**](BookApi.md#DeleteApiV1Book) | **Delete** /api/v1/book/{id} | 
-[**GetApiV1BookById**](BookApi.md#GetApiV1BookById) | **Get** /api/v1/book/{id} | 
-[**ListApiV1Book**](BookApi.md#ListApiV1Book) | **Get** /api/v1/book | 
-[**PutApiV1BookMonitor**](BookApi.md#PutApiV1BookMonitor) | **Put** /api/v1/book/monitor | 
-[**UpdateApiV1Book**](BookApi.md#UpdateApiV1Book) | **Put** /api/v1/book/{id} | 
+[**CreateBook**](BookApi.md#CreateBook) | **Post** /api/v1/book | 
+[**DeleteBook**](BookApi.md#DeleteBook) | **Delete** /api/v1/book/{id} | 
+[**GetBookById**](BookApi.md#GetBookById) | **Get** /api/v1/book/{id} | 
+[**ListBook**](BookApi.md#ListBook) | **Get** /api/v1/book | 
+[**PutBookMonitor**](BookApi.md#PutBookMonitor) | **Put** /api/v1/book/monitor | 
+[**UpdateBook**](BookApi.md#UpdateBook) | **Put** /api/v1/book/{id} | 
 
 
 
-## CreateApiV1Book
+## CreateBook
 
-> BookResource CreateApiV1Book(ctx).BookResource(bookResource).Execute()
+> BookResource CreateBook(ctx).BookResource(bookResource).Execute()
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BookApi.CreateApiV1Book(context.Background()).BookResource(bookResource).Execute()
+    resp, r, err := apiClient.BookApi.CreateBook(context.Background()).BookResource(bookResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.CreateApiV1Book``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.CreateBook``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Book`: BookResource
-    fmt.Fprintf(os.Stdout, "Response from `BookApi.CreateApiV1Book`: %v\n", resp)
+    // response from `CreateBook`: BookResource
+    fmt.Fprintf(os.Stdout, "Response from `BookApi.CreateBook`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1BookRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateBookRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Book
+## DeleteBook
 
-> DeleteApiV1Book(ctx, id).Execute()
+> DeleteBook(ctx, id).Execute()
 
 
 
@@ -100,9 +100,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BookApi.DeleteApiV1Book(context.Background(), id).Execute()
+    resp, r, err := apiClient.BookApi.DeleteBook(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.DeleteApiV1Book``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.DeleteBook``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1BookRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBookRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -143,9 +143,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1BookById
+## GetBookById
 
-> BookResource GetApiV1BookById(ctx, id).Execute()
+> BookResource GetBookById(ctx, id).Execute()
 
 
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BookApi.GetApiV1BookById(context.Background(), id).Execute()
+    resp, r, err := apiClient.BookApi.GetBookById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.GetApiV1BookById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.GetBookById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1BookById`: BookResource
-    fmt.Fprintf(os.Stdout, "Response from `BookApi.GetApiV1BookById`: %v\n", resp)
+    // response from `GetBookById`: BookResource
+    fmt.Fprintf(os.Stdout, "Response from `BookApi.GetBookById`: %v\n", resp)
 }
 ```
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1BookByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBookByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -211,9 +211,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1Book
+## ListBook
 
-> []BookResource ListApiV1Book(ctx).AuthorId(authorId).BookIds(bookIds).TitleSlug(titleSlug).IncludeAllAuthorBooks(includeAllAuthorBooks).Execute()
+> []BookResource ListBook(ctx).AuthorId(authorId).BookIds(bookIds).TitleSlug(titleSlug).IncludeAllAuthorBooks(includeAllAuthorBooks).Execute()
 
 
 
@@ -237,13 +237,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BookApi.ListApiV1Book(context.Background()).AuthorId(authorId).BookIds(bookIds).TitleSlug(titleSlug).IncludeAllAuthorBooks(includeAllAuthorBooks).Execute()
+    resp, r, err := apiClient.BookApi.ListBook(context.Background()).AuthorId(authorId).BookIds(bookIds).TitleSlug(titleSlug).IncludeAllAuthorBooks(includeAllAuthorBooks).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.ListApiV1Book``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.ListBook``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Book`: []BookResource
-    fmt.Fprintf(os.Stdout, "Response from `BookApi.ListApiV1Book`: %v\n", resp)
+    // response from `ListBook`: []BookResource
+    fmt.Fprintf(os.Stdout, "Response from `BookApi.ListBook`: %v\n", resp)
 }
 ```
 
@@ -253,7 +253,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1BookRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListBookRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -281,9 +281,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PutApiV1BookMonitor
+## PutBookMonitor
 
-> PutApiV1BookMonitor(ctx).BooksMonitoredResource(booksMonitoredResource).Execute()
+> PutBookMonitor(ctx).BooksMonitoredResource(booksMonitoredResource).Execute()
 
 
 
@@ -304,9 +304,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BookApi.PutApiV1BookMonitor(context.Background()).BooksMonitoredResource(booksMonitoredResource).Execute()
+    resp, r, err := apiClient.BookApi.PutBookMonitor(context.Background()).BooksMonitoredResource(booksMonitoredResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.PutApiV1BookMonitor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.PutBookMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -318,7 +318,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutApiV1BookMonitorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutBookMonitorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -343,9 +343,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Book
+## UpdateBook
 
-> BookResource UpdateApiV1Book(ctx, id).BookResource(bookResource).Execute()
+> BookResource UpdateBook(ctx, id).BookResource(bookResource).Execute()
 
 
 
@@ -367,13 +367,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BookApi.UpdateApiV1Book(context.Background(), id).BookResource(bookResource).Execute()
+    resp, r, err := apiClient.BookApi.UpdateBook(context.Background(), id).BookResource(bookResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.UpdateApiV1Book``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.UpdateBook``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Book`: BookResource
-    fmt.Fprintf(os.Stdout, "Response from `BookApi.UpdateApiV1Book`: %v\n", resp)
+    // response from `UpdateBook`: BookResource
+    fmt.Fprintf(os.Stdout, "Response from `BookApi.UpdateBook`: %v\n", resp)
 }
 ```
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1BookRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateBookRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

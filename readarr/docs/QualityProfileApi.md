@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1QualityProfile**](QualityProfileApi.md#CreateApiV1QualityProfile) | **Post** /api/v1/qualityprofile | 
-[**DeleteApiV1QualityProfile**](QualityProfileApi.md#DeleteApiV1QualityProfile) | **Delete** /api/v1/qualityprofile/{id} | 
-[**GetApiV1QualityProfileById**](QualityProfileApi.md#GetApiV1QualityProfileById) | **Get** /api/v1/qualityprofile/{id} | 
-[**ListApiV1QualityProfile**](QualityProfileApi.md#ListApiV1QualityProfile) | **Get** /api/v1/qualityprofile | 
-[**UpdateApiV1QualityProfile**](QualityProfileApi.md#UpdateApiV1QualityProfile) | **Put** /api/v1/qualityprofile/{id} | 
+[**CreateQualityProfile**](QualityProfileApi.md#CreateQualityProfile) | **Post** /api/v1/qualityprofile | 
+[**DeleteQualityProfile**](QualityProfileApi.md#DeleteQualityProfile) | **Delete** /api/v1/qualityprofile/{id} | 
+[**GetQualityProfileById**](QualityProfileApi.md#GetQualityProfileById) | **Get** /api/v1/qualityprofile/{id} | 
+[**ListQualityProfile**](QualityProfileApi.md#ListQualityProfile) | **Get** /api/v1/qualityprofile | 
+[**UpdateQualityProfile**](QualityProfileApi.md#UpdateQualityProfile) | **Put** /api/v1/qualityprofile/{id} | 
 
 
 
-## CreateApiV1QualityProfile
+## CreateQualityProfile
 
-> QualityProfileResource CreateApiV1QualityProfile(ctx).QualityProfileResource(qualityProfileResource).Execute()
+> QualityProfileResource CreateQualityProfile(ctx).QualityProfileResource(qualityProfileResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityProfileApi.CreateApiV1QualityProfile(context.Background()).QualityProfileResource(qualityProfileResource).Execute()
+    resp, r, err := apiClient.QualityProfileApi.CreateQualityProfile(context.Background()).QualityProfileResource(qualityProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileApi.CreateApiV1QualityProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileApi.CreateQualityProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1QualityProfile`: QualityProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `QualityProfileApi.CreateApiV1QualityProfile`: %v\n", resp)
+    // response from `CreateQualityProfile`: QualityProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `QualityProfileApi.CreateQualityProfile`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1QualityProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateQualityProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1QualityProfile
+## DeleteQualityProfile
 
-> DeleteApiV1QualityProfile(ctx, id).Execute()
+> DeleteQualityProfile(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityProfileApi.DeleteApiV1QualityProfile(context.Background(), id).Execute()
+    resp, r, err := apiClient.QualityProfileApi.DeleteQualityProfile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileApi.DeleteApiV1QualityProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileApi.DeleteQualityProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1QualityProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteQualityProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1QualityProfileById
+## GetQualityProfileById
 
-> QualityProfileResource GetApiV1QualityProfileById(ctx, id).Execute()
+> QualityProfileResource GetQualityProfileById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityProfileApi.GetApiV1QualityProfileById(context.Background(), id).Execute()
+    resp, r, err := apiClient.QualityProfileApi.GetQualityProfileById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileApi.GetApiV1QualityProfileById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileApi.GetQualityProfileById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1QualityProfileById`: QualityProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `QualityProfileApi.GetApiV1QualityProfileById`: %v\n", resp)
+    // response from `GetQualityProfileById`: QualityProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `QualityProfileApi.GetQualityProfileById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1QualityProfileByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetQualityProfileByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1QualityProfile
+## ListQualityProfile
 
-> []QualityProfileResource ListApiV1QualityProfile(ctx).Execute()
+> []QualityProfileResource ListQualityProfile(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityProfileApi.ListApiV1QualityProfile(context.Background()).Execute()
+    resp, r, err := apiClient.QualityProfileApi.ListQualityProfile(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileApi.ListApiV1QualityProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileApi.ListQualityProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1QualityProfile`: []QualityProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `QualityProfileApi.ListApiV1QualityProfile`: %v\n", resp)
+    // response from `ListQualityProfile`: []QualityProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `QualityProfileApi.ListQualityProfile`: %v\n", resp)
 }
 ```
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1QualityProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListQualityProfileRequest struct via the builder pattern
 
 
 ### Return type
@@ -269,9 +269,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1QualityProfile
+## UpdateQualityProfile
 
-> QualityProfileResource UpdateApiV1QualityProfile(ctx, id).QualityProfileResource(qualityProfileResource).Execute()
+> QualityProfileResource UpdateQualityProfile(ctx, id).QualityProfileResource(qualityProfileResource).Execute()
 
 
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityProfileApi.UpdateApiV1QualityProfile(context.Background(), id).QualityProfileResource(qualityProfileResource).Execute()
+    resp, r, err := apiClient.QualityProfileApi.UpdateQualityProfile(context.Background(), id).QualityProfileResource(qualityProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileApi.UpdateApiV1QualityProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityProfileApi.UpdateQualityProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1QualityProfile`: QualityProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `QualityProfileApi.UpdateApiV1QualityProfile`: %v\n", resp)
+    // response from `UpdateQualityProfile`: QualityProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `QualityProfileApi.UpdateQualityProfile`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1QualityProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateQualityProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

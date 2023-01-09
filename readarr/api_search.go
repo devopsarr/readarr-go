@@ -21,43 +21,43 @@ import (
 
 // SearchApiService SearchApi service
 type SearchApiService service
-type ApiGetApiV1SearchRequest struct {
+type ApiGetSearchRequest struct {
 	ctx context.Context
 	ApiService *SearchApiService
 	term *string
 }
 
-func (r ApiGetApiV1SearchRequest) Term(term string) ApiGetApiV1SearchRequest {
+func (r ApiGetSearchRequest) Term(term string) ApiGetSearchRequest {
 	r.term = &term
 	return r
 }
 
-func (r ApiGetApiV1SearchRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1SearchExecute(r)
+func (r ApiGetSearchRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetSearchExecute(r)
 }
 
 /*
-GetApiV1Search Method for GetApiV1Search
+GetSearch Method for GetSearch
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1SearchRequest
+ @return ApiGetSearchRequest
 */
-func (a *SearchApiService) GetApiV1Search(ctx context.Context) ApiGetApiV1SearchRequest {
-	return ApiGetApiV1SearchRequest{
+func (a *SearchApiService) GetSearch(ctx context.Context) ApiGetSearchRequest {
+	return ApiGetSearchRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SearchApiService) GetApiV1SearchExecute(r ApiGetApiV1SearchRequest) (*http.Response, error) {
+func (a *SearchApiService) GetSearchExecute(r ApiGetSearchRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchApiService.GetApiV1Search")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchApiService.GetSearch")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

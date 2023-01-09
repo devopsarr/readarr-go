@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListApiV1Retag**](RetagBookApi.md#ListApiV1Retag) | **Get** /api/v1/retag | 
+[**ListRetag**](RetagBookApi.md#ListRetag) | **Get** /api/v1/retag | 
 
 
 
-## ListApiV1Retag
+## ListRetag
 
-> []RetagBookResource ListApiV1Retag(ctx).AuthorId(authorId).BookId(bookId).Execute()
+> []RetagBookResource ListRetag(ctx).AuthorId(authorId).BookId(bookId).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RetagBookApi.ListApiV1Retag(context.Background()).AuthorId(authorId).BookId(bookId).Execute()
+    resp, r, err := apiClient.RetagBookApi.ListRetag(context.Background()).AuthorId(authorId).BookId(bookId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RetagBookApi.ListApiV1Retag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RetagBookApi.ListRetag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Retag`: []RetagBookResource
-    fmt.Fprintf(os.Stdout, "Response from `RetagBookApi.ListApiV1Retag`: %v\n", resp)
+    // response from `ListRetag`: []RetagBookResource
+    fmt.Fprintf(os.Stdout, "Response from `RetagBookApi.ListRetag`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1RetagRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListRetagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

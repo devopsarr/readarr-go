@@ -22,43 +22,43 @@ import (
 
 // QueueActionApiService QueueActionApi service
 type QueueActionApiService service
-type ApiCreateApiV1QueueGrabBulkRequest struct {
+type ApiCreateQueueGrabBulkRequest struct {
 	ctx context.Context
 	ApiService *QueueActionApiService
 	queueBulkResource *QueueBulkResource
 }
 
-func (r ApiCreateApiV1QueueGrabBulkRequest) QueueBulkResource(queueBulkResource QueueBulkResource) ApiCreateApiV1QueueGrabBulkRequest {
+func (r ApiCreateQueueGrabBulkRequest) QueueBulkResource(queueBulkResource QueueBulkResource) ApiCreateQueueGrabBulkRequest {
 	r.queueBulkResource = &queueBulkResource
 	return r
 }
 
-func (r ApiCreateApiV1QueueGrabBulkRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1QueueGrabBulkExecute(r)
+func (r ApiCreateQueueGrabBulkRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateQueueGrabBulkExecute(r)
 }
 
 /*
-CreateApiV1QueueGrabBulk Method for CreateApiV1QueueGrabBulk
+CreateQueueGrabBulk Method for CreateQueueGrabBulk
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1QueueGrabBulkRequest
+ @return ApiCreateQueueGrabBulkRequest
 */
-func (a *QueueActionApiService) CreateApiV1QueueGrabBulk(ctx context.Context) ApiCreateApiV1QueueGrabBulkRequest {
-	return ApiCreateApiV1QueueGrabBulkRequest{
+func (a *QueueActionApiService) CreateQueueGrabBulk(ctx context.Context) ApiCreateQueueGrabBulkRequest {
+	return ApiCreateQueueGrabBulkRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *QueueActionApiService) CreateApiV1QueueGrabBulkExecute(r ApiCreateApiV1QueueGrabBulkRequest) (*http.Response, error) {
+func (a *QueueActionApiService) CreateQueueGrabBulkExecute(r ApiCreateQueueGrabBulkRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueActionApiService.CreateApiV1QueueGrabBulk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueActionApiService.CreateQueueGrabBulk")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -115,25 +115,25 @@ func (a *QueueActionApiService) CreateApiV1QueueGrabBulkExecute(r ApiCreateApiV1
 
 	return localVarHTTPResponse, nil
 }
-type ApiCreateApiV1QueueGrabByIdRequest struct {
+type ApiCreateQueueGrabByIdRequest struct {
 	ctx context.Context
 	ApiService *QueueActionApiService
 	id int32
 }
 
-func (r ApiCreateApiV1QueueGrabByIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1QueueGrabByIdExecute(r)
+func (r ApiCreateQueueGrabByIdRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateQueueGrabByIdExecute(r)
 }
 
 /*
-CreateApiV1QueueGrabById Method for CreateApiV1QueueGrabById
+CreateQueueGrabById Method for CreateQueueGrabById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiCreateApiV1QueueGrabByIdRequest
+ @return ApiCreateQueueGrabByIdRequest
 */
-func (a *QueueActionApiService) CreateApiV1QueueGrabById(ctx context.Context, id int32) ApiCreateApiV1QueueGrabByIdRequest {
-	return ApiCreateApiV1QueueGrabByIdRequest{
+func (a *QueueActionApiService) CreateQueueGrabById(ctx context.Context, id int32) ApiCreateQueueGrabByIdRequest {
+	return ApiCreateQueueGrabByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -141,14 +141,14 @@ func (a *QueueActionApiService) CreateApiV1QueueGrabById(ctx context.Context, id
 }
 
 // Execute executes the request
-func (a *QueueActionApiService) CreateApiV1QueueGrabByIdExecute(r ApiCreateApiV1QueueGrabByIdRequest) (*http.Response, error) {
+func (a *QueueActionApiService) CreateQueueGrabByIdExecute(r ApiCreateQueueGrabByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueActionApiService.CreateApiV1QueueGrabById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueActionApiService.CreateQueueGrabById")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

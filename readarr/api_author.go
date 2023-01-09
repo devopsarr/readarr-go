@@ -22,29 +22,29 @@ import (
 
 // AuthorApiService AuthorApi service
 type AuthorApiService service
-type ApiCreateApiV1AuthorRequest struct {
+type ApiCreateAuthorRequest struct {
 	ctx context.Context
 	ApiService *AuthorApiService
 	authorResource *AuthorResource
 }
 
-func (r ApiCreateApiV1AuthorRequest) AuthorResource(authorResource AuthorResource) ApiCreateApiV1AuthorRequest {
+func (r ApiCreateAuthorRequest) AuthorResource(authorResource AuthorResource) ApiCreateAuthorRequest {
 	r.authorResource = &authorResource
 	return r
 }
 
-func (r ApiCreateApiV1AuthorRequest) Execute() (*AuthorResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1AuthorExecute(r)
+func (r ApiCreateAuthorRequest) Execute() (*AuthorResource, *http.Response, error) {
+	return r.ApiService.CreateAuthorExecute(r)
 }
 
 /*
-CreateApiV1Author Method for CreateApiV1Author
+CreateAuthor Method for CreateAuthor
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1AuthorRequest
+ @return ApiCreateAuthorRequest
 */
-func (a *AuthorApiService) CreateApiV1Author(ctx context.Context) ApiCreateApiV1AuthorRequest {
-	return ApiCreateApiV1AuthorRequest{
+func (a *AuthorApiService) CreateAuthor(ctx context.Context) ApiCreateAuthorRequest {
+	return ApiCreateAuthorRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *AuthorApiService) CreateApiV1Author(ctx context.Context) ApiCreateApiV1
 
 // Execute executes the request
 //  @return AuthorResource
-func (a *AuthorApiService) CreateApiV1AuthorExecute(r ApiCreateApiV1AuthorRequest) (*AuthorResource, *http.Response, error) {
+func (a *AuthorApiService) CreateAuthorExecute(r ApiCreateAuthorRequest) (*AuthorResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *AuthorApiService) CreateApiV1AuthorExecute(r ApiCreateApiV1AuthorReques
 		localVarReturnValue  *AuthorResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorApiService.CreateApiV1Author")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorApiService.CreateAuthor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,25 +126,25 @@ func (a *AuthorApiService) CreateApiV1AuthorExecute(r ApiCreateApiV1AuthorReques
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1AuthorRequest struct {
+type ApiDeleteAuthorRequest struct {
 	ctx context.Context
 	ApiService *AuthorApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1AuthorRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1AuthorExecute(r)
+func (r ApiDeleteAuthorRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteAuthorExecute(r)
 }
 
 /*
-DeleteApiV1Author Method for DeleteApiV1Author
+DeleteAuthor Method for DeleteAuthor
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1AuthorRequest
+ @return ApiDeleteAuthorRequest
 */
-func (a *AuthorApiService) DeleteApiV1Author(ctx context.Context, id int32) ApiDeleteApiV1AuthorRequest {
-	return ApiDeleteApiV1AuthorRequest{
+func (a *AuthorApiService) DeleteAuthor(ctx context.Context, id int32) ApiDeleteAuthorRequest {
+	return ApiDeleteAuthorRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -152,14 +152,14 @@ func (a *AuthorApiService) DeleteApiV1Author(ctx context.Context, id int32) ApiD
 }
 
 // Execute executes the request
-func (a *AuthorApiService) DeleteApiV1AuthorExecute(r ApiDeleteApiV1AuthorRequest) (*http.Response, error) {
+func (a *AuthorApiService) DeleteAuthorExecute(r ApiDeleteAuthorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorApiService.DeleteApiV1Author")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorApiService.DeleteAuthor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -215,25 +215,25 @@ func (a *AuthorApiService) DeleteApiV1AuthorExecute(r ApiDeleteApiV1AuthorReques
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1AuthorByIdRequest struct {
+type ApiGetAuthorByIdRequest struct {
 	ctx context.Context
 	ApiService *AuthorApiService
 	id int32
 }
 
-func (r ApiGetApiV1AuthorByIdRequest) Execute() (*AuthorResource, *http.Response, error) {
-	return r.ApiService.GetApiV1AuthorByIdExecute(r)
+func (r ApiGetAuthorByIdRequest) Execute() (*AuthorResource, *http.Response, error) {
+	return r.ApiService.GetAuthorByIdExecute(r)
 }
 
 /*
-GetApiV1AuthorById Method for GetApiV1AuthorById
+GetAuthorById Method for GetAuthorById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1AuthorByIdRequest
+ @return ApiGetAuthorByIdRequest
 */
-func (a *AuthorApiService) GetApiV1AuthorById(ctx context.Context, id int32) ApiGetApiV1AuthorByIdRequest {
-	return ApiGetApiV1AuthorByIdRequest{
+func (a *AuthorApiService) GetAuthorById(ctx context.Context, id int32) ApiGetAuthorByIdRequest {
+	return ApiGetAuthorByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -242,7 +242,7 @@ func (a *AuthorApiService) GetApiV1AuthorById(ctx context.Context, id int32) Api
 
 // Execute executes the request
 //  @return AuthorResource
-func (a *AuthorApiService) GetApiV1AuthorByIdExecute(r ApiGetApiV1AuthorByIdRequest) (*AuthorResource, *http.Response, error) {
+func (a *AuthorApiService) GetAuthorByIdExecute(r ApiGetAuthorByIdRequest) (*AuthorResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -250,7 +250,7 @@ func (a *AuthorApiService) GetApiV1AuthorByIdExecute(r ApiGetApiV1AuthorByIdRequ
 		localVarReturnValue  *AuthorResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorApiService.GetApiV1AuthorById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorApiService.GetAuthorById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -315,23 +315,23 @@ func (a *AuthorApiService) GetApiV1AuthorByIdExecute(r ApiGetApiV1AuthorByIdRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1AuthorRequest struct {
+type ApiListAuthorRequest struct {
 	ctx context.Context
 	ApiService *AuthorApiService
 }
 
-func (r ApiListApiV1AuthorRequest) Execute() ([]*AuthorResource, *http.Response, error) {
-	return r.ApiService.ListApiV1AuthorExecute(r)
+func (r ApiListAuthorRequest) Execute() ([]*AuthorResource, *http.Response, error) {
+	return r.ApiService.ListAuthorExecute(r)
 }
 
 /*
-ListApiV1Author Method for ListApiV1Author
+ListAuthor Method for ListAuthor
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1AuthorRequest
+ @return ApiListAuthorRequest
 */
-func (a *AuthorApiService) ListApiV1Author(ctx context.Context) ApiListApiV1AuthorRequest {
-	return ApiListApiV1AuthorRequest{
+func (a *AuthorApiService) ListAuthor(ctx context.Context) ApiListAuthorRequest {
+	return ApiListAuthorRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -339,7 +339,7 @@ func (a *AuthorApiService) ListApiV1Author(ctx context.Context) ApiListApiV1Auth
 
 // Execute executes the request
 //  @return []AuthorResource
-func (a *AuthorApiService) ListApiV1AuthorExecute(r ApiListApiV1AuthorRequest) ([]*AuthorResource, *http.Response, error) {
+func (a *AuthorApiService) ListAuthorExecute(r ApiListAuthorRequest) ([]*AuthorResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -347,7 +347,7 @@ func (a *AuthorApiService) ListApiV1AuthorExecute(r ApiListApiV1AuthorRequest) (
 		localVarReturnValue  []*AuthorResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorApiService.ListApiV1Author")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorApiService.ListAuthor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -411,31 +411,31 @@ func (a *AuthorApiService) ListApiV1AuthorExecute(r ApiListApiV1AuthorRequest) (
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1AuthorRequest struct {
+type ApiUpdateAuthorRequest struct {
 	ctx context.Context
 	ApiService *AuthorApiService
 	id string
 	authorResource *AuthorResource
 }
 
-func (r ApiUpdateApiV1AuthorRequest) AuthorResource(authorResource AuthorResource) ApiUpdateApiV1AuthorRequest {
+func (r ApiUpdateAuthorRequest) AuthorResource(authorResource AuthorResource) ApiUpdateAuthorRequest {
 	r.authorResource = &authorResource
 	return r
 }
 
-func (r ApiUpdateApiV1AuthorRequest) Execute() (*AuthorResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1AuthorExecute(r)
+func (r ApiUpdateAuthorRequest) Execute() (*AuthorResource, *http.Response, error) {
+	return r.ApiService.UpdateAuthorExecute(r)
 }
 
 /*
-UpdateApiV1Author Method for UpdateApiV1Author
+UpdateAuthor Method for UpdateAuthor
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1AuthorRequest
+ @return ApiUpdateAuthorRequest
 */
-func (a *AuthorApiService) UpdateApiV1Author(ctx context.Context, id string) ApiUpdateApiV1AuthorRequest {
-	return ApiUpdateApiV1AuthorRequest{
+func (a *AuthorApiService) UpdateAuthor(ctx context.Context, id string) ApiUpdateAuthorRequest {
+	return ApiUpdateAuthorRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -444,7 +444,7 @@ func (a *AuthorApiService) UpdateApiV1Author(ctx context.Context, id string) Api
 
 // Execute executes the request
 //  @return AuthorResource
-func (a *AuthorApiService) UpdateApiV1AuthorExecute(r ApiUpdateApiV1AuthorRequest) (*AuthorResource, *http.Response, error) {
+func (a *AuthorApiService) UpdateAuthorExecute(r ApiUpdateAuthorRequest) (*AuthorResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -452,7 +452,7 @@ func (a *AuthorApiService) UpdateApiV1AuthorExecute(r ApiUpdateApiV1AuthorReques
 		localVarReturnValue  *AuthorResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorApiService.UpdateApiV1Author")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorApiService.UpdateAuthor")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

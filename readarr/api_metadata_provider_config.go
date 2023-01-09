@@ -22,23 +22,23 @@ import (
 
 // MetadataProviderConfigApiService MetadataProviderConfigApi service
 type MetadataProviderConfigApiService service
-type ApiGetApiV1ConfigMetadataproviderRequest struct {
+type ApiGetMetadataProviderConfigRequest struct {
 	ctx context.Context
 	ApiService *MetadataProviderConfigApiService
 }
 
-func (r ApiGetApiV1ConfigMetadataproviderRequest) Execute() (*MetadataProviderConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigMetadataproviderExecute(r)
+func (r ApiGetMetadataProviderConfigRequest) Execute() (*MetadataProviderConfigResource, *http.Response, error) {
+	return r.ApiService.GetMetadataProviderConfigExecute(r)
 }
 
 /*
-GetApiV1ConfigMetadataprovider Method for GetApiV1ConfigMetadataprovider
+GetMetadataProviderConfig Method for GetMetadataProviderConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1ConfigMetadataproviderRequest
+ @return ApiGetMetadataProviderConfigRequest
 */
-func (a *MetadataProviderConfigApiService) GetApiV1ConfigMetadataprovider(ctx context.Context) ApiGetApiV1ConfigMetadataproviderRequest {
-	return ApiGetApiV1ConfigMetadataproviderRequest{
+func (a *MetadataProviderConfigApiService) GetMetadataProviderConfig(ctx context.Context) ApiGetMetadataProviderConfigRequest {
+	return ApiGetMetadataProviderConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *MetadataProviderConfigApiService) GetApiV1ConfigMetadataprovider(ctx co
 
 // Execute executes the request
 //  @return MetadataProviderConfigResource
-func (a *MetadataProviderConfigApiService) GetApiV1ConfigMetadataproviderExecute(r ApiGetApiV1ConfigMetadataproviderRequest) (*MetadataProviderConfigResource, *http.Response, error) {
+func (a *MetadataProviderConfigApiService) GetMetadataProviderConfigExecute(r ApiGetMetadataProviderConfigRequest) (*MetadataProviderConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *MetadataProviderConfigApiService) GetApiV1ConfigMetadataproviderExecute
 		localVarReturnValue  *MetadataProviderConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProviderConfigApiService.GetApiV1ConfigMetadataprovider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProviderConfigApiService.GetMetadataProviderConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -118,25 +118,25 @@ func (a *MetadataProviderConfigApiService) GetApiV1ConfigMetadataproviderExecute
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetApiV1ConfigMetadataproviderByIdRequest struct {
+type ApiGetMetadataProviderConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *MetadataProviderConfigApiService
 	id int32
 }
 
-func (r ApiGetApiV1ConfigMetadataproviderByIdRequest) Execute() (*MetadataProviderConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigMetadataproviderByIdExecute(r)
+func (r ApiGetMetadataProviderConfigByIdRequest) Execute() (*MetadataProviderConfigResource, *http.Response, error) {
+	return r.ApiService.GetMetadataProviderConfigByIdExecute(r)
 }
 
 /*
-GetApiV1ConfigMetadataproviderById Method for GetApiV1ConfigMetadataproviderById
+GetMetadataProviderConfigById Method for GetMetadataProviderConfigById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1ConfigMetadataproviderByIdRequest
+ @return ApiGetMetadataProviderConfigByIdRequest
 */
-func (a *MetadataProviderConfigApiService) GetApiV1ConfigMetadataproviderById(ctx context.Context, id int32) ApiGetApiV1ConfigMetadataproviderByIdRequest {
-	return ApiGetApiV1ConfigMetadataproviderByIdRequest{
+func (a *MetadataProviderConfigApiService) GetMetadataProviderConfigById(ctx context.Context, id int32) ApiGetMetadataProviderConfigByIdRequest {
+	return ApiGetMetadataProviderConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -145,7 +145,7 @@ func (a *MetadataProviderConfigApiService) GetApiV1ConfigMetadataproviderById(ct
 
 // Execute executes the request
 //  @return MetadataProviderConfigResource
-func (a *MetadataProviderConfigApiService) GetApiV1ConfigMetadataproviderByIdExecute(r ApiGetApiV1ConfigMetadataproviderByIdRequest) (*MetadataProviderConfigResource, *http.Response, error) {
+func (a *MetadataProviderConfigApiService) GetMetadataProviderConfigByIdExecute(r ApiGetMetadataProviderConfigByIdRequest) (*MetadataProviderConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -153,7 +153,7 @@ func (a *MetadataProviderConfigApiService) GetApiV1ConfigMetadataproviderByIdExe
 		localVarReturnValue  *MetadataProviderConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProviderConfigApiService.GetApiV1ConfigMetadataproviderById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProviderConfigApiService.GetMetadataProviderConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -218,31 +218,31 @@ func (a *MetadataProviderConfigApiService) GetApiV1ConfigMetadataproviderByIdExe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1ConfigMetadataproviderRequest struct {
+type ApiUpdateMetadataProviderConfigRequest struct {
 	ctx context.Context
 	ApiService *MetadataProviderConfigApiService
 	id string
 	metadataProviderConfigResource *MetadataProviderConfigResource
 }
 
-func (r ApiUpdateApiV1ConfigMetadataproviderRequest) MetadataProviderConfigResource(metadataProviderConfigResource MetadataProviderConfigResource) ApiUpdateApiV1ConfigMetadataproviderRequest {
+func (r ApiUpdateMetadataProviderConfigRequest) MetadataProviderConfigResource(metadataProviderConfigResource MetadataProviderConfigResource) ApiUpdateMetadataProviderConfigRequest {
 	r.metadataProviderConfigResource = &metadataProviderConfigResource
 	return r
 }
 
-func (r ApiUpdateApiV1ConfigMetadataproviderRequest) Execute() (*MetadataProviderConfigResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1ConfigMetadataproviderExecute(r)
+func (r ApiUpdateMetadataProviderConfigRequest) Execute() (*MetadataProviderConfigResource, *http.Response, error) {
+	return r.ApiService.UpdateMetadataProviderConfigExecute(r)
 }
 
 /*
-UpdateApiV1ConfigMetadataprovider Method for UpdateApiV1ConfigMetadataprovider
+UpdateMetadataProviderConfig Method for UpdateMetadataProviderConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1ConfigMetadataproviderRequest
+ @return ApiUpdateMetadataProviderConfigRequest
 */
-func (a *MetadataProviderConfigApiService) UpdateApiV1ConfigMetadataprovider(ctx context.Context, id string) ApiUpdateApiV1ConfigMetadataproviderRequest {
-	return ApiUpdateApiV1ConfigMetadataproviderRequest{
+func (a *MetadataProviderConfigApiService) UpdateMetadataProviderConfig(ctx context.Context, id string) ApiUpdateMetadataProviderConfigRequest {
+	return ApiUpdateMetadataProviderConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -251,7 +251,7 @@ func (a *MetadataProviderConfigApiService) UpdateApiV1ConfigMetadataprovider(ctx
 
 // Execute executes the request
 //  @return MetadataProviderConfigResource
-func (a *MetadataProviderConfigApiService) UpdateApiV1ConfigMetadataproviderExecute(r ApiUpdateApiV1ConfigMetadataproviderRequest) (*MetadataProviderConfigResource, *http.Response, error) {
+func (a *MetadataProviderConfigApiService) UpdateMetadataProviderConfigExecute(r ApiUpdateMetadataProviderConfigRequest) (*MetadataProviderConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -259,7 +259,7 @@ func (a *MetadataProviderConfigApiService) UpdateApiV1ConfigMetadataproviderExec
 		localVarReturnValue  *MetadataProviderConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProviderConfigApiService.UpdateApiV1ConfigMetadataprovider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProviderConfigApiService.UpdateMetadataProviderConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

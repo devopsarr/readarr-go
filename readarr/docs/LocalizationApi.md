@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1Localization**](LocalizationApi.md#GetApiV1Localization) | **Get** /api/v1/localization | 
+[**GetLocalization**](LocalizationApi.md#GetLocalization) | **Get** /api/v1/localization | 
 
 
 
-## GetApiV1Localization
+## GetLocalization
 
-> string GetApiV1Localization(ctx).Execute()
+> string GetLocalization(ctx).Execute()
 
 
 
@@ -30,13 +30,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocalizationApi.GetApiV1Localization(context.Background()).Execute()
+    resp, r, err := apiClient.LocalizationApi.GetLocalization(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LocalizationApi.GetApiV1Localization``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalizationApi.GetLocalization``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1Localization`: string
-    fmt.Fprintf(os.Stdout, "Response from `LocalizationApi.GetApiV1Localization`: %v\n", resp)
+    // response from `GetLocalization`: string
+    fmt.Fprintf(os.Stdout, "Response from `LocalizationApi.GetLocalization`: %v\n", resp)
 }
 ```
 
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1LocalizationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetLocalizationRequest struct via the builder pattern
 
 
 ### Return type

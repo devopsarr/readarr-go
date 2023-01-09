@@ -21,7 +21,7 @@ import (
 
 // ManualImportApiService ManualImportApi service
 type ManualImportApiService service
-type ApiListApiV1ManualImportRequest struct {
+type ApiListManualImportRequest struct {
 	ctx context.Context
 	ApiService *ManualImportApiService
 	folder *string
@@ -31,43 +31,43 @@ type ApiListApiV1ManualImportRequest struct {
 	replaceExistingFiles *bool
 }
 
-func (r ApiListApiV1ManualImportRequest) Folder(folder string) ApiListApiV1ManualImportRequest {
+func (r ApiListManualImportRequest) Folder(folder string) ApiListManualImportRequest {
 	r.folder = &folder
 	return r
 }
 
-func (r ApiListApiV1ManualImportRequest) DownloadId(downloadId string) ApiListApiV1ManualImportRequest {
+func (r ApiListManualImportRequest) DownloadId(downloadId string) ApiListManualImportRequest {
 	r.downloadId = &downloadId
 	return r
 }
 
-func (r ApiListApiV1ManualImportRequest) AuthorId(authorId int32) ApiListApiV1ManualImportRequest {
+func (r ApiListManualImportRequest) AuthorId(authorId int32) ApiListManualImportRequest {
 	r.authorId = &authorId
 	return r
 }
 
-func (r ApiListApiV1ManualImportRequest) FilterExistingFiles(filterExistingFiles bool) ApiListApiV1ManualImportRequest {
+func (r ApiListManualImportRequest) FilterExistingFiles(filterExistingFiles bool) ApiListManualImportRequest {
 	r.filterExistingFiles = &filterExistingFiles
 	return r
 }
 
-func (r ApiListApiV1ManualImportRequest) ReplaceExistingFiles(replaceExistingFiles bool) ApiListApiV1ManualImportRequest {
+func (r ApiListManualImportRequest) ReplaceExistingFiles(replaceExistingFiles bool) ApiListManualImportRequest {
 	r.replaceExistingFiles = &replaceExistingFiles
 	return r
 }
 
-func (r ApiListApiV1ManualImportRequest) Execute() ([]*ManualImportResource, *http.Response, error) {
-	return r.ApiService.ListApiV1ManualImportExecute(r)
+func (r ApiListManualImportRequest) Execute() ([]*ManualImportResource, *http.Response, error) {
+	return r.ApiService.ListManualImportExecute(r)
 }
 
 /*
-ListApiV1ManualImport Method for ListApiV1ManualImport
+ListManualImport Method for ListManualImport
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1ManualImportRequest
+ @return ApiListManualImportRequest
 */
-func (a *ManualImportApiService) ListApiV1ManualImport(ctx context.Context) ApiListApiV1ManualImportRequest {
-	return ApiListApiV1ManualImportRequest{
+func (a *ManualImportApiService) ListManualImport(ctx context.Context) ApiListManualImportRequest {
+	return ApiListManualImportRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -75,7 +75,7 @@ func (a *ManualImportApiService) ListApiV1ManualImport(ctx context.Context) ApiL
 
 // Execute executes the request
 //  @return []ManualImportResource
-func (a *ManualImportApiService) ListApiV1ManualImportExecute(r ApiListApiV1ManualImportRequest) ([]*ManualImportResource, *http.Response, error) {
+func (a *ManualImportApiService) ListManualImportExecute(r ApiListManualImportRequest) ([]*ManualImportResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -83,7 +83,7 @@ func (a *ManualImportApiService) ListApiV1ManualImportExecute(r ApiListApiV1Manu
 		localVarReturnValue  []*ManualImportResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportApiService.ListApiV1ManualImport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportApiService.ListManualImport")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -162,43 +162,43 @@ func (a *ManualImportApiService) ListApiV1ManualImportExecute(r ApiListApiV1Manu
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiPutApiV1ManualImportRequest struct {
+type ApiPutManualImportRequest struct {
 	ctx context.Context
 	ApiService *ManualImportApiService
 	manualImportResource *[]ManualImportResource
 }
 
-func (r ApiPutApiV1ManualImportRequest) ManualImportResource(manualImportResource []ManualImportResource) ApiPutApiV1ManualImportRequest {
+func (r ApiPutManualImportRequest) ManualImportResource(manualImportResource []ManualImportResource) ApiPutManualImportRequest {
 	r.manualImportResource = &manualImportResource
 	return r
 }
 
-func (r ApiPutApiV1ManualImportRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PutApiV1ManualImportExecute(r)
+func (r ApiPutManualImportRequest) Execute() (*http.Response, error) {
+	return r.ApiService.PutManualImportExecute(r)
 }
 
 /*
-PutApiV1ManualImport Method for PutApiV1ManualImport
+PutManualImport Method for PutManualImport
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPutApiV1ManualImportRequest
+ @return ApiPutManualImportRequest
 */
-func (a *ManualImportApiService) PutApiV1ManualImport(ctx context.Context) ApiPutApiV1ManualImportRequest {
-	return ApiPutApiV1ManualImportRequest{
+func (a *ManualImportApiService) PutManualImport(ctx context.Context) ApiPutManualImportRequest {
+	return ApiPutManualImportRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ManualImportApiService) PutApiV1ManualImportExecute(r ApiPutApiV1ManualImportRequest) (*http.Response, error) {
+func (a *ManualImportApiService) PutManualImportExecute(r ApiPutManualImportRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportApiService.PutApiV1ManualImport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportApiService.PutManualImport")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

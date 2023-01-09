@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1QueueDetailsById**](QueueDetailsApi.md#GetApiV1QueueDetailsById) | **Get** /api/v1/queue/details/{id} | 
-[**ListApiV1QueueDetails**](QueueDetailsApi.md#ListApiV1QueueDetails) | **Get** /api/v1/queue/details | 
+[**GetQueueDetailsById**](QueueDetailsApi.md#GetQueueDetailsById) | **Get** /api/v1/queue/details/{id} | 
+[**ListQueueDetails**](QueueDetailsApi.md#ListQueueDetails) | **Get** /api/v1/queue/details | 
 
 
 
-## GetApiV1QueueDetailsById
+## GetQueueDetailsById
 
-> QueueResource GetApiV1QueueDetailsById(ctx, id).Execute()
+> QueueResource GetQueueDetailsById(ctx, id).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueDetailsApi.GetApiV1QueueDetailsById(context.Background(), id).Execute()
+    resp, r, err := apiClient.QueueDetailsApi.GetQueueDetailsById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QueueDetailsApi.GetApiV1QueueDetailsById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QueueDetailsApi.GetQueueDetailsById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1QueueDetailsById`: QueueResource
-    fmt.Fprintf(os.Stdout, "Response from `QueueDetailsApi.GetApiV1QueueDetailsById`: %v\n", resp)
+    // response from `GetQueueDetailsById`: QueueResource
+    fmt.Fprintf(os.Stdout, "Response from `QueueDetailsApi.GetQueueDetailsById`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1QueueDetailsByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetQueueDetailsByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1QueueDetails
+## ListQueueDetails
 
-> []QueueResource ListApiV1QueueDetails(ctx).AuthorId(authorId).BookIds(bookIds).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+> []QueueResource ListQueueDetails(ctx).AuthorId(authorId).BookIds(bookIds).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
 
 
 
@@ -103,13 +103,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueDetailsApi.ListApiV1QueueDetails(context.Background()).AuthorId(authorId).BookIds(bookIds).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+    resp, r, err := apiClient.QueueDetailsApi.ListQueueDetails(context.Background()).AuthorId(authorId).BookIds(bookIds).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QueueDetailsApi.ListApiV1QueueDetails``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QueueDetailsApi.ListQueueDetails``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1QueueDetails`: []QueueResource
-    fmt.Fprintf(os.Stdout, "Response from `QueueDetailsApi.ListApiV1QueueDetails`: %v\n", resp)
+    // response from `ListQueueDetails`: []QueueResource
+    fmt.Fprintf(os.Stdout, "Response from `QueueDetailsApi.ListQueueDetails`: %v\n", resp)
 }
 ```
 
@@ -119,7 +119,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1QueueDetailsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListQueueDetailsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1BookLookup**](BookLookupApi.md#GetApiV1BookLookup) | **Get** /api/v1/book/lookup | 
+[**GetBookLookup**](BookLookupApi.md#GetBookLookup) | **Get** /api/v1/book/lookup | 
 
 
 
-## GetApiV1BookLookup
+## GetBookLookup
 
-> GetApiV1BookLookup(ctx).Term(term).Execute()
+> GetBookLookup(ctx).Term(term).Execute()
 
 
 
@@ -31,9 +31,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BookLookupApi.GetApiV1BookLookup(context.Background()).Term(term).Execute()
+    resp, r, err := apiClient.BookLookupApi.GetBookLookup(context.Background()).Term(term).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BookLookupApi.GetApiV1BookLookup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BookLookupApi.GetBookLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -45,7 +45,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1BookLookupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBookLookupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

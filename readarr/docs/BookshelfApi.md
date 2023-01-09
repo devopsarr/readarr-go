@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Bookshelf**](BookshelfApi.md#CreateApiV1Bookshelf) | **Post** /api/v1/bookshelf | 
+[**CreateBookshelf**](BookshelfApi.md#CreateBookshelf) | **Post** /api/v1/bookshelf | 
 
 
 
-## CreateApiV1Bookshelf
+## CreateBookshelf
 
-> CreateApiV1Bookshelf(ctx).BookshelfResource(bookshelfResource).Execute()
+> CreateBookshelf(ctx).BookshelfResource(bookshelfResource).Execute()
 
 
 
@@ -31,9 +31,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BookshelfApi.CreateApiV1Bookshelf(context.Background()).BookshelfResource(bookshelfResource).Execute()
+    resp, r, err := apiClient.BookshelfApi.CreateBookshelf(context.Background()).BookshelfResource(bookshelfResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BookshelfApi.CreateApiV1Bookshelf``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BookshelfApi.CreateBookshelf``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -45,7 +45,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1BookshelfRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateBookshelfRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

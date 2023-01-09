@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1CalendarById**](CalendarApi.md#GetApiV1CalendarById) | **Get** /api/v1/calendar/{id} | 
-[**ListApiV1Calendar**](CalendarApi.md#ListApiV1Calendar) | **Get** /api/v1/calendar | 
+[**GetCalendarById**](CalendarApi.md#GetCalendarById) | **Get** /api/v1/calendar/{id} | 
+[**ListCalendar**](CalendarApi.md#ListCalendar) | **Get** /api/v1/calendar | 
 
 
 
-## GetApiV1CalendarById
+## GetCalendarById
 
-> BookResource GetApiV1CalendarById(ctx, id).Execute()
+> BookResource GetCalendarById(ctx, id).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CalendarApi.GetApiV1CalendarById(context.Background(), id).Execute()
+    resp, r, err := apiClient.CalendarApi.GetCalendarById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CalendarApi.GetApiV1CalendarById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CalendarApi.GetCalendarById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1CalendarById`: BookResource
-    fmt.Fprintf(os.Stdout, "Response from `CalendarApi.GetApiV1CalendarById`: %v\n", resp)
+    // response from `GetCalendarById`: BookResource
+    fmt.Fprintf(os.Stdout, "Response from `CalendarApi.GetCalendarById`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1CalendarByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCalendarByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1Calendar
+## ListCalendar
 
-> []BookResource ListApiV1Calendar(ctx).Start(start).End(end).Unmonitored(unmonitored).IncludeAuthor(includeAuthor).Execute()
+> []BookResource ListCalendar(ctx).Start(start).End(end).Unmonitored(unmonitored).IncludeAuthor(includeAuthor).Execute()
 
 
 
@@ -104,13 +104,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CalendarApi.ListApiV1Calendar(context.Background()).Start(start).End(end).Unmonitored(unmonitored).IncludeAuthor(includeAuthor).Execute()
+    resp, r, err := apiClient.CalendarApi.ListCalendar(context.Background()).Start(start).End(end).Unmonitored(unmonitored).IncludeAuthor(includeAuthor).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CalendarApi.ListApiV1Calendar``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CalendarApi.ListCalendar``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Calendar`: []BookResource
-    fmt.Fprintf(os.Stdout, "Response from `CalendarApi.ListApiV1Calendar`: %v\n", resp)
+    // response from `ListCalendar`: []BookResource
+    fmt.Fprintf(os.Stdout, "Response from `CalendarApi.ListCalendar`: %v\n", resp)
 }
 ```
 
@@ -120,7 +120,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1CalendarRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListCalendarRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

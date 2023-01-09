@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1ConfigMediamanagement**](MediaManagementConfigApi.md#GetApiV1ConfigMediamanagement) | **Get** /api/v1/config/mediamanagement | 
-[**GetApiV1ConfigMediamanagementById**](MediaManagementConfigApi.md#GetApiV1ConfigMediamanagementById) | **Get** /api/v1/config/mediamanagement/{id} | 
-[**UpdateApiV1ConfigMediamanagement**](MediaManagementConfigApi.md#UpdateApiV1ConfigMediamanagement) | **Put** /api/v1/config/mediamanagement/{id} | 
+[**GetMediaManagementConfig**](MediaManagementConfigApi.md#GetMediaManagementConfig) | **Get** /api/v1/config/mediamanagement | 
+[**GetMediaManagementConfigById**](MediaManagementConfigApi.md#GetMediaManagementConfigById) | **Get** /api/v1/config/mediamanagement/{id} | 
+[**UpdateMediaManagementConfig**](MediaManagementConfigApi.md#UpdateMediaManagementConfig) | **Put** /api/v1/config/mediamanagement/{id} | 
 
 
 
-## GetApiV1ConfigMediamanagement
+## GetMediaManagementConfig
 
-> MediaManagementConfigResource GetApiV1ConfigMediamanagement(ctx).Execute()
+> MediaManagementConfigResource GetMediaManagementConfig(ctx).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaManagementConfigApi.GetApiV1ConfigMediamanagement(context.Background()).Execute()
+    resp, r, err := apiClient.MediaManagementConfigApi.GetMediaManagementConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaManagementConfigApi.GetApiV1ConfigMediamanagement``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MediaManagementConfigApi.GetMediaManagementConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigMediamanagement`: MediaManagementConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `MediaManagementConfigApi.GetApiV1ConfigMediamanagement`: %v\n", resp)
+    // response from `GetMediaManagementConfig`: MediaManagementConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `MediaManagementConfigApi.GetMediaManagementConfig`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigMediamanagementRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMediaManagementConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1ConfigMediamanagementById
+## GetMediaManagementConfigById
 
-> MediaManagementConfigResource GetApiV1ConfigMediamanagementById(ctx, id).Execute()
+> MediaManagementConfigResource GetMediaManagementConfigById(ctx, id).Execute()
 
 
 
@@ -92,13 +92,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaManagementConfigApi.GetApiV1ConfigMediamanagementById(context.Background(), id).Execute()
+    resp, r, err := apiClient.MediaManagementConfigApi.GetMediaManagementConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaManagementConfigApi.GetApiV1ConfigMediamanagementById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MediaManagementConfigApi.GetMediaManagementConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigMediamanagementById`: MediaManagementConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `MediaManagementConfigApi.GetApiV1ConfigMediamanagementById`: %v\n", resp)
+    // response from `GetMediaManagementConfigById`: MediaManagementConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `MediaManagementConfigApi.GetMediaManagementConfigById`: %v\n", resp)
 }
 ```
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigMediamanagementByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMediaManagementConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -137,9 +137,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1ConfigMediamanagement
+## UpdateMediaManagementConfig
 
-> MediaManagementConfigResource UpdateApiV1ConfigMediamanagement(ctx, id).MediaManagementConfigResource(mediaManagementConfigResource).Execute()
+> MediaManagementConfigResource UpdateMediaManagementConfig(ctx, id).MediaManagementConfigResource(mediaManagementConfigResource).Execute()
 
 
 
@@ -161,13 +161,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaManagementConfigApi.UpdateApiV1ConfigMediamanagement(context.Background(), id).MediaManagementConfigResource(mediaManagementConfigResource).Execute()
+    resp, r, err := apiClient.MediaManagementConfigApi.UpdateMediaManagementConfig(context.Background(), id).MediaManagementConfigResource(mediaManagementConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaManagementConfigApi.UpdateApiV1ConfigMediamanagement``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MediaManagementConfigApi.UpdateMediaManagementConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1ConfigMediamanagement`: MediaManagementConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `MediaManagementConfigApi.UpdateApiV1ConfigMediamanagement`: %v\n", resp)
+    // response from `UpdateMediaManagementConfig`: MediaManagementConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `MediaManagementConfigApi.UpdateMediaManagementConfig`: %v\n", resp)
 }
 ```
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1ConfigMediamanagementRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateMediaManagementConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1CalendarReadarrIcs**](CalendarFeedApi.md#GetApiV1CalendarReadarrIcs) | **Get** /api/v1/calendar/readarr.ics | 
+[**GetCalendarReadarrIcs**](CalendarFeedApi.md#GetCalendarReadarrIcs) | **Get** /api/v1/calendar/readarr.ics | 
 
 
 
-## GetApiV1CalendarReadarrIcs
+## GetCalendarReadarrIcs
 
-> GetApiV1CalendarReadarrIcs(ctx).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).Execute()
+> GetCalendarReadarrIcs(ctx).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).Execute()
 
 
 
@@ -34,9 +34,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CalendarFeedApi.GetApiV1CalendarReadarrIcs(context.Background()).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).Execute()
+    resp, r, err := apiClient.CalendarFeedApi.GetCalendarReadarrIcs(context.Background()).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CalendarFeedApi.GetApiV1CalendarReadarrIcs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CalendarFeedApi.GetCalendarReadarrIcs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1CalendarReadarrIcsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCalendarReadarrIcsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

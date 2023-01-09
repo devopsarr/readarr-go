@@ -22,29 +22,29 @@ import (
 
 // CutoffApiService CutoffApi service
 type CutoffApiService service
-type ApiGetApiV1WantedCutoffRequest struct {
+type ApiGetWantedCutoffRequest struct {
 	ctx context.Context
 	ApiService *CutoffApiService
 	includeAuthor *bool
 }
 
-func (r ApiGetApiV1WantedCutoffRequest) IncludeAuthor(includeAuthor bool) ApiGetApiV1WantedCutoffRequest {
+func (r ApiGetWantedCutoffRequest) IncludeAuthor(includeAuthor bool) ApiGetWantedCutoffRequest {
 	r.includeAuthor = &includeAuthor
 	return r
 }
 
-func (r ApiGetApiV1WantedCutoffRequest) Execute() (*BookResourcePagingResource, *http.Response, error) {
-	return r.ApiService.GetApiV1WantedCutoffExecute(r)
+func (r ApiGetWantedCutoffRequest) Execute() (*BookResourcePagingResource, *http.Response, error) {
+	return r.ApiService.GetWantedCutoffExecute(r)
 }
 
 /*
-GetApiV1WantedCutoff Method for GetApiV1WantedCutoff
+GetWantedCutoff Method for GetWantedCutoff
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1WantedCutoffRequest
+ @return ApiGetWantedCutoffRequest
 */
-func (a *CutoffApiService) GetApiV1WantedCutoff(ctx context.Context) ApiGetApiV1WantedCutoffRequest {
-	return ApiGetApiV1WantedCutoffRequest{
+func (a *CutoffApiService) GetWantedCutoff(ctx context.Context) ApiGetWantedCutoffRequest {
+	return ApiGetWantedCutoffRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *CutoffApiService) GetApiV1WantedCutoff(ctx context.Context) ApiGetApiV1
 
 // Execute executes the request
 //  @return BookResourcePagingResource
-func (a *CutoffApiService) GetApiV1WantedCutoffExecute(r ApiGetApiV1WantedCutoffRequest) (*BookResourcePagingResource, *http.Response, error) {
+func (a *CutoffApiService) GetWantedCutoffExecute(r ApiGetWantedCutoffRequest) (*BookResourcePagingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *CutoffApiService) GetApiV1WantedCutoffExecute(r ApiGetApiV1WantedCutoff
 		localVarReturnValue  *BookResourcePagingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CutoffApiService.GetApiV1WantedCutoff")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CutoffApiService.GetWantedCutoff")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -127,25 +127,25 @@ func (a *CutoffApiService) GetApiV1WantedCutoffExecute(r ApiGetApiV1WantedCutoff
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetApiV1WantedCutoffByIdRequest struct {
+type ApiGetWantedCutoffByIdRequest struct {
 	ctx context.Context
 	ApiService *CutoffApiService
 	id int32
 }
 
-func (r ApiGetApiV1WantedCutoffByIdRequest) Execute() (*BookResource, *http.Response, error) {
-	return r.ApiService.GetApiV1WantedCutoffByIdExecute(r)
+func (r ApiGetWantedCutoffByIdRequest) Execute() (*BookResource, *http.Response, error) {
+	return r.ApiService.GetWantedCutoffByIdExecute(r)
 }
 
 /*
-GetApiV1WantedCutoffById Method for GetApiV1WantedCutoffById
+GetWantedCutoffById Method for GetWantedCutoffById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1WantedCutoffByIdRequest
+ @return ApiGetWantedCutoffByIdRequest
 */
-func (a *CutoffApiService) GetApiV1WantedCutoffById(ctx context.Context, id int32) ApiGetApiV1WantedCutoffByIdRequest {
-	return ApiGetApiV1WantedCutoffByIdRequest{
+func (a *CutoffApiService) GetWantedCutoffById(ctx context.Context, id int32) ApiGetWantedCutoffByIdRequest {
+	return ApiGetWantedCutoffByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -154,7 +154,7 @@ func (a *CutoffApiService) GetApiV1WantedCutoffById(ctx context.Context, id int3
 
 // Execute executes the request
 //  @return BookResource
-func (a *CutoffApiService) GetApiV1WantedCutoffByIdExecute(r ApiGetApiV1WantedCutoffByIdRequest) (*BookResource, *http.Response, error) {
+func (a *CutoffApiService) GetWantedCutoffByIdExecute(r ApiGetWantedCutoffByIdRequest) (*BookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -162,7 +162,7 @@ func (a *CutoffApiService) GetApiV1WantedCutoffByIdExecute(r ApiGetApiV1WantedCu
 		localVarReturnValue  *BookResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CutoffApiService.GetApiV1WantedCutoffById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CutoffApiService.GetWantedCutoffById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -22,27 +22,27 @@ import (
 
 // MediaCoverApiService MediaCoverApi service
 type MediaCoverApiService service
-type ApiGetApiV1MediaCoverAuthorauthorIdByFilenameRequest struct {
+type ApiGetMediaCoverAuthorauthorIdByFilenameRequest struct {
 	ctx context.Context
 	ApiService *MediaCoverApiService
 	authorId int32
 	filename string
 }
 
-func (r ApiGetApiV1MediaCoverAuthorauthorIdByFilenameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1MediaCoverAuthorauthorIdByFilenameExecute(r)
+func (r ApiGetMediaCoverAuthorauthorIdByFilenameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetMediaCoverAuthorauthorIdByFilenameExecute(r)
 }
 
 /*
-GetApiV1MediaCoverAuthorauthorIdByFilename Method for GetApiV1MediaCoverAuthorauthorIdByFilename
+GetMediaCoverAuthorauthorIdByFilename Method for GetMediaCoverAuthorauthorIdByFilename
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param authorId
  @param filename
- @return ApiGetApiV1MediaCoverAuthorauthorIdByFilenameRequest
+ @return ApiGetMediaCoverAuthorauthorIdByFilenameRequest
 */
-func (a *MediaCoverApiService) GetApiV1MediaCoverAuthorauthorIdByFilename(ctx context.Context, authorId int32, filename string) ApiGetApiV1MediaCoverAuthorauthorIdByFilenameRequest {
-	return ApiGetApiV1MediaCoverAuthorauthorIdByFilenameRequest{
+func (a *MediaCoverApiService) GetMediaCoverAuthorauthorIdByFilename(ctx context.Context, authorId int32, filename string) ApiGetMediaCoverAuthorauthorIdByFilenameRequest {
+	return ApiGetMediaCoverAuthorauthorIdByFilenameRequest{
 		ApiService: a,
 		ctx: ctx,
 		authorId: authorId,
@@ -51,14 +51,14 @@ func (a *MediaCoverApiService) GetApiV1MediaCoverAuthorauthorIdByFilename(ctx co
 }
 
 // Execute executes the request
-func (a *MediaCoverApiService) GetApiV1MediaCoverAuthorauthorIdByFilenameExecute(r ApiGetApiV1MediaCoverAuthorauthorIdByFilenameRequest) (*http.Response, error) {
+func (a *MediaCoverApiService) GetMediaCoverAuthorauthorIdByFilenameExecute(r ApiGetMediaCoverAuthorauthorIdByFilenameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverApiService.GetApiV1MediaCoverAuthorauthorIdByFilename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverApiService.GetMediaCoverAuthorauthorIdByFilename")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -115,27 +115,27 @@ func (a *MediaCoverApiService) GetApiV1MediaCoverAuthorauthorIdByFilenameExecute
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1MediaCoverBookbookIdByFilenameRequest struct {
+type ApiGetMediaCoverBookbookIdByFilenameRequest struct {
 	ctx context.Context
 	ApiService *MediaCoverApiService
 	bookId int32
 	filename string
 }
 
-func (r ApiGetApiV1MediaCoverBookbookIdByFilenameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1MediaCoverBookbookIdByFilenameExecute(r)
+func (r ApiGetMediaCoverBookbookIdByFilenameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetMediaCoverBookbookIdByFilenameExecute(r)
 }
 
 /*
-GetApiV1MediaCoverBookbookIdByFilename Method for GetApiV1MediaCoverBookbookIdByFilename
+GetMediaCoverBookbookIdByFilename Method for GetMediaCoverBookbookIdByFilename
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bookId
  @param filename
- @return ApiGetApiV1MediaCoverBookbookIdByFilenameRequest
+ @return ApiGetMediaCoverBookbookIdByFilenameRequest
 */
-func (a *MediaCoverApiService) GetApiV1MediaCoverBookbookIdByFilename(ctx context.Context, bookId int32, filename string) ApiGetApiV1MediaCoverBookbookIdByFilenameRequest {
-	return ApiGetApiV1MediaCoverBookbookIdByFilenameRequest{
+func (a *MediaCoverApiService) GetMediaCoverBookbookIdByFilename(ctx context.Context, bookId int32, filename string) ApiGetMediaCoverBookbookIdByFilenameRequest {
+	return ApiGetMediaCoverBookbookIdByFilenameRequest{
 		ApiService: a,
 		ctx: ctx,
 		bookId: bookId,
@@ -144,14 +144,14 @@ func (a *MediaCoverApiService) GetApiV1MediaCoverBookbookIdByFilename(ctx contex
 }
 
 // Execute executes the request
-func (a *MediaCoverApiService) GetApiV1MediaCoverBookbookIdByFilenameExecute(r ApiGetApiV1MediaCoverBookbookIdByFilenameRequest) (*http.Response, error) {
+func (a *MediaCoverApiService) GetMediaCoverBookbookIdByFilenameExecute(r ApiGetMediaCoverBookbookIdByFilenameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverApiService.GetApiV1MediaCoverBookbookIdByFilename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverApiService.GetMediaCoverBookbookIdByFilename")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

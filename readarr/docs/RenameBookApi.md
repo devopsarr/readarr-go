@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListApiV1Rename**](RenameBookApi.md#ListApiV1Rename) | **Get** /api/v1/rename | 
+[**ListRename**](RenameBookApi.md#ListRename) | **Get** /api/v1/rename | 
 
 
 
-## ListApiV1Rename
+## ListRename
 
-> []RenameBookResource ListApiV1Rename(ctx).AuthorId(authorId).BookId(bookId).Execute()
+> []RenameBookResource ListRename(ctx).AuthorId(authorId).BookId(bookId).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RenameBookApi.ListApiV1Rename(context.Background()).AuthorId(authorId).BookId(bookId).Execute()
+    resp, r, err := apiClient.RenameBookApi.ListRename(context.Background()).AuthorId(authorId).BookId(bookId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RenameBookApi.ListApiV1Rename``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RenameBookApi.ListRename``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Rename`: []RenameBookResource
-    fmt.Fprintf(os.Stdout, "Response from `RenameBookApi.ListApiV1Rename`: %v\n", resp)
+    // response from `ListRename`: []RenameBookResource
+    fmt.Fprintf(os.Stdout, "Response from `RenameBookApi.ListRename`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1RenameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListRenameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

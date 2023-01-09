@@ -21,23 +21,23 @@ import (
 
 // MetadataProfileSchemaApiService MetadataProfileSchemaApi service
 type MetadataProfileSchemaApiService service
-type ApiGetApiV1MetadataprofileSchemaRequest struct {
+type ApiGetMetadataprofileSchemaRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileSchemaApiService
 }
 
-func (r ApiGetApiV1MetadataprofileSchemaRequest) Execute() (*MetadataProfileResource, *http.Response, error) {
-	return r.ApiService.GetApiV1MetadataprofileSchemaExecute(r)
+func (r ApiGetMetadataprofileSchemaRequest) Execute() (*MetadataProfileResource, *http.Response, error) {
+	return r.ApiService.GetMetadataprofileSchemaExecute(r)
 }
 
 /*
-GetApiV1MetadataprofileSchema Method for GetApiV1MetadataprofileSchema
+GetMetadataprofileSchema Method for GetMetadataprofileSchema
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1MetadataprofileSchemaRequest
+ @return ApiGetMetadataprofileSchemaRequest
 */
-func (a *MetadataProfileSchemaApiService) GetApiV1MetadataprofileSchema(ctx context.Context) ApiGetApiV1MetadataprofileSchemaRequest {
-	return ApiGetApiV1MetadataprofileSchemaRequest{
+func (a *MetadataProfileSchemaApiService) GetMetadataprofileSchema(ctx context.Context) ApiGetMetadataprofileSchemaRequest {
+	return ApiGetMetadataprofileSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -45,7 +45,7 @@ func (a *MetadataProfileSchemaApiService) GetApiV1MetadataprofileSchema(ctx cont
 
 // Execute executes the request
 //  @return MetadataProfileResource
-func (a *MetadataProfileSchemaApiService) GetApiV1MetadataprofileSchemaExecute(r ApiGetApiV1MetadataprofileSchemaRequest) (*MetadataProfileResource, *http.Response, error) {
+func (a *MetadataProfileSchemaApiService) GetMetadataprofileSchemaExecute(r ApiGetMetadataprofileSchemaRequest) (*MetadataProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *MetadataProfileSchemaApiService) GetApiV1MetadataprofileSchemaExecute(r
 		localVarReturnValue  *MetadataProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileSchemaApiService.GetApiV1MetadataprofileSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileSchemaApiService.GetMetadataprofileSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

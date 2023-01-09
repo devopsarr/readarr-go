@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1QualityDefinitionById**](QualityDefinitionApi.md#GetApiV1QualityDefinitionById) | **Get** /api/v1/qualitydefinition/{id} | 
-[**ListApiV1QualityDefinition**](QualityDefinitionApi.md#ListApiV1QualityDefinition) | **Get** /api/v1/qualitydefinition | 
-[**PutApiV1QualityDefinitionUpdate**](QualityDefinitionApi.md#PutApiV1QualityDefinitionUpdate) | **Put** /api/v1/qualitydefinition/update | 
-[**UpdateApiV1QualityDefinition**](QualityDefinitionApi.md#UpdateApiV1QualityDefinition) | **Put** /api/v1/qualitydefinition/{id} | 
+[**GetQualityDefinitionById**](QualityDefinitionApi.md#GetQualityDefinitionById) | **Get** /api/v1/qualitydefinition/{id} | 
+[**ListQualityDefinition**](QualityDefinitionApi.md#ListQualityDefinition) | **Get** /api/v1/qualitydefinition | 
+[**PutQualityDefinitionUpdate**](QualityDefinitionApi.md#PutQualityDefinitionUpdate) | **Put** /api/v1/qualitydefinition/update | 
+[**UpdateQualityDefinition**](QualityDefinitionApi.md#UpdateQualityDefinition) | **Put** /api/v1/qualitydefinition/{id} | 
 
 
 
-## GetApiV1QualityDefinitionById
+## GetQualityDefinitionById
 
-> QualityDefinitionResource GetApiV1QualityDefinitionById(ctx, id).Execute()
+> QualityDefinitionResource GetQualityDefinitionById(ctx, id).Execute()
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityDefinitionApi.GetApiV1QualityDefinitionById(context.Background(), id).Execute()
+    resp, r, err := apiClient.QualityDefinitionApi.GetQualityDefinitionById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.GetApiV1QualityDefinitionById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.GetQualityDefinitionById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1QualityDefinitionById`: QualityDefinitionResource
-    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.GetApiV1QualityDefinitionById`: %v\n", resp)
+    // response from `GetQualityDefinitionById`: QualityDefinitionResource
+    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.GetQualityDefinitionById`: %v\n", resp)
 }
 ```
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1QualityDefinitionByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetQualityDefinitionByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -79,9 +79,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1QualityDefinition
+## ListQualityDefinition
 
-> []QualityDefinitionResource ListApiV1QualityDefinition(ctx).Execute()
+> []QualityDefinitionResource ListQualityDefinition(ctx).Execute()
 
 
 
@@ -101,13 +101,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityDefinitionApi.ListApiV1QualityDefinition(context.Background()).Execute()
+    resp, r, err := apiClient.QualityDefinitionApi.ListQualityDefinition(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.ListApiV1QualityDefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.ListQualityDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1QualityDefinition`: []QualityDefinitionResource
-    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.ListApiV1QualityDefinition`: %v\n", resp)
+    // response from `ListQualityDefinition`: []QualityDefinitionResource
+    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.ListQualityDefinition`: %v\n", resp)
 }
 ```
 
@@ -117,7 +117,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1QualityDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListQualityDefinitionRequest struct via the builder pattern
 
 
 ### Return type
@@ -138,9 +138,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PutApiV1QualityDefinitionUpdate
+## PutQualityDefinitionUpdate
 
-> PutApiV1QualityDefinitionUpdate(ctx).QualityDefinitionResource(qualityDefinitionResource).Execute()
+> PutQualityDefinitionUpdate(ctx).QualityDefinitionResource(qualityDefinitionResource).Execute()
 
 
 
@@ -161,9 +161,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityDefinitionApi.PutApiV1QualityDefinitionUpdate(context.Background()).QualityDefinitionResource(qualityDefinitionResource).Execute()
+    resp, r, err := apiClient.QualityDefinitionApi.PutQualityDefinitionUpdate(context.Background()).QualityDefinitionResource(qualityDefinitionResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.PutApiV1QualityDefinitionUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.PutQualityDefinitionUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,7 +175,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutApiV1QualityDefinitionUpdateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutQualityDefinitionUpdateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -200,9 +200,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1QualityDefinition
+## UpdateQualityDefinition
 
-> QualityDefinitionResource UpdateApiV1QualityDefinition(ctx, id).QualityDefinitionResource(qualityDefinitionResource).Execute()
+> QualityDefinitionResource UpdateQualityDefinition(ctx, id).QualityDefinitionResource(qualityDefinitionResource).Execute()
 
 
 
@@ -224,13 +224,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityDefinitionApi.UpdateApiV1QualityDefinition(context.Background(), id).QualityDefinitionResource(qualityDefinitionResource).Execute()
+    resp, r, err := apiClient.QualityDefinitionApi.UpdateQualityDefinition(context.Background(), id).QualityDefinitionResource(qualityDefinitionResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.UpdateApiV1QualityDefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.UpdateQualityDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1QualityDefinition`: QualityDefinitionResource
-    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.UpdateApiV1QualityDefinition`: %v\n", resp)
+    // response from `UpdateQualityDefinition`: QualityDefinitionResource
+    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.UpdateQualityDefinition`: %v\n", resp)
 }
 ```
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1QualityDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateQualityDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

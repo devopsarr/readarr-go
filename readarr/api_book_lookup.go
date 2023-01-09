@@ -21,43 +21,43 @@ import (
 
 // BookLookupApiService BookLookupApi service
 type BookLookupApiService service
-type ApiGetApiV1BookLookupRequest struct {
+type ApiGetBookLookupRequest struct {
 	ctx context.Context
 	ApiService *BookLookupApiService
 	term *string
 }
 
-func (r ApiGetApiV1BookLookupRequest) Term(term string) ApiGetApiV1BookLookupRequest {
+func (r ApiGetBookLookupRequest) Term(term string) ApiGetBookLookupRequest {
 	r.term = &term
 	return r
 }
 
-func (r ApiGetApiV1BookLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1BookLookupExecute(r)
+func (r ApiGetBookLookupRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetBookLookupExecute(r)
 }
 
 /*
-GetApiV1BookLookup Method for GetApiV1BookLookup
+GetBookLookup Method for GetBookLookup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1BookLookupRequest
+ @return ApiGetBookLookupRequest
 */
-func (a *BookLookupApiService) GetApiV1BookLookup(ctx context.Context) ApiGetApiV1BookLookupRequest {
-	return ApiGetApiV1BookLookupRequest{
+func (a *BookLookupApiService) GetBookLookup(ctx context.Context) ApiGetBookLookupRequest {
+	return ApiGetBookLookupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BookLookupApiService) GetApiV1BookLookupExecute(r ApiGetApiV1BookLookupRequest) (*http.Response, error) {
+func (a *BookLookupApiService) GetBookLookupExecute(r ApiGetBookLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookLookupApiService.GetApiV1BookLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookLookupApiService.GetBookLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

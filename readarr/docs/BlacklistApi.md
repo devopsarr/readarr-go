@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteApiV1Blacklist**](BlacklistApi.md#DeleteApiV1Blacklist) | **Delete** /api/v1/blacklist/{id} | 
-[**DeleteApiV1BlacklistBulk**](BlacklistApi.md#DeleteApiV1BlacklistBulk) | **Delete** /api/v1/blacklist/bulk | 
-[**GetApiV1Blacklist**](BlacklistApi.md#GetApiV1Blacklist) | **Get** /api/v1/blacklist | 
+[**DeleteBlacklist**](BlacklistApi.md#DeleteBlacklist) | **Delete** /api/v1/blacklist/{id} | 
+[**DeleteBlacklistBulk**](BlacklistApi.md#DeleteBlacklistBulk) | **Delete** /api/v1/blacklist/bulk | 
+[**GetBlacklist**](BlacklistApi.md#GetBlacklist) | **Get** /api/v1/blacklist | 
 
 
 
-## DeleteApiV1Blacklist
+## DeleteBlacklist
 
-> DeleteApiV1Blacklist(ctx, id).Execute()
+> DeleteBlacklist(ctx, id).Execute()
 
 
 
@@ -33,9 +33,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlacklistApi.DeleteApiV1Blacklist(context.Background(), id).Execute()
+    resp, r, err := apiClient.BlacklistApi.DeleteBlacklist(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BlacklistApi.DeleteApiV1Blacklist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BlacklistApi.DeleteBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1BlacklistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBlacklistRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1BlacklistBulk
+## DeleteBlacklistBulk
 
-> DeleteApiV1BlacklistBulk(ctx).BlacklistBulkResource(blacklistBulkResource).Execute()
+> DeleteBlacklistBulk(ctx).BlacklistBulkResource(blacklistBulkResource).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlacklistApi.DeleteApiV1BlacklistBulk(context.Background()).BlacklistBulkResource(blacklistBulkResource).Execute()
+    resp, r, err := apiClient.BlacklistApi.DeleteBlacklistBulk(context.Background()).BlacklistBulkResource(blacklistBulkResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BlacklistApi.DeleteApiV1BlacklistBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BlacklistApi.DeleteBlacklistBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -113,7 +113,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1BlacklistBulkRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBlacklistBulkRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -138,9 +138,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1Blacklist
+## GetBlacklist
 
-> BlacklistResourcePagingResource GetApiV1Blacklist(ctx).Execute()
+> BlacklistResourcePagingResource GetBlacklist(ctx).Execute()
 
 
 
@@ -160,13 +160,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlacklistApi.GetApiV1Blacklist(context.Background()).Execute()
+    resp, r, err := apiClient.BlacklistApi.GetBlacklist(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BlacklistApi.GetApiV1Blacklist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BlacklistApi.GetBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1Blacklist`: BlacklistResourcePagingResource
-    fmt.Fprintf(os.Stdout, "Response from `BlacklistApi.GetApiV1Blacklist`: %v\n", resp)
+    // response from `GetBlacklist`: BlacklistResourcePagingResource
+    fmt.Fprintf(os.Stdout, "Response from `BlacklistApi.GetBlacklist`: %v\n", resp)
 }
 ```
 
@@ -176,7 +176,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1BlacklistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBlacklistRequest struct via the builder pattern
 
 
 ### Return type

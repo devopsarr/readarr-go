@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1QueueGrabBulk**](QueueActionApi.md#CreateApiV1QueueGrabBulk) | **Post** /api/v1/queue/grab/bulk | 
-[**CreateApiV1QueueGrabById**](QueueActionApi.md#CreateApiV1QueueGrabById) | **Post** /api/v1/queue/grab/{id} | 
+[**CreateQueueGrabBulk**](QueueActionApi.md#CreateQueueGrabBulk) | **Post** /api/v1/queue/grab/bulk | 
+[**CreateQueueGrabById**](QueueActionApi.md#CreateQueueGrabById) | **Post** /api/v1/queue/grab/{id} | 
 
 
 
-## CreateApiV1QueueGrabBulk
+## CreateQueueGrabBulk
 
-> CreateApiV1QueueGrabBulk(ctx).QueueBulkResource(queueBulkResource).Execute()
+> CreateQueueGrabBulk(ctx).QueueBulkResource(queueBulkResource).Execute()
 
 
 
@@ -32,9 +32,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueActionApi.CreateApiV1QueueGrabBulk(context.Background()).QueueBulkResource(queueBulkResource).Execute()
+    resp, r, err := apiClient.QueueActionApi.CreateQueueGrabBulk(context.Background()).QueueBulkResource(queueBulkResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QueueActionApi.CreateApiV1QueueGrabBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QueueActionApi.CreateQueueGrabBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -46,7 +46,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1QueueGrabBulkRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateQueueGrabBulkRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -71,9 +71,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateApiV1QueueGrabById
+## CreateQueueGrabById
 
-> CreateApiV1QueueGrabById(ctx, id).Execute()
+> CreateQueueGrabById(ctx, id).Execute()
 
 
 
@@ -94,9 +94,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueActionApi.CreateApiV1QueueGrabById(context.Background(), id).Execute()
+    resp, r, err := apiClient.QueueActionApi.CreateQueueGrabById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QueueActionApi.CreateApiV1QueueGrabById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QueueActionApi.CreateQueueGrabById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1QueueGrabByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateQueueGrabByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

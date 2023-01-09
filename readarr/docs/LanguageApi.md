@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1LanguageById**](LanguageApi.md#GetApiV1LanguageById) | **Get** /api/v1/language/{id} | 
-[**ListApiV1Language**](LanguageApi.md#ListApiV1Language) | **Get** /api/v1/language | 
+[**GetLanguageById**](LanguageApi.md#GetLanguageById) | **Get** /api/v1/language/{id} | 
+[**ListLanguage**](LanguageApi.md#ListLanguage) | **Get** /api/v1/language | 
 
 
 
-## GetApiV1LanguageById
+## GetLanguageById
 
-> LanguageResource GetApiV1LanguageById(ctx, id).Execute()
+> LanguageResource GetLanguageById(ctx, id).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LanguageApi.GetApiV1LanguageById(context.Background(), id).Execute()
+    resp, r, err := apiClient.LanguageApi.GetLanguageById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LanguageApi.GetApiV1LanguageById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LanguageApi.GetLanguageById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1LanguageById`: LanguageResource
-    fmt.Fprintf(os.Stdout, "Response from `LanguageApi.GetApiV1LanguageById`: %v\n", resp)
+    // response from `GetLanguageById`: LanguageResource
+    fmt.Fprintf(os.Stdout, "Response from `LanguageApi.GetLanguageById`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1LanguageByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetLanguageByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1Language
+## ListLanguage
 
-> []LanguageResource ListApiV1Language(ctx).Execute()
+> []LanguageResource ListLanguage(ctx).Execute()
 
 
 
@@ -99,13 +99,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LanguageApi.ListApiV1Language(context.Background()).Execute()
+    resp, r, err := apiClient.LanguageApi.ListLanguage(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LanguageApi.ListApiV1Language``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LanguageApi.ListLanguage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Language`: []LanguageResource
-    fmt.Fprintf(os.Stdout, "Response from `LanguageApi.ListApiV1Language`: %v\n", resp)
+    // response from `ListLanguage`: []LanguageResource
+    fmt.Fprintf(os.Stdout, "Response from `LanguageApi.ListLanguage`: %v\n", resp)
 }
 ```
 
@@ -115,7 +115,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1LanguageRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListLanguageRequest struct via the builder pattern
 
 
 ### Return type

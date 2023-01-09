@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Release**](ReleaseApi.md#CreateApiV1Release) | **Post** /api/v1/release | 
-[**GetApiV1ReleaseById**](ReleaseApi.md#GetApiV1ReleaseById) | **Get** /api/v1/release/{id} | 
-[**ListApiV1Release**](ReleaseApi.md#ListApiV1Release) | **Get** /api/v1/release | 
+[**CreateRelease**](ReleaseApi.md#CreateRelease) | **Post** /api/v1/release | 
+[**GetReleaseById**](ReleaseApi.md#GetReleaseById) | **Get** /api/v1/release/{id} | 
+[**ListRelease**](ReleaseApi.md#ListRelease) | **Get** /api/v1/release | 
 
 
 
-## CreateApiV1Release
+## CreateRelease
 
-> ReleaseResource CreateApiV1Release(ctx).ReleaseResource(releaseResource).Execute()
+> ReleaseResource CreateRelease(ctx).ReleaseResource(releaseResource).Execute()
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReleaseApi.CreateApiV1Release(context.Background()).ReleaseResource(releaseResource).Execute()
+    resp, r, err := apiClient.ReleaseApi.CreateRelease(context.Background()).ReleaseResource(releaseResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseApi.CreateApiV1Release``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseApi.CreateRelease``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Release`: ReleaseResource
-    fmt.Fprintf(os.Stdout, "Response from `ReleaseApi.CreateApiV1Release`: %v\n", resp)
+    // response from `CreateRelease`: ReleaseResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleaseApi.CreateRelease`: %v\n", resp)
 }
 ```
 
@@ -49,7 +49,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1ReleaseRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateReleaseRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -74,9 +74,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1ReleaseById
+## GetReleaseById
 
-> ReleaseResource GetApiV1ReleaseById(ctx, id).Execute()
+> ReleaseResource GetReleaseById(ctx, id).Execute()
 
 
 
@@ -97,13 +97,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReleaseApi.GetApiV1ReleaseById(context.Background(), id).Execute()
+    resp, r, err := apiClient.ReleaseApi.GetReleaseById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseApi.GetApiV1ReleaseById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseApi.GetReleaseById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ReleaseById`: ReleaseResource
-    fmt.Fprintf(os.Stdout, "Response from `ReleaseApi.GetApiV1ReleaseById`: %v\n", resp)
+    // response from `GetReleaseById`: ReleaseResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleaseApi.GetReleaseById`: %v\n", resp)
 }
 ```
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ReleaseByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetReleaseByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1Release
+## ListRelease
 
-> []ReleaseResource ListApiV1Release(ctx).BookId(bookId).AuthorId(authorId).Execute()
+> []ReleaseResource ListRelease(ctx).BookId(bookId).AuthorId(authorId).Execute()
 
 
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReleaseApi.ListApiV1Release(context.Background()).BookId(bookId).AuthorId(authorId).Execute()
+    resp, r, err := apiClient.ReleaseApi.ListRelease(context.Background()).BookId(bookId).AuthorId(authorId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseApi.ListApiV1Release``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseApi.ListRelease``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Release`: []ReleaseResource
-    fmt.Fprintf(os.Stdout, "Response from `ReleaseApi.ListApiV1Release`: %v\n", resp)
+    // response from `ListRelease`: []ReleaseResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleaseApi.ListRelease`: %v\n", resp)
 }
 ```
 
@@ -182,7 +182,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1ReleaseRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListReleaseRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

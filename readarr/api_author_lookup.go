@@ -21,43 +21,43 @@ import (
 
 // AuthorLookupApiService AuthorLookupApi service
 type AuthorLookupApiService service
-type ApiGetApiV1AuthorLookupRequest struct {
+type ApiGetAuthorLookupRequest struct {
 	ctx context.Context
 	ApiService *AuthorLookupApiService
 	term *string
 }
 
-func (r ApiGetApiV1AuthorLookupRequest) Term(term string) ApiGetApiV1AuthorLookupRequest {
+func (r ApiGetAuthorLookupRequest) Term(term string) ApiGetAuthorLookupRequest {
 	r.term = &term
 	return r
 }
 
-func (r ApiGetApiV1AuthorLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1AuthorLookupExecute(r)
+func (r ApiGetAuthorLookupRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetAuthorLookupExecute(r)
 }
 
 /*
-GetApiV1AuthorLookup Method for GetApiV1AuthorLookup
+GetAuthorLookup Method for GetAuthorLookup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1AuthorLookupRequest
+ @return ApiGetAuthorLookupRequest
 */
-func (a *AuthorLookupApiService) GetApiV1AuthorLookup(ctx context.Context) ApiGetApiV1AuthorLookupRequest {
-	return ApiGetApiV1AuthorLookupRequest{
+func (a *AuthorLookupApiService) GetAuthorLookup(ctx context.Context) ApiGetAuthorLookupRequest {
+	return ApiGetAuthorLookupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AuthorLookupApiService) GetApiV1AuthorLookupExecute(r ApiGetApiV1AuthorLookupRequest) (*http.Response, error) {
+func (a *AuthorLookupApiService) GetAuthorLookupExecute(r ApiGetAuthorLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorLookupApiService.GetApiV1AuthorLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorLookupApiService.GetAuthorLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

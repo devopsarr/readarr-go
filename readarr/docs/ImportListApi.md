@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1ImportList**](ImportListApi.md#CreateApiV1ImportList) | **Post** /api/v1/importlist | 
-[**CreateApiV1ImportListActionByName**](ImportListApi.md#CreateApiV1ImportListActionByName) | **Post** /api/v1/importlist/action/{name} | 
-[**DeleteApiV1ImportList**](ImportListApi.md#DeleteApiV1ImportList) | **Delete** /api/v1/importlist/{id} | 
-[**GetApiV1ImportListById**](ImportListApi.md#GetApiV1ImportListById) | **Get** /api/v1/importlist/{id} | 
-[**ListApiV1ImportList**](ImportListApi.md#ListApiV1ImportList) | **Get** /api/v1/importlist | 
-[**ListApiV1ImportListSchema**](ImportListApi.md#ListApiV1ImportListSchema) | **Get** /api/v1/importlist/schema | 
-[**TestApiV1ImportList**](ImportListApi.md#TestApiV1ImportList) | **Post** /api/v1/importlist/test | 
-[**TestallApiV1ImportList**](ImportListApi.md#TestallApiV1ImportList) | **Post** /api/v1/importlist/testall | 
-[**UpdateApiV1ImportList**](ImportListApi.md#UpdateApiV1ImportList) | **Put** /api/v1/importlist/{id} | 
+[**CreateImportList**](ImportListApi.md#CreateImportList) | **Post** /api/v1/importlist | 
+[**CreateImportListActionByName**](ImportListApi.md#CreateImportListActionByName) | **Post** /api/v1/importlist/action/{name} | 
+[**DeleteImportList**](ImportListApi.md#DeleteImportList) | **Delete** /api/v1/importlist/{id} | 
+[**GetImportListById**](ImportListApi.md#GetImportListById) | **Get** /api/v1/importlist/{id} | 
+[**ListImportList**](ImportListApi.md#ListImportList) | **Get** /api/v1/importlist | 
+[**ListImportListSchema**](ImportListApi.md#ListImportListSchema) | **Get** /api/v1/importlist/schema | 
+[**TestImportList**](ImportListApi.md#TestImportList) | **Post** /api/v1/importlist/test | 
+[**TestallImportList**](ImportListApi.md#TestallImportList) | **Post** /api/v1/importlist/testall | 
+[**UpdateImportList**](ImportListApi.md#UpdateImportList) | **Put** /api/v1/importlist/{id} | 
 
 
 
-## CreateApiV1ImportList
+## CreateImportList
 
-> ImportListResource CreateApiV1ImportList(ctx).ImportListResource(importListResource).Execute()
+> ImportListResource CreateImportList(ctx).ImportListResource(importListResource).Execute()
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.CreateApiV1ImportList(context.Background()).ImportListResource(importListResource).Execute()
+    resp, r, err := apiClient.ImportListApi.CreateImportList(context.Background()).ImportListResource(importListResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.CreateApiV1ImportList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.CreateImportList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1ImportList`: ImportListResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.CreateApiV1ImportList`: %v\n", resp)
+    // response from `CreateImportList`: ImportListResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.CreateImportList`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1ImportListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateImportListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -80,9 +80,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateApiV1ImportListActionByName
+## CreateImportListActionByName
 
-> CreateApiV1ImportListActionByName(ctx, name).ImportListResource(importListResource).Execute()
+> CreateImportListActionByName(ctx, name).ImportListResource(importListResource).Execute()
 
 
 
@@ -104,9 +104,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.CreateApiV1ImportListActionByName(context.Background(), name).ImportListResource(importListResource).Execute()
+    resp, r, err := apiClient.ImportListApi.CreateImportListActionByName(context.Background(), name).ImportListResource(importListResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.CreateApiV1ImportListActionByName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.CreateImportListActionByName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1ImportListActionByNameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateImportListActionByNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -148,9 +148,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1ImportList
+## DeleteImportList
 
-> DeleteApiV1ImportList(ctx, id).Execute()
+> DeleteImportList(ctx, id).Execute()
 
 
 
@@ -171,9 +171,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.DeleteApiV1ImportList(context.Background(), id).Execute()
+    resp, r, err := apiClient.ImportListApi.DeleteImportList(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.DeleteApiV1ImportList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.DeleteImportList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1ImportListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteImportListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -214,9 +214,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1ImportListById
+## GetImportListById
 
-> ImportListResource GetApiV1ImportListById(ctx, id).Execute()
+> ImportListResource GetImportListById(ctx, id).Execute()
 
 
 
@@ -237,13 +237,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.GetApiV1ImportListById(context.Background(), id).Execute()
+    resp, r, err := apiClient.ImportListApi.GetImportListById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.GetApiV1ImportListById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.GetImportListById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ImportListById`: ImportListResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.GetApiV1ImportListById`: %v\n", resp)
+    // response from `GetImportListById`: ImportListResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.GetImportListById`: %v\n", resp)
 }
 ```
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ImportListByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetImportListByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,9 +282,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1ImportList
+## ListImportList
 
-> []ImportListResource ListApiV1ImportList(ctx).Execute()
+> []ImportListResource ListImportList(ctx).Execute()
 
 
 
@@ -304,13 +304,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.ListApiV1ImportList(context.Background()).Execute()
+    resp, r, err := apiClient.ImportListApi.ListImportList(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.ListApiV1ImportList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.ListImportList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1ImportList`: []ImportListResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.ListApiV1ImportList`: %v\n", resp)
+    // response from `ListImportList`: []ImportListResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.ListImportList`: %v\n", resp)
 }
 ```
 
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1ImportListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListImportListRequest struct via the builder pattern
 
 
 ### Return type
@@ -341,9 +341,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1ImportListSchema
+## ListImportListSchema
 
-> []ImportListResource ListApiV1ImportListSchema(ctx).Execute()
+> []ImportListResource ListImportListSchema(ctx).Execute()
 
 
 
@@ -363,13 +363,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.ListApiV1ImportListSchema(context.Background()).Execute()
+    resp, r, err := apiClient.ImportListApi.ListImportListSchema(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.ListApiV1ImportListSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.ListImportListSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1ImportListSchema`: []ImportListResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.ListApiV1ImportListSchema`: %v\n", resp)
+    // response from `ListImportListSchema`: []ImportListResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.ListImportListSchema`: %v\n", resp)
 }
 ```
 
@@ -379,7 +379,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1ImportListSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListImportListSchemaRequest struct via the builder pattern
 
 
 ### Return type
@@ -400,9 +400,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## TestApiV1ImportList
+## TestImportList
 
-> TestApiV1ImportList(ctx).ImportListResource(importListResource).Execute()
+> TestImportList(ctx).ImportListResource(importListResource).Execute()
 
 
 
@@ -423,9 +423,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.TestApiV1ImportList(context.Background()).ImportListResource(importListResource).Execute()
+    resp, r, err := apiClient.ImportListApi.TestImportList(context.Background()).ImportListResource(importListResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.TestApiV1ImportList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.TestImportList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -437,7 +437,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestApiV1ImportListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestImportListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -462,9 +462,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## TestallApiV1ImportList
+## TestallImportList
 
-> TestallApiV1ImportList(ctx).Execute()
+> TestallImportList(ctx).Execute()
 
 
 
@@ -484,9 +484,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.TestallApiV1ImportList(context.Background()).Execute()
+    resp, r, err := apiClient.ImportListApi.TestallImportList(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.TestallApiV1ImportList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.TestallImportList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -498,7 +498,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestallApiV1ImportListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestallImportListRequest struct via the builder pattern
 
 
 ### Return type
@@ -519,9 +519,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1ImportList
+## UpdateImportList
 
-> ImportListResource UpdateApiV1ImportList(ctx, id).ImportListResource(importListResource).Execute()
+> ImportListResource UpdateImportList(ctx, id).ImportListResource(importListResource).Execute()
 
 
 
@@ -543,13 +543,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.UpdateApiV1ImportList(context.Background(), id).ImportListResource(importListResource).Execute()
+    resp, r, err := apiClient.ImportListApi.UpdateImportList(context.Background(), id).ImportListResource(importListResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.UpdateApiV1ImportList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.UpdateImportList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1ImportList`: ImportListResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.UpdateApiV1ImportList`: %v\n", resp)
+    // response from `UpdateImportList`: ImportListResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.UpdateImportList`: %v\n", resp)
 }
 ```
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1ImportListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateImportListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

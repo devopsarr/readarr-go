@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1WantedCutoff**](CutoffApi.md#GetApiV1WantedCutoff) | **Get** /api/v1/wanted/cutoff | 
-[**GetApiV1WantedCutoffById**](CutoffApi.md#GetApiV1WantedCutoffById) | **Get** /api/v1/wanted/cutoff/{id} | 
+[**GetWantedCutoff**](CutoffApi.md#GetWantedCutoff) | **Get** /api/v1/wanted/cutoff | 
+[**GetWantedCutoffById**](CutoffApi.md#GetWantedCutoffById) | **Get** /api/v1/wanted/cutoff/{id} | 
 
 
 
-## GetApiV1WantedCutoff
+## GetWantedCutoff
 
-> BookResourcePagingResource GetApiV1WantedCutoff(ctx).IncludeAuthor(includeAuthor).Execute()
+> BookResourcePagingResource GetWantedCutoff(ctx).IncludeAuthor(includeAuthor).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CutoffApi.GetApiV1WantedCutoff(context.Background()).IncludeAuthor(includeAuthor).Execute()
+    resp, r, err := apiClient.CutoffApi.GetWantedCutoff(context.Background()).IncludeAuthor(includeAuthor).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CutoffApi.GetApiV1WantedCutoff``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CutoffApi.GetWantedCutoff``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1WantedCutoff`: BookResourcePagingResource
-    fmt.Fprintf(os.Stdout, "Response from `CutoffApi.GetApiV1WantedCutoff`: %v\n", resp)
+    // response from `GetWantedCutoff`: BookResourcePagingResource
+    fmt.Fprintf(os.Stdout, "Response from `CutoffApi.GetWantedCutoff`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1WantedCutoffRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetWantedCutoffRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -73,9 +73,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1WantedCutoffById
+## GetWantedCutoffById
 
-> BookResource GetApiV1WantedCutoffById(ctx, id).Execute()
+> BookResource GetWantedCutoffById(ctx, id).Execute()
 
 
 
@@ -96,13 +96,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CutoffApi.GetApiV1WantedCutoffById(context.Background(), id).Execute()
+    resp, r, err := apiClient.CutoffApi.GetWantedCutoffById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CutoffApi.GetApiV1WantedCutoffById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CutoffApi.GetWantedCutoffById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1WantedCutoffById`: BookResource
-    fmt.Fprintf(os.Stdout, "Response from `CutoffApi.GetApiV1WantedCutoffById`: %v\n", resp)
+    // response from `GetWantedCutoffById`: BookResource
+    fmt.Fprintf(os.Stdout, "Response from `CutoffApi.GetWantedCutoffById`: %v\n", resp)
 }
 ```
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1WantedCutoffByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetWantedCutoffByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

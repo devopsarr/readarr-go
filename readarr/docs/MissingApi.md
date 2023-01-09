@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1WantedMissing**](MissingApi.md#GetApiV1WantedMissing) | **Get** /api/v1/wanted/missing | 
-[**GetApiV1WantedMissingById**](MissingApi.md#GetApiV1WantedMissingById) | **Get** /api/v1/wanted/missing/{id} | 
+[**GetWantedMissing**](MissingApi.md#GetWantedMissing) | **Get** /api/v1/wanted/missing | 
+[**GetWantedMissingById**](MissingApi.md#GetWantedMissingById) | **Get** /api/v1/wanted/missing/{id} | 
 
 
 
-## GetApiV1WantedMissing
+## GetWantedMissing
 
-> BookResourcePagingResource GetApiV1WantedMissing(ctx).IncludeAuthor(includeAuthor).Execute()
+> BookResourcePagingResource GetWantedMissing(ctx).IncludeAuthor(includeAuthor).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MissingApi.GetApiV1WantedMissing(context.Background()).IncludeAuthor(includeAuthor).Execute()
+    resp, r, err := apiClient.MissingApi.GetWantedMissing(context.Background()).IncludeAuthor(includeAuthor).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MissingApi.GetApiV1WantedMissing``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MissingApi.GetWantedMissing``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1WantedMissing`: BookResourcePagingResource
-    fmt.Fprintf(os.Stdout, "Response from `MissingApi.GetApiV1WantedMissing`: %v\n", resp)
+    // response from `GetWantedMissing`: BookResourcePagingResource
+    fmt.Fprintf(os.Stdout, "Response from `MissingApi.GetWantedMissing`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1WantedMissingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetWantedMissingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -73,9 +73,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1WantedMissingById
+## GetWantedMissingById
 
-> BookResource GetApiV1WantedMissingById(ctx, id).Execute()
+> BookResource GetWantedMissingById(ctx, id).Execute()
 
 
 
@@ -96,13 +96,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MissingApi.GetApiV1WantedMissingById(context.Background(), id).Execute()
+    resp, r, err := apiClient.MissingApi.GetWantedMissingById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MissingApi.GetApiV1WantedMissingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MissingApi.GetWantedMissingById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1WantedMissingById`: BookResource
-    fmt.Fprintf(os.Stdout, "Response from `MissingApi.GetApiV1WantedMissingById`: %v\n", resp)
+    // response from `GetWantedMissingById`: BookResource
+    fmt.Fprintf(os.Stdout, "Response from `MissingApi.GetWantedMissingById`: %v\n", resp)
 }
 ```
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1WantedMissingByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetWantedMissingByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

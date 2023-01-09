@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Metadata**](MetadataApi.md#CreateApiV1Metadata) | **Post** /api/v1/metadata | 
-[**CreateApiV1MetadataActionByName**](MetadataApi.md#CreateApiV1MetadataActionByName) | **Post** /api/v1/metadata/action/{name} | 
-[**DeleteApiV1Metadata**](MetadataApi.md#DeleteApiV1Metadata) | **Delete** /api/v1/metadata/{id} | 
-[**GetApiV1MetadataById**](MetadataApi.md#GetApiV1MetadataById) | **Get** /api/v1/metadata/{id} | 
-[**ListApiV1Metadata**](MetadataApi.md#ListApiV1Metadata) | **Get** /api/v1/metadata | 
-[**ListApiV1MetadataSchema**](MetadataApi.md#ListApiV1MetadataSchema) | **Get** /api/v1/metadata/schema | 
-[**TestApiV1Metadata**](MetadataApi.md#TestApiV1Metadata) | **Post** /api/v1/metadata/test | 
-[**TestallApiV1Metadata**](MetadataApi.md#TestallApiV1Metadata) | **Post** /api/v1/metadata/testall | 
-[**UpdateApiV1Metadata**](MetadataApi.md#UpdateApiV1Metadata) | **Put** /api/v1/metadata/{id} | 
+[**CreateMetadata**](MetadataApi.md#CreateMetadata) | **Post** /api/v1/metadata | 
+[**CreateMetadataActionByName**](MetadataApi.md#CreateMetadataActionByName) | **Post** /api/v1/metadata/action/{name} | 
+[**DeleteMetadata**](MetadataApi.md#DeleteMetadata) | **Delete** /api/v1/metadata/{id} | 
+[**GetMetadataById**](MetadataApi.md#GetMetadataById) | **Get** /api/v1/metadata/{id} | 
+[**ListMetadata**](MetadataApi.md#ListMetadata) | **Get** /api/v1/metadata | 
+[**ListMetadataSchema**](MetadataApi.md#ListMetadataSchema) | **Get** /api/v1/metadata/schema | 
+[**TestMetadata**](MetadataApi.md#TestMetadata) | **Post** /api/v1/metadata/test | 
+[**TestallMetadata**](MetadataApi.md#TestallMetadata) | **Post** /api/v1/metadata/testall | 
+[**UpdateMetadata**](MetadataApi.md#UpdateMetadata) | **Put** /api/v1/metadata/{id} | 
 
 
 
-## CreateApiV1Metadata
+## CreateMetadata
 
-> MetadataResource CreateApiV1Metadata(ctx).MetadataResource(metadataResource).Execute()
+> MetadataResource CreateMetadata(ctx).MetadataResource(metadataResource).Execute()
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.CreateApiV1Metadata(context.Background()).MetadataResource(metadataResource).Execute()
+    resp, r, err := apiClient.MetadataApi.CreateMetadata(context.Background()).MetadataResource(metadataResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.CreateApiV1Metadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.CreateMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Metadata`: MetadataResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.CreateApiV1Metadata`: %v\n", resp)
+    // response from `CreateMetadata`: MetadataResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.CreateMetadata`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1MetadataRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateMetadataRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -80,9 +80,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## CreateApiV1MetadataActionByName
+## CreateMetadataActionByName
 
-> CreateApiV1MetadataActionByName(ctx, name).MetadataResource(metadataResource).Execute()
+> CreateMetadataActionByName(ctx, name).MetadataResource(metadataResource).Execute()
 
 
 
@@ -104,9 +104,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.CreateApiV1MetadataActionByName(context.Background(), name).MetadataResource(metadataResource).Execute()
+    resp, r, err := apiClient.MetadataApi.CreateMetadataActionByName(context.Background(), name).MetadataResource(metadataResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.CreateApiV1MetadataActionByName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.CreateMetadataActionByName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1MetadataActionByNameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateMetadataActionByNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -148,9 +148,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Metadata
+## DeleteMetadata
 
-> DeleteApiV1Metadata(ctx, id).Execute()
+> DeleteMetadata(ctx, id).Execute()
 
 
 
@@ -171,9 +171,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.DeleteApiV1Metadata(context.Background(), id).Execute()
+    resp, r, err := apiClient.MetadataApi.DeleteMetadata(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.DeleteApiV1Metadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.DeleteMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1MetadataRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteMetadataRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -214,9 +214,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1MetadataById
+## GetMetadataById
 
-> MetadataResource GetApiV1MetadataById(ctx, id).Execute()
+> MetadataResource GetMetadataById(ctx, id).Execute()
 
 
 
@@ -237,13 +237,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.GetApiV1MetadataById(context.Background(), id).Execute()
+    resp, r, err := apiClient.MetadataApi.GetMetadataById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetApiV1MetadataById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetMetadataById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1MetadataById`: MetadataResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.GetApiV1MetadataById`: %v\n", resp)
+    // response from `GetMetadataById`: MetadataResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.GetMetadataById`: %v\n", resp)
 }
 ```
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1MetadataByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMetadataByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,9 +282,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1Metadata
+## ListMetadata
 
-> []MetadataResource ListApiV1Metadata(ctx).Execute()
+> []MetadataResource ListMetadata(ctx).Execute()
 
 
 
@@ -304,13 +304,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.ListApiV1Metadata(context.Background()).Execute()
+    resp, r, err := apiClient.MetadataApi.ListMetadata(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.ListApiV1Metadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.ListMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Metadata`: []MetadataResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.ListApiV1Metadata`: %v\n", resp)
+    // response from `ListMetadata`: []MetadataResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.ListMetadata`: %v\n", resp)
 }
 ```
 
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1MetadataRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListMetadataRequest struct via the builder pattern
 
 
 ### Return type
@@ -341,9 +341,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1MetadataSchema
+## ListMetadataSchema
 
-> []MetadataResource ListApiV1MetadataSchema(ctx).Execute()
+> []MetadataResource ListMetadataSchema(ctx).Execute()
 
 
 
@@ -363,13 +363,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.ListApiV1MetadataSchema(context.Background()).Execute()
+    resp, r, err := apiClient.MetadataApi.ListMetadataSchema(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.ListApiV1MetadataSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.ListMetadataSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1MetadataSchema`: []MetadataResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.ListApiV1MetadataSchema`: %v\n", resp)
+    // response from `ListMetadataSchema`: []MetadataResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.ListMetadataSchema`: %v\n", resp)
 }
 ```
 
@@ -379,7 +379,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1MetadataSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListMetadataSchemaRequest struct via the builder pattern
 
 
 ### Return type
@@ -400,9 +400,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## TestApiV1Metadata
+## TestMetadata
 
-> TestApiV1Metadata(ctx).MetadataResource(metadataResource).Execute()
+> TestMetadata(ctx).MetadataResource(metadataResource).Execute()
 
 
 
@@ -423,9 +423,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.TestApiV1Metadata(context.Background()).MetadataResource(metadataResource).Execute()
+    resp, r, err := apiClient.MetadataApi.TestMetadata(context.Background()).MetadataResource(metadataResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.TestApiV1Metadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.TestMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -437,7 +437,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestApiV1MetadataRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestMetadataRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -462,9 +462,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## TestallApiV1Metadata
+## TestallMetadata
 
-> TestallApiV1Metadata(ctx).Execute()
+> TestallMetadata(ctx).Execute()
 
 
 
@@ -484,9 +484,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.TestallApiV1Metadata(context.Background()).Execute()
+    resp, r, err := apiClient.MetadataApi.TestallMetadata(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.TestallApiV1Metadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.TestallMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -498,7 +498,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestallApiV1MetadataRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestallMetadataRequest struct via the builder pattern
 
 
 ### Return type
@@ -519,9 +519,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Metadata
+## UpdateMetadata
 
-> MetadataResource UpdateApiV1Metadata(ctx, id).MetadataResource(metadataResource).Execute()
+> MetadataResource UpdateMetadata(ctx, id).MetadataResource(metadataResource).Execute()
 
 
 
@@ -543,13 +543,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.UpdateApiV1Metadata(context.Background(), id).MetadataResource(metadataResource).Execute()
+    resp, r, err := apiClient.MetadataApi.UpdateMetadata(context.Background(), id).MetadataResource(metadataResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.UpdateApiV1Metadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.UpdateMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Metadata`: MetadataResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.UpdateApiV1Metadata`: %v\n", resp)
+    // response from `UpdateMetadata`: MetadataResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.UpdateMetadata`: %v\n", resp)
 }
 ```
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1MetadataRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateMetadataRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

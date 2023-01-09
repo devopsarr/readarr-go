@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1ReleasePush**](ReleasePushApi.md#CreateApiV1ReleasePush) | **Post** /api/v1/release/push | 
-[**GetApiV1ReleasePushById**](ReleasePushApi.md#GetApiV1ReleasePushById) | **Get** /api/v1/release/push/{id} | 
+[**CreateReleasePush**](ReleasePushApi.md#CreateReleasePush) | **Post** /api/v1/release/push | 
+[**GetReleasePushById**](ReleasePushApi.md#GetReleasePushById) | **Get** /api/v1/release/push/{id} | 
 
 
 
-## CreateApiV1ReleasePush
+## CreateReleasePush
 
-> ReleaseResource CreateApiV1ReleasePush(ctx).ReleaseResource(releaseResource).Execute()
+> ReleaseResource CreateReleasePush(ctx).ReleaseResource(releaseResource).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReleasePushApi.CreateApiV1ReleasePush(context.Background()).ReleaseResource(releaseResource).Execute()
+    resp, r, err := apiClient.ReleasePushApi.CreateReleasePush(context.Background()).ReleaseResource(releaseResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReleasePushApi.CreateApiV1ReleasePush``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleasePushApi.CreateReleasePush``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1ReleasePush`: ReleaseResource
-    fmt.Fprintf(os.Stdout, "Response from `ReleasePushApi.CreateApiV1ReleasePush`: %v\n", resp)
+    // response from `CreateReleasePush`: ReleaseResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleasePushApi.CreateReleasePush`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1ReleasePushRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateReleasePushRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -73,9 +73,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1ReleasePushById
+## GetReleasePushById
 
-> ReleaseResource GetApiV1ReleasePushById(ctx, id).Execute()
+> ReleaseResource GetReleasePushById(ctx, id).Execute()
 
 
 
@@ -96,13 +96,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReleasePushApi.GetApiV1ReleasePushById(context.Background(), id).Execute()
+    resp, r, err := apiClient.ReleasePushApi.GetReleasePushById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReleasePushApi.GetApiV1ReleasePushById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleasePushApi.GetReleasePushById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ReleasePushById`: ReleaseResource
-    fmt.Fprintf(os.Stdout, "Response from `ReleasePushApi.GetApiV1ReleasePushById`: %v\n", resp)
+    // response from `GetReleasePushById`: ReleaseResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleasePushApi.GetReleasePushById`: %v\n", resp)
 }
 ```
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ReleasePushByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetReleasePushByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

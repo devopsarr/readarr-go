@@ -21,43 +21,43 @@ import (
 
 // BookshelfApiService BookshelfApi service
 type BookshelfApiService service
-type ApiCreateApiV1BookshelfRequest struct {
+type ApiCreateBookshelfRequest struct {
 	ctx context.Context
 	ApiService *BookshelfApiService
 	bookshelfResource *BookshelfResource
 }
 
-func (r ApiCreateApiV1BookshelfRequest) BookshelfResource(bookshelfResource BookshelfResource) ApiCreateApiV1BookshelfRequest {
+func (r ApiCreateBookshelfRequest) BookshelfResource(bookshelfResource BookshelfResource) ApiCreateBookshelfRequest {
 	r.bookshelfResource = &bookshelfResource
 	return r
 }
 
-func (r ApiCreateApiV1BookshelfRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1BookshelfExecute(r)
+func (r ApiCreateBookshelfRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateBookshelfExecute(r)
 }
 
 /*
-CreateApiV1Bookshelf Method for CreateApiV1Bookshelf
+CreateBookshelf Method for CreateBookshelf
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1BookshelfRequest
+ @return ApiCreateBookshelfRequest
 */
-func (a *BookshelfApiService) CreateApiV1Bookshelf(ctx context.Context) ApiCreateApiV1BookshelfRequest {
-	return ApiCreateApiV1BookshelfRequest{
+func (a *BookshelfApiService) CreateBookshelf(ctx context.Context) ApiCreateBookshelfRequest {
+	return ApiCreateBookshelfRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BookshelfApiService) CreateApiV1BookshelfExecute(r ApiCreateApiV1BookshelfRequest) (*http.Response, error) {
+func (a *BookshelfApiService) CreateBookshelfExecute(r ApiCreateBookshelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookshelfApiService.CreateApiV1Bookshelf")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookshelfApiService.CreateBookshelf")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

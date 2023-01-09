@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1DelayProfile**](DelayProfileApi.md#CreateApiV1DelayProfile) | **Post** /api/v1/delayprofile | 
-[**DeleteApiV1DelayProfile**](DelayProfileApi.md#DeleteApiV1DelayProfile) | **Delete** /api/v1/delayprofile/{id} | 
-[**GetApiV1DelayProfileById**](DelayProfileApi.md#GetApiV1DelayProfileById) | **Get** /api/v1/delayprofile/{id} | 
-[**ListApiV1DelayProfile**](DelayProfileApi.md#ListApiV1DelayProfile) | **Get** /api/v1/delayprofile | 
-[**UpdateApiV1DelayProfile**](DelayProfileApi.md#UpdateApiV1DelayProfile) | **Put** /api/v1/delayprofile/{id} | 
-[**UpdateApiV1DelayProfileReorder**](DelayProfileApi.md#UpdateApiV1DelayProfileReorder) | **Put** /api/v1/delayprofile/reorder/{id} | 
+[**CreateDelayProfile**](DelayProfileApi.md#CreateDelayProfile) | **Post** /api/v1/delayprofile | 
+[**DeleteDelayProfile**](DelayProfileApi.md#DeleteDelayProfile) | **Delete** /api/v1/delayprofile/{id} | 
+[**GetDelayProfileById**](DelayProfileApi.md#GetDelayProfileById) | **Get** /api/v1/delayprofile/{id} | 
+[**ListDelayProfile**](DelayProfileApi.md#ListDelayProfile) | **Get** /api/v1/delayprofile | 
+[**UpdateDelayProfile**](DelayProfileApi.md#UpdateDelayProfile) | **Put** /api/v1/delayprofile/{id} | 
+[**UpdateDelayProfileReorder**](DelayProfileApi.md#UpdateDelayProfileReorder) | **Put** /api/v1/delayprofile/reorder/{id} | 
 
 
 
-## CreateApiV1DelayProfile
+## CreateDelayProfile
 
-> DelayProfileResource CreateApiV1DelayProfile(ctx).DelayProfileResource(delayProfileResource).Execute()
+> DelayProfileResource CreateDelayProfile(ctx).DelayProfileResource(delayProfileResource).Execute()
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelayProfileApi.CreateApiV1DelayProfile(context.Background()).DelayProfileResource(delayProfileResource).Execute()
+    resp, r, err := apiClient.DelayProfileApi.CreateDelayProfile(context.Background()).DelayProfileResource(delayProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.CreateApiV1DelayProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.CreateDelayProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1DelayProfile`: DelayProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `DelayProfileApi.CreateApiV1DelayProfile`: %v\n", resp)
+    // response from `CreateDelayProfile`: DelayProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `DelayProfileApi.CreateDelayProfile`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1DelayProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateDelayProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1DelayProfile
+## DeleteDelayProfile
 
-> DeleteApiV1DelayProfile(ctx, id).Execute()
+> DeleteDelayProfile(ctx, id).Execute()
 
 
 
@@ -100,9 +100,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelayProfileApi.DeleteApiV1DelayProfile(context.Background(), id).Execute()
+    resp, r, err := apiClient.DelayProfileApi.DeleteDelayProfile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.DeleteApiV1DelayProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.DeleteDelayProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1DelayProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteDelayProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -143,9 +143,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1DelayProfileById
+## GetDelayProfileById
 
-> DelayProfileResource GetApiV1DelayProfileById(ctx, id).Execute()
+> DelayProfileResource GetDelayProfileById(ctx, id).Execute()
 
 
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelayProfileApi.GetApiV1DelayProfileById(context.Background(), id).Execute()
+    resp, r, err := apiClient.DelayProfileApi.GetDelayProfileById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.GetApiV1DelayProfileById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.GetDelayProfileById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1DelayProfileById`: DelayProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `DelayProfileApi.GetApiV1DelayProfileById`: %v\n", resp)
+    // response from `GetDelayProfileById`: DelayProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `DelayProfileApi.GetDelayProfileById`: %v\n", resp)
 }
 ```
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1DelayProfileByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDelayProfileByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -211,9 +211,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1DelayProfile
+## ListDelayProfile
 
-> []DelayProfileResource ListApiV1DelayProfile(ctx).Execute()
+> []DelayProfileResource ListDelayProfile(ctx).Execute()
 
 
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelayProfileApi.ListApiV1DelayProfile(context.Background()).Execute()
+    resp, r, err := apiClient.DelayProfileApi.ListDelayProfile(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.ListApiV1DelayProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.ListDelayProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1DelayProfile`: []DelayProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `DelayProfileApi.ListApiV1DelayProfile`: %v\n", resp)
+    // response from `ListDelayProfile`: []DelayProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `DelayProfileApi.ListDelayProfile`: %v\n", resp)
 }
 ```
 
@@ -249,7 +249,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1DelayProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListDelayProfileRequest struct via the builder pattern
 
 
 ### Return type
@@ -270,9 +270,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1DelayProfile
+## UpdateDelayProfile
 
-> DelayProfileResource UpdateApiV1DelayProfile(ctx, id).DelayProfileResource(delayProfileResource).Execute()
+> DelayProfileResource UpdateDelayProfile(ctx, id).DelayProfileResource(delayProfileResource).Execute()
 
 
 
@@ -294,13 +294,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelayProfileApi.UpdateApiV1DelayProfile(context.Background(), id).DelayProfileResource(delayProfileResource).Execute()
+    resp, r, err := apiClient.DelayProfileApi.UpdateDelayProfile(context.Background(), id).DelayProfileResource(delayProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.UpdateApiV1DelayProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.UpdateDelayProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1DelayProfile`: DelayProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `DelayProfileApi.UpdateApiV1DelayProfile`: %v\n", resp)
+    // response from `UpdateDelayProfile`: DelayProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `DelayProfileApi.UpdateDelayProfile`: %v\n", resp)
 }
 ```
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1DelayProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateDelayProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -340,9 +340,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1DelayProfileReorder
+## UpdateDelayProfileReorder
 
-> UpdateApiV1DelayProfileReorder(ctx, id).AfterId(afterId).Execute()
+> UpdateDelayProfileReorder(ctx, id).AfterId(afterId).Execute()
 
 
 
@@ -364,9 +364,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DelayProfileApi.UpdateApiV1DelayProfileReorder(context.Background(), id).AfterId(afterId).Execute()
+    resp, r, err := apiClient.DelayProfileApi.UpdateDelayProfileReorder(context.Background(), id).AfterId(afterId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.UpdateApiV1DelayProfileReorder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DelayProfileApi.UpdateDelayProfileReorder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1DelayProfileReorderRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateDelayProfileReorderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

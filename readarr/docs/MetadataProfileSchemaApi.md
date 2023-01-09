@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1MetadataprofileSchema**](MetadataProfileSchemaApi.md#GetApiV1MetadataprofileSchema) | **Get** /api/v1/metadataprofile/schema | 
+[**GetMetadataprofileSchema**](MetadataProfileSchemaApi.md#GetMetadataprofileSchema) | **Get** /api/v1/metadataprofile/schema | 
 
 
 
-## GetApiV1MetadataprofileSchema
+## GetMetadataprofileSchema
 
-> MetadataProfileResource GetApiV1MetadataprofileSchema(ctx).Execute()
+> MetadataProfileResource GetMetadataprofileSchema(ctx).Execute()
 
 
 
@@ -30,13 +30,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataProfileSchemaApi.GetApiV1MetadataprofileSchema(context.Background()).Execute()
+    resp, r, err := apiClient.MetadataProfileSchemaApi.GetMetadataprofileSchema(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileSchemaApi.GetApiV1MetadataprofileSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataProfileSchemaApi.GetMetadataprofileSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1MetadataprofileSchema`: MetadataProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataProfileSchemaApi.GetApiV1MetadataprofileSchema`: %v\n", resp)
+    // response from `GetMetadataprofileSchema`: MetadataProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataProfileSchemaApi.GetMetadataprofileSchema`: %v\n", resp)
 }
 ```
 
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1MetadataprofileSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMetadataprofileSchemaRequest struct via the builder pattern
 
 
 ### Return type

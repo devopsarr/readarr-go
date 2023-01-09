@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1ReleaseProfile**](ReleaseProfileApi.md#CreateApiV1ReleaseProfile) | **Post** /api/v1/releaseprofile | 
-[**DeleteApiV1ReleaseProfile**](ReleaseProfileApi.md#DeleteApiV1ReleaseProfile) | **Delete** /api/v1/releaseprofile/{id} | 
-[**GetApiV1ReleaseProfileById**](ReleaseProfileApi.md#GetApiV1ReleaseProfileById) | **Get** /api/v1/releaseprofile/{id} | 
-[**ListApiV1ReleaseProfile**](ReleaseProfileApi.md#ListApiV1ReleaseProfile) | **Get** /api/v1/releaseprofile | 
-[**UpdateApiV1ReleaseProfile**](ReleaseProfileApi.md#UpdateApiV1ReleaseProfile) | **Put** /api/v1/releaseprofile/{id} | 
+[**CreateReleaseProfile**](ReleaseProfileApi.md#CreateReleaseProfile) | **Post** /api/v1/releaseprofile | 
+[**DeleteReleaseProfile**](ReleaseProfileApi.md#DeleteReleaseProfile) | **Delete** /api/v1/releaseprofile/{id} | 
+[**GetReleaseProfileById**](ReleaseProfileApi.md#GetReleaseProfileById) | **Get** /api/v1/releaseprofile/{id} | 
+[**ListReleaseProfile**](ReleaseProfileApi.md#ListReleaseProfile) | **Get** /api/v1/releaseprofile | 
+[**UpdateReleaseProfile**](ReleaseProfileApi.md#UpdateReleaseProfile) | **Put** /api/v1/releaseprofile/{id} | 
 
 
 
-## CreateApiV1ReleaseProfile
+## CreateReleaseProfile
 
-> ReleaseProfileResource CreateApiV1ReleaseProfile(ctx).ReleaseProfileResource(releaseProfileResource).Execute()
+> ReleaseProfileResource CreateReleaseProfile(ctx).ReleaseProfileResource(releaseProfileResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReleaseProfileApi.CreateApiV1ReleaseProfile(context.Background()).ReleaseProfileResource(releaseProfileResource).Execute()
+    resp, r, err := apiClient.ReleaseProfileApi.CreateReleaseProfile(context.Background()).ReleaseProfileResource(releaseProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.CreateApiV1ReleaseProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.CreateReleaseProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1ReleaseProfile`: ReleaseProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.CreateApiV1ReleaseProfile`: %v\n", resp)
+    // response from `CreateReleaseProfile`: ReleaseProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.CreateReleaseProfile`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1ReleaseProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateReleaseProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1ReleaseProfile
+## DeleteReleaseProfile
 
-> DeleteApiV1ReleaseProfile(ctx, id).Execute()
+> DeleteReleaseProfile(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReleaseProfileApi.DeleteApiV1ReleaseProfile(context.Background(), id).Execute()
+    resp, r, err := apiClient.ReleaseProfileApi.DeleteReleaseProfile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.DeleteApiV1ReleaseProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.DeleteReleaseProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1ReleaseProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteReleaseProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1ReleaseProfileById
+## GetReleaseProfileById
 
-> ReleaseProfileResource GetApiV1ReleaseProfileById(ctx, id).Execute()
+> ReleaseProfileResource GetReleaseProfileById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReleaseProfileApi.GetApiV1ReleaseProfileById(context.Background(), id).Execute()
+    resp, r, err := apiClient.ReleaseProfileApi.GetReleaseProfileById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.GetApiV1ReleaseProfileById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.GetReleaseProfileById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ReleaseProfileById`: ReleaseProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.GetApiV1ReleaseProfileById`: %v\n", resp)
+    // response from `GetReleaseProfileById`: ReleaseProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.GetReleaseProfileById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ReleaseProfileByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetReleaseProfileByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## ListApiV1ReleaseProfile
+## ListReleaseProfile
 
-> []ReleaseProfileResource ListApiV1ReleaseProfile(ctx).Execute()
+> []ReleaseProfileResource ListReleaseProfile(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReleaseProfileApi.ListApiV1ReleaseProfile(context.Background()).Execute()
+    resp, r, err := apiClient.ReleaseProfileApi.ListReleaseProfile(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.ListApiV1ReleaseProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.ListReleaseProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1ReleaseProfile`: []ReleaseProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.ListApiV1ReleaseProfile`: %v\n", resp)
+    // response from `ListReleaseProfile`: []ReleaseProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.ListReleaseProfile`: %v\n", resp)
 }
 ```
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1ReleaseProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListReleaseProfileRequest struct via the builder pattern
 
 
 ### Return type
@@ -269,9 +269,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1ReleaseProfile
+## UpdateReleaseProfile
 
-> ReleaseProfileResource UpdateApiV1ReleaseProfile(ctx, id).ReleaseProfileResource(releaseProfileResource).Execute()
+> ReleaseProfileResource UpdateReleaseProfile(ctx, id).ReleaseProfileResource(releaseProfileResource).Execute()
 
 
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReleaseProfileApi.UpdateApiV1ReleaseProfile(context.Background(), id).ReleaseProfileResource(releaseProfileResource).Execute()
+    resp, r, err := apiClient.ReleaseProfileApi.UpdateReleaseProfile(context.Background(), id).ReleaseProfileResource(releaseProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.UpdateApiV1ReleaseProfile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.UpdateReleaseProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1ReleaseProfile`: ReleaseProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.UpdateApiV1ReleaseProfile`: %v\n", resp)
+    // response from `UpdateReleaseProfile`: ReleaseProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.UpdateReleaseProfile`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1ReleaseProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateReleaseProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

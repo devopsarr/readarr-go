@@ -21,7 +21,7 @@ import (
 
 // CalendarFeedApiService CalendarFeedApi service
 type CalendarFeedApiService service
-type ApiGetApiV1CalendarReadarrIcsRequest struct {
+type ApiGetCalendarReadarrIcsRequest struct {
 	ctx context.Context
 	ApiService *CalendarFeedApiService
 	pastDays *int32
@@ -30,52 +30,52 @@ type ApiGetApiV1CalendarReadarrIcsRequest struct {
 	unmonitored *bool
 }
 
-func (r ApiGetApiV1CalendarReadarrIcsRequest) PastDays(pastDays int32) ApiGetApiV1CalendarReadarrIcsRequest {
+func (r ApiGetCalendarReadarrIcsRequest) PastDays(pastDays int32) ApiGetCalendarReadarrIcsRequest {
 	r.pastDays = &pastDays
 	return r
 }
 
-func (r ApiGetApiV1CalendarReadarrIcsRequest) FutureDays(futureDays int32) ApiGetApiV1CalendarReadarrIcsRequest {
+func (r ApiGetCalendarReadarrIcsRequest) FutureDays(futureDays int32) ApiGetCalendarReadarrIcsRequest {
 	r.futureDays = &futureDays
 	return r
 }
 
-func (r ApiGetApiV1CalendarReadarrIcsRequest) TagList(tagList string) ApiGetApiV1CalendarReadarrIcsRequest {
+func (r ApiGetCalendarReadarrIcsRequest) TagList(tagList string) ApiGetCalendarReadarrIcsRequest {
 	r.tagList = &tagList
 	return r
 }
 
-func (r ApiGetApiV1CalendarReadarrIcsRequest) Unmonitored(unmonitored bool) ApiGetApiV1CalendarReadarrIcsRequest {
+func (r ApiGetCalendarReadarrIcsRequest) Unmonitored(unmonitored bool) ApiGetCalendarReadarrIcsRequest {
 	r.unmonitored = &unmonitored
 	return r
 }
 
-func (r ApiGetApiV1CalendarReadarrIcsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1CalendarReadarrIcsExecute(r)
+func (r ApiGetCalendarReadarrIcsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetCalendarReadarrIcsExecute(r)
 }
 
 /*
-GetApiV1CalendarReadarrIcs Method for GetApiV1CalendarReadarrIcs
+GetCalendarReadarrIcs Method for GetCalendarReadarrIcs
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1CalendarReadarrIcsRequest
+ @return ApiGetCalendarReadarrIcsRequest
 */
-func (a *CalendarFeedApiService) GetApiV1CalendarReadarrIcs(ctx context.Context) ApiGetApiV1CalendarReadarrIcsRequest {
-	return ApiGetApiV1CalendarReadarrIcsRequest{
+func (a *CalendarFeedApiService) GetCalendarReadarrIcs(ctx context.Context) ApiGetCalendarReadarrIcsRequest {
+	return ApiGetCalendarReadarrIcsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CalendarFeedApiService) GetApiV1CalendarReadarrIcsExecute(r ApiGetApiV1CalendarReadarrIcsRequest) (*http.Response, error) {
+func (a *CalendarFeedApiService) GetCalendarReadarrIcsExecute(r ApiGetCalendarReadarrIcsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarFeedApiService.GetApiV1CalendarReadarrIcs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarFeedApiService.GetCalendarReadarrIcs")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -22,29 +22,29 @@ import (
 
 // MetadataApiService MetadataApi service
 type MetadataApiService service
-type ApiCreateApiV1MetadataRequest struct {
+type ApiCreateMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataApiService
 	metadataResource *MetadataResource
 }
 
-func (r ApiCreateApiV1MetadataRequest) MetadataResource(metadataResource MetadataResource) ApiCreateApiV1MetadataRequest {
+func (r ApiCreateMetadataRequest) MetadataResource(metadataResource MetadataResource) ApiCreateMetadataRequest {
 	r.metadataResource = &metadataResource
 	return r
 }
 
-func (r ApiCreateApiV1MetadataRequest) Execute() (*MetadataResource, *http.Response, error) {
-	return r.ApiService.CreateApiV1MetadataExecute(r)
+func (r ApiCreateMetadataRequest) Execute() (*MetadataResource, *http.Response, error) {
+	return r.ApiService.CreateMetadataExecute(r)
 }
 
 /*
-CreateApiV1Metadata Method for CreateApiV1Metadata
+CreateMetadata Method for CreateMetadata
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1MetadataRequest
+ @return ApiCreateMetadataRequest
 */
-func (a *MetadataApiService) CreateApiV1Metadata(ctx context.Context) ApiCreateApiV1MetadataRequest {
-	return ApiCreateApiV1MetadataRequest{
+func (a *MetadataApiService) CreateMetadata(ctx context.Context) ApiCreateMetadataRequest {
+	return ApiCreateMetadataRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *MetadataApiService) CreateApiV1Metadata(ctx context.Context) ApiCreateA
 
 // Execute executes the request
 //  @return MetadataResource
-func (a *MetadataApiService) CreateApiV1MetadataExecute(r ApiCreateApiV1MetadataRequest) (*MetadataResource, *http.Response, error) {
+func (a *MetadataApiService) CreateMetadataExecute(r ApiCreateMetadataRequest) (*MetadataResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *MetadataApiService) CreateApiV1MetadataExecute(r ApiCreateApiV1Metadata
 		localVarReturnValue  *MetadataResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.CreateApiV1Metadata")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.CreateMetadata")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -126,31 +126,31 @@ func (a *MetadataApiService) CreateApiV1MetadataExecute(r ApiCreateApiV1Metadata
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiCreateApiV1MetadataActionByNameRequest struct {
+type ApiCreateMetadataActionByNameRequest struct {
 	ctx context.Context
 	ApiService *MetadataApiService
 	name string
 	metadataResource *MetadataResource
 }
 
-func (r ApiCreateApiV1MetadataActionByNameRequest) MetadataResource(metadataResource MetadataResource) ApiCreateApiV1MetadataActionByNameRequest {
+func (r ApiCreateMetadataActionByNameRequest) MetadataResource(metadataResource MetadataResource) ApiCreateMetadataActionByNameRequest {
 	r.metadataResource = &metadataResource
 	return r
 }
 
-func (r ApiCreateApiV1MetadataActionByNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1MetadataActionByNameExecute(r)
+func (r ApiCreateMetadataActionByNameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateMetadataActionByNameExecute(r)
 }
 
 /*
-CreateApiV1MetadataActionByName Method for CreateApiV1MetadataActionByName
+CreateMetadataActionByName Method for CreateMetadataActionByName
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
- @return ApiCreateApiV1MetadataActionByNameRequest
+ @return ApiCreateMetadataActionByNameRequest
 */
-func (a *MetadataApiService) CreateApiV1MetadataActionByName(ctx context.Context, name string) ApiCreateApiV1MetadataActionByNameRequest {
-	return ApiCreateApiV1MetadataActionByNameRequest{
+func (a *MetadataApiService) CreateMetadataActionByName(ctx context.Context, name string) ApiCreateMetadataActionByNameRequest {
+	return ApiCreateMetadataActionByNameRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -158,14 +158,14 @@ func (a *MetadataApiService) CreateApiV1MetadataActionByName(ctx context.Context
 }
 
 // Execute executes the request
-func (a *MetadataApiService) CreateApiV1MetadataActionByNameExecute(r ApiCreateApiV1MetadataActionByNameRequest) (*http.Response, error) {
+func (a *MetadataApiService) CreateMetadataActionByNameExecute(r ApiCreateMetadataActionByNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.CreateApiV1MetadataActionByName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.CreateMetadataActionByName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -223,25 +223,25 @@ func (a *MetadataApiService) CreateApiV1MetadataActionByNameExecute(r ApiCreateA
 
 	return localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1MetadataRequest struct {
+type ApiDeleteMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1MetadataRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1MetadataExecute(r)
+func (r ApiDeleteMetadataRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteMetadataExecute(r)
 }
 
 /*
-DeleteApiV1Metadata Method for DeleteApiV1Metadata
+DeleteMetadata Method for DeleteMetadata
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1MetadataRequest
+ @return ApiDeleteMetadataRequest
 */
-func (a *MetadataApiService) DeleteApiV1Metadata(ctx context.Context, id int32) ApiDeleteApiV1MetadataRequest {
-	return ApiDeleteApiV1MetadataRequest{
+func (a *MetadataApiService) DeleteMetadata(ctx context.Context, id int32) ApiDeleteMetadataRequest {
+	return ApiDeleteMetadataRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -249,14 +249,14 @@ func (a *MetadataApiService) DeleteApiV1Metadata(ctx context.Context, id int32) 
 }
 
 // Execute executes the request
-func (a *MetadataApiService) DeleteApiV1MetadataExecute(r ApiDeleteApiV1MetadataRequest) (*http.Response, error) {
+func (a *MetadataApiService) DeleteMetadataExecute(r ApiDeleteMetadataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.DeleteApiV1Metadata")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.DeleteMetadata")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -312,25 +312,25 @@ func (a *MetadataApiService) DeleteApiV1MetadataExecute(r ApiDeleteApiV1Metadata
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1MetadataByIdRequest struct {
+type ApiGetMetadataByIdRequest struct {
 	ctx context.Context
 	ApiService *MetadataApiService
 	id int32
 }
 
-func (r ApiGetApiV1MetadataByIdRequest) Execute() (*MetadataResource, *http.Response, error) {
-	return r.ApiService.GetApiV1MetadataByIdExecute(r)
+func (r ApiGetMetadataByIdRequest) Execute() (*MetadataResource, *http.Response, error) {
+	return r.ApiService.GetMetadataByIdExecute(r)
 }
 
 /*
-GetApiV1MetadataById Method for GetApiV1MetadataById
+GetMetadataById Method for GetMetadataById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1MetadataByIdRequest
+ @return ApiGetMetadataByIdRequest
 */
-func (a *MetadataApiService) GetApiV1MetadataById(ctx context.Context, id int32) ApiGetApiV1MetadataByIdRequest {
-	return ApiGetApiV1MetadataByIdRequest{
+func (a *MetadataApiService) GetMetadataById(ctx context.Context, id int32) ApiGetMetadataByIdRequest {
+	return ApiGetMetadataByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -339,7 +339,7 @@ func (a *MetadataApiService) GetApiV1MetadataById(ctx context.Context, id int32)
 
 // Execute executes the request
 //  @return MetadataResource
-func (a *MetadataApiService) GetApiV1MetadataByIdExecute(r ApiGetApiV1MetadataByIdRequest) (*MetadataResource, *http.Response, error) {
+func (a *MetadataApiService) GetMetadataByIdExecute(r ApiGetMetadataByIdRequest) (*MetadataResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -347,7 +347,7 @@ func (a *MetadataApiService) GetApiV1MetadataByIdExecute(r ApiGetApiV1MetadataBy
 		localVarReturnValue  *MetadataResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.GetApiV1MetadataById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.GetMetadataById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -412,23 +412,23 @@ func (a *MetadataApiService) GetApiV1MetadataByIdExecute(r ApiGetApiV1MetadataBy
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1MetadataRequest struct {
+type ApiListMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataApiService
 }
 
-func (r ApiListApiV1MetadataRequest) Execute() ([]*MetadataResource, *http.Response, error) {
-	return r.ApiService.ListApiV1MetadataExecute(r)
+func (r ApiListMetadataRequest) Execute() ([]*MetadataResource, *http.Response, error) {
+	return r.ApiService.ListMetadataExecute(r)
 }
 
 /*
-ListApiV1Metadata Method for ListApiV1Metadata
+ListMetadata Method for ListMetadata
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1MetadataRequest
+ @return ApiListMetadataRequest
 */
-func (a *MetadataApiService) ListApiV1Metadata(ctx context.Context) ApiListApiV1MetadataRequest {
-	return ApiListApiV1MetadataRequest{
+func (a *MetadataApiService) ListMetadata(ctx context.Context) ApiListMetadataRequest {
+	return ApiListMetadataRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -436,7 +436,7 @@ func (a *MetadataApiService) ListApiV1Metadata(ctx context.Context) ApiListApiV1
 
 // Execute executes the request
 //  @return []MetadataResource
-func (a *MetadataApiService) ListApiV1MetadataExecute(r ApiListApiV1MetadataRequest) ([]*MetadataResource, *http.Response, error) {
+func (a *MetadataApiService) ListMetadataExecute(r ApiListMetadataRequest) ([]*MetadataResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -444,7 +444,7 @@ func (a *MetadataApiService) ListApiV1MetadataExecute(r ApiListApiV1MetadataRequ
 		localVarReturnValue  []*MetadataResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.ListApiV1Metadata")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.ListMetadata")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -508,23 +508,23 @@ func (a *MetadataApiService) ListApiV1MetadataExecute(r ApiListApiV1MetadataRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1MetadataSchemaRequest struct {
+type ApiListMetadataSchemaRequest struct {
 	ctx context.Context
 	ApiService *MetadataApiService
 }
 
-func (r ApiListApiV1MetadataSchemaRequest) Execute() ([]*MetadataResource, *http.Response, error) {
-	return r.ApiService.ListApiV1MetadataSchemaExecute(r)
+func (r ApiListMetadataSchemaRequest) Execute() ([]*MetadataResource, *http.Response, error) {
+	return r.ApiService.ListMetadataSchemaExecute(r)
 }
 
 /*
-ListApiV1MetadataSchema Method for ListApiV1MetadataSchema
+ListMetadataSchema Method for ListMetadataSchema
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1MetadataSchemaRequest
+ @return ApiListMetadataSchemaRequest
 */
-func (a *MetadataApiService) ListApiV1MetadataSchema(ctx context.Context) ApiListApiV1MetadataSchemaRequest {
-	return ApiListApiV1MetadataSchemaRequest{
+func (a *MetadataApiService) ListMetadataSchema(ctx context.Context) ApiListMetadataSchemaRequest {
+	return ApiListMetadataSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -532,7 +532,7 @@ func (a *MetadataApiService) ListApiV1MetadataSchema(ctx context.Context) ApiLis
 
 // Execute executes the request
 //  @return []MetadataResource
-func (a *MetadataApiService) ListApiV1MetadataSchemaExecute(r ApiListApiV1MetadataSchemaRequest) ([]*MetadataResource, *http.Response, error) {
+func (a *MetadataApiService) ListMetadataSchemaExecute(r ApiListMetadataSchemaRequest) ([]*MetadataResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -540,7 +540,7 @@ func (a *MetadataApiService) ListApiV1MetadataSchemaExecute(r ApiListApiV1Metada
 		localVarReturnValue  []*MetadataResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.ListApiV1MetadataSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.ListMetadataSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -604,43 +604,43 @@ func (a *MetadataApiService) ListApiV1MetadataSchemaExecute(r ApiListApiV1Metada
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiTestApiV1MetadataRequest struct {
+type ApiTestMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataApiService
 	metadataResource *MetadataResource
 }
 
-func (r ApiTestApiV1MetadataRequest) MetadataResource(metadataResource MetadataResource) ApiTestApiV1MetadataRequest {
+func (r ApiTestMetadataRequest) MetadataResource(metadataResource MetadataResource) ApiTestMetadataRequest {
 	r.metadataResource = &metadataResource
 	return r
 }
 
-func (r ApiTestApiV1MetadataRequest) Execute() (*http.Response, error) {
-	return r.ApiService.TestApiV1MetadataExecute(r)
+func (r ApiTestMetadataRequest) Execute() (*http.Response, error) {
+	return r.ApiService.TestMetadataExecute(r)
 }
 
 /*
-TestApiV1Metadata Method for TestApiV1Metadata
+TestMetadata Method for TestMetadata
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTestApiV1MetadataRequest
+ @return ApiTestMetadataRequest
 */
-func (a *MetadataApiService) TestApiV1Metadata(ctx context.Context) ApiTestApiV1MetadataRequest {
-	return ApiTestApiV1MetadataRequest{
+func (a *MetadataApiService) TestMetadata(ctx context.Context) ApiTestMetadataRequest {
+	return ApiTestMetadataRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *MetadataApiService) TestApiV1MetadataExecute(r ApiTestApiV1MetadataRequest) (*http.Response, error) {
+func (a *MetadataApiService) TestMetadataExecute(r ApiTestMetadataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.TestApiV1Metadata")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.TestMetadata")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -697,37 +697,37 @@ func (a *MetadataApiService) TestApiV1MetadataExecute(r ApiTestApiV1MetadataRequ
 
 	return localVarHTTPResponse, nil
 }
-type ApiTestallApiV1MetadataRequest struct {
+type ApiTestallMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataApiService
 }
 
-func (r ApiTestallApiV1MetadataRequest) Execute() (*http.Response, error) {
-	return r.ApiService.TestallApiV1MetadataExecute(r)
+func (r ApiTestallMetadataRequest) Execute() (*http.Response, error) {
+	return r.ApiService.TestallMetadataExecute(r)
 }
 
 /*
-TestallApiV1Metadata Method for TestallApiV1Metadata
+TestallMetadata Method for TestallMetadata
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTestallApiV1MetadataRequest
+ @return ApiTestallMetadataRequest
 */
-func (a *MetadataApiService) TestallApiV1Metadata(ctx context.Context) ApiTestallApiV1MetadataRequest {
-	return ApiTestallApiV1MetadataRequest{
+func (a *MetadataApiService) TestallMetadata(ctx context.Context) ApiTestallMetadataRequest {
+	return ApiTestallMetadataRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *MetadataApiService) TestallApiV1MetadataExecute(r ApiTestallApiV1MetadataRequest) (*http.Response, error) {
+func (a *MetadataApiService) TestallMetadataExecute(r ApiTestallMetadataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.TestallApiV1Metadata")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.TestallMetadata")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -782,31 +782,31 @@ func (a *MetadataApiService) TestallApiV1MetadataExecute(r ApiTestallApiV1Metada
 
 	return localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1MetadataRequest struct {
+type ApiUpdateMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataApiService
 	id string
 	metadataResource *MetadataResource
 }
 
-func (r ApiUpdateApiV1MetadataRequest) MetadataResource(metadataResource MetadataResource) ApiUpdateApiV1MetadataRequest {
+func (r ApiUpdateMetadataRequest) MetadataResource(metadataResource MetadataResource) ApiUpdateMetadataRequest {
 	r.metadataResource = &metadataResource
 	return r
 }
 
-func (r ApiUpdateApiV1MetadataRequest) Execute() (*MetadataResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1MetadataExecute(r)
+func (r ApiUpdateMetadataRequest) Execute() (*MetadataResource, *http.Response, error) {
+	return r.ApiService.UpdateMetadataExecute(r)
 }
 
 /*
-UpdateApiV1Metadata Method for UpdateApiV1Metadata
+UpdateMetadata Method for UpdateMetadata
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1MetadataRequest
+ @return ApiUpdateMetadataRequest
 */
-func (a *MetadataApiService) UpdateApiV1Metadata(ctx context.Context, id string) ApiUpdateApiV1MetadataRequest {
-	return ApiUpdateApiV1MetadataRequest{
+func (a *MetadataApiService) UpdateMetadata(ctx context.Context, id string) ApiUpdateMetadataRequest {
+	return ApiUpdateMetadataRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -815,7 +815,7 @@ func (a *MetadataApiService) UpdateApiV1Metadata(ctx context.Context, id string)
 
 // Execute executes the request
 //  @return MetadataResource
-func (a *MetadataApiService) UpdateApiV1MetadataExecute(r ApiUpdateApiV1MetadataRequest) (*MetadataResource, *http.Response, error) {
+func (a *MetadataApiService) UpdateMetadataExecute(r ApiUpdateMetadataRequest) (*MetadataResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -823,7 +823,7 @@ func (a *MetadataApiService) UpdateApiV1MetadataExecute(r ApiUpdateApiV1Metadata
 		localVarReturnValue  *MetadataResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.UpdateApiV1Metadata")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.UpdateMetadata")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

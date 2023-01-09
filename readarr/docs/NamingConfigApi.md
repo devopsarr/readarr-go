@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1ConfigNaming**](NamingConfigApi.md#GetApiV1ConfigNaming) | **Get** /api/v1/config/naming | 
-[**GetApiV1ConfigNamingById**](NamingConfigApi.md#GetApiV1ConfigNamingById) | **Get** /api/v1/config/naming/{id} | 
-[**GetApiV1ConfigNamingExamples**](NamingConfigApi.md#GetApiV1ConfigNamingExamples) | **Get** /api/v1/config/naming/examples | 
-[**UpdateApiV1ConfigNaming**](NamingConfigApi.md#UpdateApiV1ConfigNaming) | **Put** /api/v1/config/naming/{id} | 
+[**GetNamingConfig**](NamingConfigApi.md#GetNamingConfig) | **Get** /api/v1/config/naming | 
+[**GetNamingConfigById**](NamingConfigApi.md#GetNamingConfigById) | **Get** /api/v1/config/naming/{id} | 
+[**GetNamingConfigExamples**](NamingConfigApi.md#GetNamingConfigExamples) | **Get** /api/v1/config/naming/examples | 
+[**UpdateNamingConfig**](NamingConfigApi.md#UpdateNamingConfig) | **Put** /api/v1/config/naming/{id} | 
 
 
 
-## GetApiV1ConfigNaming
+## GetNamingConfig
 
-> NamingConfigResource GetApiV1ConfigNaming(ctx).Execute()
+> NamingConfigResource GetNamingConfig(ctx).Execute()
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NamingConfigApi.GetApiV1ConfigNaming(context.Background()).Execute()
+    resp, r, err := apiClient.NamingConfigApi.GetNamingConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetApiV1ConfigNaming``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetNamingConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigNaming`: NamingConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.GetApiV1ConfigNaming`: %v\n", resp)
+    // response from `GetNamingConfig`: NamingConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.GetNamingConfig`: %v\n", resp)
 }
 ```
 
@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigNamingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetNamingConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -70,9 +70,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1ConfigNamingById
+## GetNamingConfigById
 
-> NamingConfigResource GetApiV1ConfigNamingById(ctx, id).Execute()
+> NamingConfigResource GetNamingConfigById(ctx, id).Execute()
 
 
 
@@ -93,13 +93,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NamingConfigApi.GetApiV1ConfigNamingById(context.Background(), id).Execute()
+    resp, r, err := apiClient.NamingConfigApi.GetNamingConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetApiV1ConfigNamingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetNamingConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ConfigNamingById`: NamingConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.GetApiV1ConfigNamingById`: %v\n", resp)
+    // response from `GetNamingConfigById`: NamingConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.GetNamingConfigById`: %v\n", resp)
 }
 ```
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigNamingByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetNamingConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -138,9 +138,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetApiV1ConfigNamingExamples
+## GetNamingConfigExamples
 
-> GetApiV1ConfigNamingExamples(ctx).RenameBooks(renameBooks).ReplaceIllegalCharacters(replaceIllegalCharacters).StandardBookFormat(standardBookFormat).AuthorFolderFormat(authorFolderFormat).IncludeAuthorName(includeAuthorName).IncludeBookTitle(includeBookTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+> GetNamingConfigExamples(ctx).RenameBooks(renameBooks).ReplaceIllegalCharacters(replaceIllegalCharacters).StandardBookFormat(standardBookFormat).AuthorFolderFormat(authorFolderFormat).IncludeAuthorName(includeAuthorName).IncludeBookTitle(includeBookTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
 
 
 
@@ -172,9 +172,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NamingConfigApi.GetApiV1ConfigNamingExamples(context.Background()).RenameBooks(renameBooks).ReplaceIllegalCharacters(replaceIllegalCharacters).StandardBookFormat(standardBookFormat).AuthorFolderFormat(authorFolderFormat).IncludeAuthorName(includeAuthorName).IncludeBookTitle(includeBookTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+    resp, r, err := apiClient.NamingConfigApi.GetNamingConfigExamples(context.Background()).RenameBooks(renameBooks).ReplaceIllegalCharacters(replaceIllegalCharacters).StandardBookFormat(standardBookFormat).AuthorFolderFormat(authorFolderFormat).IncludeAuthorName(includeAuthorName).IncludeBookTitle(includeBookTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetApiV1ConfigNamingExamples``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetNamingConfigExamples``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -186,7 +186,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ConfigNamingExamplesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetNamingConfigExamplesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -222,9 +222,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1ConfigNaming
+## UpdateNamingConfig
 
-> NamingConfigResource UpdateApiV1ConfigNaming(ctx, id).NamingConfigResource(namingConfigResource).Execute()
+> NamingConfigResource UpdateNamingConfig(ctx, id).NamingConfigResource(namingConfigResource).Execute()
 
 
 
@@ -246,13 +246,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NamingConfigApi.UpdateApiV1ConfigNaming(context.Background(), id).NamingConfigResource(namingConfigResource).Execute()
+    resp, r, err := apiClient.NamingConfigApi.UpdateNamingConfig(context.Background(), id).NamingConfigResource(namingConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.UpdateApiV1ConfigNaming``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.UpdateNamingConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1ConfigNaming`: NamingConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.UpdateApiV1ConfigNaming`: %v\n", resp)
+    // response from `UpdateNamingConfig`: NamingConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.UpdateNamingConfig`: %v\n", resp)
 }
 ```
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1ConfigNamingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateNamingConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

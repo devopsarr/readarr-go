@@ -21,23 +21,23 @@ import (
 
 // QualityProfileSchemaApiService QualityProfileSchemaApi service
 type QualityProfileSchemaApiService service
-type ApiGetApiV1QualityprofileSchemaRequest struct {
+type ApiGetQualityprofileSchemaRequest struct {
 	ctx context.Context
 	ApiService *QualityProfileSchemaApiService
 }
 
-func (r ApiGetApiV1QualityprofileSchemaRequest) Execute() (*QualityProfileResource, *http.Response, error) {
-	return r.ApiService.GetApiV1QualityprofileSchemaExecute(r)
+func (r ApiGetQualityprofileSchemaRequest) Execute() (*QualityProfileResource, *http.Response, error) {
+	return r.ApiService.GetQualityprofileSchemaExecute(r)
 }
 
 /*
-GetApiV1QualityprofileSchema Method for GetApiV1QualityprofileSchema
+GetQualityprofileSchema Method for GetQualityprofileSchema
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1QualityprofileSchemaRequest
+ @return ApiGetQualityprofileSchemaRequest
 */
-func (a *QualityProfileSchemaApiService) GetApiV1QualityprofileSchema(ctx context.Context) ApiGetApiV1QualityprofileSchemaRequest {
-	return ApiGetApiV1QualityprofileSchemaRequest{
+func (a *QualityProfileSchemaApiService) GetQualityprofileSchema(ctx context.Context) ApiGetQualityprofileSchemaRequest {
+	return ApiGetQualityprofileSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -45,7 +45,7 @@ func (a *QualityProfileSchemaApiService) GetApiV1QualityprofileSchema(ctx contex
 
 // Execute executes the request
 //  @return QualityProfileResource
-func (a *QualityProfileSchemaApiService) GetApiV1QualityprofileSchemaExecute(r ApiGetApiV1QualityprofileSchemaRequest) (*QualityProfileResource, *http.Response, error) {
+func (a *QualityProfileSchemaApiService) GetQualityprofileSchemaExecute(r ApiGetQualityprofileSchemaRequest) (*QualityProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *QualityProfileSchemaApiService) GetApiV1QualityprofileSchemaExecute(r A
 		localVarReturnValue  *QualityProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileSchemaApiService.GetApiV1QualityprofileSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileSchemaApiService.GetQualityprofileSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -22,23 +22,23 @@ import (
 
 // MediaManagementConfigApiService MediaManagementConfigApi service
 type MediaManagementConfigApiService service
-type ApiGetApiV1ConfigMediamanagementRequest struct {
+type ApiGetMediaManagementConfigRequest struct {
 	ctx context.Context
 	ApiService *MediaManagementConfigApiService
 }
 
-func (r ApiGetApiV1ConfigMediamanagementRequest) Execute() (*MediaManagementConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigMediamanagementExecute(r)
+func (r ApiGetMediaManagementConfigRequest) Execute() (*MediaManagementConfigResource, *http.Response, error) {
+	return r.ApiService.GetMediaManagementConfigExecute(r)
 }
 
 /*
-GetApiV1ConfigMediamanagement Method for GetApiV1ConfigMediamanagement
+GetMediaManagementConfig Method for GetMediaManagementConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1ConfigMediamanagementRequest
+ @return ApiGetMediaManagementConfigRequest
 */
-func (a *MediaManagementConfigApiService) GetApiV1ConfigMediamanagement(ctx context.Context) ApiGetApiV1ConfigMediamanagementRequest {
-	return ApiGetApiV1ConfigMediamanagementRequest{
+func (a *MediaManagementConfigApiService) GetMediaManagementConfig(ctx context.Context) ApiGetMediaManagementConfigRequest {
+	return ApiGetMediaManagementConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *MediaManagementConfigApiService) GetApiV1ConfigMediamanagement(ctx cont
 
 // Execute executes the request
 //  @return MediaManagementConfigResource
-func (a *MediaManagementConfigApiService) GetApiV1ConfigMediamanagementExecute(r ApiGetApiV1ConfigMediamanagementRequest) (*MediaManagementConfigResource, *http.Response, error) {
+func (a *MediaManagementConfigApiService) GetMediaManagementConfigExecute(r ApiGetMediaManagementConfigRequest) (*MediaManagementConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *MediaManagementConfigApiService) GetApiV1ConfigMediamanagementExecute(r
 		localVarReturnValue  *MediaManagementConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaManagementConfigApiService.GetApiV1ConfigMediamanagement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaManagementConfigApiService.GetMediaManagementConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -118,25 +118,25 @@ func (a *MediaManagementConfigApiService) GetApiV1ConfigMediamanagementExecute(r
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetApiV1ConfigMediamanagementByIdRequest struct {
+type ApiGetMediaManagementConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *MediaManagementConfigApiService
 	id int32
 }
 
-func (r ApiGetApiV1ConfigMediamanagementByIdRequest) Execute() (*MediaManagementConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigMediamanagementByIdExecute(r)
+func (r ApiGetMediaManagementConfigByIdRequest) Execute() (*MediaManagementConfigResource, *http.Response, error) {
+	return r.ApiService.GetMediaManagementConfigByIdExecute(r)
 }
 
 /*
-GetApiV1ConfigMediamanagementById Method for GetApiV1ConfigMediamanagementById
+GetMediaManagementConfigById Method for GetMediaManagementConfigById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1ConfigMediamanagementByIdRequest
+ @return ApiGetMediaManagementConfigByIdRequest
 */
-func (a *MediaManagementConfigApiService) GetApiV1ConfigMediamanagementById(ctx context.Context, id int32) ApiGetApiV1ConfigMediamanagementByIdRequest {
-	return ApiGetApiV1ConfigMediamanagementByIdRequest{
+func (a *MediaManagementConfigApiService) GetMediaManagementConfigById(ctx context.Context, id int32) ApiGetMediaManagementConfigByIdRequest {
+	return ApiGetMediaManagementConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -145,7 +145,7 @@ func (a *MediaManagementConfigApiService) GetApiV1ConfigMediamanagementById(ctx 
 
 // Execute executes the request
 //  @return MediaManagementConfigResource
-func (a *MediaManagementConfigApiService) GetApiV1ConfigMediamanagementByIdExecute(r ApiGetApiV1ConfigMediamanagementByIdRequest) (*MediaManagementConfigResource, *http.Response, error) {
+func (a *MediaManagementConfigApiService) GetMediaManagementConfigByIdExecute(r ApiGetMediaManagementConfigByIdRequest) (*MediaManagementConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -153,7 +153,7 @@ func (a *MediaManagementConfigApiService) GetApiV1ConfigMediamanagementByIdExecu
 		localVarReturnValue  *MediaManagementConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaManagementConfigApiService.GetApiV1ConfigMediamanagementById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaManagementConfigApiService.GetMediaManagementConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -218,31 +218,31 @@ func (a *MediaManagementConfigApiService) GetApiV1ConfigMediamanagementByIdExecu
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1ConfigMediamanagementRequest struct {
+type ApiUpdateMediaManagementConfigRequest struct {
 	ctx context.Context
 	ApiService *MediaManagementConfigApiService
 	id string
 	mediaManagementConfigResource *MediaManagementConfigResource
 }
 
-func (r ApiUpdateApiV1ConfigMediamanagementRequest) MediaManagementConfigResource(mediaManagementConfigResource MediaManagementConfigResource) ApiUpdateApiV1ConfigMediamanagementRequest {
+func (r ApiUpdateMediaManagementConfigRequest) MediaManagementConfigResource(mediaManagementConfigResource MediaManagementConfigResource) ApiUpdateMediaManagementConfigRequest {
 	r.mediaManagementConfigResource = &mediaManagementConfigResource
 	return r
 }
 
-func (r ApiUpdateApiV1ConfigMediamanagementRequest) Execute() (*MediaManagementConfigResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1ConfigMediamanagementExecute(r)
+func (r ApiUpdateMediaManagementConfigRequest) Execute() (*MediaManagementConfigResource, *http.Response, error) {
+	return r.ApiService.UpdateMediaManagementConfigExecute(r)
 }
 
 /*
-UpdateApiV1ConfigMediamanagement Method for UpdateApiV1ConfigMediamanagement
+UpdateMediaManagementConfig Method for UpdateMediaManagementConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1ConfigMediamanagementRequest
+ @return ApiUpdateMediaManagementConfigRequest
 */
-func (a *MediaManagementConfigApiService) UpdateApiV1ConfigMediamanagement(ctx context.Context, id string) ApiUpdateApiV1ConfigMediamanagementRequest {
-	return ApiUpdateApiV1ConfigMediamanagementRequest{
+func (a *MediaManagementConfigApiService) UpdateMediaManagementConfig(ctx context.Context, id string) ApiUpdateMediaManagementConfigRequest {
+	return ApiUpdateMediaManagementConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -251,7 +251,7 @@ func (a *MediaManagementConfigApiService) UpdateApiV1ConfigMediamanagement(ctx c
 
 // Execute executes the request
 //  @return MediaManagementConfigResource
-func (a *MediaManagementConfigApiService) UpdateApiV1ConfigMediamanagementExecute(r ApiUpdateApiV1ConfigMediamanagementRequest) (*MediaManagementConfigResource, *http.Response, error) {
+func (a *MediaManagementConfigApiService) UpdateMediaManagementConfigExecute(r ApiUpdateMediaManagementConfigRequest) (*MediaManagementConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -259,7 +259,7 @@ func (a *MediaManagementConfigApiService) UpdateApiV1ConfigMediamanagementExecut
 		localVarReturnValue  *MediaManagementConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaManagementConfigApiService.UpdateApiV1ConfigMediamanagement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaManagementConfigApiService.UpdateMediaManagementConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -22,23 +22,23 @@ import (
 
 // IndexerConfigApiService IndexerConfigApi service
 type IndexerConfigApiService service
-type ApiGetApiV1ConfigIndexerRequest struct {
+type ApiGetIndexerConfigRequest struct {
 	ctx context.Context
 	ApiService *IndexerConfigApiService
 }
 
-func (r ApiGetApiV1ConfigIndexerRequest) Execute() (*IndexerConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigIndexerExecute(r)
+func (r ApiGetIndexerConfigRequest) Execute() (*IndexerConfigResource, *http.Response, error) {
+	return r.ApiService.GetIndexerConfigExecute(r)
 }
 
 /*
-GetApiV1ConfigIndexer Method for GetApiV1ConfigIndexer
+GetIndexerConfig Method for GetIndexerConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1ConfigIndexerRequest
+ @return ApiGetIndexerConfigRequest
 */
-func (a *IndexerConfigApiService) GetApiV1ConfigIndexer(ctx context.Context) ApiGetApiV1ConfigIndexerRequest {
-	return ApiGetApiV1ConfigIndexerRequest{
+func (a *IndexerConfigApiService) GetIndexerConfig(ctx context.Context) ApiGetIndexerConfigRequest {
+	return ApiGetIndexerConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *IndexerConfigApiService) GetApiV1ConfigIndexer(ctx context.Context) Api
 
 // Execute executes the request
 //  @return IndexerConfigResource
-func (a *IndexerConfigApiService) GetApiV1ConfigIndexerExecute(r ApiGetApiV1ConfigIndexerRequest) (*IndexerConfigResource, *http.Response, error) {
+func (a *IndexerConfigApiService) GetIndexerConfigExecute(r ApiGetIndexerConfigRequest) (*IndexerConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *IndexerConfigApiService) GetApiV1ConfigIndexerExecute(r ApiGetApiV1Conf
 		localVarReturnValue  *IndexerConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerConfigApiService.GetApiV1ConfigIndexer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerConfigApiService.GetIndexerConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -118,25 +118,25 @@ func (a *IndexerConfigApiService) GetApiV1ConfigIndexerExecute(r ApiGetApiV1Conf
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetApiV1ConfigIndexerByIdRequest struct {
+type ApiGetIndexerConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *IndexerConfigApiService
 	id int32
 }
 
-func (r ApiGetApiV1ConfigIndexerByIdRequest) Execute() (*IndexerConfigResource, *http.Response, error) {
-	return r.ApiService.GetApiV1ConfigIndexerByIdExecute(r)
+func (r ApiGetIndexerConfigByIdRequest) Execute() (*IndexerConfigResource, *http.Response, error) {
+	return r.ApiService.GetIndexerConfigByIdExecute(r)
 }
 
 /*
-GetApiV1ConfigIndexerById Method for GetApiV1ConfigIndexerById
+GetIndexerConfigById Method for GetIndexerConfigById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1ConfigIndexerByIdRequest
+ @return ApiGetIndexerConfigByIdRequest
 */
-func (a *IndexerConfigApiService) GetApiV1ConfigIndexerById(ctx context.Context, id int32) ApiGetApiV1ConfigIndexerByIdRequest {
-	return ApiGetApiV1ConfigIndexerByIdRequest{
+func (a *IndexerConfigApiService) GetIndexerConfigById(ctx context.Context, id int32) ApiGetIndexerConfigByIdRequest {
+	return ApiGetIndexerConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -145,7 +145,7 @@ func (a *IndexerConfigApiService) GetApiV1ConfigIndexerById(ctx context.Context,
 
 // Execute executes the request
 //  @return IndexerConfigResource
-func (a *IndexerConfigApiService) GetApiV1ConfigIndexerByIdExecute(r ApiGetApiV1ConfigIndexerByIdRequest) (*IndexerConfigResource, *http.Response, error) {
+func (a *IndexerConfigApiService) GetIndexerConfigByIdExecute(r ApiGetIndexerConfigByIdRequest) (*IndexerConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -153,7 +153,7 @@ func (a *IndexerConfigApiService) GetApiV1ConfigIndexerByIdExecute(r ApiGetApiV1
 		localVarReturnValue  *IndexerConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerConfigApiService.GetApiV1ConfigIndexerById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerConfigApiService.GetIndexerConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -218,31 +218,31 @@ func (a *IndexerConfigApiService) GetApiV1ConfigIndexerByIdExecute(r ApiGetApiV1
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateApiV1ConfigIndexerRequest struct {
+type ApiUpdateIndexerConfigRequest struct {
 	ctx context.Context
 	ApiService *IndexerConfigApiService
 	id string
 	indexerConfigResource *IndexerConfigResource
 }
 
-func (r ApiUpdateApiV1ConfigIndexerRequest) IndexerConfigResource(indexerConfigResource IndexerConfigResource) ApiUpdateApiV1ConfigIndexerRequest {
+func (r ApiUpdateIndexerConfigRequest) IndexerConfigResource(indexerConfigResource IndexerConfigResource) ApiUpdateIndexerConfigRequest {
 	r.indexerConfigResource = &indexerConfigResource
 	return r
 }
 
-func (r ApiUpdateApiV1ConfigIndexerRequest) Execute() (*IndexerConfigResource, *http.Response, error) {
-	return r.ApiService.UpdateApiV1ConfigIndexerExecute(r)
+func (r ApiUpdateIndexerConfigRequest) Execute() (*IndexerConfigResource, *http.Response, error) {
+	return r.ApiService.UpdateIndexerConfigExecute(r)
 }
 
 /*
-UpdateApiV1ConfigIndexer Method for UpdateApiV1ConfigIndexer
+UpdateIndexerConfig Method for UpdateIndexerConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateApiV1ConfigIndexerRequest
+ @return ApiUpdateIndexerConfigRequest
 */
-func (a *IndexerConfigApiService) UpdateApiV1ConfigIndexer(ctx context.Context, id string) ApiUpdateApiV1ConfigIndexerRequest {
-	return ApiUpdateApiV1ConfigIndexerRequest{
+func (a *IndexerConfigApiService) UpdateIndexerConfig(ctx context.Context, id string) ApiUpdateIndexerConfigRequest {
+	return ApiUpdateIndexerConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -251,7 +251,7 @@ func (a *IndexerConfigApiService) UpdateApiV1ConfigIndexer(ctx context.Context, 
 
 // Execute executes the request
 //  @return IndexerConfigResource
-func (a *IndexerConfigApiService) UpdateApiV1ConfigIndexerExecute(r ApiUpdateApiV1ConfigIndexerRequest) (*IndexerConfigResource, *http.Response, error) {
+func (a *IndexerConfigApiService) UpdateIndexerConfigExecute(r ApiUpdateIndexerConfigRequest) (*IndexerConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -259,7 +259,7 @@ func (a *IndexerConfigApiService) UpdateApiV1ConfigIndexerExecute(r ApiUpdateApi
 		localVarReturnValue  *IndexerConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerConfigApiService.UpdateApiV1ConfigIndexer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerConfigApiService.UpdateIndexerConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

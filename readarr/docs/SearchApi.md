@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1Search**](SearchApi.md#GetApiV1Search) | **Get** /api/v1/search | 
+[**GetSearch**](SearchApi.md#GetSearch) | **Get** /api/v1/search | 
 
 
 
-## GetApiV1Search
+## GetSearch
 
-> GetApiV1Search(ctx).Term(term).Execute()
+> GetSearch(ctx).Term(term).Execute()
 
 
 
@@ -31,9 +31,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SearchApi.GetApiV1Search(context.Background()).Term(term).Execute()
+    resp, r, err := apiClient.SearchApi.GetSearch(context.Background()).Term(term).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.GetApiV1Search``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchApi.GetSearch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -45,7 +45,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1SearchRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSearchRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

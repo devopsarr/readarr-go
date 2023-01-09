@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1Parse**](ParseApi.md#GetApiV1Parse) | **Get** /api/v1/parse | 
+[**GetParse**](ParseApi.md#GetParse) | **Get** /api/v1/parse | 
 
 
 
-## GetApiV1Parse
+## GetParse
 
-> ParseResource GetApiV1Parse(ctx).Title(title).Execute()
+> ParseResource GetParse(ctx).Title(title).Execute()
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ParseApi.GetApiV1Parse(context.Background()).Title(title).Execute()
+    resp, r, err := apiClient.ParseApi.GetParse(context.Background()).Title(title).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ParseApi.GetApiV1Parse``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ParseApi.GetParse``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1Parse`: ParseResource
-    fmt.Fprintf(os.Stdout, "Response from `ParseApi.GetApiV1Parse`: %v\n", resp)
+    // response from `GetParse`: ParseResource
+    fmt.Fprintf(os.Stdout, "Response from `ParseApi.GetParse`: %v\n", resp)
 }
 ```
 
@@ -47,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ParseRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetParseRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
