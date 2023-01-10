@@ -33,6 +33,10 @@ Name | Type | Description | Notes
 **SupportsOnImportFailure** | Pointer to **bool** |  | [optional] 
 **SupportsOnBookRetag** | Pointer to **bool** |  | [optional] 
 **TestCommand** | Pointer to **NullableString** |  | [optional] 
+**OnAuthorDelete** | Pointer to **bool** |  | [optional] 
+**OnBookDelete** | Pointer to **bool** |  | [optional] 
+**OnBookFileDelete** | Pointer to **bool** |  | [optional] 
+**OnBookFileDeleteForUpgrade** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -878,6 +882,106 @@ HasTestCommand returns a boolean if a field has been set.
 `func (o *NotificationResource) UnsetTestCommand()`
 
 UnsetTestCommand ensures that no value is present for TestCommand, not even an explicit nil
+### GetOnAuthorDelete
+
+`func (o *NotificationResource) GetOnAuthorDelete() bool`
+
+GetOnAuthorDelete returns the OnAuthorDelete field if non-nil, zero value otherwise.
+
+### GetOnAuthorDeleteOk
+
+`func (o *NotificationResource) GetOnAuthorDeleteOk() (*bool, bool)`
+
+GetOnAuthorDeleteOk returns a tuple with the OnAuthorDelete field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnAuthorDelete
+
+`func (o *NotificationResource) SetOnAuthorDelete(v bool)`
+
+SetOnAuthorDelete sets OnAuthorDelete field to given value.
+
+### HasOnAuthorDelete
+
+`func (o *NotificationResource) HasOnAuthorDelete() bool`
+
+HasOnAuthorDelete returns a boolean if a field has been set.
+
+### GetOnBookDelete
+
+`func (o *NotificationResource) GetOnBookDelete() bool`
+
+GetOnBookDelete returns the OnBookDelete field if non-nil, zero value otherwise.
+
+### GetOnBookDeleteOk
+
+`func (o *NotificationResource) GetOnBookDeleteOk() (*bool, bool)`
+
+GetOnBookDeleteOk returns a tuple with the OnBookDelete field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnBookDelete
+
+`func (o *NotificationResource) SetOnBookDelete(v bool)`
+
+SetOnBookDelete sets OnBookDelete field to given value.
+
+### HasOnBookDelete
+
+`func (o *NotificationResource) HasOnBookDelete() bool`
+
+HasOnBookDelete returns a boolean if a field has been set.
+
+### GetOnBookFileDelete
+
+`func (o *NotificationResource) GetOnBookFileDelete() bool`
+
+GetOnBookFileDelete returns the OnBookFileDelete field if non-nil, zero value otherwise.
+
+### GetOnBookFileDeleteOk
+
+`func (o *NotificationResource) GetOnBookFileDeleteOk() (*bool, bool)`
+
+GetOnBookFileDeleteOk returns a tuple with the OnBookFileDelete field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnBookFileDelete
+
+`func (o *NotificationResource) SetOnBookFileDelete(v bool)`
+
+SetOnBookFileDelete sets OnBookFileDelete field to given value.
+
+### HasOnBookFileDelete
+
+`func (o *NotificationResource) HasOnBookFileDelete() bool`
+
+HasOnBookFileDelete returns a boolean if a field has been set.
+
+### GetOnBookFileDeleteForUpgrade
+
+`func (o *NotificationResource) GetOnBookFileDeleteForUpgrade() bool`
+
+GetOnBookFileDeleteForUpgrade returns the OnBookFileDeleteForUpgrade field if non-nil, zero value otherwise.
+
+### GetOnBookFileDeleteForUpgradeOk
+
+`func (o *NotificationResource) GetOnBookFileDeleteForUpgradeOk() (*bool, bool)`
+
+GetOnBookFileDeleteForUpgradeOk returns a tuple with the OnBookFileDeleteForUpgrade field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnBookFileDeleteForUpgrade
+
+`func (o *NotificationResource) SetOnBookFileDeleteForUpgrade(v bool)`
+
+SetOnBookFileDeleteForUpgrade sets OnBookFileDeleteForUpgrade field to given value.
+
+### HasOnBookFileDeleteForUpgrade
+
+`func (o *NotificationResource) HasOnBookFileDeleteForUpgrade() bool`
+
+HasOnBookFileDeleteForUpgrade returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

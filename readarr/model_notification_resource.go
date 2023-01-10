@@ -45,6 +45,10 @@ type NotificationResource struct {
 	SupportsOnImportFailure *bool `json:"supportsOnImportFailure,omitempty"`
 	SupportsOnBookRetag *bool `json:"supportsOnBookRetag,omitempty"`
 	TestCommand NullableString `json:"testCommand,omitempty"`
+	OnAuthorDelete *bool `json:"onAuthorDelete,omitempty"`
+	OnBookDelete *bool `json:"onBookDelete,omitempty"`
+	OnBookFileDelete *bool `json:"onBookFileDelete,omitempty"`
+	OnBookFileDeleteForUpgrade *bool `json:"onBookFileDeleteForUpgrade,omitempty"`
 }
 
 // NewNotificationResource instantiates a new NotificationResource object
@@ -1065,6 +1069,134 @@ func (o *NotificationResource) UnsetTestCommand() {
 	o.TestCommand.Unset()
 }
 
+// GetOnAuthorDelete returns the OnAuthorDelete field value if set, zero value otherwise.
+func (o *NotificationResource) GetOnAuthorDelete() bool {
+	if o == nil || isNil(o.OnAuthorDelete) {
+		var ret bool
+		return ret
+	}
+	return *o.OnAuthorDelete
+}
+
+// GetOnAuthorDeleteOk returns a tuple with the OnAuthorDelete field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetOnAuthorDeleteOk() (*bool, bool) {
+	if o == nil || isNil(o.OnAuthorDelete) {
+    return nil, false
+	}
+	return o.OnAuthorDelete, true
+}
+
+// HasOnAuthorDelete returns a boolean if a field has been set.
+func (o *NotificationResource) HasOnAuthorDelete() bool {
+	if o != nil && !isNil(o.OnAuthorDelete) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnAuthorDelete gets a reference to the given bool and assigns it to the OnAuthorDelete field.
+func (o *NotificationResource) SetOnAuthorDelete(v bool) {
+	o.OnAuthorDelete = &v
+}
+
+// GetOnBookDelete returns the OnBookDelete field value if set, zero value otherwise.
+func (o *NotificationResource) GetOnBookDelete() bool {
+	if o == nil || isNil(o.OnBookDelete) {
+		var ret bool
+		return ret
+	}
+	return *o.OnBookDelete
+}
+
+// GetOnBookDeleteOk returns a tuple with the OnBookDelete field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetOnBookDeleteOk() (*bool, bool) {
+	if o == nil || isNil(o.OnBookDelete) {
+    return nil, false
+	}
+	return o.OnBookDelete, true
+}
+
+// HasOnBookDelete returns a boolean if a field has been set.
+func (o *NotificationResource) HasOnBookDelete() bool {
+	if o != nil && !isNil(o.OnBookDelete) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnBookDelete gets a reference to the given bool and assigns it to the OnBookDelete field.
+func (o *NotificationResource) SetOnBookDelete(v bool) {
+	o.OnBookDelete = &v
+}
+
+// GetOnBookFileDelete returns the OnBookFileDelete field value if set, zero value otherwise.
+func (o *NotificationResource) GetOnBookFileDelete() bool {
+	if o == nil || isNil(o.OnBookFileDelete) {
+		var ret bool
+		return ret
+	}
+	return *o.OnBookFileDelete
+}
+
+// GetOnBookFileDeleteOk returns a tuple with the OnBookFileDelete field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetOnBookFileDeleteOk() (*bool, bool) {
+	if o == nil || isNil(o.OnBookFileDelete) {
+    return nil, false
+	}
+	return o.OnBookFileDelete, true
+}
+
+// HasOnBookFileDelete returns a boolean if a field has been set.
+func (o *NotificationResource) HasOnBookFileDelete() bool {
+	if o != nil && !isNil(o.OnBookFileDelete) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnBookFileDelete gets a reference to the given bool and assigns it to the OnBookFileDelete field.
+func (o *NotificationResource) SetOnBookFileDelete(v bool) {
+	o.OnBookFileDelete = &v
+}
+
+// GetOnBookFileDeleteForUpgrade returns the OnBookFileDeleteForUpgrade field value if set, zero value otherwise.
+func (o *NotificationResource) GetOnBookFileDeleteForUpgrade() bool {
+	if o == nil || isNil(o.OnBookFileDeleteForUpgrade) {
+		var ret bool
+		return ret
+	}
+	return *o.OnBookFileDeleteForUpgrade
+}
+
+// GetOnBookFileDeleteForUpgradeOk returns a tuple with the OnBookFileDeleteForUpgrade field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetOnBookFileDeleteForUpgradeOk() (*bool, bool) {
+	if o == nil || isNil(o.OnBookFileDeleteForUpgrade) {
+    return nil, false
+	}
+	return o.OnBookFileDeleteForUpgrade, true
+}
+
+// HasOnBookFileDeleteForUpgrade returns a boolean if a field has been set.
+func (o *NotificationResource) HasOnBookFileDeleteForUpgrade() bool {
+	if o != nil && !isNil(o.OnBookFileDeleteForUpgrade) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnBookFileDeleteForUpgrade gets a reference to the given bool and assigns it to the OnBookFileDeleteForUpgrade field.
+func (o *NotificationResource) SetOnBookFileDeleteForUpgrade(v bool) {
+	o.OnBookFileDeleteForUpgrade = &v
+}
+
 func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -1153,6 +1285,18 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.TestCommand.IsSet() {
 		toSerialize["testCommand"] = o.TestCommand.Get()
+	}
+	if !isNil(o.OnAuthorDelete) {
+		toSerialize["onAuthorDelete"] = o.OnAuthorDelete
+	}
+	if !isNil(o.OnBookDelete) {
+		toSerialize["onBookDelete"] = o.OnBookDelete
+	}
+	if !isNil(o.OnBookFileDelete) {
+		toSerialize["onBookFileDelete"] = o.OnBookFileDelete
+	}
+	if !isNil(o.OnBookFileDeleteForUpgrade) {
+		toSerialize["onBookFileDeleteForUpgrade"] = o.OnBookFileDeleteForUpgrade
 	}
 	return json.Marshal(toSerialize)
 }
