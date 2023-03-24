@@ -40,7 +40,7 @@ type ParsedTrackInfo struct {
 	Source NullableString `json:"source,omitempty"`
 	CatalogNumber NullableString `json:"catalogNumber,omitempty"`
 	Disambiguation NullableString `json:"disambiguation,omitempty"`
-	Duration *TimeSpan `json:"duration,omitempty"`
+	Duration *string `json:"duration,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
 	MediaInfo *MediaInfoModel `json:"mediaInfo,omitempty"`
 	TrackNumbers []*int32 `json:"trackNumbers,omitempty"`
@@ -1026,9 +1026,9 @@ func (o *ParsedTrackInfo) UnsetDisambiguation() {
 }
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
-func (o *ParsedTrackInfo) GetDuration() TimeSpan {
+func (o *ParsedTrackInfo) GetDuration() string {
 	if o == nil || isNil(o.Duration) {
-		var ret TimeSpan
+		var ret string
 		return ret
 	}
 	return *o.Duration
@@ -1036,7 +1036,7 @@ func (o *ParsedTrackInfo) GetDuration() TimeSpan {
 
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ParsedTrackInfo) GetDurationOk() (*TimeSpan, bool) {
+func (o *ParsedTrackInfo) GetDurationOk() (*string, bool) {
 	if o == nil || isNil(o.Duration) {
     return nil, false
 	}
@@ -1052,8 +1052,8 @@ func (o *ParsedTrackInfo) HasDuration() bool {
 	return false
 }
 
-// SetDuration gets a reference to the given TimeSpan and assigns it to the Duration field.
-func (o *ParsedTrackInfo) SetDuration(v TimeSpan) {
+// SetDuration gets a reference to the given string and assigns it to the Duration field.
+func (o *ParsedTrackInfo) SetDuration(v string) {
 	o.Duration = &v
 }
 
