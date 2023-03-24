@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/devopsarr/readarr-go/compare/v0.1.0...v0.2.0) (2023-03-24)
+
+
+### Features
+
+* sdk generation alignment ([69dd3f9](https://github.com/devopsarr/readarr-go/commit/69dd3f9f356798599fb527ee26f7d5544086e0ac))
+
 ## 0.1.0 (2023-01-24)
 
 
