@@ -153,7 +153,6 @@ docs/HistoryResource.md
 docs/HistoryResourcePagingResource.md
 docs/HostConfigApi.md
 docs/HostConfigResource.md
-docs/HttpUri.md
 docs/ImportListApi.md
 docs/ImportListExclusionApi.md
 docs/ImportListExclusionResource.md
@@ -267,7 +266,6 @@ docs/TagDifference.md
 docs/TagResource.md
 docs/TaskApi.md
 docs/TaskResource.md
-docs/TimeSpan.md
 docs/TrackedDownloadState.md
 docs/TrackedDownloadStatus.md
 docs/TrackedDownloadStatusMessage.md
@@ -278,7 +276,6 @@ docs/UpdateChanges.md
 docs/UpdateLogFileApi.md
 docs/UpdateMechanism.md
 docs/UpdateResource.md
-docs/Version.md
 docs/WriteAudioTagsType.md
 docs/WriteBookTagsType.md
 go.mod
@@ -340,7 +337,6 @@ model_history_event_type.go
 model_history_resource.go
 model_history_resource_paging_resource.go
 model_host_config_resource.go
-model_http_uri.go
 model_import_list_exclusion_resource.go
 model_import_list_monitor_type.go
 model_import_list_resource.go
@@ -413,7 +409,6 @@ model_tag_details_resource.go
 model_tag_difference.go
 model_tag_resource.go
 model_task_resource.go
-model_time_span.go
 model_tracked_download_state.go
 model_tracked_download_status.go
 model_tracked_download_status_message.go
@@ -421,7 +416,6 @@ model_ui_config_resource.go
 model_update_changes.go
 model_update_mechanism.go
 model_update_resource.go
-model_version.go
 model_write_audio_tags_type.go
 model_write_book_tags_type.go
 response.go

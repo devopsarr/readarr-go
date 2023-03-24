@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **Source** | Pointer to **NullableString** |  | [optional] 
 **CatalogNumber** | Pointer to **NullableString** |  | [optional] 
 **Disambiguation** | Pointer to **NullableString** |  | [optional] 
-**Duration** | Pointer to [**TimeSpan**](TimeSpan.md) |  | [optional] 
+**Duration** | Pointer to **string** |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **MediaInfo** | Pointer to [**MediaInfoModel**](MediaInfoModel.md) |  | [optional] 
 **TrackNumbers** | Pointer to **[]int32** |  | [optional] 
@@ -857,20 +857,20 @@ HasDisambiguation returns a boolean if a field has been set.
 UnsetDisambiguation ensures that no value is present for Disambiguation, not even an explicit nil
 ### GetDuration
 
-`func (o *ParsedTrackInfo) GetDuration() TimeSpan`
+`func (o *ParsedTrackInfo) GetDuration() string`
 
 GetDuration returns the Duration field if non-nil, zero value otherwise.
 
 ### GetDurationOk
 
-`func (o *ParsedTrackInfo) GetDurationOk() (*TimeSpan, bool)`
+`func (o *ParsedTrackInfo) GetDurationOk() (*string, bool)`
 
 GetDurationOk returns a tuple with the Duration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDuration
 
-`func (o *ParsedTrackInfo) SetDuration(v TimeSpan)`
+`func (o *ParsedTrackInfo) SetDuration(v string)`
 
 SetDuration sets Duration field to given value.
 

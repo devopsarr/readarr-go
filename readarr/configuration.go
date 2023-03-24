@@ -101,7 +101,9 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "Readarr-go/v0.0.1",
+		// x-release-please-start-version
+		UserAgent:        "readarr-go/v0.1.0",
+		// x-release-please-end
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
