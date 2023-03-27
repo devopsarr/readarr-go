@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/devopsarr/readarr-go/compare/v0.2.0...v0.2.1) (2023-03-27)
+
+
+### Bug Fixes
+
+* **devopsarr/sonarr-py#6:** remove timespan validator ([33b2a53](https://github.com/devopsarr/readarr-go/commit/33b2a53a132a58b8af60e64dcb85bc4a53acf7b3))
+
 ## [0.2.0](https://github.com/devopsarr/readarr-go/compare/v0.1.0...v0.2.0) (2023-03-24)
 
 
