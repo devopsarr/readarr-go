@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Size** | Pointer to **int64** |  | [optional] 
 **Modified** | Pointer to **time.Time** |  | [optional] 
 **DateAdded** | Pointer to **time.Time** |  | [optional] 
+**OriginalFilePath** | Pointer to **NullableString** |  | [optional] 
 **SceneName** | Pointer to **NullableString** |  | [optional] 
 **ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
@@ -174,6 +175,41 @@ SetDateAdded sets DateAdded field to given value.
 
 HasDateAdded returns a boolean if a field has been set.
 
+### GetOriginalFilePath
+
+`func (o *BookFile) GetOriginalFilePath() string`
+
+GetOriginalFilePath returns the OriginalFilePath field if non-nil, zero value otherwise.
+
+### GetOriginalFilePathOk
+
+`func (o *BookFile) GetOriginalFilePathOk() (*string, bool)`
+
+GetOriginalFilePathOk returns a tuple with the OriginalFilePath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginalFilePath
+
+`func (o *BookFile) SetOriginalFilePath(v string)`
+
+SetOriginalFilePath sets OriginalFilePath field to given value.
+
+### HasOriginalFilePath
+
+`func (o *BookFile) HasOriginalFilePath() bool`
+
+HasOriginalFilePath returns a boolean if a field has been set.
+
+### SetOriginalFilePathNil
+
+`func (o *BookFile) SetOriginalFilePathNil(b bool)`
+
+ SetOriginalFilePathNil sets the value for OriginalFilePath to be an explicit nil
+
+### UnsetOriginalFilePath
+`func (o *BookFile) UnsetOriginalFilePath()`
+
+UnsetOriginalFilePath ensures that no value is present for OriginalFilePath, not even an explicit nil
 ### GetSceneName
 
 `func (o *BookFile) GetSceneName() string`

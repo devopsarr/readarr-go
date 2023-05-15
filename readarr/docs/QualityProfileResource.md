@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **UpgradeAllowed** | Pointer to **bool** |  | [optional] 
 **Cutoff** | Pointer to **int32** |  | [optional] 
 **Items** | Pointer to [**[]QualityProfileQualityItemResource**](QualityProfileQualityItemResource.md) |  | [optional] 
+**MinFormatScore** | Pointer to **int32** |  | [optional] 
+**CutoffFormatScore** | Pointer to **int32** |  | [optional] 
+**FormatItems** | Pointer to [**[]ProfileFormatItemResource**](ProfileFormatItemResource.md) |  | [optional] 
 
 ## Methods
 
@@ -174,6 +177,91 @@ HasItems returns a boolean if a field has been set.
 `func (o *QualityProfileResource) UnsetItems()`
 
 UnsetItems ensures that no value is present for Items, not even an explicit nil
+### GetMinFormatScore
+
+`func (o *QualityProfileResource) GetMinFormatScore() int32`
+
+GetMinFormatScore returns the MinFormatScore field if non-nil, zero value otherwise.
+
+### GetMinFormatScoreOk
+
+`func (o *QualityProfileResource) GetMinFormatScoreOk() (*int32, bool)`
+
+GetMinFormatScoreOk returns a tuple with the MinFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinFormatScore
+
+`func (o *QualityProfileResource) SetMinFormatScore(v int32)`
+
+SetMinFormatScore sets MinFormatScore field to given value.
+
+### HasMinFormatScore
+
+`func (o *QualityProfileResource) HasMinFormatScore() bool`
+
+HasMinFormatScore returns a boolean if a field has been set.
+
+### GetCutoffFormatScore
+
+`func (o *QualityProfileResource) GetCutoffFormatScore() int32`
+
+GetCutoffFormatScore returns the CutoffFormatScore field if non-nil, zero value otherwise.
+
+### GetCutoffFormatScoreOk
+
+`func (o *QualityProfileResource) GetCutoffFormatScoreOk() (*int32, bool)`
+
+GetCutoffFormatScoreOk returns a tuple with the CutoffFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCutoffFormatScore
+
+`func (o *QualityProfileResource) SetCutoffFormatScore(v int32)`
+
+SetCutoffFormatScore sets CutoffFormatScore field to given value.
+
+### HasCutoffFormatScore
+
+`func (o *QualityProfileResource) HasCutoffFormatScore() bool`
+
+HasCutoffFormatScore returns a boolean if a field has been set.
+
+### GetFormatItems
+
+`func (o *QualityProfileResource) GetFormatItems() []ProfileFormatItemResource`
+
+GetFormatItems returns the FormatItems field if non-nil, zero value otherwise.
+
+### GetFormatItemsOk
+
+`func (o *QualityProfileResource) GetFormatItemsOk() (*[]ProfileFormatItemResource, bool)`
+
+GetFormatItemsOk returns a tuple with the FormatItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormatItems
+
+`func (o *QualityProfileResource) SetFormatItems(v []ProfileFormatItemResource)`
+
+SetFormatItems sets FormatItems field to given value.
+
+### HasFormatItems
+
+`func (o *QualityProfileResource) HasFormatItems() bool`
+
+HasFormatItems returns a boolean if a field has been set.
+
+### SetFormatItemsNil
+
+`func (o *QualityProfileResource) SetFormatItemsNil(b bool)`
+
+ SetFormatItemsNil sets the value for FormatItems to be an explicit nil
+
+### UnsetFormatItems
+`func (o *QualityProfileResource) UnsetFormatItems()`
+
+UnsetFormatItems ensures that no value is present for FormatItems, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

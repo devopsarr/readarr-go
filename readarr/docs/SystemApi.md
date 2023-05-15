@@ -1,6 +1,6 @@
 # \SystemApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8787*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiCreateSystemRestartRequest
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -114,7 +114,7 @@ Other parameters are passed through a pointer to a apiCreateSystemShutdownReques
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -171,7 +171,7 @@ Other parameters are passed through a pointer to a apiGetSystemRoutesRequest str
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -228,7 +228,7 @@ Other parameters are passed through a pointer to a apiGetSystemRoutesDuplicateRe
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -242,7 +242,7 @@ No authorization required
 
 ## GetSystemStatus
 
-> GetSystemStatus(ctx).Execute()
+> SystemResource GetSystemStatus(ctx).Execute()
 
 
 
@@ -267,6 +267,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.GetSystemStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GetSystemStatus`: SystemResource
+    fmt.Fprintf(os.Stdout, "Response from `SystemApi.GetSystemStatus`: %v\n", resp)
 }
 ```
 
@@ -281,16 +283,16 @@ Other parameters are passed through a pointer to a apiGetSystemStatusRequest str
 
 ### Return type
 
- (empty response body)
+[**SystemResource**](SystemResource.md)
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

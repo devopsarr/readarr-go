@@ -1,12 +1,74 @@
 # \ManualImportApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8787*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CreateManualImport**](ManualImportApi.md#CreateManualImport) | **Post** /api/v1/manualimport | 
 [**ListManualImport**](ManualImportApi.md#ListManualImport) | **Get** /api/v1/manualimport | 
-[**PutManualImport**](ManualImportApi.md#PutManualImport) | **Put** /api/v1/manualimport | 
 
+
+
+## CreateManualImport
+
+> CreateManualImport(ctx).ManualImportUpdateResource(manualImportUpdateResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    readarrClient "./openapi"
+)
+
+func main() {
+    manualImportUpdateResource := []readarrClient.ManualImportUpdateResource{*readarrClient.NewManualImportUpdateResource()} // []ManualImportUpdateResource |  (optional)
+
+    configuration := readarrClient.NewConfiguration()
+    apiClient := readarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManualImportApi.CreateManualImport(context.Background()).ManualImportUpdateResource(manualImportUpdateResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ManualImportApi.CreateManualImport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateManualImportRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **manualImportUpdateResource** | [**[]ManualImportUpdateResource**](ManualImportUpdateResource.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## ListManualImport
@@ -69,74 +131,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutManualImport
-
-> PutManualImport(ctx).ManualImportResource(manualImportResource).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    readarrClient "./openapi"
-)
-
-func main() {
-    manualImportResource := []readarrClient.ManualImportResource{*readarrClient.NewManualImportResource()} // []ManualImportResource |  (optional)
-
-    configuration := readarrClient.NewConfiguration()
-    apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualImportApi.PutManualImport(context.Background()).ManualImportResource(manualImportResource).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ManualImportApi.PutManualImport``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutManualImportRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **manualImportResource** | [**[]ManualImportResource**](ManualImportResource.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Book** | Pointer to [**BookResource**](BookResource.md) |  | [optional] 
 **ForeignEditionId** | Pointer to **NullableString** |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
+**ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
 **QualityWeight** | Pointer to **int32** |  | [optional] 
 **DownloadId** | Pointer to **NullableString** |  | [optional] 
 **Rejections** | Pointer to [**[]Rejection**](Rejection.md) |  | [optional] 
@@ -269,6 +270,41 @@ SetQuality sets Quality field to given value.
 
 HasQuality returns a boolean if a field has been set.
 
+### GetReleaseGroup
+
+`func (o *ManualImportResource) GetReleaseGroup() string`
+
+GetReleaseGroup returns the ReleaseGroup field if non-nil, zero value otherwise.
+
+### GetReleaseGroupOk
+
+`func (o *ManualImportResource) GetReleaseGroupOk() (*string, bool)`
+
+GetReleaseGroupOk returns a tuple with the ReleaseGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseGroup
+
+`func (o *ManualImportResource) SetReleaseGroup(v string)`
+
+SetReleaseGroup sets ReleaseGroup field to given value.
+
+### HasReleaseGroup
+
+`func (o *ManualImportResource) HasReleaseGroup() bool`
+
+HasReleaseGroup returns a boolean if a field has been set.
+
+### SetReleaseGroupNil
+
+`func (o *ManualImportResource) SetReleaseGroupNil(b bool)`
+
+ SetReleaseGroupNil sets the value for ReleaseGroup to be an explicit nil
+
+### UnsetReleaseGroup
+`func (o *ManualImportResource) UnsetReleaseGroup()`
+
+UnsetReleaseGroup ensures that no value is present for ReleaseGroup, not even an explicit nil
 ### GetQualityWeight
 
 `func (o *ManualImportResource) GetQualityWeight() int32`

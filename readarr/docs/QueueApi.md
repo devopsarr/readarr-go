@@ -1,6 +1,6 @@
 # \QueueApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8787*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## DeleteQueue
 
-> DeleteQueue(ctx, id).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).Execute()
+> DeleteQueue(ctx, id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipReDownload(skipReDownload).Execute()
 
 
 
@@ -32,12 +32,12 @@ import (
 func main() {
     id := int32(56) // int32 | 
     removeFromClient := true // bool |  (optional) (default to true)
-    blacklist := true // bool |  (optional) (default to false)
+    blocklist := true // bool |  (optional) (default to false)
     skipReDownload := true // bool |  (optional) (default to false)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueApi.DeleteQueue(context.Background(), id).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).Execute()
+    resp, r, err := apiClient.QueueApi.DeleteQueue(context.Background(), id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipReDownload(skipReDownload).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.DeleteQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **removeFromClient** | **bool** |  | [default to true]
- **blacklist** | **bool** |  | [default to false]
+ **blocklist** | **bool** |  | [default to false]
  **skipReDownload** | **bool** |  | [default to false]
 
 ### Return type
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -85,7 +85,7 @@ No authorization required
 
 ## DeleteQueueBulk
 
-> DeleteQueueBulk(ctx).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).QueueBulkResource(queueBulkResource).Execute()
+> DeleteQueueBulk(ctx).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipReDownload(skipReDownload).QueueBulkResource(queueBulkResource).Execute()
 
 
 
@@ -103,13 +103,13 @@ import (
 
 func main() {
     removeFromClient := true // bool |  (optional) (default to true)
-    blacklist := true // bool |  (optional) (default to false)
+    blocklist := true // bool |  (optional) (default to false)
     skipReDownload := true // bool |  (optional) (default to false)
     queueBulkResource := *readarrClient.NewQueueBulkResource() // QueueBulkResource |  (optional)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueApi.DeleteQueueBulk(context.Background()).RemoveFromClient(removeFromClient).Blacklist(blacklist).SkipReDownload(skipReDownload).QueueBulkResource(queueBulkResource).Execute()
+    resp, r, err := apiClient.QueueApi.DeleteQueueBulk(context.Background()).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipReDownload(skipReDownload).QueueBulkResource(queueBulkResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.DeleteQueueBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,7 +129,7 @@ Other parameters are passed through a pointer to a apiDeleteQueueBulkRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **removeFromClient** | **bool** |  | [default to true]
- **blacklist** | **bool** |  | [default to false]
+ **blocklist** | **bool** |  | [default to false]
  **skipReDownload** | **bool** |  | [default to false]
  **queueBulkResource** | [**QueueBulkResource**](QueueBulkResource.md) |  | 
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 

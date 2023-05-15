@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Author** | Pointer to [**AuthorResource**](AuthorResource.md) |  | [optional] 
 **Book** | Pointer to [**BookResource**](BookResource.md) |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
+**CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **Size** | Pointer to **float64** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
 **Sizeleft** | Pointer to **float64** |  | [optional] 
@@ -216,6 +217,41 @@ SetQuality sets Quality field to given value.
 
 HasQuality returns a boolean if a field has been set.
 
+### GetCustomFormats
+
+`func (o *QueueResource) GetCustomFormats() []CustomFormatResource`
+
+GetCustomFormats returns the CustomFormats field if non-nil, zero value otherwise.
+
+### GetCustomFormatsOk
+
+`func (o *QueueResource) GetCustomFormatsOk() (*[]CustomFormatResource, bool)`
+
+GetCustomFormatsOk returns a tuple with the CustomFormats field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormats
+
+`func (o *QueueResource) SetCustomFormats(v []CustomFormatResource)`
+
+SetCustomFormats sets CustomFormats field to given value.
+
+### HasCustomFormats
+
+`func (o *QueueResource) HasCustomFormats() bool`
+
+HasCustomFormats returns a boolean if a field has been set.
+
+### SetCustomFormatsNil
+
+`func (o *QueueResource) SetCustomFormatsNil(b bool)`
+
+ SetCustomFormatsNil sets the value for CustomFormats to be an explicit nil
+
+### UnsetCustomFormats
+`func (o *QueueResource) UnsetCustomFormats()`
+
+UnsetCustomFormats ensures that no value is present for CustomFormats, not even an explicit nil
 ### GetSize
 
 `func (o *QueueResource) GetSize() float64`

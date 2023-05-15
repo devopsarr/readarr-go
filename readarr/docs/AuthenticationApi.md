@@ -1,6 +1,6 @@
 # \AuthenticationApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8787*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -122,7 +122,7 @@ Other parameters are passed through a pointer to a apiGetLogoutRequest struct vi
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 

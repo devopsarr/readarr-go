@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthorIds** | Pointer to **[]int32** |  | [optional] 
 **Monitored** | Pointer to **NullableBool** |  | [optional] 
+**MonitorNewItems** | Pointer to [**NewItemMonitorTypes**](NewItemMonitorTypes.md) |  | [optional] 
 **QualityProfileId** | Pointer to **NullableInt32** |  | [optional] 
 **MetadataProfileId** | Pointer to **NullableInt32** |  | [optional] 
 **RootFolderPath** | Pointer to **NullableString** |  | [optional] 
@@ -103,6 +104,31 @@ HasMonitored returns a boolean if a field has been set.
 `func (o *AuthorEditorResource) UnsetMonitored()`
 
 UnsetMonitored ensures that no value is present for Monitored, not even an explicit nil
+### GetMonitorNewItems
+
+`func (o *AuthorEditorResource) GetMonitorNewItems() NewItemMonitorTypes`
+
+GetMonitorNewItems returns the MonitorNewItems field if non-nil, zero value otherwise.
+
+### GetMonitorNewItemsOk
+
+`func (o *AuthorEditorResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool)`
+
+GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorNewItems
+
+`func (o *AuthorEditorResource) SetMonitorNewItems(v NewItemMonitorTypes)`
+
+SetMonitorNewItems sets MonitorNewItems field to given value.
+
+### HasMonitorNewItems
+
+`func (o *AuthorEditorResource) HasMonitorNewItems() bool`
+
+HasMonitorNewItems returns a boolean if a field has been set.
+
 ### GetQualityProfileId
 
 `func (o *AuthorEditorResource) GetQualityProfileId() int32`

@@ -1,4 +1,4 @@
-# HistoryEventType
+# EntityHistoryEventType
 
 ## Enum
 
@@ -6,8 +6,6 @@
 * `UNKNOWN` (value: `"unknown"`)
 
 * `GRABBED` (value: `"grabbed"`)
-
-* `AUTHOR_FOLDER_IMPORTED` (value: `"authorFolderImported"`)
 
 * `BOOK_FILE_IMPORTED` (value: `"bookFileImported"`)
 

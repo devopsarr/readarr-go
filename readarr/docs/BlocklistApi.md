@@ -1,18 +1,18 @@
-# \BlacklistApi
+# \BlocklistApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8787*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteBlacklist**](BlacklistApi.md#DeleteBlacklist) | **Delete** /api/v1/blacklist/{id} | 
-[**DeleteBlacklistBulk**](BlacklistApi.md#DeleteBlacklistBulk) | **Delete** /api/v1/blacklist/bulk | 
-[**GetBlacklist**](BlacklistApi.md#GetBlacklist) | **Get** /api/v1/blacklist | 
+[**DeleteBlocklist**](BlocklistApi.md#DeleteBlocklist) | **Delete** /api/v1/blocklist/{id} | 
+[**DeleteBlocklistBulk**](BlocklistApi.md#DeleteBlocklistBulk) | **Delete** /api/v1/blocklist/bulk | 
+[**GetBlocklist**](BlocklistApi.md#GetBlocklist) | **Get** /api/v1/blocklist | 
 
 
 
-## DeleteBlacklist
+## DeleteBlocklist
 
-> DeleteBlacklist(ctx, id).Execute()
+> DeleteBlocklist(ctx, id).Execute()
 
 
 
@@ -33,9 +33,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlacklistApi.DeleteBlacklist(context.Background(), id).Execute()
+    resp, r, err := apiClient.BlocklistApi.DeleteBlocklist(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BlacklistApi.DeleteBlacklist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BlocklistApi.DeleteBlocklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteBlacklistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBlocklistRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -76,9 +76,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DeleteBlacklistBulk
+## DeleteBlocklistBulk
 
-> DeleteBlacklistBulk(ctx).BlacklistBulkResource(blacklistBulkResource).Execute()
+> DeleteBlocklistBulk(ctx).BlocklistBulkResource(blocklistBulkResource).Execute()
 
 
 
@@ -95,13 +95,13 @@ import (
 )
 
 func main() {
-    blacklistBulkResource := *readarrClient.NewBlacklistBulkResource() // BlacklistBulkResource |  (optional)
+    blocklistBulkResource := *readarrClient.NewBlocklistBulkResource() // BlocklistBulkResource |  (optional)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlacklistApi.DeleteBlacklistBulk(context.Background()).BlacklistBulkResource(blacklistBulkResource).Execute()
+    resp, r, err := apiClient.BlocklistApi.DeleteBlocklistBulk(context.Background()).BlocklistBulkResource(blocklistBulkResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BlacklistApi.DeleteBlacklistBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BlocklistApi.DeleteBlocklistBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -113,12 +113,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteBlacklistBulkRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBlocklistBulkRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **blacklistBulkResource** | [**BlacklistBulkResource**](BlacklistBulkResource.md) |  | 
+ **blocklistBulkResource** | [**BlocklistBulkResource**](BlocklistBulkResource.md) |  | 
 
 ### Return type
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
@@ -138,9 +138,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetBlacklist
+## GetBlocklist
 
-> BlacklistResourcePagingResource GetBlacklist(ctx).Execute()
+> BlocklistResourcePagingResource GetBlocklist(ctx).Execute()
 
 
 
@@ -160,13 +160,13 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlacklistApi.GetBlacklist(context.Background()).Execute()
+    resp, r, err := apiClient.BlocklistApi.GetBlocklist(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BlacklistApi.GetBlacklist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BlocklistApi.GetBlocklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetBlacklist`: BlacklistResourcePagingResource
-    fmt.Fprintf(os.Stdout, "Response from `BlacklistApi.GetBlacklist`: %v\n", resp)
+    // response from `GetBlocklist`: BlocklistResourcePagingResource
+    fmt.Fprintf(os.Stdout, "Response from `BlocklistApi.GetBlocklist`: %v\n", resp)
 }
 ```
 
@@ -176,16 +176,16 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetBlacklistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBlocklistRequest struct via the builder pattern
 
 
 ### Return type
 
-[**BlacklistResourcePagingResource**](BlacklistResourcePagingResource.md)
+[**BlocklistResourcePagingResource**](BlocklistResourcePagingResource.md)
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 

@@ -16,12 +16,15 @@ Name | Type | Description | Notes
 **Presets** | Pointer to [**[]ImportListResource**](ImportListResource.md) |  | [optional] 
 **EnableAutomaticAdd** | Pointer to **bool** |  | [optional] 
 **ShouldMonitor** | Pointer to [**ImportListMonitorType**](ImportListMonitorType.md) |  | [optional] 
+**ShouldMonitorExisting** | Pointer to **bool** |  | [optional] 
 **ShouldSearch** | Pointer to **bool** |  | [optional] 
 **RootFolderPath** | Pointer to **NullableString** |  | [optional] 
+**MonitorNewItems** | Pointer to [**NewItemMonitorTypes**](NewItemMonitorTypes.md) |  | [optional] 
 **QualityProfileId** | Pointer to **int32** |  | [optional] 
 **MetadataProfileId** | Pointer to **int32** |  | [optional] 
 **ListType** | Pointer to [**ImportListType**](ImportListType.md) |  | [optional] 
 **ListOrder** | Pointer to **int32** |  | [optional] 
+**MinRefreshInterval** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -422,6 +425,31 @@ SetShouldMonitor sets ShouldMonitor field to given value.
 
 HasShouldMonitor returns a boolean if a field has been set.
 
+### GetShouldMonitorExisting
+
+`func (o *ImportListResource) GetShouldMonitorExisting() bool`
+
+GetShouldMonitorExisting returns the ShouldMonitorExisting field if non-nil, zero value otherwise.
+
+### GetShouldMonitorExistingOk
+
+`func (o *ImportListResource) GetShouldMonitorExistingOk() (*bool, bool)`
+
+GetShouldMonitorExistingOk returns a tuple with the ShouldMonitorExisting field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShouldMonitorExisting
+
+`func (o *ImportListResource) SetShouldMonitorExisting(v bool)`
+
+SetShouldMonitorExisting sets ShouldMonitorExisting field to given value.
+
+### HasShouldMonitorExisting
+
+`func (o *ImportListResource) HasShouldMonitorExisting() bool`
+
+HasShouldMonitorExisting returns a boolean if a field has been set.
+
 ### GetShouldSearch
 
 `func (o *ImportListResource) GetShouldSearch() bool`
@@ -482,6 +510,31 @@ HasRootFolderPath returns a boolean if a field has been set.
 `func (o *ImportListResource) UnsetRootFolderPath()`
 
 UnsetRootFolderPath ensures that no value is present for RootFolderPath, not even an explicit nil
+### GetMonitorNewItems
+
+`func (o *ImportListResource) GetMonitorNewItems() NewItemMonitorTypes`
+
+GetMonitorNewItems returns the MonitorNewItems field if non-nil, zero value otherwise.
+
+### GetMonitorNewItemsOk
+
+`func (o *ImportListResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool)`
+
+GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorNewItems
+
+`func (o *ImportListResource) SetMonitorNewItems(v NewItemMonitorTypes)`
+
+SetMonitorNewItems sets MonitorNewItems field to given value.
+
+### HasMonitorNewItems
+
+`func (o *ImportListResource) HasMonitorNewItems() bool`
+
+HasMonitorNewItems returns a boolean if a field has been set.
+
 ### GetQualityProfileId
 
 `func (o *ImportListResource) GetQualityProfileId() int32`
@@ -581,6 +634,31 @@ SetListOrder sets ListOrder field to given value.
 `func (o *ImportListResource) HasListOrder() bool`
 
 HasListOrder returns a boolean if a field has been set.
+
+### GetMinRefreshInterval
+
+`func (o *ImportListResource) GetMinRefreshInterval() string`
+
+GetMinRefreshInterval returns the MinRefreshInterval field if non-nil, zero value otherwise.
+
+### GetMinRefreshIntervalOk
+
+`func (o *ImportListResource) GetMinRefreshIntervalOk() (*string, bool)`
+
+GetMinRefreshIntervalOk returns a tuple with the MinRefreshInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinRefreshInterval
+
+`func (o *ImportListResource) SetMinRefreshInterval(v string)`
+
+SetMinRefreshInterval sets MinRefreshInterval field to given value.
+
+### HasMinRefreshInterval
+
+`func (o *ImportListResource) HasMinRefreshInterval() bool`
+
+HasMinRefreshInterval returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

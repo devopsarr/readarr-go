@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ShowRelativeDates** | Pointer to **bool** |  | [optional] 
 **EnableColorImpairedMode** | Pointer to **bool** |  | [optional] 
 **UiLanguage** | Pointer to **int32** |  | [optional] 
+**Theme** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -298,6 +299,41 @@ SetUiLanguage sets UiLanguage field to given value.
 
 HasUiLanguage returns a boolean if a field has been set.
 
+### GetTheme
+
+`func (o *UiConfigResource) GetTheme() string`
+
+GetTheme returns the Theme field if non-nil, zero value otherwise.
+
+### GetThemeOk
+
+`func (o *UiConfigResource) GetThemeOk() (*string, bool)`
+
+GetThemeOk returns a tuple with the Theme field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTheme
+
+`func (o *UiConfigResource) SetTheme(v string)`
+
+SetTheme sets Theme field to given value.
+
+### HasTheme
+
+`func (o *UiConfigResource) HasTheme() bool`
+
+HasTheme returns a boolean if a field has been set.
+
+### SetThemeNil
+
+`func (o *UiConfigResource) SetThemeNil(b bool)`
+
+ SetThemeNil sets the value for Theme to be an explicit nil
+
+### UnsetTheme
+`func (o *UiConfigResource) UnsetTheme()`
+
+UnsetTheme ensures that no value is present for Theme, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
