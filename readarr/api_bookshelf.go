@@ -19,11 +19,11 @@ import (
 )
 
 
-// BookshelfAPIService BookshelfAPI service
-type BookshelfAPIService service
+// BookshelfApiService BookshelfApi service
+type BookshelfApiService service
 type ApiCreateBookshelfRequest struct {
 	ctx context.Context
-	ApiService *BookshelfAPIService
+	ApiService *BookshelfApiService
 	bookshelfResource *BookshelfResource
 }
 
@@ -42,7 +42,7 @@ CreateBookshelf Method for CreateBookshelf
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateBookshelfRequest
 */
-func (a *BookshelfAPIService) CreateBookshelf(ctx context.Context) ApiCreateBookshelfRequest {
+func (a *BookshelfApiService) CreateBookshelf(ctx context.Context) ApiCreateBookshelfRequest {
 	return ApiCreateBookshelfRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *BookshelfAPIService) CreateBookshelf(ctx context.Context) ApiCreateBook
 }
 
 // Execute executes the request
-func (a *BookshelfAPIService) CreateBookshelfExecute(r ApiCreateBookshelfRequest) (*http.Response, error) {
+func (a *BookshelfApiService) CreateBookshelfExecute(r ApiCreateBookshelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookshelfAPIService.CreateBookshelf")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookshelfApiService.CreateBookshelf")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,11 +20,11 @@ import (
 )
 
 
-// ReleaseAPIService ReleaseAPI service
-type ReleaseAPIService service
+// ReleaseApiService ReleaseApi service
+type ReleaseApiService service
 type ApiCreateReleaseRequest struct {
 	ctx context.Context
-	ApiService *ReleaseAPIService
+	ApiService *ReleaseApiService
 	releaseResource *ReleaseResource
 }
 
@@ -43,7 +43,7 @@ CreateRelease Method for CreateRelease
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateReleaseRequest
 */
-func (a *ReleaseAPIService) CreateRelease(ctx context.Context) ApiCreateReleaseRequest {
+func (a *ReleaseApiService) CreateRelease(ctx context.Context) ApiCreateReleaseRequest {
 	return ApiCreateReleaseRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *ReleaseAPIService) CreateRelease(ctx context.Context) ApiCreateReleaseR
 
 // Execute executes the request
 //  @return ReleaseResource
-func (a *ReleaseAPIService) CreateReleaseExecute(r ApiCreateReleaseRequest) (*ReleaseResource, *http.Response, error) {
+func (a *ReleaseApiService) CreateReleaseExecute(r ApiCreateReleaseRequest) (*ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ReleaseAPIService) CreateReleaseExecute(r ApiCreateReleaseRequest) (*Re
 		localVarReturnValue  *ReleaseResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseAPIService.CreateRelease")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseApiService.CreateRelease")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -128,7 +128,7 @@ func (a *ReleaseAPIService) CreateReleaseExecute(r ApiCreateReleaseRequest) (*Re
 }
 type ApiGetReleaseByIdRequest struct {
 	ctx context.Context
-	ApiService *ReleaseAPIService
+	ApiService *ReleaseApiService
 	id int32
 }
 
@@ -143,7 +143,7 @@ GetReleaseById Method for GetReleaseById
  @param id
  @return ApiGetReleaseByIdRequest
 */
-func (a *ReleaseAPIService) GetReleaseById(ctx context.Context, id int32) ApiGetReleaseByIdRequest {
+func (a *ReleaseApiService) GetReleaseById(ctx context.Context, id int32) ApiGetReleaseByIdRequest {
 	return ApiGetReleaseByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -153,7 +153,7 @@ func (a *ReleaseAPIService) GetReleaseById(ctx context.Context, id int32) ApiGet
 
 // Execute executes the request
 //  @return ReleaseResource
-func (a *ReleaseAPIService) GetReleaseByIdExecute(r ApiGetReleaseByIdRequest) (*ReleaseResource, *http.Response, error) {
+func (a *ReleaseApiService) GetReleaseByIdExecute(r ApiGetReleaseByIdRequest) (*ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -161,7 +161,7 @@ func (a *ReleaseAPIService) GetReleaseByIdExecute(r ApiGetReleaseByIdRequest) (*
 		localVarReturnValue  *ReleaseResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseAPIService.GetReleaseById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseApiService.GetReleaseById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -228,7 +228,7 @@ func (a *ReleaseAPIService) GetReleaseByIdExecute(r ApiGetReleaseByIdRequest) (*
 }
 type ApiListReleaseRequest struct {
 	ctx context.Context
-	ApiService *ReleaseAPIService
+	ApiService *ReleaseApiService
 	bookId *int32
 	authorId *int32
 }
@@ -253,7 +253,7 @@ ListRelease Method for ListRelease
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListReleaseRequest
 */
-func (a *ReleaseAPIService) ListRelease(ctx context.Context) ApiListReleaseRequest {
+func (a *ReleaseApiService) ListRelease(ctx context.Context) ApiListReleaseRequest {
 	return ApiListReleaseRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -262,7 +262,7 @@ func (a *ReleaseAPIService) ListRelease(ctx context.Context) ApiListReleaseReque
 
 // Execute executes the request
 //  @return []ReleaseResource
-func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]*ReleaseResource, *http.Response, error) {
+func (a *ReleaseApiService) ListReleaseExecute(r ApiListReleaseRequest) ([]*ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -270,7 +270,7 @@ func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]*Rele
 		localVarReturnValue  []*ReleaseResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseAPIService.ListRelease")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseApiService.ListRelease")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

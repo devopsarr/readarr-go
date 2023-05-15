@@ -21,11 +21,11 @@ import (
 )
 
 
-// CalendarAPIService CalendarAPI service
-type CalendarAPIService service
+// CalendarApiService CalendarApi service
+type CalendarApiService service
 type ApiGetCalendarByIdRequest struct {
 	ctx context.Context
-	ApiService *CalendarAPIService
+	ApiService *CalendarApiService
 	id int32
 }
 
@@ -40,7 +40,7 @@ GetCalendarById Method for GetCalendarById
  @param id
  @return ApiGetCalendarByIdRequest
 */
-func (a *CalendarAPIService) GetCalendarById(ctx context.Context, id int32) ApiGetCalendarByIdRequest {
+func (a *CalendarApiService) GetCalendarById(ctx context.Context, id int32) ApiGetCalendarByIdRequest {
 	return ApiGetCalendarByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,7 +50,7 @@ func (a *CalendarAPIService) GetCalendarById(ctx context.Context, id int32) ApiG
 
 // Execute executes the request
 //  @return BookResource
-func (a *CalendarAPIService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest) (*BookResource, *http.Response, error) {
+func (a *CalendarApiService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest) (*BookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -58,7 +58,7 @@ func (a *CalendarAPIService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest)
 		localVarReturnValue  *BookResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarAPIService.GetCalendarById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarApiService.GetCalendarById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -125,7 +125,7 @@ func (a *CalendarAPIService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest)
 }
 type ApiListCalendarRequest struct {
 	ctx context.Context
-	ApiService *CalendarAPIService
+	ApiService *CalendarApiService
 	start *time.Time
 	end *time.Time
 	unmonitored *bool
@@ -162,7 +162,7 @@ ListCalendar Method for ListCalendar
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListCalendarRequest
 */
-func (a *CalendarAPIService) ListCalendar(ctx context.Context) ApiListCalendarRequest {
+func (a *CalendarApiService) ListCalendar(ctx context.Context) ApiListCalendarRequest {
 	return ApiListCalendarRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -171,7 +171,7 @@ func (a *CalendarAPIService) ListCalendar(ctx context.Context) ApiListCalendarRe
 
 // Execute executes the request
 //  @return []BookResource
-func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]*BookResource, *http.Response, error) {
+func (a *CalendarApiService) ListCalendarExecute(r ApiListCalendarRequest) ([]*BookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -179,7 +179,7 @@ func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]*B
 		localVarReturnValue  []*BookResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarAPIService.ListCalendar")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarApiService.ListCalendar")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

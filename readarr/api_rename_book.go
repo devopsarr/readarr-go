@@ -19,11 +19,11 @@ import (
 )
 
 
-// RenameBookAPIService RenameBookAPI service
-type RenameBookAPIService service
+// RenameBookApiService RenameBookApi service
+type RenameBookApiService service
 type ApiListRenameRequest struct {
 	ctx context.Context
-	ApiService *RenameBookAPIService
+	ApiService *RenameBookApiService
 	authorId *int32
 	bookId *int32
 }
@@ -48,7 +48,7 @@ ListRename Method for ListRename
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListRenameRequest
 */
-func (a *RenameBookAPIService) ListRename(ctx context.Context) ApiListRenameRequest {
+func (a *RenameBookApiService) ListRename(ctx context.Context) ApiListRenameRequest {
 	return ApiListRenameRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -57,7 +57,7 @@ func (a *RenameBookAPIService) ListRename(ctx context.Context) ApiListRenameRequ
 
 // Execute executes the request
 //  @return []RenameBookResource
-func (a *RenameBookAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameBookResource, *http.Response, error) {
+func (a *RenameBookApiService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameBookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -65,7 +65,7 @@ func (a *RenameBookAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*Ren
 		localVarReturnValue  []*RenameBookResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameBookAPIService.ListRename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameBookApiService.ListRename")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

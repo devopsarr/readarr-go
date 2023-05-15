@@ -19,11 +19,11 @@ import (
 )
 
 
-// MetadataProfileSchemaAPIService MetadataProfileSchemaAPI service
-type MetadataProfileSchemaAPIService service
+// MetadataProfileSchemaApiService MetadataProfileSchemaApi service
+type MetadataProfileSchemaApiService service
 type ApiGetMetadataprofileSchemaRequest struct {
 	ctx context.Context
-	ApiService *MetadataProfileSchemaAPIService
+	ApiService *MetadataProfileSchemaApiService
 }
 
 func (r ApiGetMetadataprofileSchemaRequest) Execute() (*MetadataProfileResource, *http.Response, error) {
@@ -36,7 +36,7 @@ GetMetadataprofileSchema Method for GetMetadataprofileSchema
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetMetadataprofileSchemaRequest
 */
-func (a *MetadataProfileSchemaAPIService) GetMetadataprofileSchema(ctx context.Context) ApiGetMetadataprofileSchemaRequest {
+func (a *MetadataProfileSchemaApiService) GetMetadataprofileSchema(ctx context.Context) ApiGetMetadataprofileSchemaRequest {
 	return ApiGetMetadataprofileSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -45,7 +45,7 @@ func (a *MetadataProfileSchemaAPIService) GetMetadataprofileSchema(ctx context.C
 
 // Execute executes the request
 //  @return MetadataProfileResource
-func (a *MetadataProfileSchemaAPIService) GetMetadataprofileSchemaExecute(r ApiGetMetadataprofileSchemaRequest) (*MetadataProfileResource, *http.Response, error) {
+func (a *MetadataProfileSchemaApiService) GetMetadataprofileSchemaExecute(r ApiGetMetadataprofileSchemaRequest) (*MetadataProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *MetadataProfileSchemaAPIService) GetMetadataprofileSchemaExecute(r ApiG
 		localVarReturnValue  *MetadataProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileSchemaAPIService.GetMetadataprofileSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileSchemaApiService.GetMetadataprofileSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

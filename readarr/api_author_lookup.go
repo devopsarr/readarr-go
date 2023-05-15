@@ -19,11 +19,11 @@ import (
 )
 
 
-// AuthorLookupAPIService AuthorLookupAPI service
-type AuthorLookupAPIService service
+// AuthorLookupApiService AuthorLookupApi service
+type AuthorLookupApiService service
 type ApiGetAuthorLookupRequest struct {
 	ctx context.Context
-	ApiService *AuthorLookupAPIService
+	ApiService *AuthorLookupApiService
 	term *string
 }
 
@@ -42,7 +42,7 @@ GetAuthorLookup Method for GetAuthorLookup
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetAuthorLookupRequest
 */
-func (a *AuthorLookupAPIService) GetAuthorLookup(ctx context.Context) ApiGetAuthorLookupRequest {
+func (a *AuthorLookupApiService) GetAuthorLookup(ctx context.Context) ApiGetAuthorLookupRequest {
 	return ApiGetAuthorLookupRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *AuthorLookupAPIService) GetAuthorLookup(ctx context.Context) ApiGetAuth
 }
 
 // Execute executes the request
-func (a *AuthorLookupAPIService) GetAuthorLookupExecute(r ApiGetAuthorLookupRequest) (*http.Response, error) {
+func (a *AuthorLookupApiService) GetAuthorLookupExecute(r ApiGetAuthorLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorLookupAPIService.GetAuthorLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorLookupApiService.GetAuthorLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

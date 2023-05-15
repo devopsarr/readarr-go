@@ -20,11 +20,11 @@ import (
 )
 
 
-// MissingAPIService MissingAPI service
-type MissingAPIService service
+// MissingApiService MissingApi service
+type MissingApiService service
 type ApiGetWantedMissingRequest struct {
 	ctx context.Context
-	ApiService *MissingAPIService
+	ApiService *MissingApiService
 	includeAuthor *bool
 }
 
@@ -43,7 +43,7 @@ GetWantedMissing Method for GetWantedMissing
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetWantedMissingRequest
 */
-func (a *MissingAPIService) GetWantedMissing(ctx context.Context) ApiGetWantedMissingRequest {
+func (a *MissingApiService) GetWantedMissing(ctx context.Context) ApiGetWantedMissingRequest {
 	return ApiGetWantedMissingRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *MissingAPIService) GetWantedMissing(ctx context.Context) ApiGetWantedMi
 
 // Execute executes the request
 //  @return BookResourcePagingResource
-func (a *MissingAPIService) GetWantedMissingExecute(r ApiGetWantedMissingRequest) (*BookResourcePagingResource, *http.Response, error) {
+func (a *MissingApiService) GetWantedMissingExecute(r ApiGetWantedMissingRequest) (*BookResourcePagingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *MissingAPIService) GetWantedMissingExecute(r ApiGetWantedMissingRequest
 		localVarReturnValue  *BookResourcePagingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MissingAPIService.GetWantedMissing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MissingApiService.GetWantedMissing")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -129,7 +129,7 @@ func (a *MissingAPIService) GetWantedMissingExecute(r ApiGetWantedMissingRequest
 }
 type ApiGetWantedMissingByIdRequest struct {
 	ctx context.Context
-	ApiService *MissingAPIService
+	ApiService *MissingApiService
 	id int32
 }
 
@@ -144,7 +144,7 @@ GetWantedMissingById Method for GetWantedMissingById
  @param id
  @return ApiGetWantedMissingByIdRequest
 */
-func (a *MissingAPIService) GetWantedMissingById(ctx context.Context, id int32) ApiGetWantedMissingByIdRequest {
+func (a *MissingApiService) GetWantedMissingById(ctx context.Context, id int32) ApiGetWantedMissingByIdRequest {
 	return ApiGetWantedMissingByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -154,7 +154,7 @@ func (a *MissingAPIService) GetWantedMissingById(ctx context.Context, id int32) 
 
 // Execute executes the request
 //  @return BookResource
-func (a *MissingAPIService) GetWantedMissingByIdExecute(r ApiGetWantedMissingByIdRequest) (*BookResource, *http.Response, error) {
+func (a *MissingApiService) GetWantedMissingByIdExecute(r ApiGetWantedMissingByIdRequest) (*BookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -162,7 +162,7 @@ func (a *MissingAPIService) GetWantedMissingByIdExecute(r ApiGetWantedMissingByI
 		localVarReturnValue  *BookResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MissingAPIService.GetWantedMissingById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MissingApiService.GetWantedMissingById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
