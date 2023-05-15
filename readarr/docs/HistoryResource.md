@@ -9,10 +9,11 @@ Name | Type | Description | Notes
 **AuthorId** | Pointer to **int32** |  | [optional] 
 **SourceTitle** | Pointer to **NullableString** |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
+**CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **QualityCutoffNotMet** | Pointer to **bool** |  | [optional] 
 **Date** | Pointer to **time.Time** |  | [optional] 
 **DownloadId** | Pointer to **NullableString** |  | [optional] 
-**EventType** | Pointer to [**HistoryEventType**](HistoryEventType.md) |  | [optional] 
+**EventType** | Pointer to [**EntityHistoryEventType**](EntityHistoryEventType.md) |  | [optional] 
 **Data** | Pointer to **map[string]string** |  | [optional] 
 **Book** | Pointer to [**BookResource**](BookResource.md) |  | [optional] 
 **Author** | Pointer to [**AuthorResource**](AuthorResource.md) |  | [optional] 
@@ -171,6 +172,41 @@ SetQuality sets Quality field to given value.
 
 HasQuality returns a boolean if a field has been set.
 
+### GetCustomFormats
+
+`func (o *HistoryResource) GetCustomFormats() []CustomFormatResource`
+
+GetCustomFormats returns the CustomFormats field if non-nil, zero value otherwise.
+
+### GetCustomFormatsOk
+
+`func (o *HistoryResource) GetCustomFormatsOk() (*[]CustomFormatResource, bool)`
+
+GetCustomFormatsOk returns a tuple with the CustomFormats field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormats
+
+`func (o *HistoryResource) SetCustomFormats(v []CustomFormatResource)`
+
+SetCustomFormats sets CustomFormats field to given value.
+
+### HasCustomFormats
+
+`func (o *HistoryResource) HasCustomFormats() bool`
+
+HasCustomFormats returns a boolean if a field has been set.
+
+### SetCustomFormatsNil
+
+`func (o *HistoryResource) SetCustomFormatsNil(b bool)`
+
+ SetCustomFormatsNil sets the value for CustomFormats to be an explicit nil
+
+### UnsetCustomFormats
+`func (o *HistoryResource) UnsetCustomFormats()`
+
+UnsetCustomFormats ensures that no value is present for CustomFormats, not even an explicit nil
 ### GetQualityCutoffNotMet
 
 `func (o *HistoryResource) GetQualityCutoffNotMet() bool`
@@ -258,20 +294,20 @@ HasDownloadId returns a boolean if a field has been set.
 UnsetDownloadId ensures that no value is present for DownloadId, not even an explicit nil
 ### GetEventType
 
-`func (o *HistoryResource) GetEventType() HistoryEventType`
+`func (o *HistoryResource) GetEventType() EntityHistoryEventType`
 
 GetEventType returns the EventType field if non-nil, zero value otherwise.
 
 ### GetEventTypeOk
 
-`func (o *HistoryResource) GetEventTypeOk() (*HistoryEventType, bool)`
+`func (o *HistoryResource) GetEventTypeOk() (*EntityHistoryEventType, bool)`
 
 GetEventTypeOk returns a tuple with the EventType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventType
 
-`func (o *HistoryResource) SetEventType(v HistoryEventType)`
+`func (o *HistoryResource) SetEventType(v EntityHistoryEventType)`
 
 SetEventType sets EventType field to given value.
 

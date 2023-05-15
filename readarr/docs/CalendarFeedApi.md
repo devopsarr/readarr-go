@@ -1,16 +1,16 @@
 # \CalendarFeedApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8787*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCalendarReadarrIcs**](CalendarFeedApi.md#GetCalendarReadarrIcs) | **Get** /api/v1/calendar/readarr.ics | 
+[**GetFeedV1CalendarReadarrIcs**](CalendarFeedApi.md#GetFeedV1CalendarReadarrIcs) | **Get** /feed/v1/calendar/readarr.ics | 
 
 
 
-## GetCalendarReadarrIcs
+## GetFeedV1CalendarReadarrIcs
 
-> GetCalendarReadarrIcs(ctx).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).Execute()
+> GetFeedV1CalendarReadarrIcs(ctx).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).Execute()
 
 
 
@@ -34,9 +34,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CalendarFeedApi.GetCalendarReadarrIcs(context.Background()).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).Execute()
+    resp, r, err := apiClient.CalendarFeedApi.GetFeedV1CalendarReadarrIcs(context.Background()).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CalendarFeedApi.GetCalendarReadarrIcs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CalendarFeedApi.GetFeedV1CalendarReadarrIcs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetCalendarReadarrIcsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetFeedV1CalendarReadarrIcsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 

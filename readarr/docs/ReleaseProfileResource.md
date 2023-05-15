@@ -6,10 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Required** | Pointer to **NullableString** |  | [optional] 
-**Ignored** | Pointer to **NullableString** |  | [optional] 
-**Preferred** | Pointer to [**[]StringInt32KeyValuePair**](StringInt32KeyValuePair.md) |  | [optional] 
-**IncludePreferredWhenRenaming** | Pointer to **bool** |  | [optional] 
+**Required** | Pointer to **[]string** |  | [optional] 
+**Ignored** | Pointer to **[]string** |  | [optional] 
 **IndexerId** | Pointer to **int32** |  | [optional] 
 **Tags** | Pointer to **[]int32** |  | [optional] 
 
@@ -84,20 +82,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetRequired
 
-`func (o *ReleaseProfileResource) GetRequired() string`
+`func (o *ReleaseProfileResource) GetRequired() []string`
 
 GetRequired returns the Required field if non-nil, zero value otherwise.
 
 ### GetRequiredOk
 
-`func (o *ReleaseProfileResource) GetRequiredOk() (*string, bool)`
+`func (o *ReleaseProfileResource) GetRequiredOk() (*[]string, bool)`
 
 GetRequiredOk returns a tuple with the Required field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequired
 
-`func (o *ReleaseProfileResource) SetRequired(v string)`
+`func (o *ReleaseProfileResource) SetRequired(v []string)`
 
 SetRequired sets Required field to given value.
 
@@ -119,20 +117,20 @@ HasRequired returns a boolean if a field has been set.
 UnsetRequired ensures that no value is present for Required, not even an explicit nil
 ### GetIgnored
 
-`func (o *ReleaseProfileResource) GetIgnored() string`
+`func (o *ReleaseProfileResource) GetIgnored() []string`
 
 GetIgnored returns the Ignored field if non-nil, zero value otherwise.
 
 ### GetIgnoredOk
 
-`func (o *ReleaseProfileResource) GetIgnoredOk() (*string, bool)`
+`func (o *ReleaseProfileResource) GetIgnoredOk() (*[]string, bool)`
 
 GetIgnoredOk returns a tuple with the Ignored field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIgnored
 
-`func (o *ReleaseProfileResource) SetIgnored(v string)`
+`func (o *ReleaseProfileResource) SetIgnored(v []string)`
 
 SetIgnored sets Ignored field to given value.
 
@@ -152,66 +150,6 @@ HasIgnored returns a boolean if a field has been set.
 `func (o *ReleaseProfileResource) UnsetIgnored()`
 
 UnsetIgnored ensures that no value is present for Ignored, not even an explicit nil
-### GetPreferred
-
-`func (o *ReleaseProfileResource) GetPreferred() []StringInt32KeyValuePair`
-
-GetPreferred returns the Preferred field if non-nil, zero value otherwise.
-
-### GetPreferredOk
-
-`func (o *ReleaseProfileResource) GetPreferredOk() (*[]StringInt32KeyValuePair, bool)`
-
-GetPreferredOk returns a tuple with the Preferred field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPreferred
-
-`func (o *ReleaseProfileResource) SetPreferred(v []StringInt32KeyValuePair)`
-
-SetPreferred sets Preferred field to given value.
-
-### HasPreferred
-
-`func (o *ReleaseProfileResource) HasPreferred() bool`
-
-HasPreferred returns a boolean if a field has been set.
-
-### SetPreferredNil
-
-`func (o *ReleaseProfileResource) SetPreferredNil(b bool)`
-
- SetPreferredNil sets the value for Preferred to be an explicit nil
-
-### UnsetPreferred
-`func (o *ReleaseProfileResource) UnsetPreferred()`
-
-UnsetPreferred ensures that no value is present for Preferred, not even an explicit nil
-### GetIncludePreferredWhenRenaming
-
-`func (o *ReleaseProfileResource) GetIncludePreferredWhenRenaming() bool`
-
-GetIncludePreferredWhenRenaming returns the IncludePreferredWhenRenaming field if non-nil, zero value otherwise.
-
-### GetIncludePreferredWhenRenamingOk
-
-`func (o *ReleaseProfileResource) GetIncludePreferredWhenRenamingOk() (*bool, bool)`
-
-GetIncludePreferredWhenRenamingOk returns a tuple with the IncludePreferredWhenRenaming field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludePreferredWhenRenaming
-
-`func (o *ReleaseProfileResource) SetIncludePreferredWhenRenaming(v bool)`
-
-SetIncludePreferredWhenRenaming sets IncludePreferredWhenRenaming field to given value.
-
-### HasIncludePreferredWhenRenaming
-
-`func (o *ReleaseProfileResource) HasIncludePreferredWhenRenaming() bool`
-
-HasIncludePreferredWhenRenaming returns a boolean if a field has been set.
-
 ### GetIndexerId
 
 `func (o *ReleaseProfileResource) GetIndexerId() int32`

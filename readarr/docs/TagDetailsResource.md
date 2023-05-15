@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ImportListIds** | Pointer to **[]int32** |  | [optional] 
 **NotificationIds** | Pointer to **[]int32** |  | [optional] 
 **RestrictionIds** | Pointer to **[]int32** |  | [optional] 
+**IndexerIds** | Pointer to **[]int32** |  | [optional] 
 **AuthorIds** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
@@ -231,6 +232,41 @@ HasRestrictionIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetRestrictionIds()`
 
 UnsetRestrictionIds ensures that no value is present for RestrictionIds, not even an explicit nil
+### GetIndexerIds
+
+`func (o *TagDetailsResource) GetIndexerIds() []int32`
+
+GetIndexerIds returns the IndexerIds field if non-nil, zero value otherwise.
+
+### GetIndexerIdsOk
+
+`func (o *TagDetailsResource) GetIndexerIdsOk() (*[]int32, bool)`
+
+GetIndexerIdsOk returns a tuple with the IndexerIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexerIds
+
+`func (o *TagDetailsResource) SetIndexerIds(v []int32)`
+
+SetIndexerIds sets IndexerIds field to given value.
+
+### HasIndexerIds
+
+`func (o *TagDetailsResource) HasIndexerIds() bool`
+
+HasIndexerIds returns a boolean if a field has been set.
+
+### SetIndexerIdsNil
+
+`func (o *TagDetailsResource) SetIndexerIdsNil(b bool)`
+
+ SetIndexerIdsNil sets the value for IndexerIds to be an explicit nil
+
+### UnsetIndexerIds
+`func (o *TagDetailsResource) UnsetIndexerIds()`
+
+UnsetIndexerIds ensures that no value is present for IndexerIds, not even an explicit nil
 ### GetAuthorIds
 
 `func (o *TagDetailsResource) GetAuthorIds() []int32`

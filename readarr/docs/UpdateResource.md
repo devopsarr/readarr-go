@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **FileName** | Pointer to **NullableString** |  | [optional] 
 **Url** | Pointer to **NullableString** |  | [optional] 
 **Installed** | Pointer to **bool** |  | [optional] 
+**InstalledOn** | Pointer to **NullableTime** |  | [optional] 
 **Installable** | Pointer to **bool** |  | [optional] 
 **Latest** | Pointer to **bool** |  | [optional] 
 **Changes** | Pointer to [**UpdateChanges**](UpdateChanges.md) |  | [optional] 
@@ -240,6 +241,41 @@ SetInstalled sets Installed field to given value.
 
 HasInstalled returns a boolean if a field has been set.
 
+### GetInstalledOn
+
+`func (o *UpdateResource) GetInstalledOn() time.Time`
+
+GetInstalledOn returns the InstalledOn field if non-nil, zero value otherwise.
+
+### GetInstalledOnOk
+
+`func (o *UpdateResource) GetInstalledOnOk() (*time.Time, bool)`
+
+GetInstalledOnOk returns a tuple with the InstalledOn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstalledOn
+
+`func (o *UpdateResource) SetInstalledOn(v time.Time)`
+
+SetInstalledOn sets InstalledOn field to given value.
+
+### HasInstalledOn
+
+`func (o *UpdateResource) HasInstalledOn() bool`
+
+HasInstalledOn returns a boolean if a field has been set.
+
+### SetInstalledOnNil
+
+`func (o *UpdateResource) SetInstalledOnNil(b bool)`
+
+ SetInstalledOnNil sets the value for InstalledOn to be an explicit nil
+
+### UnsetInstalledOn
+`func (o *UpdateResource) UnsetInstalledOn()`
+
+UnsetInstalledOn ensures that no value is present for InstalledOn, not even an explicit nil
 ### GetInstallable
 
 `func (o *UpdateResource) GetInstallable() bool`

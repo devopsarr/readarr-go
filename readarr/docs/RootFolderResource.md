@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DefaultMetadataProfileId** | Pointer to **int32** |  | [optional] 
 **DefaultQualityProfileId** | Pointer to **int32** |  | [optional] 
 **DefaultMonitorOption** | Pointer to [**MonitorTypes**](MonitorTypes.md) |  | [optional] 
+**DefaultNewItemMonitorOption** | Pointer to [**NewItemMonitorTypes**](NewItemMonitorTypes.md) |  | [optional] 
 **DefaultTags** | Pointer to **[]int32** |  | [optional] 
 **IsCalibreLibrary** | Pointer to **bool** |  | [optional] 
 **Host** | Pointer to **NullableString** |  | [optional] 
@@ -213,6 +214,31 @@ SetDefaultMonitorOption sets DefaultMonitorOption field to given value.
 `func (o *RootFolderResource) HasDefaultMonitorOption() bool`
 
 HasDefaultMonitorOption returns a boolean if a field has been set.
+
+### GetDefaultNewItemMonitorOption
+
+`func (o *RootFolderResource) GetDefaultNewItemMonitorOption() NewItemMonitorTypes`
+
+GetDefaultNewItemMonitorOption returns the DefaultNewItemMonitorOption field if non-nil, zero value otherwise.
+
+### GetDefaultNewItemMonitorOptionOk
+
+`func (o *RootFolderResource) GetDefaultNewItemMonitorOptionOk() (*NewItemMonitorTypes, bool)`
+
+GetDefaultNewItemMonitorOptionOk returns a tuple with the DefaultNewItemMonitorOption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultNewItemMonitorOption
+
+`func (o *RootFolderResource) SetDefaultNewItemMonitorOption(v NewItemMonitorTypes)`
+
+SetDefaultNewItemMonitorOption sets DefaultNewItemMonitorOption field to given value.
+
+### HasDefaultNewItemMonitorOption
+
+`func (o *RootFolderResource) HasDefaultNewItemMonitorOption() bool`
+
+HasDefaultNewItemMonitorOption returns a boolean if a field has been set.
 
 ### GetDefaultTags
 

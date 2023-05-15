@@ -8,6 +8,9 @@ Name | Type | Description | Notes
 **Name** | Pointer to **NullableString** |  | [optional] 
 **UpgradeAllowed** | Pointer to **bool** |  | [optional] 
 **Cutoff** | Pointer to **int32** |  | [optional] 
+**MinFormatScore** | Pointer to **int32** |  | [optional] 
+**CutoffFormatScore** | Pointer to **int32** |  | [optional] 
+**FormatItems** | Pointer to [**[]ProfileFormatItem**](ProfileFormatItem.md) |  | [optional] 
 **Items** | Pointer to [**[]QualityProfileQualityItem**](QualityProfileQualityItem.md) |  | [optional] 
 
 ## Methods
@@ -139,6 +142,91 @@ SetCutoff sets Cutoff field to given value.
 
 HasCutoff returns a boolean if a field has been set.
 
+### GetMinFormatScore
+
+`func (o *QualityProfile) GetMinFormatScore() int32`
+
+GetMinFormatScore returns the MinFormatScore field if non-nil, zero value otherwise.
+
+### GetMinFormatScoreOk
+
+`func (o *QualityProfile) GetMinFormatScoreOk() (*int32, bool)`
+
+GetMinFormatScoreOk returns a tuple with the MinFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinFormatScore
+
+`func (o *QualityProfile) SetMinFormatScore(v int32)`
+
+SetMinFormatScore sets MinFormatScore field to given value.
+
+### HasMinFormatScore
+
+`func (o *QualityProfile) HasMinFormatScore() bool`
+
+HasMinFormatScore returns a boolean if a field has been set.
+
+### GetCutoffFormatScore
+
+`func (o *QualityProfile) GetCutoffFormatScore() int32`
+
+GetCutoffFormatScore returns the CutoffFormatScore field if non-nil, zero value otherwise.
+
+### GetCutoffFormatScoreOk
+
+`func (o *QualityProfile) GetCutoffFormatScoreOk() (*int32, bool)`
+
+GetCutoffFormatScoreOk returns a tuple with the CutoffFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCutoffFormatScore
+
+`func (o *QualityProfile) SetCutoffFormatScore(v int32)`
+
+SetCutoffFormatScore sets CutoffFormatScore field to given value.
+
+### HasCutoffFormatScore
+
+`func (o *QualityProfile) HasCutoffFormatScore() bool`
+
+HasCutoffFormatScore returns a boolean if a field has been set.
+
+### GetFormatItems
+
+`func (o *QualityProfile) GetFormatItems() []ProfileFormatItem`
+
+GetFormatItems returns the FormatItems field if non-nil, zero value otherwise.
+
+### GetFormatItemsOk
+
+`func (o *QualityProfile) GetFormatItemsOk() (*[]ProfileFormatItem, bool)`
+
+GetFormatItemsOk returns a tuple with the FormatItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormatItems
+
+`func (o *QualityProfile) SetFormatItems(v []ProfileFormatItem)`
+
+SetFormatItems sets FormatItems field to given value.
+
+### HasFormatItems
+
+`func (o *QualityProfile) HasFormatItems() bool`
+
+HasFormatItems returns a boolean if a field has been set.
+
+### SetFormatItemsNil
+
+`func (o *QualityProfile) SetFormatItemsNil(b bool)`
+
+ SetFormatItemsNil sets the value for FormatItems to be an explicit nil
+
+### UnsetFormatItems
+`func (o *QualityProfile) UnsetFormatItems()`
+
+UnsetFormatItems ensures that no value is present for FormatItems, not even an explicit nil
 ### GetItems
 
 `func (o *QualityProfile) GetItems() []QualityProfileQualityItem`

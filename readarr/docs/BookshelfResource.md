@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Authors** | Pointer to [**[]BookshelfAuthorResource**](BookshelfAuthorResource.md) |  | [optional] 
 **MonitoringOptions** | Pointer to [**MonitoringOptions**](MonitoringOptions.md) |  | [optional] 
+**MonitorNewItems** | Pointer to [**NewItemMonitorTypes**](NewItemMonitorTypes.md) |  | [optional] 
 
 ## Methods
 
@@ -85,6 +86,31 @@ SetMonitoringOptions sets MonitoringOptions field to given value.
 `func (o *BookshelfResource) HasMonitoringOptions() bool`
 
 HasMonitoringOptions returns a boolean if a field has been set.
+
+### GetMonitorNewItems
+
+`func (o *BookshelfResource) GetMonitorNewItems() NewItemMonitorTypes`
+
+GetMonitorNewItems returns the MonitorNewItems field if non-nil, zero value otherwise.
+
+### GetMonitorNewItemsOk
+
+`func (o *BookshelfResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool)`
+
+GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorNewItems
+
+`func (o *BookshelfResource) SetMonitorNewItems(v NewItemMonitorTypes)`
+
+SetMonitorNewItems sets MonitorNewItems field to given value.
+
+### HasMonitorNewItems
+
+`func (o *BookshelfResource) HasMonitorNewItems() bool`
+
+HasMonitorNewItems returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

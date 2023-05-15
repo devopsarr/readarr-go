@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **Position** | Pointer to **NullableString** |  | [optional] 
+**SeriesPosition** | Pointer to **int32** |  | [optional] 
 **SeriesId** | Pointer to **int32** |  | [optional] 
 **BookId** | Pointer to **int32** |  | [optional] 
 **IsPrimary** | Pointer to **bool** |  | [optional] 
@@ -91,6 +92,31 @@ HasPosition returns a boolean if a field has been set.
 `func (o *SeriesBookLink) UnsetPosition()`
 
 UnsetPosition ensures that no value is present for Position, not even an explicit nil
+### GetSeriesPosition
+
+`func (o *SeriesBookLink) GetSeriesPosition() int32`
+
+GetSeriesPosition returns the SeriesPosition field if non-nil, zero value otherwise.
+
+### GetSeriesPositionOk
+
+`func (o *SeriesBookLink) GetSeriesPositionOk() (*int32, bool)`
+
+GetSeriesPositionOk returns a tuple with the SeriesPosition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSeriesPosition
+
+`func (o *SeriesBookLink) SetSeriesPosition(v int32)`
+
+SetSeriesPosition sets SeriesPosition field to given value.
+
+### HasSeriesPosition
+
+`func (o *SeriesBookLink) HasSeriesPosition() bool`
+
+HasSeriesPosition returns a boolean if a field has been set.
+
 ### GetSeriesId
 
 `func (o *SeriesBookLink) GetSeriesId() int32`

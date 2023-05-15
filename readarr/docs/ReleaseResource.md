@@ -33,7 +33,8 @@ Name | Type | Description | Notes
 **InfoUrl** | Pointer to **NullableString** |  | [optional] 
 **DownloadAllowed** | Pointer to **bool** |  | [optional] 
 **ReleaseWeight** | Pointer to **int32** |  | [optional] 
-**PreferredWordScore** | Pointer to **int32** |  | [optional] 
+**CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
+**CustomFormatScore** | Pointer to **int32** |  | [optional] 
 **MagnetUrl** | Pointer to **NullableString** |  | [optional] 
 **InfoHash** | Pointer to **NullableString** |  | [optional] 
 **Seeders** | Pointer to **NullableInt32** |  | [optional] 
@@ -916,30 +917,65 @@ SetReleaseWeight sets ReleaseWeight field to given value.
 
 HasReleaseWeight returns a boolean if a field has been set.
 
-### GetPreferredWordScore
+### GetCustomFormats
 
-`func (o *ReleaseResource) GetPreferredWordScore() int32`
+`func (o *ReleaseResource) GetCustomFormats() []CustomFormatResource`
 
-GetPreferredWordScore returns the PreferredWordScore field if non-nil, zero value otherwise.
+GetCustomFormats returns the CustomFormats field if non-nil, zero value otherwise.
 
-### GetPreferredWordScoreOk
+### GetCustomFormatsOk
 
-`func (o *ReleaseResource) GetPreferredWordScoreOk() (*int32, bool)`
+`func (o *ReleaseResource) GetCustomFormatsOk() (*[]CustomFormatResource, bool)`
 
-GetPreferredWordScoreOk returns a tuple with the PreferredWordScore field if it's non-nil, zero value otherwise
+GetCustomFormatsOk returns a tuple with the CustomFormats field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPreferredWordScore
+### SetCustomFormats
 
-`func (o *ReleaseResource) SetPreferredWordScore(v int32)`
+`func (o *ReleaseResource) SetCustomFormats(v []CustomFormatResource)`
 
-SetPreferredWordScore sets PreferredWordScore field to given value.
+SetCustomFormats sets CustomFormats field to given value.
 
-### HasPreferredWordScore
+### HasCustomFormats
 
-`func (o *ReleaseResource) HasPreferredWordScore() bool`
+`func (o *ReleaseResource) HasCustomFormats() bool`
 
-HasPreferredWordScore returns a boolean if a field has been set.
+HasCustomFormats returns a boolean if a field has been set.
+
+### SetCustomFormatsNil
+
+`func (o *ReleaseResource) SetCustomFormatsNil(b bool)`
+
+ SetCustomFormatsNil sets the value for CustomFormats to be an explicit nil
+
+### UnsetCustomFormats
+`func (o *ReleaseResource) UnsetCustomFormats()`
+
+UnsetCustomFormats ensures that no value is present for CustomFormats, not even an explicit nil
+### GetCustomFormatScore
+
+`func (o *ReleaseResource) GetCustomFormatScore() int32`
+
+GetCustomFormatScore returns the CustomFormatScore field if non-nil, zero value otherwise.
+
+### GetCustomFormatScoreOk
+
+`func (o *ReleaseResource) GetCustomFormatScoreOk() (*int32, bool)`
+
+GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormatScore
+
+`func (o *ReleaseResource) SetCustomFormatScore(v int32)`
+
+SetCustomFormatScore sets CustomFormatScore field to given value.
+
+### HasCustomFormatScore
+
+`func (o *ReleaseResource) HasCustomFormatScore() bool`
+
+HasCustomFormatScore returns a boolean if a field has been set.
 
 ### GetMagnetUrl
 

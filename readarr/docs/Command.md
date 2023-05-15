@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **RequiresDiskAccess** | Pointer to **bool** |  | [optional] [readonly] 
 **IsExclusive** | Pointer to **bool** |  | [optional] [readonly] 
 **IsTypeExclusive** | Pointer to **bool** |  | [optional] [readonly] 
+**IsLongRunning** | Pointer to **bool** |  | [optional] [readonly] 
 **Name** | Pointer to **NullableString** |  | [optional] [readonly] 
 **LastExecutionTime** | Pointer to **NullableTime** |  | [optional] 
 **LastStartTime** | Pointer to **NullableTime** |  | [optional] 
@@ -195,6 +196,31 @@ SetIsTypeExclusive sets IsTypeExclusive field to given value.
 `func (o *Command) HasIsTypeExclusive() bool`
 
 HasIsTypeExclusive returns a boolean if a field has been set.
+
+### GetIsLongRunning
+
+`func (o *Command) GetIsLongRunning() bool`
+
+GetIsLongRunning returns the IsLongRunning field if non-nil, zero value otherwise.
+
+### GetIsLongRunningOk
+
+`func (o *Command) GetIsLongRunningOk() (*bool, bool)`
+
+GetIsLongRunningOk returns a tuple with the IsLongRunning field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsLongRunning
+
+`func (o *Command) SetIsLongRunning(v bool)`
+
+SetIsLongRunning sets IsLongRunning field to given value.
+
+### HasIsLongRunning
+
+`func (o *Command) HasIsLongRunning() bool`
+
+HasIsLongRunning returns a boolean if a field has been set.
 
 ### GetName
 

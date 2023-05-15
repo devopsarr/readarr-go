@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ReleaseDate** | Pointer to **NullableTime** |  | [optional] 
 **Links** | Pointer to [**[]Links**](Links.md) |  | [optional] 
 **Genres** | Pointer to **[]string** |  | [optional] 
+**RelatedBooks** | Pointer to **[]int32** |  | [optional] 
 **Ratings** | Pointer to [**Ratings**](Ratings.md) |  | [optional] 
 **CleanTitle** | Pointer to **NullableString** |  | [optional] 
 **Monitored** | Pointer to **bool** |  | [optional] 
@@ -304,6 +305,41 @@ HasGenres returns a boolean if a field has been set.
 `func (o *Book) UnsetGenres()`
 
 UnsetGenres ensures that no value is present for Genres, not even an explicit nil
+### GetRelatedBooks
+
+`func (o *Book) GetRelatedBooks() []int32`
+
+GetRelatedBooks returns the RelatedBooks field if non-nil, zero value otherwise.
+
+### GetRelatedBooksOk
+
+`func (o *Book) GetRelatedBooksOk() (*[]int32, bool)`
+
+GetRelatedBooksOk returns a tuple with the RelatedBooks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRelatedBooks
+
+`func (o *Book) SetRelatedBooks(v []int32)`
+
+SetRelatedBooks sets RelatedBooks field to given value.
+
+### HasRelatedBooks
+
+`func (o *Book) HasRelatedBooks() bool`
+
+HasRelatedBooks returns a boolean if a field has been set.
+
+### SetRelatedBooksNil
+
+`func (o *Book) SetRelatedBooksNil(b bool)`
+
+ SetRelatedBooksNil sets the value for RelatedBooks to be an explicit nil
+
+### UnsetRelatedBooks
+`func (o *Book) UnsetRelatedBooks()`
+
+UnsetRelatedBooks ensures that no value is present for RelatedBooks, not even an explicit nil
 ### GetRatings
 
 `func (o *Book) GetRatings() Ratings`

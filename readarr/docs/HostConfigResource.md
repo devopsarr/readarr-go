@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **SslCertPath** | Pointer to **NullableString** |  | [optional] 
 **SslCertPassword** | Pointer to **NullableString** |  | [optional] 
 **UrlBase** | Pointer to **NullableString** |  | [optional] 
+**InstanceName** | Pointer to **NullableString** |  | [optional] 
+**ApplicationUrl** | Pointer to **NullableString** |  | [optional] 
 **UpdateAutomatically** | Pointer to **bool** |  | [optional] 
 **UpdateMechanism** | Pointer to [**UpdateMechanism**](UpdateMechanism.md) |  | [optional] 
 **UpdateScriptPath** | Pointer to **NullableString** |  | [optional] 
@@ -581,6 +583,76 @@ HasUrlBase returns a boolean if a field has been set.
 `func (o *HostConfigResource) UnsetUrlBase()`
 
 UnsetUrlBase ensures that no value is present for UrlBase, not even an explicit nil
+### GetInstanceName
+
+`func (o *HostConfigResource) GetInstanceName() string`
+
+GetInstanceName returns the InstanceName field if non-nil, zero value otherwise.
+
+### GetInstanceNameOk
+
+`func (o *HostConfigResource) GetInstanceNameOk() (*string, bool)`
+
+GetInstanceNameOk returns a tuple with the InstanceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstanceName
+
+`func (o *HostConfigResource) SetInstanceName(v string)`
+
+SetInstanceName sets InstanceName field to given value.
+
+### HasInstanceName
+
+`func (o *HostConfigResource) HasInstanceName() bool`
+
+HasInstanceName returns a boolean if a field has been set.
+
+### SetInstanceNameNil
+
+`func (o *HostConfigResource) SetInstanceNameNil(b bool)`
+
+ SetInstanceNameNil sets the value for InstanceName to be an explicit nil
+
+### UnsetInstanceName
+`func (o *HostConfigResource) UnsetInstanceName()`
+
+UnsetInstanceName ensures that no value is present for InstanceName, not even an explicit nil
+### GetApplicationUrl
+
+`func (o *HostConfigResource) GetApplicationUrl() string`
+
+GetApplicationUrl returns the ApplicationUrl field if non-nil, zero value otherwise.
+
+### GetApplicationUrlOk
+
+`func (o *HostConfigResource) GetApplicationUrlOk() (*string, bool)`
+
+GetApplicationUrlOk returns a tuple with the ApplicationUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationUrl
+
+`func (o *HostConfigResource) SetApplicationUrl(v string)`
+
+SetApplicationUrl sets ApplicationUrl field to given value.
+
+### HasApplicationUrl
+
+`func (o *HostConfigResource) HasApplicationUrl() bool`
+
+HasApplicationUrl returns a boolean if a field has been set.
+
+### SetApplicationUrlNil
+
+`func (o *HostConfigResource) SetApplicationUrlNil(b bool)`
+
+ SetApplicationUrlNil sets the value for ApplicationUrl to be an explicit nil
+
+### UnsetApplicationUrl
+`func (o *HostConfigResource) UnsetApplicationUrl()`
+
+UnsetApplicationUrl ensures that no value is present for ApplicationUrl, not even an explicit nil
 ### GetUpdateAutomatically
 
 `func (o *HostConfigResource) GetUpdateAutomatically() bool`

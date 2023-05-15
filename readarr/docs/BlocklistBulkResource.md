@@ -1,4 +1,4 @@
-# BlacklistBulkResource
+# BlocklistBulkResource
 
 ## Properties
 
@@ -8,56 +8,56 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewBlacklistBulkResource
+### NewBlocklistBulkResource
 
-`func NewBlacklistBulkResource() *BlacklistBulkResource`
+`func NewBlocklistBulkResource() *BlocklistBulkResource`
 
-NewBlacklistBulkResource instantiates a new BlacklistBulkResource object
+NewBlocklistBulkResource instantiates a new BlocklistBulkResource object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewBlacklistBulkResourceWithDefaults
+### NewBlocklistBulkResourceWithDefaults
 
-`func NewBlacklistBulkResourceWithDefaults() *BlacklistBulkResource`
+`func NewBlocklistBulkResourceWithDefaults() *BlocklistBulkResource`
 
-NewBlacklistBulkResourceWithDefaults instantiates a new BlacklistBulkResource object
+NewBlocklistBulkResourceWithDefaults instantiates a new BlocklistBulkResource object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetIds
 
-`func (o *BlacklistBulkResource) GetIds() []int32`
+`func (o *BlocklistBulkResource) GetIds() []int32`
 
 GetIds returns the Ids field if non-nil, zero value otherwise.
 
 ### GetIdsOk
 
-`func (o *BlacklistBulkResource) GetIdsOk() (*[]int32, bool)`
+`func (o *BlocklistBulkResource) GetIdsOk() (*[]int32, bool)`
 
 GetIdsOk returns a tuple with the Ids field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIds
 
-`func (o *BlacklistBulkResource) SetIds(v []int32)`
+`func (o *BlocklistBulkResource) SetIds(v []int32)`
 
 SetIds sets Ids field to given value.
 
 ### HasIds
 
-`func (o *BlacklistBulkResource) HasIds() bool`
+`func (o *BlocklistBulkResource) HasIds() bool`
 
 HasIds returns a boolean if a field has been set.
 
 ### SetIdsNil
 
-`func (o *BlacklistBulkResource) SetIdsNil(b bool)`
+`func (o *BlocklistBulkResource) SetIdsNil(b bool)`
 
  SetIdsNil sets the value for Ids to be an explicit nil
 
 ### UnsetIds
-`func (o *BlacklistBulkResource) UnsetIds()`
+`func (o *BlocklistBulkResource) UnsetIds()`
 
 UnsetIds ensures that no value is present for Ids, not even an explicit nil
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **AuthorMetadataId** | Pointer to **int32** |  | [optional] 
 **CleanName** | Pointer to **NullableString** |  | [optional] 
 **Monitored** | Pointer to **bool** |  | [optional] 
+**MonitorNewItems** | Pointer to [**NewItemMonitorTypes**](NewItemMonitorTypes.md) |  | [optional] 
 **LastInfoSync** | Pointer to **NullableTime** |  | [optional] 
 **Path** | Pointer to **NullableString** |  | [optional] 
 **RootFolderPath** | Pointer to **NullableString** |  | [optional] 
@@ -152,6 +153,31 @@ SetMonitored sets Monitored field to given value.
 `func (o *Author) HasMonitored() bool`
 
 HasMonitored returns a boolean if a field has been set.
+
+### GetMonitorNewItems
+
+`func (o *Author) GetMonitorNewItems() NewItemMonitorTypes`
+
+GetMonitorNewItems returns the MonitorNewItems field if non-nil, zero value otherwise.
+
+### GetMonitorNewItemsOk
+
+`func (o *Author) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool)`
+
+GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorNewItems
+
+`func (o *Author) SetMonitorNewItems(v NewItemMonitorTypes)`
+
+SetMonitorNewItems sets MonitorNewItems field to given value.
+
+### HasMonitorNewItems
+
+`func (o *Author) HasMonitorNewItems() bool`
+
+HasMonitorNewItems returns a boolean if a field has been set.
 
 ### GetLastInfoSync
 
