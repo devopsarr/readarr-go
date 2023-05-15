@@ -19,11 +19,11 @@ import (
 )
 
 
-// CalendarFeedApiService CalendarFeedApi service
-type CalendarFeedApiService service
+// CalendarFeedAPIService CalendarFeedAPI service
+type CalendarFeedAPIService service
 type ApiGetCalendarReadarrIcsRequest struct {
 	ctx context.Context
-	ApiService *CalendarFeedApiService
+	ApiService *CalendarFeedAPIService
 	pastDays *int32
 	futureDays *int32
 	tagList *string
@@ -60,7 +60,7 @@ GetCalendarReadarrIcs Method for GetCalendarReadarrIcs
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetCalendarReadarrIcsRequest
 */
-func (a *CalendarFeedApiService) GetCalendarReadarrIcs(ctx context.Context) ApiGetCalendarReadarrIcsRequest {
+func (a *CalendarFeedAPIService) GetCalendarReadarrIcs(ctx context.Context) ApiGetCalendarReadarrIcsRequest {
 	return ApiGetCalendarReadarrIcsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -68,14 +68,14 @@ func (a *CalendarFeedApiService) GetCalendarReadarrIcs(ctx context.Context) ApiG
 }
 
 // Execute executes the request
-func (a *CalendarFeedApiService) GetCalendarReadarrIcsExecute(r ApiGetCalendarReadarrIcsRequest) (*http.Response, error) {
+func (a *CalendarFeedAPIService) GetCalendarReadarrIcsExecute(r ApiGetCalendarReadarrIcsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarFeedApiService.GetCalendarReadarrIcs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarFeedAPIService.GetCalendarReadarrIcs")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

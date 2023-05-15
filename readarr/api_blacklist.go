@@ -20,11 +20,11 @@ import (
 )
 
 
-// BlacklistApiService BlacklistApi service
-type BlacklistApiService service
+// BlacklistAPIService BlacklistAPI service
+type BlacklistAPIService service
 type ApiDeleteBlacklistRequest struct {
 	ctx context.Context
-	ApiService *BlacklistApiService
+	ApiService *BlacklistAPIService
 	id int32
 }
 
@@ -39,7 +39,7 @@ DeleteBlacklist Method for DeleteBlacklist
  @param id
  @return ApiDeleteBlacklistRequest
 */
-func (a *BlacklistApiService) DeleteBlacklist(ctx context.Context, id int32) ApiDeleteBlacklistRequest {
+func (a *BlacklistAPIService) DeleteBlacklist(ctx context.Context, id int32) ApiDeleteBlacklistRequest {
 	return ApiDeleteBlacklistRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -48,14 +48,14 @@ func (a *BlacklistApiService) DeleteBlacklist(ctx context.Context, id int32) Api
 }
 
 // Execute executes the request
-func (a *BlacklistApiService) DeleteBlacklistExecute(r ApiDeleteBlacklistRequest) (*http.Response, error) {
+func (a *BlacklistAPIService) DeleteBlacklistExecute(r ApiDeleteBlacklistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlacklistApiService.DeleteBlacklist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlacklistAPIService.DeleteBlacklist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -113,7 +113,7 @@ func (a *BlacklistApiService) DeleteBlacklistExecute(r ApiDeleteBlacklistRequest
 }
 type ApiDeleteBlacklistBulkRequest struct {
 	ctx context.Context
-	ApiService *BlacklistApiService
+	ApiService *BlacklistAPIService
 	blacklistBulkResource *BlacklistBulkResource
 }
 
@@ -132,7 +132,7 @@ DeleteBlacklistBulk Method for DeleteBlacklistBulk
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteBlacklistBulkRequest
 */
-func (a *BlacklistApiService) DeleteBlacklistBulk(ctx context.Context) ApiDeleteBlacklistBulkRequest {
+func (a *BlacklistAPIService) DeleteBlacklistBulk(ctx context.Context) ApiDeleteBlacklistBulkRequest {
 	return ApiDeleteBlacklistBulkRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -140,14 +140,14 @@ func (a *BlacklistApiService) DeleteBlacklistBulk(ctx context.Context) ApiDelete
 }
 
 // Execute executes the request
-func (a *BlacklistApiService) DeleteBlacklistBulkExecute(r ApiDeleteBlacklistBulkRequest) (*http.Response, error) {
+func (a *BlacklistAPIService) DeleteBlacklistBulkExecute(r ApiDeleteBlacklistBulkRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlacklistApiService.DeleteBlacklistBulk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlacklistAPIService.DeleteBlacklistBulk")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -206,7 +206,7 @@ func (a *BlacklistApiService) DeleteBlacklistBulkExecute(r ApiDeleteBlacklistBul
 }
 type ApiGetBlacklistRequest struct {
 	ctx context.Context
-	ApiService *BlacklistApiService
+	ApiService *BlacklistAPIService
 }
 
 func (r ApiGetBlacklistRequest) Execute() (*BlacklistResourcePagingResource, *http.Response, error) {
@@ -219,7 +219,7 @@ GetBlacklist Method for GetBlacklist
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetBlacklistRequest
 */
-func (a *BlacklistApiService) GetBlacklist(ctx context.Context) ApiGetBlacklistRequest {
+func (a *BlacklistAPIService) GetBlacklist(ctx context.Context) ApiGetBlacklistRequest {
 	return ApiGetBlacklistRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -228,7 +228,7 @@ func (a *BlacklistApiService) GetBlacklist(ctx context.Context) ApiGetBlacklistR
 
 // Execute executes the request
 //  @return BlacklistResourcePagingResource
-func (a *BlacklistApiService) GetBlacklistExecute(r ApiGetBlacklistRequest) (*BlacklistResourcePagingResource, *http.Response, error) {
+func (a *BlacklistAPIService) GetBlacklistExecute(r ApiGetBlacklistRequest) (*BlacklistResourcePagingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -236,7 +236,7 @@ func (a *BlacklistApiService) GetBlacklistExecute(r ApiGetBlacklistRequest) (*Bl
 		localVarReturnValue  *BlacklistResourcePagingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlacklistApiService.GetBlacklist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlacklistAPIService.GetBlacklist")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
