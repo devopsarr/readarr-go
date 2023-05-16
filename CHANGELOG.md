@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/devopsarr/readarr-go/compare/v0.2.1...v0.3.0) (2023-05-15)
+
+
+### Features
+
+* pin openapi version and add version management ([caecf95](https://github.com/devopsarr/readarr-go/commit/caecf957e109bf209ed622ccf0418c1199564e3f))
+
 ## [0.2.1](https://github.com/devopsarr/readarr-go/compare/v0.2.0...v0.2.1) (2023-03-27)
 
 
