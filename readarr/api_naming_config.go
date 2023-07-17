@@ -203,7 +203,7 @@ func (a *NamingConfigApiService) GetNamingConfigByIdExecute(r ApiGetNamingConfig
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -279,6 +279,7 @@ type ApiGetNamingConfigExamplesRequest struct {
 	ApiService *NamingConfigApiService
 	renameBooks *bool
 	replaceIllegalCharacters *bool
+	colonReplacementFormat *int32
 	standardBookFormat *string
 	authorFolderFormat *string
 	includeAuthorName *bool
@@ -298,6 +299,11 @@ func (r ApiGetNamingConfigExamplesRequest) RenameBooks(renameBooks bool) ApiGetN
 
 func (r ApiGetNamingConfigExamplesRequest) ReplaceIllegalCharacters(replaceIllegalCharacters bool) ApiGetNamingConfigExamplesRequest {
 	r.replaceIllegalCharacters = &replaceIllegalCharacters
+	return r
+}
+
+func (r ApiGetNamingConfigExamplesRequest) ColonReplacementFormat(colonReplacementFormat int32) ApiGetNamingConfigExamplesRequest {
+	r.colonReplacementFormat = &colonReplacementFormat
 	return r
 }
 
@@ -392,6 +398,9 @@ func (a *NamingConfigApiService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	}
 	if r.replaceIllegalCharacters != nil {
 		localVarQueryParams.Add("ReplaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
+	}
+	if r.colonReplacementFormat != nil {
+		localVarQueryParams.Add("ColonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
 	}
 	if r.standardBookFormat != nil {
 		localVarQueryParams.Add("StandardBookFormat", parameterToString(*r.standardBookFormat, ""))

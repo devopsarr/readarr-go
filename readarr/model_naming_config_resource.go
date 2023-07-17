@@ -19,6 +19,7 @@ type NamingConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
 	RenameBooks *bool `json:"renameBooks,omitempty"`
 	ReplaceIllegalCharacters *bool `json:"replaceIllegalCharacters,omitempty"`
+	ColonReplacementFormat *int32 `json:"colonReplacementFormat,omitempty"`
 	StandardBookFormat NullableString `json:"standardBookFormat,omitempty"`
 	AuthorFolderFormat NullableString `json:"authorFolderFormat,omitempty"`
 	IncludeAuthorName *bool `json:"includeAuthorName,omitempty"`
@@ -140,6 +141,38 @@ func (o *NamingConfigResource) HasReplaceIllegalCharacters() bool {
 // SetReplaceIllegalCharacters gets a reference to the given bool and assigns it to the ReplaceIllegalCharacters field.
 func (o *NamingConfigResource) SetReplaceIllegalCharacters(v bool) {
 	o.ReplaceIllegalCharacters = &v
+}
+
+// GetColonReplacementFormat returns the ColonReplacementFormat field value if set, zero value otherwise.
+func (o *NamingConfigResource) GetColonReplacementFormat() int32 {
+	if o == nil || isNil(o.ColonReplacementFormat) {
+		var ret int32
+		return ret
+	}
+	return *o.ColonReplacementFormat
+}
+
+// GetColonReplacementFormatOk returns a tuple with the ColonReplacementFormat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NamingConfigResource) GetColonReplacementFormatOk() (*int32, bool) {
+	if o == nil || isNil(o.ColonReplacementFormat) {
+    return nil, false
+	}
+	return o.ColonReplacementFormat, true
+}
+
+// HasColonReplacementFormat returns a boolean if a field has been set.
+func (o *NamingConfigResource) HasColonReplacementFormat() bool {
+	if o != nil && !isNil(o.ColonReplacementFormat) {
+		return true
+	}
+
+	return false
+}
+
+// SetColonReplacementFormat gets a reference to the given int32 and assigns it to the ColonReplacementFormat field.
+func (o *NamingConfigResource) SetColonReplacementFormat(v int32) {
+	o.ColonReplacementFormat = &v
 }
 
 // GetStandardBookFormat returns the StandardBookFormat field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -448,6 +481,9 @@ func (o NamingConfigResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ReplaceIllegalCharacters) {
 		toSerialize["replaceIllegalCharacters"] = o.ReplaceIllegalCharacters
+	}
+	if !isNil(o.ColonReplacementFormat) {
+		toSerialize["colonReplacementFormat"] = o.ColonReplacementFormat
 	}
 	if o.StandardBookFormat.IsSet() {
 		toSerialize["standardBookFormat"] = o.StandardBookFormat.Get()

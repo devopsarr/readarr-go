@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateNotification
 
-> NotificationResource CreateNotification(ctx).NotificationResource(notificationResource).Execute()
+> NotificationResource CreateNotification(ctx).ForceSave(forceSave).NotificationResource(notificationResource).Execute()
 
 
 
@@ -35,11 +35,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     notificationResource := *readarrClient.NewNotificationResource() // NotificationResource |  (optional)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.CreateNotification(context.Background()).NotificationResource(notificationResource).Execute()
+    resp, r, err := apiClient.NotificationApi.CreateNotification(context.Background()).ForceSave(forceSave).NotificationResource(notificationResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.CreateNotification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +61,7 @@ Other parameters are passed through a pointer to a apiCreateNotificationRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **notificationResource** | [**NotificationResource**](NotificationResource.md) |  | 
 
 ### Return type
@@ -72,8 +74,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -140,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -275,7 +277,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -334,7 +336,7 @@ Other parameters are passed through a pointer to a apiListNotificationRequest st
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -393,7 +395,7 @@ Other parameters are passed through a pointer to a apiListNotificationSchemaRequ
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -454,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -521,7 +523,7 @@ Other parameters are passed through a pointer to a apiTestallNotificationRequest
 
 ## UpdateNotification
 
-> NotificationResource UpdateNotification(ctx, id).NotificationResource(notificationResource).Execute()
+> NotificationResource UpdateNotification(ctx, id).ForceSave(forceSave).NotificationResource(notificationResource).Execute()
 
 
 
@@ -539,11 +541,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    forceSave := true // bool |  (optional) (default to false)
     notificationResource := *readarrClient.NewNotificationResource() // NotificationResource |  (optional)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.UpdateNotification(context.Background(), id).NotificationResource(notificationResource).Execute()
+    resp, r, err := apiClient.NotificationApi.UpdateNotification(context.Background(), id).ForceSave(forceSave).NotificationResource(notificationResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.UpdateNotification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,6 +572,7 @@ Other parameters are passed through a pointer to a apiUpdateNotificationRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **forceSave** | **bool** |  | [default to false]
  **notificationResource** | [**NotificationResource**](NotificationResource.md) |  | 
 
 ### Return type
@@ -581,8 +585,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

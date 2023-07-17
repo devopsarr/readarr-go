@@ -25,7 +25,7 @@ type MetadataProfileResource struct {
 	SkipSeriesSecondary *bool `json:"skipSeriesSecondary,omitempty"`
 	AllowedLanguages NullableString `json:"allowedLanguages,omitempty"`
 	MinPages *int32 `json:"minPages,omitempty"`
-	Ignored NullableString `json:"ignored,omitempty"`
+	Ignored []*string `json:"ignored,omitempty"`
 }
 
 // NewMetadataProfileResource instantiates a new MetadataProfileResource object
@@ -354,45 +354,36 @@ func (o *MetadataProfileResource) SetMinPages(v int32) {
 }
 
 // GetIgnored returns the Ignored field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MetadataProfileResource) GetIgnored() string {
-	if o == nil || isNil(o.Ignored.Get()) {
-		var ret string
+func (o *MetadataProfileResource) GetIgnored() []*string {
+	if o == nil {
+		var ret []*string
 		return ret
 	}
-	return *o.Ignored.Get()
+	return o.Ignored
 }
 
 // GetIgnoredOk returns a tuple with the Ignored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MetadataProfileResource) GetIgnoredOk() (*string, bool) {
-	if o == nil {
+func (o *MetadataProfileResource) GetIgnoredOk() ([]*string, bool) {
+	if o == nil || isNil(o.Ignored) {
     return nil, false
 	}
-	return o.Ignored.Get(), o.Ignored.IsSet()
+	return o.Ignored, true
 }
 
 // HasIgnored returns a boolean if a field has been set.
 func (o *MetadataProfileResource) HasIgnored() bool {
-	if o != nil && o.Ignored.IsSet() {
+	if o != nil && isNil(o.Ignored) {
 		return true
 	}
 
 	return false
 }
 
-// SetIgnored gets a reference to the given NullableString and assigns it to the Ignored field.
-func (o *MetadataProfileResource) SetIgnored(v string) {
-	o.Ignored.Set(&v)
-}
-// SetIgnoredNil sets the value for Ignored to be an explicit nil
-func (o *MetadataProfileResource) SetIgnoredNil() {
-	o.Ignored.Set(nil)
-}
-
-// UnsetIgnored ensures that no value is present for Ignored, not even an explicit nil
-func (o *MetadataProfileResource) UnsetIgnored() {
-	o.Ignored.Unset()
+// SetIgnored gets a reference to the given []string and assigns it to the Ignored field.
+func (o *MetadataProfileResource) SetIgnored(v []*string) {
+	o.Ignored = v
 }
 
 func (o MetadataProfileResource) MarshalJSON() ([]byte, error) {
@@ -424,8 +415,8 @@ func (o MetadataProfileResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.MinPages) {
 		toSerialize["minPages"] = o.MinPages
 	}
-	if o.Ignored.IsSet() {
-		toSerialize["ignored"] = o.Ignored.Get()
+	if o.Ignored != nil {
+		toSerialize["ignored"] = o.Ignored
 	}
 	return json.Marshal(toSerialize)
 }

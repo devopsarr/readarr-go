@@ -29,6 +29,8 @@ type DownloadClientResource struct {
 	Enable *bool `json:"enable,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	Priority *int32 `json:"priority,omitempty"`
+	RemoveCompletedDownloads *bool `json:"removeCompletedDownloads,omitempty"`
+	RemoveFailedDownloads *bool `json:"removeFailedDownloads,omitempty"`
 }
 
 // NewDownloadClientResource instantiates a new DownloadClientResource object
@@ -517,6 +519,70 @@ func (o *DownloadClientResource) SetPriority(v int32) {
 	o.Priority = &v
 }
 
+// GetRemoveCompletedDownloads returns the RemoveCompletedDownloads field value if set, zero value otherwise.
+func (o *DownloadClientResource) GetRemoveCompletedDownloads() bool {
+	if o == nil || isNil(o.RemoveCompletedDownloads) {
+		var ret bool
+		return ret
+	}
+	return *o.RemoveCompletedDownloads
+}
+
+// GetRemoveCompletedDownloadsOk returns a tuple with the RemoveCompletedDownloads field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DownloadClientResource) GetRemoveCompletedDownloadsOk() (*bool, bool) {
+	if o == nil || isNil(o.RemoveCompletedDownloads) {
+    return nil, false
+	}
+	return o.RemoveCompletedDownloads, true
+}
+
+// HasRemoveCompletedDownloads returns a boolean if a field has been set.
+func (o *DownloadClientResource) HasRemoveCompletedDownloads() bool {
+	if o != nil && !isNil(o.RemoveCompletedDownloads) {
+		return true
+	}
+
+	return false
+}
+
+// SetRemoveCompletedDownloads gets a reference to the given bool and assigns it to the RemoveCompletedDownloads field.
+func (o *DownloadClientResource) SetRemoveCompletedDownloads(v bool) {
+	o.RemoveCompletedDownloads = &v
+}
+
+// GetRemoveFailedDownloads returns the RemoveFailedDownloads field value if set, zero value otherwise.
+func (o *DownloadClientResource) GetRemoveFailedDownloads() bool {
+	if o == nil || isNil(o.RemoveFailedDownloads) {
+		var ret bool
+		return ret
+	}
+	return *o.RemoveFailedDownloads
+}
+
+// GetRemoveFailedDownloadsOk returns a tuple with the RemoveFailedDownloads field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DownloadClientResource) GetRemoveFailedDownloadsOk() (*bool, bool) {
+	if o == nil || isNil(o.RemoveFailedDownloads) {
+    return nil, false
+	}
+	return o.RemoveFailedDownloads, true
+}
+
+// HasRemoveFailedDownloads returns a boolean if a field has been set.
+func (o *DownloadClientResource) HasRemoveFailedDownloads() bool {
+	if o != nil && !isNil(o.RemoveFailedDownloads) {
+		return true
+	}
+
+	return false
+}
+
+// SetRemoveFailedDownloads gets a reference to the given bool and assigns it to the RemoveFailedDownloads field.
+func (o *DownloadClientResource) SetRemoveFailedDownloads(v bool) {
+	o.RemoveFailedDownloads = &v
+}
+
 func (o DownloadClientResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -557,6 +623,12 @@ func (o DownloadClientResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
+	}
+	if !isNil(o.RemoveCompletedDownloads) {
+		toSerialize["removeCompletedDownloads"] = o.RemoveCompletedDownloads
+	}
+	if !isNil(o.RemoveFailedDownloads) {
+		toSerialize["removeFailedDownloads"] = o.RemoveFailedDownloads
 	}
 	return json.Marshal(toSerialize)
 }

@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAuthor
 
-> DeleteAuthor(ctx, id).Execute()
+> DeleteAuthor(ctx, id).DeleteFiles(deleteFiles).AddImportListExclusion(addImportListExclusion).Execute()
 
 
 
@@ -96,10 +96,12 @@ import (
 
 func main() {
     id := int32(56) // int32 | 
+    deleteFiles := true // bool |  (optional) (default to false)
+    addImportListExclusion := true // bool |  (optional) (default to false)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorApi.DeleteAuthor(context.Background(), id).Execute()
+    resp, r, err := apiClient.AuthorApi.DeleteAuthor(context.Background(), id).DeleteFiles(deleteFiles).AddImportListExclusion(addImportListExclusion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.DeleteAuthor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -123,6 +125,8 @@ Other parameters are passed through a pointer to a apiDeleteAuthorRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **deleteFiles** | **bool** |  | [default to false]
+ **addImportListExclusion** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -203,7 +207,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -271,7 +275,7 @@ Other parameters are passed through a pointer to a apiListAuthorRequest struct v
 
 ## UpdateAuthor
 
-> AuthorResource UpdateAuthor(ctx, id).AuthorResource(authorResource).Execute()
+> AuthorResource UpdateAuthor(ctx, id).MoveFiles(moveFiles).AuthorResource(authorResource).Execute()
 
 
 
@@ -289,11 +293,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    moveFiles := true // bool |  (optional) (default to false)
     authorResource := *readarrClient.NewAuthorResource() // AuthorResource |  (optional)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorApi.UpdateAuthor(context.Background(), id).AuthorResource(authorResource).Execute()
+    resp, r, err := apiClient.AuthorApi.UpdateAuthor(context.Background(), id).MoveFiles(moveFiles).AuthorResource(authorResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorApi.UpdateAuthor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -319,6 +324,7 @@ Other parameters are passed through a pointer to a apiUpdateAuthorRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **moveFiles** | **bool** |  | [default to false]
  **authorResource** | [**AuthorResource**](AuthorResource.md) |  | 
 
 ### Return type

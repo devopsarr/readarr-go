@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## GetNamingConfigExamples
 
-> GetNamingConfigExamples(ctx).RenameBooks(renameBooks).ReplaceIllegalCharacters(replaceIllegalCharacters).StandardBookFormat(standardBookFormat).AuthorFolderFormat(authorFolderFormat).IncludeAuthorName(includeAuthorName).IncludeBookTitle(includeBookTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+> GetNamingConfigExamples(ctx).RenameBooks(renameBooks).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardBookFormat(standardBookFormat).AuthorFolderFormat(authorFolderFormat).IncludeAuthorName(includeAuthorName).IncludeBookTitle(includeBookTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
 
 
 
@@ -159,6 +159,7 @@ import (
 func main() {
     renameBooks := true // bool |  (optional)
     replaceIllegalCharacters := true // bool |  (optional)
+    colonReplacementFormat := int32(56) // int32 |  (optional)
     standardBookFormat := "standardBookFormat_example" // string |  (optional)
     authorFolderFormat := "authorFolderFormat_example" // string |  (optional)
     includeAuthorName := true // bool |  (optional)
@@ -172,7 +173,7 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NamingConfigApi.GetNamingConfigExamples(context.Background()).RenameBooks(renameBooks).ReplaceIllegalCharacters(replaceIllegalCharacters).StandardBookFormat(standardBookFormat).AuthorFolderFormat(authorFolderFormat).IncludeAuthorName(includeAuthorName).IncludeBookTitle(includeBookTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+    resp, r, err := apiClient.NamingConfigApi.GetNamingConfigExamples(context.Background()).RenameBooks(renameBooks).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardBookFormat(standardBookFormat).AuthorFolderFormat(authorFolderFormat).IncludeAuthorName(includeAuthorName).IncludeBookTitle(includeBookTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetNamingConfigExamples``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -193,6 +194,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **renameBooks** | **bool** |  | 
  **replaceIllegalCharacters** | **bool** |  | 
+ **colonReplacementFormat** | **int32** |  | 
  **standardBookFormat** | **string** |  | 
  **authorFolderFormat** | **string** |  | 
  **includeAuthorName** | **bool** |  | 

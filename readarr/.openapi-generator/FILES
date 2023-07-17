@@ -147,6 +147,7 @@ docs/DevelopmentConfigResource.md
 docs/DiskSpaceApi.md
 docs/DiskSpaceResource.md
 docs/DownloadClientApi.md
+docs/DownloadClientBulkResource.md
 docs/DownloadClientConfigApi.md
 docs/DownloadClientConfigResource.md
 docs/DownloadClientResource.md
@@ -170,12 +171,14 @@ docs/HostConfigApi.md
 docs/HostConfigResource.md
 docs/ICustomFormatSpecification.md
 docs/ImportListApi.md
+docs/ImportListBulkResource.md
 docs/ImportListExclusionApi.md
 docs/ImportListExclusionResource.md
 docs/ImportListMonitorType.md
 docs/ImportListResource.md
 docs/ImportListType.md
 docs/IndexerApi.md
+docs/IndexerBulkResource.md
 docs/IndexerConfigApi.md
 docs/IndexerConfigResource.md
 docs/IndexerResource.md
@@ -351,6 +354,7 @@ model_database_type.go
 model_delay_profile_resource.go
 model_development_config_resource.go
 model_disk_space_resource.go
+model_download_client_bulk_resource.go
 model_download_client_config_resource.go
 model_download_client_resource.go
 model_download_protocol.go
@@ -367,10 +371,12 @@ model_history_resource.go
 model_history_resource_paging_resource.go
 model_host_config_resource.go
 model_i_custom_format_specification.go
+model_import_list_bulk_resource.go
 model_import_list_exclusion_resource.go
 model_import_list_monitor_type.go
 model_import_list_resource.go
 model_import_list_type.go
+model_indexer_bulk_resource.go
 model_indexer_config_resource.go
 model_indexer_resource.go
 model_iso_country.go

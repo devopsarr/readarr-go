@@ -158,6 +158,18 @@ type ApiDeleteAuthorRequest struct {
 	ctx context.Context
 	ApiService *AuthorApiService
 	id int32
+	deleteFiles *bool
+	addImportListExclusion *bool
+}
+
+func (r ApiDeleteAuthorRequest) DeleteFiles(deleteFiles bool) ApiDeleteAuthorRequest {
+	r.deleteFiles = &deleteFiles
+	return r
+}
+
+func (r ApiDeleteAuthorRequest) AddImportListExclusion(addImportListExclusion bool) ApiDeleteAuthorRequest {
+	r.addImportListExclusion = &addImportListExclusion
+	return r
 }
 
 func (r ApiDeleteAuthorRequest) Execute() (*http.Response, error) {
@@ -199,6 +211,12 @@ func (a *AuthorApiService) DeleteAuthorExecute(r ApiDeleteAuthorRequest) (*http.
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.deleteFiles != nil {
+		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+	}
+	if r.addImportListExclusion != nil {
+		localVarQueryParams.Add("addImportListExclusion", parameterToString(*r.addImportListExclusion, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -328,7 +346,7 @@ func (a *AuthorApiService) GetAuthorByIdExecute(r ApiGetAuthorByIdRequest) (*Aut
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -527,7 +545,13 @@ type ApiUpdateAuthorRequest struct {
 	ctx context.Context
 	ApiService *AuthorApiService
 	id string
+	moveFiles *bool
 	authorResource *AuthorResource
+}
+
+func (r ApiUpdateAuthorRequest) MoveFiles(moveFiles bool) ApiUpdateAuthorRequest {
+	r.moveFiles = &moveFiles
+	return r
 }
 
 func (r ApiUpdateAuthorRequest) AuthorResource(authorResource AuthorResource) ApiUpdateAuthorRequest {
@@ -576,6 +600,9 @@ func (a *AuthorApiService) UpdateAuthorExecute(r ApiUpdateAuthorRequest) (*Autho
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.moveFiles != nil {
+		localVarQueryParams.Add("moveFiles", parameterToString(*r.moveFiles, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
 
