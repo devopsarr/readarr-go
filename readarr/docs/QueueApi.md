@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**DeleteQueue**](QueueApi.md#DeleteQueue) | **Delete** /api/v1/queue/{id} | 
 [**DeleteQueueBulk**](QueueApi.md#DeleteQueueBulk) | **Delete** /api/v1/queue/bulk | 
 [**GetQueue**](QueueApi.md#GetQueue) | **Get** /api/v1/queue | 
-[**GetQueueById**](QueueApi.md#GetQueueById) | **Get** /api/v1/queue/{id} | 
 
 
 
@@ -204,74 +203,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**QueueResourcePagingResource**](QueueResourcePagingResource.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetQueueById
-
-> QueueResource GetQueueById(ctx, id).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    readarrClient "./openapi"
-)
-
-func main() {
-    id := int32(56) // int32 | 
-
-    configuration := readarrClient.NewConfiguration()
-    apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueApi.GetQueueById(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.GetQueueById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetQueueById`: QueueResource
-    fmt.Fprintf(os.Stdout, "Response from `QueueApi.GetQueueById`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetQueueByIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**QueueResource**](QueueResource.md)
 
 ### Authorization
 

@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## DeleteBook
 
-> DeleteBook(ctx, id).Execute()
+> DeleteBook(ctx, id).DeleteFiles(deleteFiles).AddImportListExclusion(addImportListExclusion).Execute()
 
 
 
@@ -98,10 +98,12 @@ import (
 
 func main() {
     id := int32(56) // int32 | 
+    deleteFiles := true // bool |  (optional) (default to false)
+    addImportListExclusion := true // bool |  (optional) (default to false)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BookApi.DeleteBook(context.Background(), id).Execute()
+    resp, r, err := apiClient.BookApi.DeleteBook(context.Background(), id).DeleteFiles(deleteFiles).AddImportListExclusion(addImportListExclusion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BookApi.DeleteBook``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -125,6 +127,8 @@ Other parameters are passed through a pointer to a apiDeleteBookRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **deleteFiles** | **bool** |  | [default to false]
+ **addImportListExclusion** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -205,7 +209,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

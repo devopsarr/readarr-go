@@ -19,9 +19,7 @@ type DownloadClientConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
 	DownloadClientWorkingFolders NullableString `json:"downloadClientWorkingFolders,omitempty"`
 	EnableCompletedDownloadHandling *bool `json:"enableCompletedDownloadHandling,omitempty"`
-	RemoveCompletedDownloads *bool `json:"removeCompletedDownloads,omitempty"`
 	AutoRedownloadFailed *bool `json:"autoRedownloadFailed,omitempty"`
-	RemoveFailedDownloads *bool `json:"removeFailedDownloads,omitempty"`
 }
 
 // NewDownloadClientConfigResource instantiates a new DownloadClientConfigResource object
@@ -147,38 +145,6 @@ func (o *DownloadClientConfigResource) SetEnableCompletedDownloadHandling(v bool
 	o.EnableCompletedDownloadHandling = &v
 }
 
-// GetRemoveCompletedDownloads returns the RemoveCompletedDownloads field value if set, zero value otherwise.
-func (o *DownloadClientConfigResource) GetRemoveCompletedDownloads() bool {
-	if o == nil || isNil(o.RemoveCompletedDownloads) {
-		var ret bool
-		return ret
-	}
-	return *o.RemoveCompletedDownloads
-}
-
-// GetRemoveCompletedDownloadsOk returns a tuple with the RemoveCompletedDownloads field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DownloadClientConfigResource) GetRemoveCompletedDownloadsOk() (*bool, bool) {
-	if o == nil || isNil(o.RemoveCompletedDownloads) {
-    return nil, false
-	}
-	return o.RemoveCompletedDownloads, true
-}
-
-// HasRemoveCompletedDownloads returns a boolean if a field has been set.
-func (o *DownloadClientConfigResource) HasRemoveCompletedDownloads() bool {
-	if o != nil && !isNil(o.RemoveCompletedDownloads) {
-		return true
-	}
-
-	return false
-}
-
-// SetRemoveCompletedDownloads gets a reference to the given bool and assigns it to the RemoveCompletedDownloads field.
-func (o *DownloadClientConfigResource) SetRemoveCompletedDownloads(v bool) {
-	o.RemoveCompletedDownloads = &v
-}
-
 // GetAutoRedownloadFailed returns the AutoRedownloadFailed field value if set, zero value otherwise.
 func (o *DownloadClientConfigResource) GetAutoRedownloadFailed() bool {
 	if o == nil || isNil(o.AutoRedownloadFailed) {
@@ -211,38 +177,6 @@ func (o *DownloadClientConfigResource) SetAutoRedownloadFailed(v bool) {
 	o.AutoRedownloadFailed = &v
 }
 
-// GetRemoveFailedDownloads returns the RemoveFailedDownloads field value if set, zero value otherwise.
-func (o *DownloadClientConfigResource) GetRemoveFailedDownloads() bool {
-	if o == nil || isNil(o.RemoveFailedDownloads) {
-		var ret bool
-		return ret
-	}
-	return *o.RemoveFailedDownloads
-}
-
-// GetRemoveFailedDownloadsOk returns a tuple with the RemoveFailedDownloads field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DownloadClientConfigResource) GetRemoveFailedDownloadsOk() (*bool, bool) {
-	if o == nil || isNil(o.RemoveFailedDownloads) {
-    return nil, false
-	}
-	return o.RemoveFailedDownloads, true
-}
-
-// HasRemoveFailedDownloads returns a boolean if a field has been set.
-func (o *DownloadClientConfigResource) HasRemoveFailedDownloads() bool {
-	if o != nil && !isNil(o.RemoveFailedDownloads) {
-		return true
-	}
-
-	return false
-}
-
-// SetRemoveFailedDownloads gets a reference to the given bool and assigns it to the RemoveFailedDownloads field.
-func (o *DownloadClientConfigResource) SetRemoveFailedDownloads(v bool) {
-	o.RemoveFailedDownloads = &v
-}
-
 func (o DownloadClientConfigResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -254,14 +188,8 @@ func (o DownloadClientConfigResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.EnableCompletedDownloadHandling) {
 		toSerialize["enableCompletedDownloadHandling"] = o.EnableCompletedDownloadHandling
 	}
-	if !isNil(o.RemoveCompletedDownloads) {
-		toSerialize["removeCompletedDownloads"] = o.RemoveCompletedDownloads
-	}
 	if !isNil(o.AutoRedownloadFailed) {
 		toSerialize["autoRedownloadFailed"] = o.AutoRedownloadFailed
-	}
-	if !isNil(o.RemoveFailedDownloads) {
-		toSerialize["removeFailedDownloads"] = o.RemoveFailedDownloads
 	}
 	return json.Marshal(toSerialize)
 }

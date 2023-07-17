@@ -25,7 +25,13 @@ type NotificationApiService service
 type ApiCreateNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
+	forceSave *bool
 	notificationResource *NotificationResource
+}
+
+func (r ApiCreateNotificationRequest) ForceSave(forceSave bool) ApiCreateNotificationRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiCreateNotificationRequest) NotificationResource(notificationResource NotificationResource) ApiCreateNotificationRequest {
@@ -71,8 +77,11 @@ func (a *NotificationApiService) CreateNotificationExecute(r ApiCreateNotificati
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -81,7 +90,7 @@ func (a *NotificationApiService) CreateNotificationExecute(r ApiCreateNotificati
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -206,7 +215,7 @@ func (a *NotificationApiService) CreateNotificationActionByNameExecute(r ApiCrea
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -453,7 +462,7 @@ func (a *NotificationApiService) GetNotificationByIdExecute(r ApiGetNotification
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -577,7 +586,7 @@ func (a *NotificationApiService) ListNotificationExecute(r ApiListNotificationRe
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -701,7 +710,7 @@ func (a *NotificationApiService) ListNotificationSchemaExecute(r ApiListNotifica
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -820,7 +829,7 @@ func (a *NotificationApiService) TestNotificationExecute(r ApiTestNotificationRe
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -1010,7 +1019,13 @@ type ApiUpdateNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationApiService
 	id string
+	forceSave *bool
 	notificationResource *NotificationResource
+}
+
+func (r ApiUpdateNotificationRequest) ForceSave(forceSave bool) ApiUpdateNotificationRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiUpdateNotificationRequest) NotificationResource(notificationResource NotificationResource) ApiUpdateNotificationRequest {
@@ -1059,8 +1074,11 @@ func (a *NotificationApiService) UpdateNotificationExecute(r ApiUpdateNotificati
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -1069,7 +1087,7 @@ func (a *NotificationApiService) UpdateNotificationExecute(r ApiUpdateNotificati
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)

@@ -150,9 +150,11 @@ Class | Method | HTTP request | Description
 *DownloadClientApi* | [**CreateDownloadClient**](readarr/docs/DownloadClientApi.md#createdownloadclient) | **Post** /api/v1/downloadclient | 
 *DownloadClientApi* | [**CreateDownloadClientActionByName**](readarr/docs/DownloadClientApi.md#createdownloadclientactionbyname) | **Post** /api/v1/downloadclient/action/{name} | 
 *DownloadClientApi* | [**DeleteDownloadClient**](readarr/docs/DownloadClientApi.md#deletedownloadclient) | **Delete** /api/v1/downloadclient/{id} | 
+*DownloadClientApi* | [**DeleteDownloadClientBulk**](readarr/docs/DownloadClientApi.md#deletedownloadclientbulk) | **Delete** /api/v1/downloadclient/bulk | 
 *DownloadClientApi* | [**GetDownloadClientById**](readarr/docs/DownloadClientApi.md#getdownloadclientbyid) | **Get** /api/v1/downloadclient/{id} | 
 *DownloadClientApi* | [**ListDownloadClient**](readarr/docs/DownloadClientApi.md#listdownloadclient) | **Get** /api/v1/downloadclient | 
 *DownloadClientApi* | [**ListDownloadClientSchema**](readarr/docs/DownloadClientApi.md#listdownloadclientschema) | **Get** /api/v1/downloadclient/schema | 
+*DownloadClientApi* | [**PutDownloadClientBulk**](readarr/docs/DownloadClientApi.md#putdownloadclientbulk) | **Put** /api/v1/downloadclient/bulk | 
 *DownloadClientApi* | [**TestDownloadClient**](readarr/docs/DownloadClientApi.md#testdownloadclient) | **Post** /api/v1/downloadclient/test | 
 *DownloadClientApi* | [**TestallDownloadClient**](readarr/docs/DownloadClientApi.md#testalldownloadclient) | **Post** /api/v1/downloadclient/testall | 
 *DownloadClientApi* | [**UpdateDownloadClient**](readarr/docs/DownloadClientApi.md#updatedownloadclient) | **Put** /api/v1/downloadclient/{id} | 
@@ -163,7 +165,6 @@ Class | Method | HTTP request | Description
 *FileSystemApi* | [**GetFileSystem**](readarr/docs/FileSystemApi.md#getfilesystem) | **Get** /api/v1/filesystem | 
 *FileSystemApi* | [**GetFileSystemMediafiles**](readarr/docs/FileSystemApi.md#getfilesystemmediafiles) | **Get** /api/v1/filesystem/mediafiles | 
 *FileSystemApi* | [**GetFileSystemType**](readarr/docs/FileSystemApi.md#getfilesystemtype) | **Get** /api/v1/filesystem/type | 
-*HealthApi* | [**GetHealthById**](readarr/docs/HealthApi.md#gethealthbyid) | **Get** /api/v1/health/{id} | 
 *HealthApi* | [**ListHealth**](readarr/docs/HealthApi.md#listhealth) | **Get** /api/v1/health | 
 *HistoryApi* | [**CreateHistoryFailedById**](readarr/docs/HistoryApi.md#createhistoryfailedbyid) | **Post** /api/v1/history/failed/{id} | 
 *HistoryApi* | [**GetHistory**](readarr/docs/HistoryApi.md#gethistory) | **Get** /api/v1/history | 
@@ -175,9 +176,11 @@ Class | Method | HTTP request | Description
 *ImportListApi* | [**CreateImportList**](readarr/docs/ImportListApi.md#createimportlist) | **Post** /api/v1/importlist | 
 *ImportListApi* | [**CreateImportListActionByName**](readarr/docs/ImportListApi.md#createimportlistactionbyname) | **Post** /api/v1/importlist/action/{name} | 
 *ImportListApi* | [**DeleteImportList**](readarr/docs/ImportListApi.md#deleteimportlist) | **Delete** /api/v1/importlist/{id} | 
+*ImportListApi* | [**DeleteImportListBulk**](readarr/docs/ImportListApi.md#deleteimportlistbulk) | **Delete** /api/v1/importlist/bulk | 
 *ImportListApi* | [**GetImportListById**](readarr/docs/ImportListApi.md#getimportlistbyid) | **Get** /api/v1/importlist/{id} | 
 *ImportListApi* | [**ListImportList**](readarr/docs/ImportListApi.md#listimportlist) | **Get** /api/v1/importlist | 
 *ImportListApi* | [**ListImportListSchema**](readarr/docs/ImportListApi.md#listimportlistschema) | **Get** /api/v1/importlist/schema | 
+*ImportListApi* | [**PutImportListBulk**](readarr/docs/ImportListApi.md#putimportlistbulk) | **Put** /api/v1/importlist/bulk | 
 *ImportListApi* | [**TestImportList**](readarr/docs/ImportListApi.md#testimportlist) | **Post** /api/v1/importlist/test | 
 *ImportListApi* | [**TestallImportList**](readarr/docs/ImportListApi.md#testallimportlist) | **Post** /api/v1/importlist/testall | 
 *ImportListApi* | [**UpdateImportList**](readarr/docs/ImportListApi.md#updateimportlist) | **Put** /api/v1/importlist/{id} | 
@@ -189,9 +192,11 @@ Class | Method | HTTP request | Description
 *IndexerApi* | [**CreateIndexer**](readarr/docs/IndexerApi.md#createindexer) | **Post** /api/v1/indexer | 
 *IndexerApi* | [**CreateIndexerActionByName**](readarr/docs/IndexerApi.md#createindexeractionbyname) | **Post** /api/v1/indexer/action/{name} | 
 *IndexerApi* | [**DeleteIndexer**](readarr/docs/IndexerApi.md#deleteindexer) | **Delete** /api/v1/indexer/{id} | 
+*IndexerApi* | [**DeleteIndexerBulk**](readarr/docs/IndexerApi.md#deleteindexerbulk) | **Delete** /api/v1/indexer/bulk | 
 *IndexerApi* | [**GetIndexerById**](readarr/docs/IndexerApi.md#getindexerbyid) | **Get** /api/v1/indexer/{id} | 
 *IndexerApi* | [**ListIndexer**](readarr/docs/IndexerApi.md#listindexer) | **Get** /api/v1/indexer | 
 *IndexerApi* | [**ListIndexerSchema**](readarr/docs/IndexerApi.md#listindexerschema) | **Get** /api/v1/indexer/schema | 
+*IndexerApi* | [**PutIndexerBulk**](readarr/docs/IndexerApi.md#putindexerbulk) | **Put** /api/v1/indexer/bulk | 
 *IndexerApi* | [**TestIndexer**](readarr/docs/IndexerApi.md#testindexer) | **Post** /api/v1/indexer/test | 
 *IndexerApi* | [**TestallIndexer**](readarr/docs/IndexerApi.md#testallindexer) | **Post** /api/v1/indexer/testall | 
 *IndexerApi* | [**UpdateIndexer**](readarr/docs/IndexerApi.md#updateindexer) | **Put** /api/v1/indexer/{id} | 
@@ -260,15 +265,11 @@ Class | Method | HTTP request | Description
 *QueueApi* | [**DeleteQueue**](readarr/docs/QueueApi.md#deletequeue) | **Delete** /api/v1/queue/{id} | 
 *QueueApi* | [**DeleteQueueBulk**](readarr/docs/QueueApi.md#deletequeuebulk) | **Delete** /api/v1/queue/bulk | 
 *QueueApi* | [**GetQueue**](readarr/docs/QueueApi.md#getqueue) | **Get** /api/v1/queue | 
-*QueueApi* | [**GetQueueById**](readarr/docs/QueueApi.md#getqueuebyid) | **Get** /api/v1/queue/{id} | 
 *QueueActionApi* | [**CreateQueueGrabBulk**](readarr/docs/QueueActionApi.md#createqueuegrabbulk) | **Post** /api/v1/queue/grab/bulk | 
 *QueueActionApi* | [**CreateQueueGrabById**](readarr/docs/QueueActionApi.md#createqueuegrabbyid) | **Post** /api/v1/queue/grab/{id} | 
-*QueueDetailsApi* | [**GetQueueDetailsById**](readarr/docs/QueueDetailsApi.md#getqueuedetailsbyid) | **Get** /api/v1/queue/details/{id} | 
 *QueueDetailsApi* | [**ListQueueDetails**](readarr/docs/QueueDetailsApi.md#listqueuedetails) | **Get** /api/v1/queue/details | 
 *QueueStatusApi* | [**GetQueueStatus**](readarr/docs/QueueStatusApi.md#getqueuestatus) | **Get** /api/v1/queue/status | 
-*QueueStatusApi* | [**GetQueueStatusById**](readarr/docs/QueueStatusApi.md#getqueuestatusbyid) | **Get** /api/v1/queue/status/{id} | 
 *ReleaseApi* | [**CreateRelease**](readarr/docs/ReleaseApi.md#createrelease) | **Post** /api/v1/release | 
-*ReleaseApi* | [**GetReleaseById**](readarr/docs/ReleaseApi.md#getreleasebyid) | **Get** /api/v1/release/{id} | 
 *ReleaseApi* | [**ListRelease**](readarr/docs/ReleaseApi.md#listrelease) | **Get** /api/v1/release | 
 *ReleaseProfileApi* | [**CreateReleaseProfile**](readarr/docs/ReleaseProfileApi.md#createreleaseprofile) | **Post** /api/v1/releaseprofile | 
 *ReleaseProfileApi* | [**DeleteReleaseProfile**](readarr/docs/ReleaseProfileApi.md#deletereleaseprofile) | **Delete** /api/v1/releaseprofile/{id} | 
@@ -276,7 +277,6 @@ Class | Method | HTTP request | Description
 *ReleaseProfileApi* | [**ListReleaseProfile**](readarr/docs/ReleaseProfileApi.md#listreleaseprofile) | **Get** /api/v1/releaseprofile | 
 *ReleaseProfileApi* | [**UpdateReleaseProfile**](readarr/docs/ReleaseProfileApi.md#updatereleaseprofile) | **Put** /api/v1/releaseprofile/{id} | 
 *ReleasePushApi* | [**CreateReleasePush**](readarr/docs/ReleasePushApi.md#createreleasepush) | **Post** /api/v1/release/push | 
-*ReleasePushApi* | [**GetReleasePushById**](readarr/docs/ReleasePushApi.md#getreleasepushbyid) | **Get** /api/v1/release/push/{id} | 
 *RemotePathMappingApi* | [**CreateRemotePathMapping**](readarr/docs/RemotePathMappingApi.md#createremotepathmapping) | **Post** /api/v1/remotepathmapping | 
 *RemotePathMappingApi* | [**DeleteRemotePathMapping**](readarr/docs/RemotePathMappingApi.md#deleteremotepathmapping) | **Delete** /api/v1/remotepathmapping/{id} | 
 *RemotePathMappingApi* | [**GetRemotePathMappingById**](readarr/docs/RemotePathMappingApi.md#getremotepathmappingbyid) | **Get** /api/v1/remotepathmapping/{id} | 
@@ -368,6 +368,7 @@ Class | Method | HTTP request | Description
  - [DelayProfileResource](docs/DelayProfileResource.md)
  - [DevelopmentConfigResource](docs/DevelopmentConfigResource.md)
  - [DiskSpaceResource](docs/DiskSpaceResource.md)
+ - [DownloadClientBulkResource](docs/DownloadClientBulkResource.md)
  - [DownloadClientConfigResource](docs/DownloadClientConfigResource.md)
  - [DownloadClientResource](docs/DownloadClientResource.md)
  - [DownloadProtocol](docs/DownloadProtocol.md)
@@ -384,10 +385,12 @@ Class | Method | HTTP request | Description
  - [HistoryResourcePagingResource](docs/HistoryResourcePagingResource.md)
  - [HostConfigResource](docs/HostConfigResource.md)
  - [ICustomFormatSpecification](docs/ICustomFormatSpecification.md)
+ - [ImportListBulkResource](docs/ImportListBulkResource.md)
  - [ImportListExclusionResource](docs/ImportListExclusionResource.md)
  - [ImportListMonitorType](docs/ImportListMonitorType.md)
  - [ImportListResource](docs/ImportListResource.md)
  - [ImportListType](docs/ImportListType.md)
+ - [IndexerBulkResource](docs/IndexerBulkResource.md)
  - [IndexerConfigResource](docs/IndexerConfigResource.md)
  - [IndexerResource](docs/IndexerResource.md)
  - [IsoCountry](docs/IsoCountry.md)

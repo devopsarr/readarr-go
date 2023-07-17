@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateMetadata
 
-> MetadataResource CreateMetadata(ctx).MetadataResource(metadataResource).Execute()
+> MetadataResource CreateMetadata(ctx).ForceSave(forceSave).MetadataResource(metadataResource).Execute()
 
 
 
@@ -35,11 +35,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     metadataResource := *readarrClient.NewMetadataResource() // MetadataResource |  (optional)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.CreateMetadata(context.Background()).MetadataResource(metadataResource).Execute()
+    resp, r, err := apiClient.MetadataApi.CreateMetadata(context.Background()).ForceSave(forceSave).MetadataResource(metadataResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.CreateMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +61,7 @@ Other parameters are passed through a pointer to a apiCreateMetadataRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **metadataResource** | [**MetadataResource**](MetadataResource.md) |  | 
 
 ### Return type
@@ -72,8 +74,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -140,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -275,7 +277,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -334,7 +336,7 @@ Other parameters are passed through a pointer to a apiListMetadataRequest struct
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -393,7 +395,7 @@ Other parameters are passed through a pointer to a apiListMetadataSchemaRequest 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -454,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -521,7 +523,7 @@ Other parameters are passed through a pointer to a apiTestallMetadataRequest str
 
 ## UpdateMetadata
 
-> MetadataResource UpdateMetadata(ctx, id).MetadataResource(metadataResource).Execute()
+> MetadataResource UpdateMetadata(ctx, id).ForceSave(forceSave).MetadataResource(metadataResource).Execute()
 
 
 
@@ -539,11 +541,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    forceSave := true // bool |  (optional) (default to false)
     metadataResource := *readarrClient.NewMetadataResource() // MetadataResource |  (optional)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.UpdateMetadata(context.Background(), id).MetadataResource(metadataResource).Execute()
+    resp, r, err := apiClient.MetadataApi.UpdateMetadata(context.Background(), id).ForceSave(forceSave).MetadataResource(metadataResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.UpdateMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,6 +572,7 @@ Other parameters are passed through a pointer to a apiUpdateMetadataRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **forceSave** | **bool** |  | [default to false]
  **metadataResource** | [**MetadataResource**](MetadataResource.md) |  | 
 
 ### Return type
@@ -581,8 +585,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

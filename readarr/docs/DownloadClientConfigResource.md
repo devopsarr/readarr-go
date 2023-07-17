@@ -7,9 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **DownloadClientWorkingFolders** | Pointer to **NullableString** |  | [optional] 
 **EnableCompletedDownloadHandling** | Pointer to **bool** |  | [optional] 
-**RemoveCompletedDownloads** | Pointer to **bool** |  | [optional] 
 **AutoRedownloadFailed** | Pointer to **bool** |  | [optional] 
-**RemoveFailedDownloads** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -115,31 +113,6 @@ SetEnableCompletedDownloadHandling sets EnableCompletedDownloadHandling field to
 
 HasEnableCompletedDownloadHandling returns a boolean if a field has been set.
 
-### GetRemoveCompletedDownloads
-
-`func (o *DownloadClientConfigResource) GetRemoveCompletedDownloads() bool`
-
-GetRemoveCompletedDownloads returns the RemoveCompletedDownloads field if non-nil, zero value otherwise.
-
-### GetRemoveCompletedDownloadsOk
-
-`func (o *DownloadClientConfigResource) GetRemoveCompletedDownloadsOk() (*bool, bool)`
-
-GetRemoveCompletedDownloadsOk returns a tuple with the RemoveCompletedDownloads field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRemoveCompletedDownloads
-
-`func (o *DownloadClientConfigResource) SetRemoveCompletedDownloads(v bool)`
-
-SetRemoveCompletedDownloads sets RemoveCompletedDownloads field to given value.
-
-### HasRemoveCompletedDownloads
-
-`func (o *DownloadClientConfigResource) HasRemoveCompletedDownloads() bool`
-
-HasRemoveCompletedDownloads returns a boolean if a field has been set.
-
 ### GetAutoRedownloadFailed
 
 `func (o *DownloadClientConfigResource) GetAutoRedownloadFailed() bool`
@@ -164,31 +137,6 @@ SetAutoRedownloadFailed sets AutoRedownloadFailed field to given value.
 `func (o *DownloadClientConfigResource) HasAutoRedownloadFailed() bool`
 
 HasAutoRedownloadFailed returns a boolean if a field has been set.
-
-### GetRemoveFailedDownloads
-
-`func (o *DownloadClientConfigResource) GetRemoveFailedDownloads() bool`
-
-GetRemoveFailedDownloads returns the RemoveFailedDownloads field if non-nil, zero value otherwise.
-
-### GetRemoveFailedDownloadsOk
-
-`func (o *DownloadClientConfigResource) GetRemoveFailedDownloadsOk() (*bool, bool)`
-
-GetRemoveFailedDownloadsOk returns a tuple with the RemoveFailedDownloads field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRemoveFailedDownloads
-
-`func (o *DownloadClientConfigResource) SetRemoveFailedDownloads(v bool)`
-
-SetRemoveFailedDownloads sets RemoveFailedDownloads field to given value.
-
-### HasRemoveFailedDownloads
-
-`func (o *DownloadClientConfigResource) HasRemoveFailedDownloads() bool`
-
-HasRemoveFailedDownloads returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

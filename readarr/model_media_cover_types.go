@@ -29,6 +29,7 @@ const (
 	MEDIACOVERTYPES_COVER MediaCoverTypes = "cover"
 	MEDIACOVERTYPES_DISC MediaCoverTypes = "disc"
 	MEDIACOVERTYPES_LOGO MediaCoverTypes = "logo"
+	MEDIACOVERTYPES_CLEARLOGO MediaCoverTypes = "clearlogo"
 )
 
 // All allowed values of MediaCoverTypes enum
@@ -42,6 +43,7 @@ var AllowedMediaCoverTypesEnumValues = []MediaCoverTypes{
 	"cover",
 	"disc",
 	"logo",
+	"clearlogo",
 }
 
 func (v *MediaCoverTypes) UnmarshalJSON(src []byte) error {

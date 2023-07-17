@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **SkipSeriesSecondary** | Pointer to **bool** |  | [optional] 
 **AllowedLanguages** | Pointer to **NullableString** |  | [optional] 
 **MinPages** | Pointer to **int32** |  | [optional] 
-**Ignored** | Pointer to **NullableString** |  | [optional] 
+**Ignored** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -281,20 +281,20 @@ HasMinPages returns a boolean if a field has been set.
 
 ### GetIgnored
 
-`func (o *MetadataProfile) GetIgnored() string`
+`func (o *MetadataProfile) GetIgnored() []string`
 
 GetIgnored returns the Ignored field if non-nil, zero value otherwise.
 
 ### GetIgnoredOk
 
-`func (o *MetadataProfile) GetIgnoredOk() (*string, bool)`
+`func (o *MetadataProfile) GetIgnoredOk() (*[]string, bool)`
 
 GetIgnoredOk returns a tuple with the Ignored field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIgnored
 
-`func (o *MetadataProfile) SetIgnored(v string)`
+`func (o *MetadataProfile) SetIgnored(v []string)`
 
 SetIgnored sets Ignored field to given value.
 

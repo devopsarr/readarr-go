@@ -7,9 +7,11 @@ Method | HTTP request | Description
 [**CreateIndexer**](IndexerApi.md#CreateIndexer) | **Post** /api/v1/indexer | 
 [**CreateIndexerActionByName**](IndexerApi.md#CreateIndexerActionByName) | **Post** /api/v1/indexer/action/{name} | 
 [**DeleteIndexer**](IndexerApi.md#DeleteIndexer) | **Delete** /api/v1/indexer/{id} | 
+[**DeleteIndexerBulk**](IndexerApi.md#DeleteIndexerBulk) | **Delete** /api/v1/indexer/bulk | 
 [**GetIndexerById**](IndexerApi.md#GetIndexerById) | **Get** /api/v1/indexer/{id} | 
 [**ListIndexer**](IndexerApi.md#ListIndexer) | **Get** /api/v1/indexer | 
 [**ListIndexerSchema**](IndexerApi.md#ListIndexerSchema) | **Get** /api/v1/indexer/schema | 
+[**PutIndexerBulk**](IndexerApi.md#PutIndexerBulk) | **Put** /api/v1/indexer/bulk | 
 [**TestIndexer**](IndexerApi.md#TestIndexer) | **Post** /api/v1/indexer/test | 
 [**TestallIndexer**](IndexerApi.md#TestallIndexer) | **Post** /api/v1/indexer/testall | 
 [**UpdateIndexer**](IndexerApi.md#UpdateIndexer) | **Put** /api/v1/indexer/{id} | 
@@ -18,7 +20,7 @@ Method | HTTP request | Description
 
 ## CreateIndexer
 
-> IndexerResource CreateIndexer(ctx).IndexerResource(indexerResource).Execute()
+> IndexerResource CreateIndexer(ctx).ForceSave(forceSave).IndexerResource(indexerResource).Execute()
 
 
 
@@ -35,11 +37,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     indexerResource := *readarrClient.NewIndexerResource() // IndexerResource |  (optional)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerApi.CreateIndexer(context.Background()).IndexerResource(indexerResource).Execute()
+    resp, r, err := apiClient.IndexerApi.CreateIndexer(context.Background()).ForceSave(forceSave).IndexerResource(indexerResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IndexerApi.CreateIndexer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +63,7 @@ Other parameters are passed through a pointer to a apiCreateIndexerRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **indexerResource** | [**IndexerResource**](IndexerResource.md) |  | 
 
 ### Return type
@@ -72,8 +76,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -140,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -214,6 +218,68 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DeleteIndexerBulk
+
+> DeleteIndexerBulk(ctx).IndexerBulkResource(indexerBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    readarrClient "./openapi"
+)
+
+func main() {
+    indexerBulkResource := *readarrClient.NewIndexerBulkResource() // IndexerBulkResource |  (optional)
+
+    configuration := readarrClient.NewConfiguration()
+    apiClient := readarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IndexerApi.DeleteIndexerBulk(context.Background()).IndexerBulkResource(indexerBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerApi.DeleteIndexerBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteIndexerBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **indexerBulkResource** | [**IndexerBulkResource**](IndexerBulkResource.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetIndexerById
 
 > IndexerResource GetIndexerById(ctx, id).Execute()
@@ -275,7 +341,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -334,7 +400,7 @@ Other parameters are passed through a pointer to a apiListIndexerRequest struct 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -393,7 +459,71 @@ Other parameters are passed through a pointer to a apiListIndexerSchemaRequest s
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PutIndexerBulk
+
+> IndexerResource PutIndexerBulk(ctx).IndexerBulkResource(indexerBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    readarrClient "./openapi"
+)
+
+func main() {
+    indexerBulkResource := *readarrClient.NewIndexerBulkResource() // IndexerBulkResource |  (optional)
+
+    configuration := readarrClient.NewConfiguration()
+    apiClient := readarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IndexerApi.PutIndexerBulk(context.Background()).IndexerBulkResource(indexerBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerApi.PutIndexerBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PutIndexerBulk`: IndexerResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerApi.PutIndexerBulk`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPutIndexerBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **indexerBulkResource** | [**IndexerBulkResource**](IndexerBulkResource.md) |  | 
+
+### Return type
+
+[**IndexerResource**](IndexerResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -454,7 +584,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -521,7 +651,7 @@ Other parameters are passed through a pointer to a apiTestallIndexerRequest stru
 
 ## UpdateIndexer
 
-> IndexerResource UpdateIndexer(ctx, id).IndexerResource(indexerResource).Execute()
+> IndexerResource UpdateIndexer(ctx, id).ForceSave(forceSave).IndexerResource(indexerResource).Execute()
 
 
 
@@ -539,11 +669,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    forceSave := true // bool |  (optional) (default to false)
     indexerResource := *readarrClient.NewIndexerResource() // IndexerResource |  (optional)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerApi.UpdateIndexer(context.Background(), id).IndexerResource(indexerResource).Execute()
+    resp, r, err := apiClient.IndexerApi.UpdateIndexer(context.Background(), id).ForceSave(forceSave).IndexerResource(indexerResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IndexerApi.UpdateIndexer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,6 +700,7 @@ Other parameters are passed through a pointer to a apiUpdateIndexerRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **forceSave** | **bool** |  | [default to false]
  **indexerResource** | [**IndexerResource**](IndexerResource.md) |  | 
 
 ### Return type
@@ -581,8 +713,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

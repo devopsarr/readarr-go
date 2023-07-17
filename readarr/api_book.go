@@ -159,6 +159,18 @@ type ApiDeleteBookRequest struct {
 	ctx context.Context
 	ApiService *BookApiService
 	id int32
+	deleteFiles *bool
+	addImportListExclusion *bool
+}
+
+func (r ApiDeleteBookRequest) DeleteFiles(deleteFiles bool) ApiDeleteBookRequest {
+	r.deleteFiles = &deleteFiles
+	return r
+}
+
+func (r ApiDeleteBookRequest) AddImportListExclusion(addImportListExclusion bool) ApiDeleteBookRequest {
+	r.addImportListExclusion = &addImportListExclusion
+	return r
 }
 
 func (r ApiDeleteBookRequest) Execute() (*http.Response, error) {
@@ -200,6 +212,12 @@ func (a *BookApiService) DeleteBookExecute(r ApiDeleteBookRequest) (*http.Respon
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.deleteFiles != nil {
+		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+	}
+	if r.addImportListExclusion != nil {
+		localVarQueryParams.Add("addImportListExclusion", parameterToString(*r.addImportListExclusion, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -329,7 +347,7 @@ func (a *BookApiService) GetBookByIdExecute(r ApiGetBookByIdRequest) (*BookResou
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
