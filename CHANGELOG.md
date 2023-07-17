@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/devopsarr/readarr-go/compare/v0.3.0...v0.4.0) (2023-07-17)
+
+
+### Features
+
+* update readarr swagger location ([65e64d2](https://github.com/devopsarr/readarr-go/commit/65e64d29490f4953a5942f1e72f9adc4264304f5))
+
 ## [0.3.0](https://github.com/devopsarr/readarr-go/compare/v0.2.1...v0.3.0) (2023-05-15)
 
 
