@@ -28,7 +28,7 @@ type ApiDeleteQueueRequest struct {
 	id int32
 	removeFromClient *bool
 	blocklist *bool
-	skipReDownload *bool
+	skipRedownload *bool
 }
 
 func (r ApiDeleteQueueRequest) RemoveFromClient(removeFromClient bool) ApiDeleteQueueRequest {
@@ -41,8 +41,8 @@ func (r ApiDeleteQueueRequest) Blocklist(blocklist bool) ApiDeleteQueueRequest {
 	return r
 }
 
-func (r ApiDeleteQueueRequest) SkipReDownload(skipReDownload bool) ApiDeleteQueueRequest {
-	r.skipReDownload = &skipReDownload
+func (r ApiDeleteQueueRequest) SkipRedownload(skipRedownload bool) ApiDeleteQueueRequest {
+	r.skipRedownload = &skipRedownload
 	return r
 }
 
@@ -91,8 +91,8 @@ func (a *QueueApiService) DeleteQueueExecute(r ApiDeleteQueueRequest) (*http.Res
 	if r.blocklist != nil {
 		localVarQueryParams.Add("blocklist", parameterToString(*r.blocklist, ""))
 	}
-	if r.skipReDownload != nil {
-		localVarQueryParams.Add("skipReDownload", parameterToString(*r.skipReDownload, ""))
+	if r.skipRedownload != nil {
+		localVarQueryParams.Add("skipRedownload", parameterToString(*r.skipRedownload, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -171,7 +171,7 @@ type ApiDeleteQueueBulkRequest struct {
 	ApiService *QueueApiService
 	removeFromClient *bool
 	blocklist *bool
-	skipReDownload *bool
+	skipRedownload *bool
 	queueBulkResource *QueueBulkResource
 }
 
@@ -185,8 +185,8 @@ func (r ApiDeleteQueueBulkRequest) Blocklist(blocklist bool) ApiDeleteQueueBulkR
 	return r
 }
 
-func (r ApiDeleteQueueBulkRequest) SkipReDownload(skipReDownload bool) ApiDeleteQueueBulkRequest {
-	r.skipReDownload = &skipReDownload
+func (r ApiDeleteQueueBulkRequest) SkipRedownload(skipRedownload bool) ApiDeleteQueueBulkRequest {
+	r.skipRedownload = &skipRedownload
 	return r
 }
 
@@ -237,8 +237,8 @@ func (a *QueueApiService) DeleteQueueBulkExecute(r ApiDeleteQueueBulkRequest) (*
 	if r.blocklist != nil {
 		localVarQueryParams.Add("blocklist", parameterToString(*r.blocklist, ""))
 	}
-	if r.skipReDownload != nil {
-		localVarQueryParams.Add("skipReDownload", parameterToString(*r.skipReDownload, ""))
+	if r.skipRedownload != nil {
+		localVarQueryParams.Add("skipRedownload", parameterToString(*r.skipRedownload, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
