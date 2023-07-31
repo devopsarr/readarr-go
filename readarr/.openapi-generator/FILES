@@ -130,6 +130,7 @@ docs/Command.md
 docs/CommandApi.md
 docs/CommandPriority.md
 docs/CommandResource.md
+docs/CommandResult.md
 docs/CommandStatus.md
 docs/CommandTrigger.md
 docs/CustomFilterApi.md
@@ -344,6 +345,7 @@ model_certificate_validation_type.go
 model_command.go
 model_command_priority.go
 model_command_resource.go
+model_command_result.go
 model_command_status.go
 model_command_trigger.go
 model_custom_filter_resource.go
