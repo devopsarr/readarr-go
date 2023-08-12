@@ -33,7 +33,6 @@ api_import_list.go
 api_import_list_exclusion.go
 api_indexer.go
 api_indexer_config.go
-api_initialize_js_.go
 api_language.go
 api_localization.go
 api_log.go
@@ -183,7 +182,6 @@ docs/IndexerBulkResource.md
 docs/IndexerConfigApi.md
 docs/IndexerConfigResource.md
 docs/IndexerResource.md
-docs/InitializeJsApi.md
 docs/IsoCountry.md
 docs/LanguageApi.md
 docs/LanguageResource.md

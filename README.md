@@ -203,7 +203,6 @@ Class | Method | HTTP request | Description
 *IndexerConfigApi* | [**GetIndexerConfig**](readarr/docs/IndexerConfigApi.md#getindexerconfig) | **Get** /api/v1/config/indexer | 
 *IndexerConfigApi* | [**GetIndexerConfigById**](readarr/docs/IndexerConfigApi.md#getindexerconfigbyid) | **Get** /api/v1/config/indexer/{id} | 
 *IndexerConfigApi* | [**UpdateIndexerConfig**](readarr/docs/IndexerConfigApi.md#updateindexerconfig) | **Put** /api/v1/config/indexer/{id} | 
-*InitializeJsApi* | [**GetInitializeJs**](readarr/docs/InitializeJsApi.md#getinitializejs) | **Get** /initialize.js | 
 *LanguageApi* | [**GetLanguageById**](readarr/docs/LanguageApi.md#getlanguagebyid) | **Get** /api/v1/language/{id} | 
 *LanguageApi* | [**ListLanguage**](readarr/docs/LanguageApi.md#listlanguage) | **Get** /api/v1/language | 
 *LocalizationApi* | [**GetLocalization**](readarr/docs/LocalizationApi.md#getlocalization) | **Get** /api/v1/localization | 
