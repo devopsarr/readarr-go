@@ -31,6 +31,7 @@ type NotificationResource struct {
 	OnReleaseImport *bool `json:"onReleaseImport,omitempty"`
 	OnUpgrade *bool `json:"onUpgrade,omitempty"`
 	OnRename *bool `json:"onRename,omitempty"`
+	OnAuthorAdded *bool `json:"onAuthorAdded,omitempty"`
 	OnAuthorDelete *bool `json:"onAuthorDelete,omitempty"`
 	OnBookDelete *bool `json:"onBookDelete,omitempty"`
 	OnBookFileDelete *bool `json:"onBookFileDelete,omitempty"`
@@ -44,6 +45,7 @@ type NotificationResource struct {
 	SupportsOnReleaseImport *bool `json:"supportsOnReleaseImport,omitempty"`
 	SupportsOnUpgrade *bool `json:"supportsOnUpgrade,omitempty"`
 	SupportsOnRename *bool `json:"supportsOnRename,omitempty"`
+	SupportsOnAuthorAdded *bool `json:"supportsOnAuthorAdded,omitempty"`
 	SupportsOnAuthorDelete *bool `json:"supportsOnAuthorDelete,omitempty"`
 	SupportsOnBookDelete *bool `json:"supportsOnBookDelete,omitempty"`
 	SupportsOnBookFileDelete *bool `json:"supportsOnBookFileDelete,omitempty"`
@@ -617,6 +619,38 @@ func (o *NotificationResource) SetOnRename(v bool) {
 	o.OnRename = &v
 }
 
+// GetOnAuthorAdded returns the OnAuthorAdded field value if set, zero value otherwise.
+func (o *NotificationResource) GetOnAuthorAdded() bool {
+	if o == nil || isNil(o.OnAuthorAdded) {
+		var ret bool
+		return ret
+	}
+	return *o.OnAuthorAdded
+}
+
+// GetOnAuthorAddedOk returns a tuple with the OnAuthorAdded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetOnAuthorAddedOk() (*bool, bool) {
+	if o == nil || isNil(o.OnAuthorAdded) {
+    return nil, false
+	}
+	return o.OnAuthorAdded, true
+}
+
+// HasOnAuthorAdded returns a boolean if a field has been set.
+func (o *NotificationResource) HasOnAuthorAdded() bool {
+	if o != nil && !isNil(o.OnAuthorAdded) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnAuthorAdded gets a reference to the given bool and assigns it to the OnAuthorAdded field.
+func (o *NotificationResource) SetOnAuthorAdded(v bool) {
+	o.OnAuthorAdded = &v
+}
+
 // GetOnAuthorDelete returns the OnAuthorDelete field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnAuthorDelete() bool {
 	if o == nil || isNil(o.OnAuthorDelete) {
@@ -1033,6 +1067,38 @@ func (o *NotificationResource) SetSupportsOnRename(v bool) {
 	o.SupportsOnRename = &v
 }
 
+// GetSupportsOnAuthorAdded returns the SupportsOnAuthorAdded field value if set, zero value otherwise.
+func (o *NotificationResource) GetSupportsOnAuthorAdded() bool {
+	if o == nil || isNil(o.SupportsOnAuthorAdded) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportsOnAuthorAdded
+}
+
+// GetSupportsOnAuthorAddedOk returns a tuple with the SupportsOnAuthorAdded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetSupportsOnAuthorAddedOk() (*bool, bool) {
+	if o == nil || isNil(o.SupportsOnAuthorAdded) {
+    return nil, false
+	}
+	return o.SupportsOnAuthorAdded, true
+}
+
+// HasSupportsOnAuthorAdded returns a boolean if a field has been set.
+func (o *NotificationResource) HasSupportsOnAuthorAdded() bool {
+	if o != nil && !isNil(o.SupportsOnAuthorAdded) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportsOnAuthorAdded gets a reference to the given bool and assigns it to the SupportsOnAuthorAdded field.
+func (o *NotificationResource) SetSupportsOnAuthorAdded(v bool) {
+	o.SupportsOnAuthorAdded = &v
+}
+
 // GetSupportsOnAuthorDelete returns the SupportsOnAuthorDelete field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnAuthorDelete() bool {
 	if o == nil || isNil(o.SupportsOnAuthorDelete) {
@@ -1442,6 +1508,9 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.OnRename) {
 		toSerialize["onRename"] = o.OnRename
 	}
+	if !isNil(o.OnAuthorAdded) {
+		toSerialize["onAuthorAdded"] = o.OnAuthorAdded
+	}
 	if !isNil(o.OnAuthorDelete) {
 		toSerialize["onAuthorDelete"] = o.OnAuthorDelete
 	}
@@ -1480,6 +1549,9 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.SupportsOnRename) {
 		toSerialize["supportsOnRename"] = o.SupportsOnRename
+	}
+	if !isNil(o.SupportsOnAuthorAdded) {
+		toSerialize["supportsOnAuthorAdded"] = o.SupportsOnAuthorAdded
 	}
 	if !isNil(o.SupportsOnAuthorDelete) {
 		toSerialize["supportsOnAuthorDelete"] = o.SupportsOnAuthorDelete

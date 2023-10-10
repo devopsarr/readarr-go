@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **OnReleaseImport** | Pointer to **bool** |  | [optional] 
 **OnUpgrade** | Pointer to **bool** |  | [optional] 
 **OnRename** | Pointer to **bool** |  | [optional] 
+**OnAuthorAdded** | Pointer to **bool** |  | [optional] 
 **OnAuthorDelete** | Pointer to **bool** |  | [optional] 
 **OnBookDelete** | Pointer to **bool** |  | [optional] 
 **OnBookFileDelete** | Pointer to **bool** |  | [optional] 
@@ -32,6 +33,7 @@ Name | Type | Description | Notes
 **SupportsOnReleaseImport** | Pointer to **bool** |  | [optional] 
 **SupportsOnUpgrade** | Pointer to **bool** |  | [optional] 
 **SupportsOnRename** | Pointer to **bool** |  | [optional] 
+**SupportsOnAuthorAdded** | Pointer to **bool** |  | [optional] 
 **SupportsOnAuthorDelete** | Pointer to **bool** |  | [optional] 
 **SupportsOnBookDelete** | Pointer to **bool** |  | [optional] 
 **SupportsOnBookFileDelete** | Pointer to **bool** |  | [optional] 
@@ -528,6 +530,31 @@ SetOnRename sets OnRename field to given value.
 
 HasOnRename returns a boolean if a field has been set.
 
+### GetOnAuthorAdded
+
+`func (o *NotificationResource) GetOnAuthorAdded() bool`
+
+GetOnAuthorAdded returns the OnAuthorAdded field if non-nil, zero value otherwise.
+
+### GetOnAuthorAddedOk
+
+`func (o *NotificationResource) GetOnAuthorAddedOk() (*bool, bool)`
+
+GetOnAuthorAddedOk returns a tuple with the OnAuthorAdded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnAuthorAdded
+
+`func (o *NotificationResource) SetOnAuthorAdded(v bool)`
+
+SetOnAuthorAdded sets OnAuthorAdded field to given value.
+
+### HasOnAuthorAdded
+
+`func (o *NotificationResource) HasOnAuthorAdded() bool`
+
+HasOnAuthorAdded returns a boolean if a field has been set.
+
 ### GetOnAuthorDelete
 
 `func (o *NotificationResource) GetOnAuthorDelete() bool`
@@ -852,6 +879,31 @@ SetSupportsOnRename sets SupportsOnRename field to given value.
 `func (o *NotificationResource) HasSupportsOnRename() bool`
 
 HasSupportsOnRename returns a boolean if a field has been set.
+
+### GetSupportsOnAuthorAdded
+
+`func (o *NotificationResource) GetSupportsOnAuthorAdded() bool`
+
+GetSupportsOnAuthorAdded returns the SupportsOnAuthorAdded field if non-nil, zero value otherwise.
+
+### GetSupportsOnAuthorAddedOk
+
+`func (o *NotificationResource) GetSupportsOnAuthorAddedOk() (*bool, bool)`
+
+GetSupportsOnAuthorAddedOk returns a tuple with the SupportsOnAuthorAdded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportsOnAuthorAdded
+
+`func (o *NotificationResource) SetSupportsOnAuthorAdded(v bool)`
+
+SetSupportsOnAuthorAdded sets SupportsOnAuthorAdded field to given value.
+
+### HasSupportsOnAuthorAdded
+
+`func (o *NotificationResource) HasSupportsOnAuthorAdded() bool`
+
+HasSupportsOnAuthorAdded returns a boolean if a field has been set.
 
 ### GetSupportsOnAuthorDelete
 
