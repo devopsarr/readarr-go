@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**CreateBook**](BookApi.md#CreateBook) | **Post** /api/v1/book | 
 [**DeleteBook**](BookApi.md#DeleteBook) | **Delete** /api/v1/book/{id} | 
 [**GetBookById**](BookApi.md#GetBookById) | **Get** /api/v1/book/{id} | 
-[**GetBookidOverview**](BookApi.md#GetBookidOverview) | **Get** /api/v1/book/{id}/overview | 
+[**GetBookOverview**](BookApi.md#GetBookOverview) | **Get** /api/v1/book/{id}/overview | 
 [**ListBook**](BookApi.md#ListBook) | **Get** /api/v1/book | 
 [**PutBookMonitor**](BookApi.md#PutBookMonitor) | **Put** /api/v1/book/monitor | 
 [**UpdateBook**](BookApi.md#UpdateBook) | **Put** /api/v1/book/{id} | 
@@ -216,9 +216,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetBookidOverview
+## GetBookOverview
 
-> GetBookidOverview(ctx, id).Execute()
+> GetBookOverview(ctx, id).Execute()
 
 
 
@@ -239,9 +239,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BookApi.GetBookidOverview(context.Background(), id).Execute()
+    resp, r, err := apiClient.BookApi.GetBookOverview(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.GetBookidOverview``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BookApi.GetBookOverview``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetBookidOverviewRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBookOverviewRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
