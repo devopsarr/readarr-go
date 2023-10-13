@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:8787*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMediaCoverAuthorauthorIdByFilename**](MediaCoverApi.md#GetMediaCoverAuthorauthorIdByFilename) | **Get** /api/v1/mediacover/author/{authorId}/{filename} | 
-[**GetMediaCoverBookbookIdByFilename**](MediaCoverApi.md#GetMediaCoverBookbookIdByFilename) | **Get** /api/v1/mediacover/book/{bookId}/{filename} | 
+[**GetMediaCoverAuthorByFilename**](MediaCoverApi.md#GetMediaCoverAuthorByFilename) | **Get** /api/v1/mediacover/author/{authorId}/{filename} | 
+[**GetMediaCoverBookByFilename**](MediaCoverApi.md#GetMediaCoverBookByFilename) | **Get** /api/v1/mediacover/book/{bookId}/{filename} | 
 
 
 
-## GetMediaCoverAuthorauthorIdByFilename
+## GetMediaCoverAuthorByFilename
 
-> GetMediaCoverAuthorauthorIdByFilename(ctx, authorId, filename).Execute()
+> GetMediaCoverAuthorByFilename(ctx, authorId, filename).Execute()
 
 
 
@@ -33,9 +33,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaCoverApi.GetMediaCoverAuthorauthorIdByFilename(context.Background(), authorId, filename).Execute()
+    resp, r, err := apiClient.MediaCoverApi.GetMediaCoverAuthorByFilename(context.Background(), authorId, filename).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaCoverApi.GetMediaCoverAuthorauthorIdByFilename``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MediaCoverApi.GetMediaCoverAuthorByFilename``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetMediaCoverAuthorauthorIdByFilenameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMediaCoverAuthorByFilenameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -78,9 +78,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetMediaCoverBookbookIdByFilename
+## GetMediaCoverBookByFilename
 
-> GetMediaCoverBookbookIdByFilename(ctx, bookId, filename).Execute()
+> GetMediaCoverBookByFilename(ctx, bookId, filename).Execute()
 
 
 
@@ -102,9 +102,9 @@ func main() {
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaCoverApi.GetMediaCoverBookbookIdByFilename(context.Background(), bookId, filename).Execute()
+    resp, r, err := apiClient.MediaCoverApi.GetMediaCoverBookByFilename(context.Background(), bookId, filename).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaCoverApi.GetMediaCoverBookbookIdByFilename``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MediaCoverApi.GetMediaCoverBookByFilename``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetMediaCoverBookbookIdByFilenameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMediaCoverBookByFilenameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

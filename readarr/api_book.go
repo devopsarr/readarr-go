@@ -418,25 +418,25 @@ func (a *BookApiService) GetBookByIdExecute(r ApiGetBookByIdRequest) (*BookResou
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetBookidOverviewRequest struct {
+type ApiGetBookOverviewRequest struct {
 	ctx context.Context
 	ApiService *BookApiService
 	id int32
 }
 
-func (r ApiGetBookidOverviewRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetBookidOverviewExecute(r)
+func (r ApiGetBookOverviewRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetBookOverviewExecute(r)
 }
 
 /*
-GetBookidOverview Method for GetBookidOverview
+GetBookOverview Method for GetBookOverview
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetBookidOverviewRequest
+ @return ApiGetBookOverviewRequest
 */
-func (a *BookApiService) GetBookidOverview(ctx context.Context, id int32) ApiGetBookidOverviewRequest {
-	return ApiGetBookidOverviewRequest{
+func (a *BookApiService) GetBookOverview(ctx context.Context, id int32) ApiGetBookOverviewRequest {
+	return ApiGetBookOverviewRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -444,14 +444,14 @@ func (a *BookApiService) GetBookidOverview(ctx context.Context, id int32) ApiGet
 }
 
 // Execute executes the request
-func (a *BookApiService) GetBookidOverviewExecute(r ApiGetBookidOverviewRequest) (*http.Response, error) {
+func (a *BookApiService) GetBookOverviewExecute(r ApiGetBookOverviewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.GetBookidOverview")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookApiService.GetBookOverview")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

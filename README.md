@@ -103,7 +103,7 @@ Class | Method | HTTP request | Description
 *BookApi* | [**CreateBook**](readarr/docs/BookApi.md#createbook) | **Post** /api/v1/book | 
 *BookApi* | [**DeleteBook**](readarr/docs/BookApi.md#deletebook) | **Delete** /api/v1/book/{id} | 
 *BookApi* | [**GetBookById**](readarr/docs/BookApi.md#getbookbyid) | **Get** /api/v1/book/{id} | 
-*BookApi* | [**GetBookidOverview**](readarr/docs/BookApi.md#getbookidoverview) | **Get** /api/v1/book/{id}/overview | 
+*BookApi* | [**GetBookOverview**](readarr/docs/BookApi.md#getbookoverview) | **Get** /api/v1/book/{id}/overview | 
 *BookApi* | [**ListBook**](readarr/docs/BookApi.md#listbook) | **Get** /api/v1/book | 
 *BookApi* | [**PutBookMonitor**](readarr/docs/BookApi.md#putbookmonitor) | **Put** /api/v1/book/monitor | 
 *BookApi* | [**UpdateBook**](readarr/docs/BookApi.md#updatebook) | **Put** /api/v1/book/{id} | 
@@ -211,8 +211,8 @@ Class | Method | HTTP request | Description
 *LogFileApi* | [**ListLogFile**](readarr/docs/LogFileApi.md#listlogfile) | **Get** /api/v1/log/file | 
 *ManualImportApi* | [**CreateManualImport**](readarr/docs/ManualImportApi.md#createmanualimport) | **Post** /api/v1/manualimport | 
 *ManualImportApi* | [**ListManualImport**](readarr/docs/ManualImportApi.md#listmanualimport) | **Get** /api/v1/manualimport | 
-*MediaCoverApi* | [**GetMediaCoverAuthorauthorIdByFilename**](readarr/docs/MediaCoverApi.md#getmediacoverauthorauthoridbyfilename) | **Get** /api/v1/mediacover/author/{authorId}/{filename} | 
-*MediaCoverApi* | [**GetMediaCoverBookbookIdByFilename**](readarr/docs/MediaCoverApi.md#getmediacoverbookbookidbyfilename) | **Get** /api/v1/mediacover/book/{bookId}/{filename} | 
+*MediaCoverApi* | [**GetMediaCoverAuthorByFilename**](readarr/docs/MediaCoverApi.md#getmediacoverauthorbyfilename) | **Get** /api/v1/mediacover/author/{authorId}/{filename} | 
+*MediaCoverApi* | [**GetMediaCoverBookByFilename**](readarr/docs/MediaCoverApi.md#getmediacoverbookbyfilename) | **Get** /api/v1/mediacover/book/{bookId}/{filename} | 
 *MediaManagementConfigApi* | [**GetMediaManagementConfig**](readarr/docs/MediaManagementConfigApi.md#getmediamanagementconfig) | **Get** /api/v1/config/mediamanagement | 
 *MediaManagementConfigApi* | [**GetMediaManagementConfigById**](readarr/docs/MediaManagementConfigApi.md#getmediamanagementconfigbyid) | **Get** /api/v1/config/mediamanagement/{id} | 
 *MediaManagementConfigApi* | [**UpdateMediaManagementConfig**](readarr/docs/MediaManagementConfigApi.md#updatemediamanagementconfig) | **Put** /api/v1/config/mediamanagement/{id} | 
