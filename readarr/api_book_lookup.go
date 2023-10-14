@@ -19,11 +19,11 @@ import (
 )
 
 
-// BookLookupApiService BookLookupApi service
-type BookLookupApiService service
+// BookLookupAPIService BookLookupAPI service
+type BookLookupAPIService service
 type ApiGetBookLookupRequest struct {
 	ctx context.Context
-	ApiService *BookLookupApiService
+	ApiService *BookLookupAPIService
 	term *string
 }
 
@@ -42,7 +42,7 @@ GetBookLookup Method for GetBookLookup
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetBookLookupRequest
 */
-func (a *BookLookupApiService) GetBookLookup(ctx context.Context) ApiGetBookLookupRequest {
+func (a *BookLookupAPIService) GetBookLookup(ctx context.Context) ApiGetBookLookupRequest {
 	return ApiGetBookLookupRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *BookLookupApiService) GetBookLookup(ctx context.Context) ApiGetBookLook
 }
 
 // Execute executes the request
-func (a *BookLookupApiService) GetBookLookupExecute(r ApiGetBookLookupRequest) (*http.Response, error) {
+func (a *BookLookupAPIService) GetBookLookupExecute(r ApiGetBookLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookLookupApiService.GetBookLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookLookupAPIService.GetBookLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

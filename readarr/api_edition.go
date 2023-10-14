@@ -20,11 +20,11 @@ import (
 )
 
 
-// EditionApiService EditionApi service
-type EditionApiService service
+// EditionAPIService EditionAPI service
+type EditionAPIService service
 type ApiListEditionRequest struct {
 	ctx context.Context
-	ApiService *EditionApiService
+	ApiService *EditionAPIService
 	bookId *[]int32
 }
 
@@ -43,7 +43,7 @@ ListEdition Method for ListEdition
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListEditionRequest
 */
-func (a *EditionApiService) ListEdition(ctx context.Context) ApiListEditionRequest {
+func (a *EditionAPIService) ListEdition(ctx context.Context) ApiListEditionRequest {
 	return ApiListEditionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *EditionApiService) ListEdition(ctx context.Context) ApiListEditionReque
 
 // Execute executes the request
 //  @return []EditionResource
-func (a *EditionApiService) ListEditionExecute(r ApiListEditionRequest) ([]*EditionResource, *http.Response, error) {
+func (a *EditionAPIService) ListEditionExecute(r ApiListEditionRequest) ([]*EditionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *EditionApiService) ListEditionExecute(r ApiListEditionRequest) ([]*Edit
 		localVarReturnValue  []*EditionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EditionApiService.ListEdition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EditionAPIService.ListEdition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

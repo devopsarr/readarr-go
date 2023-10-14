@@ -47,78 +47,78 @@ type APIClient struct {
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// API Services
-	ApiInfoApi *ApiInfoApiService
-	AuthenticationApi *AuthenticationApiService
-	AuthorApi *AuthorApiService
-	AuthorEditorApi *AuthorEditorApiService
-	AuthorLookupApi *AuthorLookupApiService
-	BackupApi *BackupApiService
-	BlocklistApi *BlocklistApiService
-	BookApi *BookApiService
-	BookEditorApi *BookEditorApiService
-	BookFileApi *BookFileApiService
-	BookLookupApi *BookLookupApiService
-	BookshelfApi *BookshelfApiService
-	CalendarApi *CalendarApiService
-	CalendarFeedApi *CalendarFeedApiService
-	CommandApi *CommandApiService
-	CustomFilterApi *CustomFilterApiService
-	CustomFormatApi *CustomFormatApiService
-	CutoffApi *CutoffApiService
-	DelayProfileApi *DelayProfileApiService
-	DevelopmentConfigApi *DevelopmentConfigApiService
-	DiskSpaceApi *DiskSpaceApiService
-	DownloadClientApi *DownloadClientApiService
-	DownloadClientConfigApi *DownloadClientConfigApiService
-	EditionApi *EditionApiService
-	FileSystemApi *FileSystemApiService
-	HealthApi *HealthApiService
-	HistoryApi *HistoryApiService
-	HostConfigApi *HostConfigApiService
-	ImportListApi *ImportListApiService
-	ImportListExclusionApi *ImportListExclusionApiService
-	IndexerApi *IndexerApiService
-	IndexerConfigApi *IndexerConfigApiService
-	LanguageApi *LanguageApiService
-	LocalizationApi *LocalizationApiService
-	LogApi *LogApiService
-	LogFileApi *LogFileApiService
-	ManualImportApi *ManualImportApiService
-	MediaCoverApi *MediaCoverApiService
-	MediaManagementConfigApi *MediaManagementConfigApiService
-	MetadataApi *MetadataApiService
-	MetadataProfileApi *MetadataProfileApiService
-	MetadataProfileSchemaApi *MetadataProfileSchemaApiService
-	MetadataProviderConfigApi *MetadataProviderConfigApiService
-	MissingApi *MissingApiService
-	NamingConfigApi *NamingConfigApiService
-	NotificationApi *NotificationApiService
-	ParseApi *ParseApiService
-	PingApi *PingApiService
-	QualityDefinitionApi *QualityDefinitionApiService
-	QualityProfileApi *QualityProfileApiService
-	QualityProfileSchemaApi *QualityProfileSchemaApiService
-	QueueApi *QueueApiService
-	QueueActionApi *QueueActionApiService
-	QueueDetailsApi *QueueDetailsApiService
-	QueueStatusApi *QueueStatusApiService
-	ReleaseApi *ReleaseApiService
-	ReleaseProfileApi *ReleaseProfileApiService
-	ReleasePushApi *ReleasePushApiService
-	RemotePathMappingApi *RemotePathMappingApiService
-	RenameBookApi *RenameBookApiService
-	RetagBookApi *RetagBookApiService
-	RootFolderApi *RootFolderApiService
-	SearchApi *SearchApiService
-	SeriesApi *SeriesApiService
-	StaticResourceApi *StaticResourceApiService
-	SystemApi *SystemApiService
-	TagApi *TagApiService
-	TagDetailsApi *TagDetailsApiService
-	TaskApi *TaskApiService
-	UiConfigApi *UiConfigApiService
-	UpdateApi *UpdateApiService
-	UpdateLogFileApi *UpdateLogFileApiService
+	ApiInfoAPI *ApiInfoAPIService
+	AuthenticationAPI *AuthenticationAPIService
+	AuthorAPI *AuthorAPIService
+	AuthorEditorAPI *AuthorEditorAPIService
+	AuthorLookupAPI *AuthorLookupAPIService
+	BackupAPI *BackupAPIService
+	BlocklistAPI *BlocklistAPIService
+	BookAPI *BookAPIService
+	BookEditorAPI *BookEditorAPIService
+	BookFileAPI *BookFileAPIService
+	BookLookupAPI *BookLookupAPIService
+	BookshelfAPI *BookshelfAPIService
+	CalendarAPI *CalendarAPIService
+	CalendarFeedAPI *CalendarFeedAPIService
+	CommandAPI *CommandAPIService
+	CustomFilterAPI *CustomFilterAPIService
+	CustomFormatAPI *CustomFormatAPIService
+	CutoffAPI *CutoffAPIService
+	DelayProfileAPI *DelayProfileAPIService
+	DevelopmentConfigAPI *DevelopmentConfigAPIService
+	DiskSpaceAPI *DiskSpaceAPIService
+	DownloadClientAPI *DownloadClientAPIService
+	DownloadClientConfigAPI *DownloadClientConfigAPIService
+	EditionAPI *EditionAPIService
+	FileSystemAPI *FileSystemAPIService
+	HealthAPI *HealthAPIService
+	HistoryAPI *HistoryAPIService
+	HostConfigAPI *HostConfigAPIService
+	ImportListAPI *ImportListAPIService
+	ImportListExclusionAPI *ImportListExclusionAPIService
+	IndexerAPI *IndexerAPIService
+	IndexerConfigAPI *IndexerConfigAPIService
+	LanguageAPI *LanguageAPIService
+	LocalizationAPI *LocalizationAPIService
+	LogAPI *LogAPIService
+	LogFileAPI *LogFileAPIService
+	ManualImportAPI *ManualImportAPIService
+	MediaCoverAPI *MediaCoverAPIService
+	MediaManagementConfigAPI *MediaManagementConfigAPIService
+	MetadataAPI *MetadataAPIService
+	MetadataProfileAPI *MetadataProfileAPIService
+	MetadataProfileSchemaAPI *MetadataProfileSchemaAPIService
+	MetadataProviderConfigAPI *MetadataProviderConfigAPIService
+	MissingAPI *MissingAPIService
+	NamingConfigAPI *NamingConfigAPIService
+	NotificationAPI *NotificationAPIService
+	ParseAPI *ParseAPIService
+	PingAPI *PingAPIService
+	QualityDefinitionAPI *QualityDefinitionAPIService
+	QualityProfileAPI *QualityProfileAPIService
+	QualityProfileSchemaAPI *QualityProfileSchemaAPIService
+	QueueAPI *QueueAPIService
+	QueueActionAPI *QueueActionAPIService
+	QueueDetailsAPI *QueueDetailsAPIService
+	QueueStatusAPI *QueueStatusAPIService
+	ReleaseAPI *ReleaseAPIService
+	ReleaseProfileAPI *ReleaseProfileAPIService
+	ReleasePushAPI *ReleasePushAPIService
+	RemotePathMappingAPI *RemotePathMappingAPIService
+	RenameBookAPI *RenameBookAPIService
+	RetagBookAPI *RetagBookAPIService
+	RootFolderAPI *RootFolderAPIService
+	SearchAPI *SearchAPIService
+	SeriesAPI *SeriesAPIService
+	StaticResourceAPI *StaticResourceAPIService
+	SystemAPI *SystemAPIService
+	TagAPI *TagAPIService
+	TagDetailsAPI *TagDetailsAPIService
+	TaskAPI *TaskAPIService
+	UiConfigAPI *UiConfigAPIService
+	UpdateAPI *UpdateAPIService
+	UpdateLogFileAPI *UpdateLogFileAPIService
 }
 
 type service struct {
@@ -137,78 +137,78 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.ApiInfoApi = (*ApiInfoApiService)(&c.common)
-	c.AuthenticationApi = (*AuthenticationApiService)(&c.common)
-	c.AuthorApi = (*AuthorApiService)(&c.common)
-	c.AuthorEditorApi = (*AuthorEditorApiService)(&c.common)
-	c.AuthorLookupApi = (*AuthorLookupApiService)(&c.common)
-	c.BackupApi = (*BackupApiService)(&c.common)
-	c.BlocklistApi = (*BlocklistApiService)(&c.common)
-	c.BookApi = (*BookApiService)(&c.common)
-	c.BookEditorApi = (*BookEditorApiService)(&c.common)
-	c.BookFileApi = (*BookFileApiService)(&c.common)
-	c.BookLookupApi = (*BookLookupApiService)(&c.common)
-	c.BookshelfApi = (*BookshelfApiService)(&c.common)
-	c.CalendarApi = (*CalendarApiService)(&c.common)
-	c.CalendarFeedApi = (*CalendarFeedApiService)(&c.common)
-	c.CommandApi = (*CommandApiService)(&c.common)
-	c.CustomFilterApi = (*CustomFilterApiService)(&c.common)
-	c.CustomFormatApi = (*CustomFormatApiService)(&c.common)
-	c.CutoffApi = (*CutoffApiService)(&c.common)
-	c.DelayProfileApi = (*DelayProfileApiService)(&c.common)
-	c.DevelopmentConfigApi = (*DevelopmentConfigApiService)(&c.common)
-	c.DiskSpaceApi = (*DiskSpaceApiService)(&c.common)
-	c.DownloadClientApi = (*DownloadClientApiService)(&c.common)
-	c.DownloadClientConfigApi = (*DownloadClientConfigApiService)(&c.common)
-	c.EditionApi = (*EditionApiService)(&c.common)
-	c.FileSystemApi = (*FileSystemApiService)(&c.common)
-	c.HealthApi = (*HealthApiService)(&c.common)
-	c.HistoryApi = (*HistoryApiService)(&c.common)
-	c.HostConfigApi = (*HostConfigApiService)(&c.common)
-	c.ImportListApi = (*ImportListApiService)(&c.common)
-	c.ImportListExclusionApi = (*ImportListExclusionApiService)(&c.common)
-	c.IndexerApi = (*IndexerApiService)(&c.common)
-	c.IndexerConfigApi = (*IndexerConfigApiService)(&c.common)
-	c.LanguageApi = (*LanguageApiService)(&c.common)
-	c.LocalizationApi = (*LocalizationApiService)(&c.common)
-	c.LogApi = (*LogApiService)(&c.common)
-	c.LogFileApi = (*LogFileApiService)(&c.common)
-	c.ManualImportApi = (*ManualImportApiService)(&c.common)
-	c.MediaCoverApi = (*MediaCoverApiService)(&c.common)
-	c.MediaManagementConfigApi = (*MediaManagementConfigApiService)(&c.common)
-	c.MetadataApi = (*MetadataApiService)(&c.common)
-	c.MetadataProfileApi = (*MetadataProfileApiService)(&c.common)
-	c.MetadataProfileSchemaApi = (*MetadataProfileSchemaApiService)(&c.common)
-	c.MetadataProviderConfigApi = (*MetadataProviderConfigApiService)(&c.common)
-	c.MissingApi = (*MissingApiService)(&c.common)
-	c.NamingConfigApi = (*NamingConfigApiService)(&c.common)
-	c.NotificationApi = (*NotificationApiService)(&c.common)
-	c.ParseApi = (*ParseApiService)(&c.common)
-	c.PingApi = (*PingApiService)(&c.common)
-	c.QualityDefinitionApi = (*QualityDefinitionApiService)(&c.common)
-	c.QualityProfileApi = (*QualityProfileApiService)(&c.common)
-	c.QualityProfileSchemaApi = (*QualityProfileSchemaApiService)(&c.common)
-	c.QueueApi = (*QueueApiService)(&c.common)
-	c.QueueActionApi = (*QueueActionApiService)(&c.common)
-	c.QueueDetailsApi = (*QueueDetailsApiService)(&c.common)
-	c.QueueStatusApi = (*QueueStatusApiService)(&c.common)
-	c.ReleaseApi = (*ReleaseApiService)(&c.common)
-	c.ReleaseProfileApi = (*ReleaseProfileApiService)(&c.common)
-	c.ReleasePushApi = (*ReleasePushApiService)(&c.common)
-	c.RemotePathMappingApi = (*RemotePathMappingApiService)(&c.common)
-	c.RenameBookApi = (*RenameBookApiService)(&c.common)
-	c.RetagBookApi = (*RetagBookApiService)(&c.common)
-	c.RootFolderApi = (*RootFolderApiService)(&c.common)
-	c.SearchApi = (*SearchApiService)(&c.common)
-	c.SeriesApi = (*SeriesApiService)(&c.common)
-	c.StaticResourceApi = (*StaticResourceApiService)(&c.common)
-	c.SystemApi = (*SystemApiService)(&c.common)
-	c.TagApi = (*TagApiService)(&c.common)
-	c.TagDetailsApi = (*TagDetailsApiService)(&c.common)
-	c.TaskApi = (*TaskApiService)(&c.common)
-	c.UiConfigApi = (*UiConfigApiService)(&c.common)
-	c.UpdateApi = (*UpdateApiService)(&c.common)
-	c.UpdateLogFileApi = (*UpdateLogFileApiService)(&c.common)
+	c.ApiInfoAPI = (*ApiInfoAPIService)(&c.common)
+	c.AuthenticationAPI = (*AuthenticationAPIService)(&c.common)
+	c.AuthorAPI = (*AuthorAPIService)(&c.common)
+	c.AuthorEditorAPI = (*AuthorEditorAPIService)(&c.common)
+	c.AuthorLookupAPI = (*AuthorLookupAPIService)(&c.common)
+	c.BackupAPI = (*BackupAPIService)(&c.common)
+	c.BlocklistAPI = (*BlocklistAPIService)(&c.common)
+	c.BookAPI = (*BookAPIService)(&c.common)
+	c.BookEditorAPI = (*BookEditorAPIService)(&c.common)
+	c.BookFileAPI = (*BookFileAPIService)(&c.common)
+	c.BookLookupAPI = (*BookLookupAPIService)(&c.common)
+	c.BookshelfAPI = (*BookshelfAPIService)(&c.common)
+	c.CalendarAPI = (*CalendarAPIService)(&c.common)
+	c.CalendarFeedAPI = (*CalendarFeedAPIService)(&c.common)
+	c.CommandAPI = (*CommandAPIService)(&c.common)
+	c.CustomFilterAPI = (*CustomFilterAPIService)(&c.common)
+	c.CustomFormatAPI = (*CustomFormatAPIService)(&c.common)
+	c.CutoffAPI = (*CutoffAPIService)(&c.common)
+	c.DelayProfileAPI = (*DelayProfileAPIService)(&c.common)
+	c.DevelopmentConfigAPI = (*DevelopmentConfigAPIService)(&c.common)
+	c.DiskSpaceAPI = (*DiskSpaceAPIService)(&c.common)
+	c.DownloadClientAPI = (*DownloadClientAPIService)(&c.common)
+	c.DownloadClientConfigAPI = (*DownloadClientConfigAPIService)(&c.common)
+	c.EditionAPI = (*EditionAPIService)(&c.common)
+	c.FileSystemAPI = (*FileSystemAPIService)(&c.common)
+	c.HealthAPI = (*HealthAPIService)(&c.common)
+	c.HistoryAPI = (*HistoryAPIService)(&c.common)
+	c.HostConfigAPI = (*HostConfigAPIService)(&c.common)
+	c.ImportListAPI = (*ImportListAPIService)(&c.common)
+	c.ImportListExclusionAPI = (*ImportListExclusionAPIService)(&c.common)
+	c.IndexerAPI = (*IndexerAPIService)(&c.common)
+	c.IndexerConfigAPI = (*IndexerConfigAPIService)(&c.common)
+	c.LanguageAPI = (*LanguageAPIService)(&c.common)
+	c.LocalizationAPI = (*LocalizationAPIService)(&c.common)
+	c.LogAPI = (*LogAPIService)(&c.common)
+	c.LogFileAPI = (*LogFileAPIService)(&c.common)
+	c.ManualImportAPI = (*ManualImportAPIService)(&c.common)
+	c.MediaCoverAPI = (*MediaCoverAPIService)(&c.common)
+	c.MediaManagementConfigAPI = (*MediaManagementConfigAPIService)(&c.common)
+	c.MetadataAPI = (*MetadataAPIService)(&c.common)
+	c.MetadataProfileAPI = (*MetadataProfileAPIService)(&c.common)
+	c.MetadataProfileSchemaAPI = (*MetadataProfileSchemaAPIService)(&c.common)
+	c.MetadataProviderConfigAPI = (*MetadataProviderConfigAPIService)(&c.common)
+	c.MissingAPI = (*MissingAPIService)(&c.common)
+	c.NamingConfigAPI = (*NamingConfigAPIService)(&c.common)
+	c.NotificationAPI = (*NotificationAPIService)(&c.common)
+	c.ParseAPI = (*ParseAPIService)(&c.common)
+	c.PingAPI = (*PingAPIService)(&c.common)
+	c.QualityDefinitionAPI = (*QualityDefinitionAPIService)(&c.common)
+	c.QualityProfileAPI = (*QualityProfileAPIService)(&c.common)
+	c.QualityProfileSchemaAPI = (*QualityProfileSchemaAPIService)(&c.common)
+	c.QueueAPI = (*QueueAPIService)(&c.common)
+	c.QueueActionAPI = (*QueueActionAPIService)(&c.common)
+	c.QueueDetailsAPI = (*QueueDetailsAPIService)(&c.common)
+	c.QueueStatusAPI = (*QueueStatusAPIService)(&c.common)
+	c.ReleaseAPI = (*ReleaseAPIService)(&c.common)
+	c.ReleaseProfileAPI = (*ReleaseProfileAPIService)(&c.common)
+	c.ReleasePushAPI = (*ReleasePushAPIService)(&c.common)
+	c.RemotePathMappingAPI = (*RemotePathMappingAPIService)(&c.common)
+	c.RenameBookAPI = (*RenameBookAPIService)(&c.common)
+	c.RetagBookAPI = (*RetagBookAPIService)(&c.common)
+	c.RootFolderAPI = (*RootFolderAPIService)(&c.common)
+	c.SearchAPI = (*SearchAPIService)(&c.common)
+	c.SeriesAPI = (*SeriesAPIService)(&c.common)
+	c.StaticResourceAPI = (*StaticResourceAPIService)(&c.common)
+	c.SystemAPI = (*SystemAPIService)(&c.common)
+	c.TagAPI = (*TagAPIService)(&c.common)
+	c.TagDetailsAPI = (*TagDetailsAPIService)(&c.common)
+	c.TaskAPI = (*TaskAPIService)(&c.common)
+	c.UiConfigAPI = (*UiConfigAPIService)(&c.common)
+	c.UpdateAPI = (*UpdateAPIService)(&c.common)
+	c.UpdateLogFileAPI = (*UpdateLogFileAPIService)(&c.common)
 
 	return c
 }
