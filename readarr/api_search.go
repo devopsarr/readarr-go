@@ -19,11 +19,11 @@ import (
 )
 
 
-// SearchApiService SearchApi service
-type SearchApiService service
+// SearchAPIService SearchAPI service
+type SearchAPIService service
 type ApiGetSearchRequest struct {
 	ctx context.Context
-	ApiService *SearchApiService
+	ApiService *SearchAPIService
 	term *string
 }
 
@@ -42,7 +42,7 @@ GetSearch Method for GetSearch
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSearchRequest
 */
-func (a *SearchApiService) GetSearch(ctx context.Context) ApiGetSearchRequest {
+func (a *SearchAPIService) GetSearch(ctx context.Context) ApiGetSearchRequest {
 	return ApiGetSearchRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *SearchApiService) GetSearch(ctx context.Context) ApiGetSearchRequest {
 }
 
 // Execute executes the request
-func (a *SearchApiService) GetSearchExecute(r ApiGetSearchRequest) (*http.Response, error) {
+func (a *SearchAPIService) GetSearchExecute(r ApiGetSearchRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchApiService.GetSearch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchAPIService.GetSearch")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

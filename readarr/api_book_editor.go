@@ -19,11 +19,11 @@ import (
 )
 
 
-// BookEditorApiService BookEditorApi service
-type BookEditorApiService service
+// BookEditorAPIService BookEditorAPI service
+type BookEditorAPIService service
 type ApiDeleteBookEditorRequest struct {
 	ctx context.Context
-	ApiService *BookEditorApiService
+	ApiService *BookEditorAPIService
 	bookEditorResource *BookEditorResource
 }
 
@@ -42,7 +42,7 @@ DeleteBookEditor Method for DeleteBookEditor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteBookEditorRequest
 */
-func (a *BookEditorApiService) DeleteBookEditor(ctx context.Context) ApiDeleteBookEditorRequest {
+func (a *BookEditorAPIService) DeleteBookEditor(ctx context.Context) ApiDeleteBookEditorRequest {
 	return ApiDeleteBookEditorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *BookEditorApiService) DeleteBookEditor(ctx context.Context) ApiDeleteBo
 }
 
 // Execute executes the request
-func (a *BookEditorApiService) DeleteBookEditorExecute(r ApiDeleteBookEditorRequest) (*http.Response, error) {
+func (a *BookEditorAPIService) DeleteBookEditorExecute(r ApiDeleteBookEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookEditorApiService.DeleteBookEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookEditorAPIService.DeleteBookEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *BookEditorApiService) DeleteBookEditorExecute(r ApiDeleteBookEditorRequ
 }
 type ApiPutBookEditorRequest struct {
 	ctx context.Context
-	ApiService *BookEditorApiService
+	ApiService *BookEditorAPIService
 	bookEditorResource *BookEditorResource
 }
 
@@ -163,7 +163,7 @@ PutBookEditor Method for PutBookEditor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutBookEditorRequest
 */
-func (a *BookEditorApiService) PutBookEditor(ctx context.Context) ApiPutBookEditorRequest {
+func (a *BookEditorAPIService) PutBookEditor(ctx context.Context) ApiPutBookEditorRequest {
 	return ApiPutBookEditorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -171,14 +171,14 @@ func (a *BookEditorApiService) PutBookEditor(ctx context.Context) ApiPutBookEdit
 }
 
 // Execute executes the request
-func (a *BookEditorApiService) PutBookEditorExecute(r ApiPutBookEditorRequest) (*http.Response, error) {
+func (a *BookEditorAPIService) PutBookEditorExecute(r ApiPutBookEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookEditorApiService.PutBookEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookEditorAPIService.PutBookEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

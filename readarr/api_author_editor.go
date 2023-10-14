@@ -19,11 +19,11 @@ import (
 )
 
 
-// AuthorEditorApiService AuthorEditorApi service
-type AuthorEditorApiService service
+// AuthorEditorAPIService AuthorEditorAPI service
+type AuthorEditorAPIService service
 type ApiDeleteAuthorEditorRequest struct {
 	ctx context.Context
-	ApiService *AuthorEditorApiService
+	ApiService *AuthorEditorAPIService
 	authorEditorResource *AuthorEditorResource
 }
 
@@ -42,7 +42,7 @@ DeleteAuthorEditor Method for DeleteAuthorEditor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteAuthorEditorRequest
 */
-func (a *AuthorEditorApiService) DeleteAuthorEditor(ctx context.Context) ApiDeleteAuthorEditorRequest {
+func (a *AuthorEditorAPIService) DeleteAuthorEditor(ctx context.Context) ApiDeleteAuthorEditorRequest {
 	return ApiDeleteAuthorEditorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *AuthorEditorApiService) DeleteAuthorEditor(ctx context.Context) ApiDele
 }
 
 // Execute executes the request
-func (a *AuthorEditorApiService) DeleteAuthorEditorExecute(r ApiDeleteAuthorEditorRequest) (*http.Response, error) {
+func (a *AuthorEditorAPIService) DeleteAuthorEditorExecute(r ApiDeleteAuthorEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorEditorApiService.DeleteAuthorEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorEditorAPIService.DeleteAuthorEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *AuthorEditorApiService) DeleteAuthorEditorExecute(r ApiDeleteAuthorEdit
 }
 type ApiPutAuthorEditorRequest struct {
 	ctx context.Context
-	ApiService *AuthorEditorApiService
+	ApiService *AuthorEditorAPIService
 	authorEditorResource *AuthorEditorResource
 }
 
@@ -163,7 +163,7 @@ PutAuthorEditor Method for PutAuthorEditor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutAuthorEditorRequest
 */
-func (a *AuthorEditorApiService) PutAuthorEditor(ctx context.Context) ApiPutAuthorEditorRequest {
+func (a *AuthorEditorAPIService) PutAuthorEditor(ctx context.Context) ApiPutAuthorEditorRequest {
 	return ApiPutAuthorEditorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -171,14 +171,14 @@ func (a *AuthorEditorApiService) PutAuthorEditor(ctx context.Context) ApiPutAuth
 }
 
 // Execute executes the request
-func (a *AuthorEditorApiService) PutAuthorEditorExecute(r ApiPutAuthorEditorRequest) (*http.Response, error) {
+func (a *AuthorEditorAPIService) PutAuthorEditorExecute(r ApiPutAuthorEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorEditorApiService.PutAuthorEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorEditorAPIService.PutAuthorEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
