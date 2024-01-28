@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **AuthorMetadataId** | Pointer to **int32** |  | [optional] 
 **ForeignBookId** | Pointer to **NullableString** |  | [optional] 
+**ForeignEditionId** | Pointer to **NullableString** |  | [optional] 
 **TitleSlug** | Pointer to **NullableString** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
 **ReleaseDate** | Pointer to **NullableTime** |  | [optional] 
@@ -130,6 +131,41 @@ HasForeignBookId returns a boolean if a field has been set.
 `func (o *Book) UnsetForeignBookId()`
 
 UnsetForeignBookId ensures that no value is present for ForeignBookId, not even an explicit nil
+### GetForeignEditionId
+
+`func (o *Book) GetForeignEditionId() string`
+
+GetForeignEditionId returns the ForeignEditionId field if non-nil, zero value otherwise.
+
+### GetForeignEditionIdOk
+
+`func (o *Book) GetForeignEditionIdOk() (*string, bool)`
+
+GetForeignEditionIdOk returns a tuple with the ForeignEditionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForeignEditionId
+
+`func (o *Book) SetForeignEditionId(v string)`
+
+SetForeignEditionId sets ForeignEditionId field to given value.
+
+### HasForeignEditionId
+
+`func (o *Book) HasForeignEditionId() bool`
+
+HasForeignEditionId returns a boolean if a field has been set.
+
+### SetForeignEditionIdNil
+
+`func (o *Book) SetForeignEditionIdNil(b bool)`
+
+ SetForeignEditionIdNil sets the value for ForeignEditionId to be an explicit nil
+
+### UnsetForeignEditionId
+`func (o *Book) UnsetForeignEditionId()`
+
+UnsetForeignEditionId ensures that no value is present for ForeignEditionId, not even an explicit nil
 ### GetTitleSlug
 
 `func (o *Book) GetTitleSlug() string`

@@ -25,11 +25,41 @@ type CutoffAPIService service
 type ApiGetWantedCutoffRequest struct {
 	ctx context.Context
 	ApiService *CutoffAPIService
+	page *int32
+	pageSize *int32
+	sortKey *string
+	sortDirection *SortDirection
 	includeAuthor *bool
+	monitored *bool
+}
+
+func (r ApiGetWantedCutoffRequest) Page(page int32) ApiGetWantedCutoffRequest {
+	r.page = &page
+	return r
+}
+
+func (r ApiGetWantedCutoffRequest) PageSize(pageSize int32) ApiGetWantedCutoffRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r ApiGetWantedCutoffRequest) SortKey(sortKey string) ApiGetWantedCutoffRequest {
+	r.sortKey = &sortKey
+	return r
+}
+
+func (r ApiGetWantedCutoffRequest) SortDirection(sortDirection SortDirection) ApiGetWantedCutoffRequest {
+	r.sortDirection = &sortDirection
+	return r
 }
 
 func (r ApiGetWantedCutoffRequest) IncludeAuthor(includeAuthor bool) ApiGetWantedCutoffRequest {
 	r.includeAuthor = &includeAuthor
+	return r
+}
+
+func (r ApiGetWantedCutoffRequest) Monitored(monitored bool) ApiGetWantedCutoffRequest {
+	r.monitored = &monitored
 	return r
 }
 
@@ -71,8 +101,23 @@ func (a *CutoffAPIService) GetWantedCutoffExecute(r ApiGetWantedCutoffRequest) (
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.page != nil {
+		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+	}
+	if r.pageSize != nil {
+		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+	}
+	if r.sortKey != nil {
+		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+	}
+	if r.sortDirection != nil {
+		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+	}
 	if r.includeAuthor != nil {
 		localVarQueryParams.Add("includeAuthor", parameterToString(*r.includeAuthor, ""))
+	}
+	if r.monitored != nil {
+		localVarQueryParams.Add("monitored", parameterToString(*r.monitored, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
