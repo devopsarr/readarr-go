@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## GetHistory
 
-> HistoryResourcePagingResource GetHistory(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeAuthor(includeAuthor).IncludeBook(includeBook).EventType(eventType).BookId(bookId).DownloadId(downloadId).Execute()
+> HistoryResourcePagingResource GetHistory(ctx).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
 
 
 
@@ -96,19 +96,12 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 |  (optional) (default to 1)
-    pageSize := int32(56) // int32 |  (optional) (default to 10)
-    sortKey := "sortKey_example" // string |  (optional)
-    sortDirection := readarrClient.SortDirection("default") // SortDirection |  (optional)
-    includeAuthor := true // bool |  (optional)
-    includeBook := true // bool |  (optional)
-    eventType := []int32{int32(123)} // []int32 |  (optional)
-    bookId := int32(56) // int32 |  (optional)
-    downloadId := "downloadId_example" // string |  (optional)
+    includeAuthor := true // bool |  (optional) (default to false)
+    includeBook := true // bool |  (optional) (default to false)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryAPI.GetHistory(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeAuthor(includeAuthor).IncludeBook(includeBook).EventType(eventType).BookId(bookId).DownloadId(downloadId).Execute()
+    resp, r, err := apiClient.HistoryAPI.GetHistory(context.Background()).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoryAPI.GetHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,15 +122,8 @@ Other parameters are passed through a pointer to a apiGetHistoryRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** |  | [default to 1]
- **pageSize** | **int32** |  | [default to 10]
- **sortKey** | **string** |  | 
- **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
- **includeAuthor** | **bool** |  | 
- **includeBook** | **bool** |  | 
- **eventType** | **[]int32** |  | 
- **bookId** | **int32** |  | 
- **downloadId** | **string** |  | 
+ **includeAuthor** | **bool** |  | [default to false]
+ **includeBook** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -150,7 +136,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

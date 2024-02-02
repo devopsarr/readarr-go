@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## DeleteQueue
 
-> DeleteQueue(ctx, id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).ChangeCategory(changeCategory).Execute()
+> DeleteQueue(ctx, id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).Execute()
 
 
 
@@ -33,11 +33,10 @@ func main() {
     removeFromClient := true // bool |  (optional) (default to true)
     blocklist := true // bool |  (optional) (default to false)
     skipRedownload := true // bool |  (optional) (default to false)
-    changeCategory := true // bool |  (optional) (default to false)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueAPI.DeleteQueue(context.Background(), id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).ChangeCategory(changeCategory).Execute()
+    resp, r, err := apiClient.QueueAPI.DeleteQueue(context.Background(), id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueAPI.DeleteQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,7 +63,6 @@ Name | Type | Description  | Notes
  **removeFromClient** | **bool** |  | [default to true]
  **blocklist** | **bool** |  | [default to false]
  **skipRedownload** | **bool** |  | [default to false]
- **changeCategory** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -86,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## DeleteQueueBulk
 
-> DeleteQueueBulk(ctx).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).ChangeCategory(changeCategory).QueueBulkResource(queueBulkResource).Execute()
+> DeleteQueueBulk(ctx).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).QueueBulkResource(queueBulkResource).Execute()
 
 
 
@@ -106,12 +104,11 @@ func main() {
     removeFromClient := true // bool |  (optional) (default to true)
     blocklist := true // bool |  (optional) (default to false)
     skipRedownload := true // bool |  (optional) (default to false)
-    changeCategory := true // bool |  (optional) (default to false)
     queueBulkResource := *readarrClient.NewQueueBulkResource() // QueueBulkResource |  (optional)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueAPI.DeleteQueueBulk(context.Background()).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).ChangeCategory(changeCategory).QueueBulkResource(queueBulkResource).Execute()
+    resp, r, err := apiClient.QueueAPI.DeleteQueueBulk(context.Background()).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).QueueBulkResource(queueBulkResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueAPI.DeleteQueueBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -133,7 +130,6 @@ Name | Type | Description  | Notes
  **removeFromClient** | **bool** |  | [default to true]
  **blocklist** | **bool** |  | [default to false]
  **skipRedownload** | **bool** |  | [default to false]
- **changeCategory** | **bool** |  | [default to false]
  **queueBulkResource** | [**QueueBulkResource**](QueueBulkResource.md) |  | 
 
 ### Return type
@@ -156,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetQueue
 
-> QueueResourcePagingResource GetQueue(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownAuthorItems(includeUnknownAuthorItems).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+> QueueResourcePagingResource GetQueue(ctx).IncludeUnknownAuthorItems(includeUnknownAuthorItems).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
 
 
 
@@ -173,17 +169,13 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 |  (optional) (default to 1)
-    pageSize := int32(56) // int32 |  (optional) (default to 10)
-    sortKey := "sortKey_example" // string |  (optional)
-    sortDirection := readarrClient.SortDirection("default") // SortDirection |  (optional)
     includeUnknownAuthorItems := true // bool |  (optional) (default to false)
     includeAuthor := true // bool |  (optional) (default to false)
     includeBook := true // bool |  (optional) (default to false)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueAPI.GetQueue(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownAuthorItems(includeUnknownAuthorItems).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
+    resp, r, err := apiClient.QueueAPI.GetQueue(context.Background()).IncludeUnknownAuthorItems(includeUnknownAuthorItems).IncludeAuthor(includeAuthor).IncludeBook(includeBook).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueAPI.GetQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -204,10 +196,6 @@ Other parameters are passed through a pointer to a apiGetQueueRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** |  | [default to 1]
- **pageSize** | **int32** |  | [default to 10]
- **sortKey** | **string** |  | 
- **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeUnknownAuthorItems** | **bool** |  | [default to false]
  **includeAuthor** | **bool** |  | [default to false]
  **includeBook** | **bool** |  | [default to false]
@@ -223,7 +211,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

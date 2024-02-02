@@ -394,43 +394,43 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	localVarFormParams := url.Values{}
 
 	if r.renameBooks != nil {
-		localVarQueryParams.Add("renameBooks", parameterToString(*r.renameBooks, ""))
+		localVarQueryParams.Add("RenameBooks", parameterToString(*r.renameBooks, ""))
 	}
 	if r.replaceIllegalCharacters != nil {
-		localVarQueryParams.Add("replaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
+		localVarQueryParams.Add("ReplaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
 	}
 	if r.colonReplacementFormat != nil {
-		localVarQueryParams.Add("colonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
+		localVarQueryParams.Add("ColonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
 	}
 	if r.standardBookFormat != nil {
-		localVarQueryParams.Add("standardBookFormat", parameterToString(*r.standardBookFormat, ""))
+		localVarQueryParams.Add("StandardBookFormat", parameterToString(*r.standardBookFormat, ""))
 	}
 	if r.authorFolderFormat != nil {
-		localVarQueryParams.Add("authorFolderFormat", parameterToString(*r.authorFolderFormat, ""))
+		localVarQueryParams.Add("AuthorFolderFormat", parameterToString(*r.authorFolderFormat, ""))
 	}
 	if r.includeAuthorName != nil {
-		localVarQueryParams.Add("includeAuthorName", parameterToString(*r.includeAuthorName, ""))
+		localVarQueryParams.Add("IncludeAuthorName", parameterToString(*r.includeAuthorName, ""))
 	}
 	if r.includeBookTitle != nil {
-		localVarQueryParams.Add("includeBookTitle", parameterToString(*r.includeBookTitle, ""))
+		localVarQueryParams.Add("IncludeBookTitle", parameterToString(*r.includeBookTitle, ""))
 	}
 	if r.includeQuality != nil {
-		localVarQueryParams.Add("includeQuality", parameterToString(*r.includeQuality, ""))
+		localVarQueryParams.Add("IncludeQuality", parameterToString(*r.includeQuality, ""))
 	}
 	if r.replaceSpaces != nil {
-		localVarQueryParams.Add("replaceSpaces", parameterToString(*r.replaceSpaces, ""))
+		localVarQueryParams.Add("ReplaceSpaces", parameterToString(*r.replaceSpaces, ""))
 	}
 	if r.separator != nil {
-		localVarQueryParams.Add("separator", parameterToString(*r.separator, ""))
+		localVarQueryParams.Add("Separator", parameterToString(*r.separator, ""))
 	}
 	if r.numberStyle != nil {
-		localVarQueryParams.Add("numberStyle", parameterToString(*r.numberStyle, ""))
+		localVarQueryParams.Add("NumberStyle", parameterToString(*r.numberStyle, ""))
 	}
 	if r.id != nil {
-		localVarQueryParams.Add("id", parameterToString(*r.id, ""))
+		localVarQueryParams.Add("Id", parameterToString(*r.id, ""))
 	}
 	if r.resourceName != nil {
-		localVarQueryParams.Add("resourceName", parameterToString(*r.resourceName, ""))
+		localVarQueryParams.Add("ResourceName", parameterToString(*r.resourceName, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

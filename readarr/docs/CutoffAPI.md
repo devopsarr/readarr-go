@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetWantedCutoff
 
-> BookResourcePagingResource GetWantedCutoff(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeAuthor(includeAuthor).Monitored(monitored).Execute()
+> BookResourcePagingResource GetWantedCutoff(ctx).IncludeAuthor(includeAuthor).Execute()
 
 
 
@@ -28,16 +28,11 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 |  (optional) (default to 1)
-    pageSize := int32(56) // int32 |  (optional) (default to 10)
-    sortKey := "sortKey_example" // string |  (optional)
-    sortDirection := readarrClient.SortDirection("default") // SortDirection |  (optional)
     includeAuthor := true // bool |  (optional) (default to false)
-    monitored := true // bool |  (optional) (default to true)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CutoffAPI.GetWantedCutoff(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeAuthor(includeAuthor).Monitored(monitored).Execute()
+    resp, r, err := apiClient.CutoffAPI.GetWantedCutoff(context.Background()).IncludeAuthor(includeAuthor).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CutoffAPI.GetWantedCutoff``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,12 +53,7 @@ Other parameters are passed through a pointer to a apiGetWantedCutoffRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** |  | [default to 1]
- **pageSize** | **int32** |  | [default to 10]
- **sortKey** | **string** |  | 
- **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeAuthor** | **bool** |  | [default to false]
- **monitored** | **bool** |  | [default to true]
 
 ### Return type
 
