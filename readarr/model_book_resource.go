@@ -25,7 +25,6 @@ type BookResource struct {
 	Overview NullableString `json:"overview,omitempty"`
 	AuthorId *int32 `json:"authorId,omitempty"`
 	ForeignBookId NullableString `json:"foreignBookId,omitempty"`
-	ForeignEditionId NullableString `json:"foreignEditionId,omitempty"`
 	TitleSlug NullableString `json:"titleSlug,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 	AnyEditionOk *bool `json:"anyEditionOk,omitempty"`
@@ -375,48 +374,6 @@ func (o *BookResource) SetForeignBookIdNil() {
 // UnsetForeignBookId ensures that no value is present for ForeignBookId, not even an explicit nil
 func (o *BookResource) UnsetForeignBookId() {
 	o.ForeignBookId.Unset()
-}
-
-// GetForeignEditionId returns the ForeignEditionId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BookResource) GetForeignEditionId() string {
-	if o == nil || isNil(o.ForeignEditionId.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ForeignEditionId.Get()
-}
-
-// GetForeignEditionIdOk returns a tuple with the ForeignEditionId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BookResource) GetForeignEditionIdOk() (*string, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return o.ForeignEditionId.Get(), o.ForeignEditionId.IsSet()
-}
-
-// HasForeignEditionId returns a boolean if a field has been set.
-func (o *BookResource) HasForeignEditionId() bool {
-	if o != nil && o.ForeignEditionId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetForeignEditionId gets a reference to the given NullableString and assigns it to the ForeignEditionId field.
-func (o *BookResource) SetForeignEditionId(v string) {
-	o.ForeignEditionId.Set(&v)
-}
-// SetForeignEditionIdNil sets the value for ForeignEditionId to be an explicit nil
-func (o *BookResource) SetForeignEditionIdNil() {
-	o.ForeignEditionId.Set(nil)
-}
-
-// UnsetForeignEditionId ensures that no value is present for ForeignEditionId, not even an explicit nil
-func (o *BookResource) UnsetForeignEditionId() {
-	o.ForeignEditionId.Unset()
 }
 
 // GetTitleSlug returns the TitleSlug field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1000,9 +957,6 @@ func (o BookResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.ForeignBookId.IsSet() {
 		toSerialize["foreignBookId"] = o.ForeignBookId.Get()
-	}
-	if o.ForeignEditionId.IsSet() {
-		toSerialize["foreignEditionId"] = o.ForeignEditionId.Get()
 	}
 	if o.TitleSlug.IsSet() {
 		toSerialize["titleSlug"] = o.TitleSlug.Get()

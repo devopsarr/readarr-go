@@ -17,7 +17,6 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-	"reflect"
 	"time"
 )
 
@@ -144,35 +143,8 @@ func (a *HistoryAPIService) CreateHistoryFailedByIdExecute(r ApiCreateHistoryFai
 type ApiGetHistoryRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
-	page *int32
-	pageSize *int32
-	sortKey *string
-	sortDirection *SortDirection
 	includeAuthor *bool
 	includeBook *bool
-	eventType *[]int32
-	bookId *int32
-	downloadId *string
-}
-
-func (r ApiGetHistoryRequest) Page(page int32) ApiGetHistoryRequest {
-	r.page = &page
-	return r
-}
-
-func (r ApiGetHistoryRequest) PageSize(pageSize int32) ApiGetHistoryRequest {
-	r.pageSize = &pageSize
-	return r
-}
-
-func (r ApiGetHistoryRequest) SortKey(sortKey string) ApiGetHistoryRequest {
-	r.sortKey = &sortKey
-	return r
-}
-
-func (r ApiGetHistoryRequest) SortDirection(sortDirection SortDirection) ApiGetHistoryRequest {
-	r.sortDirection = &sortDirection
-	return r
 }
 
 func (r ApiGetHistoryRequest) IncludeAuthor(includeAuthor bool) ApiGetHistoryRequest {
@@ -182,21 +154,6 @@ func (r ApiGetHistoryRequest) IncludeAuthor(includeAuthor bool) ApiGetHistoryReq
 
 func (r ApiGetHistoryRequest) IncludeBook(includeBook bool) ApiGetHistoryRequest {
 	r.includeBook = &includeBook
-	return r
-}
-
-func (r ApiGetHistoryRequest) EventType(eventType []int32) ApiGetHistoryRequest {
-	r.eventType = &eventType
-	return r
-}
-
-func (r ApiGetHistoryRequest) BookId(bookId int32) ApiGetHistoryRequest {
-	r.bookId = &bookId
-	return r
-}
-
-func (r ApiGetHistoryRequest) DownloadId(downloadId string) ApiGetHistoryRequest {
-	r.downloadId = &downloadId
 	return r
 }
 
@@ -238,40 +195,11 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.page != nil {
-		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
-	}
-	if r.pageSize != nil {
-		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
-	}
-	if r.sortKey != nil {
-		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
-	}
-	if r.sortDirection != nil {
-		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
-	}
 	if r.includeAuthor != nil {
 		localVarQueryParams.Add("includeAuthor", parameterToString(*r.includeAuthor, ""))
 	}
 	if r.includeBook != nil {
 		localVarQueryParams.Add("includeBook", parameterToString(*r.includeBook, ""))
-	}
-	if r.eventType != nil {
-		t := *r.eventType
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("eventType", parameterToString(s.Index(i), "multi"))
-			}
-		} else {
-			localVarQueryParams.Add("eventType", parameterToString(t, "multi"))
-		}
-	}
-	if r.bookId != nil {
-		localVarQueryParams.Add("bookId", parameterToString(*r.bookId, ""))
-	}
-	if r.downloadId != nil {
-		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -283,7 +211,7 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
+	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
