@@ -416,7 +416,6 @@ Class | Method | HTTP request | Description
  - [NamingConfigResource](docs/NamingConfigResource.md)
  - [NewItemMonitorTypes](docs/NewItemMonitorTypes.md)
  - [NotificationResource](docs/NotificationResource.md)
- - [PagingResourceFilter](docs/PagingResourceFilter.md)
  - [ParseResource](docs/ParseResource.md)
  - [ParsedBookInfo](docs/ParsedBookInfo.md)
  - [ParsedTrackInfo](docs/ParsedTrackInfo.md)

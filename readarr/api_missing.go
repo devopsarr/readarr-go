@@ -25,11 +25,41 @@ type MissingAPIService service
 type ApiGetWantedMissingRequest struct {
 	ctx context.Context
 	ApiService *MissingAPIService
+	page *int32
+	pageSize *int32
+	sortKey *string
+	sortDirection *SortDirection
 	includeAuthor *bool
+	monitored *bool
+}
+
+func (r ApiGetWantedMissingRequest) Page(page int32) ApiGetWantedMissingRequest {
+	r.page = &page
+	return r
+}
+
+func (r ApiGetWantedMissingRequest) PageSize(pageSize int32) ApiGetWantedMissingRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r ApiGetWantedMissingRequest) SortKey(sortKey string) ApiGetWantedMissingRequest {
+	r.sortKey = &sortKey
+	return r
+}
+
+func (r ApiGetWantedMissingRequest) SortDirection(sortDirection SortDirection) ApiGetWantedMissingRequest {
+	r.sortDirection = &sortDirection
+	return r
 }
 
 func (r ApiGetWantedMissingRequest) IncludeAuthor(includeAuthor bool) ApiGetWantedMissingRequest {
 	r.includeAuthor = &includeAuthor
+	return r
+}
+
+func (r ApiGetWantedMissingRequest) Monitored(monitored bool) ApiGetWantedMissingRequest {
+	r.monitored = &monitored
 	return r
 }
 
@@ -71,8 +101,23 @@ func (a *MissingAPIService) GetWantedMissingExecute(r ApiGetWantedMissingRequest
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.page != nil {
+		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+	}
+	if r.pageSize != nil {
+		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+	}
+	if r.sortKey != nil {
+		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+	}
+	if r.sortDirection != nil {
+		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+	}
 	if r.includeAuthor != nil {
 		localVarQueryParams.Add("includeAuthor", parameterToString(*r.includeAuthor, ""))
+	}
+	if r.monitored != nil {
+		localVarQueryParams.Add("monitored", parameterToString(*r.monitored, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
