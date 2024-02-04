@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetWantedMissing
 
-> BookResourcePagingResource GetWantedMissing(ctx).IncludeAuthor(includeAuthor).Execute()
+> BookResourcePagingResource GetWantedMissing(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeAuthor(includeAuthor).Monitored(monitored).Execute()
 
 
 
@@ -28,11 +28,16 @@ import (
 )
 
 func main() {
+    page := int32(56) // int32 |  (optional) (default to 1)
+    pageSize := int32(56) // int32 |  (optional) (default to 10)
+    sortKey := "sortKey_example" // string |  (optional)
+    sortDirection := readarrClient.SortDirection("default") // SortDirection |  (optional)
     includeAuthor := true // bool |  (optional) (default to false)
+    monitored := true // bool |  (optional) (default to true)
 
     configuration := readarrClient.NewConfiguration()
     apiClient := readarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MissingAPI.GetWantedMissing(context.Background()).IncludeAuthor(includeAuthor).Execute()
+    resp, r, err := apiClient.MissingAPI.GetWantedMissing(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeAuthor(includeAuthor).Monitored(monitored).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MissingAPI.GetWantedMissing``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +58,12 @@ Other parameters are passed through a pointer to a apiGetWantedMissingRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int32** |  | [default to 1]
+ **pageSize** | **int32** |  | [default to 10]
+ **sortKey** | **string** |  | 
+ **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeAuthor** | **bool** |  | [default to false]
+ **monitored** | **bool** |  | [default to true]
 
 ### Return type
 

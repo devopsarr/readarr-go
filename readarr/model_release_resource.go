@@ -55,6 +55,8 @@ type ReleaseResource struct {
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	AuthorId NullableInt32 `json:"authorId,omitempty"`
 	BookId NullableInt32 `json:"bookId,omitempty"`
+	DownloadClientId NullableInt32 `json:"downloadClientId,omitempty"`
+	DownloadClient NullableString `json:"downloadClient,omitempty"`
 }
 
 // NewReleaseResource instantiates a new ReleaseResource object
@@ -1472,6 +1474,90 @@ func (o *ReleaseResource) UnsetBookId() {
 	o.BookId.Unset()
 }
 
+// GetDownloadClientId returns the DownloadClientId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReleaseResource) GetDownloadClientId() int32 {
+	if o == nil || isNil(o.DownloadClientId.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.DownloadClientId.Get()
+}
+
+// GetDownloadClientIdOk returns a tuple with the DownloadClientId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReleaseResource) GetDownloadClientIdOk() (*int32, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.DownloadClientId.Get(), o.DownloadClientId.IsSet()
+}
+
+// HasDownloadClientId returns a boolean if a field has been set.
+func (o *ReleaseResource) HasDownloadClientId() bool {
+	if o != nil && o.DownloadClientId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDownloadClientId gets a reference to the given NullableInt32 and assigns it to the DownloadClientId field.
+func (o *ReleaseResource) SetDownloadClientId(v int32) {
+	o.DownloadClientId.Set(&v)
+}
+// SetDownloadClientIdNil sets the value for DownloadClientId to be an explicit nil
+func (o *ReleaseResource) SetDownloadClientIdNil() {
+	o.DownloadClientId.Set(nil)
+}
+
+// UnsetDownloadClientId ensures that no value is present for DownloadClientId, not even an explicit nil
+func (o *ReleaseResource) UnsetDownloadClientId() {
+	o.DownloadClientId.Unset()
+}
+
+// GetDownloadClient returns the DownloadClient field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReleaseResource) GetDownloadClient() string {
+	if o == nil || isNil(o.DownloadClient.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.DownloadClient.Get()
+}
+
+// GetDownloadClientOk returns a tuple with the DownloadClient field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReleaseResource) GetDownloadClientOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.DownloadClient.Get(), o.DownloadClient.IsSet()
+}
+
+// HasDownloadClient returns a boolean if a field has been set.
+func (o *ReleaseResource) HasDownloadClient() bool {
+	if o != nil && o.DownloadClient.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDownloadClient gets a reference to the given NullableString and assigns it to the DownloadClient field.
+func (o *ReleaseResource) SetDownloadClient(v string) {
+	o.DownloadClient.Set(&v)
+}
+// SetDownloadClientNil sets the value for DownloadClient to be an explicit nil
+func (o *ReleaseResource) SetDownloadClientNil() {
+	o.DownloadClient.Set(nil)
+}
+
+// UnsetDownloadClient ensures that no value is present for DownloadClient, not even an explicit nil
+func (o *ReleaseResource) UnsetDownloadClient() {
+	o.DownloadClient.Unset()
+}
+
 func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -1587,6 +1673,12 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.BookId.IsSet() {
 		toSerialize["bookId"] = o.BookId.Get()
+	}
+	if o.DownloadClientId.IsSet() {
+		toSerialize["downloadClientId"] = o.DownloadClientId.Get()
+	}
+	if o.DownloadClient.IsSet() {
+		toSerialize["downloadClient"] = o.DownloadClient.Get()
 	}
 	return json.Marshal(toSerialize)
 }
