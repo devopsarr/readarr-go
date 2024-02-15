@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.0.0](https://github.com/devopsarr/readarr-go/compare/v0.4.0...v1.0.0) (2024-02-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **devopsarr/prowlarr-py#39:** update sdk generator to use pydantic 2.x
+
+### Features
+
+* align to go sdk ([24ab872](https://github.com/devopsarr/readarr-go/commit/24ab87268f3116be067a4810a29c8febb3b3fc26))
+* **devopsarr/prowlarr-py#39:** update sdk generator to use pydantic 2.x ([64fdd59](https://github.com/devopsarr/readarr-go/commit/64fdd593d88f4c8bca5c449192926066677210dd))
+* inject api version into readme ([f515760](https://github.com/devopsarr/readarr-go/commit/f51576098bbb913cc32523adb3f51402df50ec1b))
+
+
+### Bug Fixes
+
+* release please commented lines ([3aed745](https://github.com/devopsarr/readarr-go/commit/3aed745677b58f6f9c242ece6081aa0ed46da39c))
+* remove middle elements from method name ([7b41db2](https://github.com/devopsarr/readarr-go/commit/7b41db29c8ab85aaeae1e22d49f357e03d90e96f))
+
 ## [0.4.0](https://github.com/devopsarr/readarr-go/compare/v0.3.0...v0.4.0) (2023-07-17)
 
 
