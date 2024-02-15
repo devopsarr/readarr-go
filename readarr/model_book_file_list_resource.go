@@ -14,9 +14,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the BookFileListResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BookFileListResource{}
+
 // BookFileListResource struct for BookFileListResource
 type BookFileListResource struct {
-	BookFileIds []*int32 `json:"bookFileIds,omitempty"`
+	BookFileIds []int32 `json:"bookFileIds,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
 }
 
@@ -38,9 +41,9 @@ func NewBookFileListResourceWithDefaults() *BookFileListResource {
 }
 
 // GetBookFileIds returns the BookFileIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BookFileListResource) GetBookFileIds() []*int32 {
+func (o *BookFileListResource) GetBookFileIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.BookFileIds
@@ -49,16 +52,16 @@ func (o *BookFileListResource) GetBookFileIds() []*int32 {
 // GetBookFileIdsOk returns a tuple with the BookFileIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BookFileListResource) GetBookFileIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.BookFileIds) {
-    return nil, false
+func (o *BookFileListResource) GetBookFileIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.BookFileIds) {
+		return nil, false
 	}
 	return o.BookFileIds, true
 }
 
 // HasBookFileIds returns a boolean if a field has been set.
 func (o *BookFileListResource) HasBookFileIds() bool {
-	if o != nil && isNil(o.BookFileIds) {
+	if o != nil && IsNil(o.BookFileIds) {
 		return true
 	}
 
@@ -66,13 +69,13 @@ func (o *BookFileListResource) HasBookFileIds() bool {
 }
 
 // SetBookFileIds gets a reference to the given []int32 and assigns it to the BookFileIds field.
-func (o *BookFileListResource) SetBookFileIds(v []*int32) {
+func (o *BookFileListResource) SetBookFileIds(v []int32) {
 	o.BookFileIds = v
 }
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *BookFileListResource) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *BookFileListResource) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookFileListResource) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *BookFileListResource) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *BookFileListResource) SetQuality(v QualityModel) {
 }
 
 func (o BookFileListResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BookFileListResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BookFileIds != nil {
 		toSerialize["bookFileIds"] = o.BookFileIds
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBookFileListResource struct {

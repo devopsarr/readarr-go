@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Links type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Links{}
+
 // Links struct for Links
 type Links struct {
 	Url NullableString `json:"url,omitempty"`
@@ -39,7 +42,7 @@ func NewLinksWithDefaults() *Links {
 
 // GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Links) GetUrl() string {
-	if o == nil || isNil(o.Url.Get()) {
+	if o == nil || IsNil(o.Url.Get()) {
 		var ret string
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *Links) GetUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Links) GetUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Url.Get(), o.Url.IsSet()
 }
@@ -81,7 +84,7 @@ func (o *Links) UnsetUrl() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Links) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *Links) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Links) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -122,6 +125,14 @@ func (o *Links) UnsetName() {
 }
 
 func (o Links) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o Links) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Url.IsSet() {
 		toSerialize["url"] = o.Url.Get()
@@ -129,7 +140,7 @@ func (o Links) MarshalJSON() ([]byte, error) {
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableLinks struct {

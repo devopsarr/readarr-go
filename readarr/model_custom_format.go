@@ -14,12 +14,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomFormat type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomFormat{}
+
 // CustomFormat struct for CustomFormat
 type CustomFormat struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	IncludeCustomFormatWhenRenaming *bool `json:"includeCustomFormatWhenRenaming,omitempty"`
-	Specifications []*ICustomFormatSpecification `json:"specifications,omitempty"`
+	Specifications []ICustomFormatSpecification `json:"specifications,omitempty"`
 }
 
 // NewCustomFormat instantiates a new CustomFormat object
@@ -41,7 +44,7 @@ func NewCustomFormatWithDefaults() *CustomFormat {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *CustomFormat) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -51,15 +54,15 @@ func (o *CustomFormat) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomFormat) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *CustomFormat) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *CustomFormat) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CustomFormat) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -85,7 +88,7 @@ func (o *CustomFormat) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomFormat) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -115,7 +118,7 @@ func (o *CustomFormat) UnsetName() {
 
 // GetIncludeCustomFormatWhenRenaming returns the IncludeCustomFormatWhenRenaming field value if set, zero value otherwise.
 func (o *CustomFormat) GetIncludeCustomFormatWhenRenaming() bool {
-	if o == nil || isNil(o.IncludeCustomFormatWhenRenaming) {
+	if o == nil || IsNil(o.IncludeCustomFormatWhenRenaming) {
 		var ret bool
 		return ret
 	}
@@ -125,15 +128,15 @@ func (o *CustomFormat) GetIncludeCustomFormatWhenRenaming() bool {
 // GetIncludeCustomFormatWhenRenamingOk returns a tuple with the IncludeCustomFormatWhenRenaming field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomFormat) GetIncludeCustomFormatWhenRenamingOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeCustomFormatWhenRenaming) {
-    return nil, false
+	if o == nil || IsNil(o.IncludeCustomFormatWhenRenaming) {
+		return nil, false
 	}
 	return o.IncludeCustomFormatWhenRenaming, true
 }
 
 // HasIncludeCustomFormatWhenRenaming returns a boolean if a field has been set.
 func (o *CustomFormat) HasIncludeCustomFormatWhenRenaming() bool {
-	if o != nil && !isNil(o.IncludeCustomFormatWhenRenaming) {
+	if o != nil && !IsNil(o.IncludeCustomFormatWhenRenaming) {
 		return true
 	}
 
@@ -146,9 +149,9 @@ func (o *CustomFormat) SetIncludeCustomFormatWhenRenaming(v bool) {
 }
 
 // GetSpecifications returns the Specifications field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomFormat) GetSpecifications() []*ICustomFormatSpecification {
+func (o *CustomFormat) GetSpecifications() []ICustomFormatSpecification {
 	if o == nil {
-		var ret []*ICustomFormatSpecification
+		var ret []ICustomFormatSpecification
 		return ret
 	}
 	return o.Specifications
@@ -157,16 +160,16 @@ func (o *CustomFormat) GetSpecifications() []*ICustomFormatSpecification {
 // GetSpecificationsOk returns a tuple with the Specifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomFormat) GetSpecificationsOk() ([]*ICustomFormatSpecification, bool) {
-	if o == nil || isNil(o.Specifications) {
-    return nil, false
+func (o *CustomFormat) GetSpecificationsOk() ([]ICustomFormatSpecification, bool) {
+	if o == nil || IsNil(o.Specifications) {
+		return nil, false
 	}
 	return o.Specifications, true
 }
 
 // HasSpecifications returns a boolean if a field has been set.
 func (o *CustomFormat) HasSpecifications() bool {
-	if o != nil && isNil(o.Specifications) {
+	if o != nil && IsNil(o.Specifications) {
 		return true
 	}
 
@@ -174,25 +177,33 @@ func (o *CustomFormat) HasSpecifications() bool {
 }
 
 // SetSpecifications gets a reference to the given []ICustomFormatSpecification and assigns it to the Specifications field.
-func (o *CustomFormat) SetSpecifications(v []*ICustomFormatSpecification) {
+func (o *CustomFormat) SetSpecifications(v []ICustomFormatSpecification) {
 	o.Specifications = v
 }
 
 func (o CustomFormat) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CustomFormat) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.IncludeCustomFormatWhenRenaming) {
+	if !IsNil(o.IncludeCustomFormatWhenRenaming) {
 		toSerialize["includeCustomFormatWhenRenaming"] = o.IncludeCustomFormatWhenRenaming
 	}
 	if o.Specifications != nil {
 		toSerialize["specifications"] = o.Specifications
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCustomFormat struct {

@@ -14,12 +14,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the QualityProfileQualityItem type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &QualityProfileQualityItem{}
+
 // QualityProfileQualityItem struct for QualityProfileQualityItem
 type QualityProfileQualityItem struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	Quality *Quality `json:"quality,omitempty"`
-	Items []*QualityProfileQualityItem `json:"items,omitempty"`
+	Items []QualityProfileQualityItem `json:"items,omitempty"`
 	Allowed *bool `json:"allowed,omitempty"`
 }
 
@@ -42,7 +45,7 @@ func NewQualityProfileQualityItemWithDefaults() *QualityProfileQualityItem {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *QualityProfileQualityItem) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *QualityProfileQualityItem) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityProfileQualityItem) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *QualityProfileQualityItem) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *QualityProfileQualityItem) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QualityProfileQualityItem) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *QualityProfileQualityItem) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QualityProfileQualityItem) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -116,7 +119,7 @@ func (o *QualityProfileQualityItem) UnsetName() {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *QualityProfileQualityItem) GetQuality() Quality {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret Quality
 		return ret
 	}
@@ -126,15 +129,15 @@ func (o *QualityProfileQualityItem) GetQuality() Quality {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityProfileQualityItem) GetQualityOk() (*Quality, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *QualityProfileQualityItem) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -147,9 +150,9 @@ func (o *QualityProfileQualityItem) SetQuality(v Quality) {
 }
 
 // GetItems returns the Items field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QualityProfileQualityItem) GetItems() []*QualityProfileQualityItem {
+func (o *QualityProfileQualityItem) GetItems() []QualityProfileQualityItem {
 	if o == nil {
-		var ret []*QualityProfileQualityItem
+		var ret []QualityProfileQualityItem
 		return ret
 	}
 	return o.Items
@@ -158,16 +161,16 @@ func (o *QualityProfileQualityItem) GetItems() []*QualityProfileQualityItem {
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QualityProfileQualityItem) GetItemsOk() ([]*QualityProfileQualityItem, bool) {
-	if o == nil || isNil(o.Items) {
-    return nil, false
+func (o *QualityProfileQualityItem) GetItemsOk() ([]QualityProfileQualityItem, bool) {
+	if o == nil || IsNil(o.Items) {
+		return nil, false
 	}
 	return o.Items, true
 }
 
 // HasItems returns a boolean if a field has been set.
 func (o *QualityProfileQualityItem) HasItems() bool {
-	if o != nil && isNil(o.Items) {
+	if o != nil && IsNil(o.Items) {
 		return true
 	}
 
@@ -175,13 +178,13 @@ func (o *QualityProfileQualityItem) HasItems() bool {
 }
 
 // SetItems gets a reference to the given []QualityProfileQualityItem and assigns it to the Items field.
-func (o *QualityProfileQualityItem) SetItems(v []*QualityProfileQualityItem) {
+func (o *QualityProfileQualityItem) SetItems(v []QualityProfileQualityItem) {
 	o.Items = v
 }
 
 // GetAllowed returns the Allowed field value if set, zero value otherwise.
 func (o *QualityProfileQualityItem) GetAllowed() bool {
-	if o == nil || isNil(o.Allowed) {
+	if o == nil || IsNil(o.Allowed) {
 		var ret bool
 		return ret
 	}
@@ -191,15 +194,15 @@ func (o *QualityProfileQualityItem) GetAllowed() bool {
 // GetAllowedOk returns a tuple with the Allowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityProfileQualityItem) GetAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.Allowed) {
-    return nil, false
+	if o == nil || IsNil(o.Allowed) {
+		return nil, false
 	}
 	return o.Allowed, true
 }
 
 // HasAllowed returns a boolean if a field has been set.
 func (o *QualityProfileQualityItem) HasAllowed() bool {
-	if o != nil && !isNil(o.Allowed) {
+	if o != nil && !IsNil(o.Allowed) {
 		return true
 	}
 
@@ -212,23 +215,31 @@ func (o *QualityProfileQualityItem) SetAllowed(v bool) {
 }
 
 func (o QualityProfileQualityItem) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o QualityProfileQualityItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.Items != nil {
 		toSerialize["items"] = o.Items
 	}
-	if !isNil(o.Allowed) {
+	if !IsNil(o.Allowed) {
 		toSerialize["allowed"] = o.Allowed
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableQualityProfileQualityItem struct {

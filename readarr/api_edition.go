@@ -22,6 +22,7 @@ import (
 
 // EditionAPIService EditionAPI service
 type EditionAPIService service
+
 type ApiListEditionRequest struct {
 	ctx context.Context
 	ApiService *EditionAPIService
@@ -33,7 +34,7 @@ func (r ApiListEditionRequest) BookId(bookId []int32) ApiListEditionRequest {
 	return r
 }
 
-func (r ApiListEditionRequest) Execute() ([]*EditionResource, *http.Response, error) {
+func (r ApiListEditionRequest) Execute() ([]EditionResource, *http.Response, error) {
 	return r.ApiService.ListEditionExecute(r)
 }
 
@@ -52,12 +53,12 @@ func (a *EditionAPIService) ListEdition(ctx context.Context) ApiListEditionReque
 
 // Execute executes the request
 //  @return []EditionResource
-func (a *EditionAPIService) ListEditionExecute(r ApiListEditionRequest) ([]*EditionResource, *http.Response, error) {
+func (a *EditionAPIService) ListEditionExecute(r ApiListEditionRequest) ([]EditionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*EditionResource
+		localVarReturnValue  []EditionResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EditionAPIService.ListEdition")
@@ -76,10 +77,10 @@ func (a *EditionAPIService) ListEditionExecute(r ApiListEditionRequest) ([]*Edit
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("bookId", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("bookId", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", t, "multi")
 		}
 	}
 	// to determine the Content-Type header

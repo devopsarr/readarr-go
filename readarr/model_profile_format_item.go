@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ProfileFormatItem type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ProfileFormatItem{}
+
 // ProfileFormatItem struct for ProfileFormatItem
 type ProfileFormatItem struct {
 	Format *CustomFormat `json:"format,omitempty"`
@@ -39,7 +42,7 @@ func NewProfileFormatItemWithDefaults() *ProfileFormatItem {
 
 // GetFormat returns the Format field value if set, zero value otherwise.
 func (o *ProfileFormatItem) GetFormat() CustomFormat {
-	if o == nil || isNil(o.Format) {
+	if o == nil || IsNil(o.Format) {
 		var ret CustomFormat
 		return ret
 	}
@@ -49,15 +52,15 @@ func (o *ProfileFormatItem) GetFormat() CustomFormat {
 // GetFormatOk returns a tuple with the Format field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProfileFormatItem) GetFormatOk() (*CustomFormat, bool) {
-	if o == nil || isNil(o.Format) {
-    return nil, false
+	if o == nil || IsNil(o.Format) {
+		return nil, false
 	}
 	return o.Format, true
 }
 
 // HasFormat returns a boolean if a field has been set.
 func (o *ProfileFormatItem) HasFormat() bool {
-	if o != nil && !isNil(o.Format) {
+	if o != nil && !IsNil(o.Format) {
 		return true
 	}
 
@@ -71,7 +74,7 @@ func (o *ProfileFormatItem) SetFormat(v CustomFormat) {
 
 // GetScore returns the Score field value if set, zero value otherwise.
 func (o *ProfileFormatItem) GetScore() int32 {
-	if o == nil || isNil(o.Score) {
+	if o == nil || IsNil(o.Score) {
 		var ret int32
 		return ret
 	}
@@ -81,15 +84,15 @@ func (o *ProfileFormatItem) GetScore() int32 {
 // GetScoreOk returns a tuple with the Score field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProfileFormatItem) GetScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.Score) {
-    return nil, false
+	if o == nil || IsNil(o.Score) {
+		return nil, false
 	}
 	return o.Score, true
 }
 
 // HasScore returns a boolean if a field has been set.
 func (o *ProfileFormatItem) HasScore() bool {
-	if o != nil && !isNil(o.Score) {
+	if o != nil && !IsNil(o.Score) {
 		return true
 	}
 
@@ -102,14 +105,22 @@ func (o *ProfileFormatItem) SetScore(v int32) {
 }
 
 func (o ProfileFormatItem) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Format) {
-		toSerialize["format"] = o.Format
-	}
-	if !isNil(o.Score) {
-		toSerialize["score"] = o.Score
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ProfileFormatItem) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Format) {
+		toSerialize["format"] = o.Format
+	}
+	if !IsNil(o.Score) {
+		toSerialize["score"] = o.Score
+	}
+	return toSerialize, nil
 }
 
 type NullableProfileFormatItem struct {

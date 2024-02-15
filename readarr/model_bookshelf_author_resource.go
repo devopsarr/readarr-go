@@ -14,11 +14,14 @@ import (
 	"encoding/json"
 )
 
+// checks if the BookshelfAuthorResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BookshelfAuthorResource{}
+
 // BookshelfAuthorResource struct for BookshelfAuthorResource
 type BookshelfAuthorResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Monitored NullableBool `json:"monitored,omitempty"`
-	Books []*BookResource `json:"books,omitempty"`
+	Books []BookResource `json:"books,omitempty"`
 }
 
 // NewBookshelfAuthorResource instantiates a new BookshelfAuthorResource object
@@ -40,7 +43,7 @@ func NewBookshelfAuthorResourceWithDefaults() *BookshelfAuthorResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *BookshelfAuthorResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *BookshelfAuthorResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookshelfAuthorResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *BookshelfAuthorResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *BookshelfAuthorResource) SetId(v int32) {
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BookshelfAuthorResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored.Get()) {
+	if o == nil || IsNil(o.Monitored.Get()) {
 		var ret bool
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *BookshelfAuthorResource) GetMonitored() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BookshelfAuthorResource) GetMonitoredOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Monitored.Get(), o.Monitored.IsSet()
 }
@@ -113,9 +116,9 @@ func (o *BookshelfAuthorResource) UnsetMonitored() {
 }
 
 // GetBooks returns the Books field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BookshelfAuthorResource) GetBooks() []*BookResource {
+func (o *BookshelfAuthorResource) GetBooks() []BookResource {
 	if o == nil {
-		var ret []*BookResource
+		var ret []BookResource
 		return ret
 	}
 	return o.Books
@@ -124,16 +127,16 @@ func (o *BookshelfAuthorResource) GetBooks() []*BookResource {
 // GetBooksOk returns a tuple with the Books field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BookshelfAuthorResource) GetBooksOk() ([]*BookResource, bool) {
-	if o == nil || isNil(o.Books) {
-    return nil, false
+func (o *BookshelfAuthorResource) GetBooksOk() ([]BookResource, bool) {
+	if o == nil || IsNil(o.Books) {
+		return nil, false
 	}
 	return o.Books, true
 }
 
 // HasBooks returns a boolean if a field has been set.
 func (o *BookshelfAuthorResource) HasBooks() bool {
-	if o != nil && isNil(o.Books) {
+	if o != nil && IsNil(o.Books) {
 		return true
 	}
 
@@ -141,13 +144,21 @@ func (o *BookshelfAuthorResource) HasBooks() bool {
 }
 
 // SetBooks gets a reference to the given []BookResource and assigns it to the Books field.
-func (o *BookshelfAuthorResource) SetBooks(v []*BookResource) {
+func (o *BookshelfAuthorResource) SetBooks(v []BookResource) {
 	o.Books = v
 }
 
 func (o BookshelfAuthorResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BookshelfAuthorResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Monitored.IsSet() {
@@ -156,7 +167,7 @@ func (o BookshelfAuthorResource) MarshalJSON() ([]byte, error) {
 	if o.Books != nil {
 		toSerialize["books"] = o.Books
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBookshelfAuthorResource struct {

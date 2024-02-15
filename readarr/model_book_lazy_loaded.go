@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BookLazyLoaded type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BookLazyLoaded{}
+
 // BookLazyLoaded struct for BookLazyLoaded
 type BookLazyLoaded struct {
 	Value *Book `json:"value,omitempty"`
@@ -39,7 +42,7 @@ func NewBookLazyLoadedWithDefaults() *BookLazyLoaded {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *BookLazyLoaded) GetValue() Book {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		var ret Book
 		return ret
 	}
@@ -49,15 +52,15 @@ func (o *BookLazyLoaded) GetValue() Book {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookLazyLoaded) GetValueOk() (*Book, bool) {
-	if o == nil || isNil(o.Value) {
-    return nil, false
+	if o == nil || IsNil(o.Value) {
+		return nil, false
 	}
 	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *BookLazyLoaded) HasValue() bool {
-	if o != nil && !isNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
@@ -71,7 +74,7 @@ func (o *BookLazyLoaded) SetValue(v Book) {
 
 // GetIsLoaded returns the IsLoaded field value if set, zero value otherwise.
 func (o *BookLazyLoaded) GetIsLoaded() bool {
-	if o == nil || isNil(o.IsLoaded) {
+	if o == nil || IsNil(o.IsLoaded) {
 		var ret bool
 		return ret
 	}
@@ -81,15 +84,15 @@ func (o *BookLazyLoaded) GetIsLoaded() bool {
 // GetIsLoadedOk returns a tuple with the IsLoaded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookLazyLoaded) GetIsLoadedOk() (*bool, bool) {
-	if o == nil || isNil(o.IsLoaded) {
-    return nil, false
+	if o == nil || IsNil(o.IsLoaded) {
+		return nil, false
 	}
 	return o.IsLoaded, true
 }
 
 // HasIsLoaded returns a boolean if a field has been set.
 func (o *BookLazyLoaded) HasIsLoaded() bool {
-	if o != nil && !isNil(o.IsLoaded) {
+	if o != nil && !IsNil(o.IsLoaded) {
 		return true
 	}
 
@@ -102,14 +105,22 @@ func (o *BookLazyLoaded) SetIsLoaded(v bool) {
 }
 
 func (o BookLazyLoaded) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Value) {
-		toSerialize["value"] = o.Value
-	}
-	if !isNil(o.IsLoaded) {
-		toSerialize["isLoaded"] = o.IsLoaded
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BookLazyLoaded) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
+	}
+	if !IsNil(o.IsLoaded) {
+		toSerialize["isLoaded"] = o.IsLoaded
+	}
+	return toSerialize, nil
 }
 
 type NullableBookLazyLoaded struct {

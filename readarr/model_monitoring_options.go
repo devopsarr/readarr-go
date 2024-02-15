@@ -14,10 +14,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the MonitoringOptions type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MonitoringOptions{}
+
 // MonitoringOptions struct for MonitoringOptions
 type MonitoringOptions struct {
 	Monitor *MonitorTypes `json:"monitor,omitempty"`
-	BooksToMonitor []*string `json:"booksToMonitor,omitempty"`
+	BooksToMonitor []string `json:"booksToMonitor,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 }
 
@@ -40,7 +43,7 @@ func NewMonitoringOptionsWithDefaults() *MonitoringOptions {
 
 // GetMonitor returns the Monitor field value if set, zero value otherwise.
 func (o *MonitoringOptions) GetMonitor() MonitorTypes {
-	if o == nil || isNil(o.Monitor) {
+	if o == nil || IsNil(o.Monitor) {
 		var ret MonitorTypes
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *MonitoringOptions) GetMonitor() MonitorTypes {
 // GetMonitorOk returns a tuple with the Monitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringOptions) GetMonitorOk() (*MonitorTypes, bool) {
-	if o == nil || isNil(o.Monitor) {
-    return nil, false
+	if o == nil || IsNil(o.Monitor) {
+		return nil, false
 	}
 	return o.Monitor, true
 }
 
 // HasMonitor returns a boolean if a field has been set.
 func (o *MonitoringOptions) HasMonitor() bool {
-	if o != nil && !isNil(o.Monitor) {
+	if o != nil && !IsNil(o.Monitor) {
 		return true
 	}
 
@@ -71,9 +74,9 @@ func (o *MonitoringOptions) SetMonitor(v MonitorTypes) {
 }
 
 // GetBooksToMonitor returns the BooksToMonitor field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MonitoringOptions) GetBooksToMonitor() []*string {
+func (o *MonitoringOptions) GetBooksToMonitor() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.BooksToMonitor
@@ -82,16 +85,16 @@ func (o *MonitoringOptions) GetBooksToMonitor() []*string {
 // GetBooksToMonitorOk returns a tuple with the BooksToMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MonitoringOptions) GetBooksToMonitorOk() ([]*string, bool) {
-	if o == nil || isNil(o.BooksToMonitor) {
-    return nil, false
+func (o *MonitoringOptions) GetBooksToMonitorOk() ([]string, bool) {
+	if o == nil || IsNil(o.BooksToMonitor) {
+		return nil, false
 	}
 	return o.BooksToMonitor, true
 }
 
 // HasBooksToMonitor returns a boolean if a field has been set.
 func (o *MonitoringOptions) HasBooksToMonitor() bool {
-	if o != nil && isNil(o.BooksToMonitor) {
+	if o != nil && IsNil(o.BooksToMonitor) {
 		return true
 	}
 
@@ -99,13 +102,13 @@ func (o *MonitoringOptions) HasBooksToMonitor() bool {
 }
 
 // SetBooksToMonitor gets a reference to the given []string and assigns it to the BooksToMonitor field.
-func (o *MonitoringOptions) SetBooksToMonitor(v []*string) {
+func (o *MonitoringOptions) SetBooksToMonitor(v []string) {
 	o.BooksToMonitor = v
 }
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
 func (o *MonitoringOptions) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored) {
+	if o == nil || IsNil(o.Monitored) {
 		var ret bool
 		return ret
 	}
@@ -115,15 +118,15 @@ func (o *MonitoringOptions) GetMonitored() bool {
 // GetMonitoredOk returns a tuple with the Monitored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringOptions) GetMonitoredOk() (*bool, bool) {
-	if o == nil || isNil(o.Monitored) {
-    return nil, false
+	if o == nil || IsNil(o.Monitored) {
+		return nil, false
 	}
 	return o.Monitored, true
 }
 
 // HasMonitored returns a boolean if a field has been set.
 func (o *MonitoringOptions) HasMonitored() bool {
-	if o != nil && !isNil(o.Monitored) {
+	if o != nil && !IsNil(o.Monitored) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *MonitoringOptions) SetMonitored(v bool) {
 }
 
 func (o MonitoringOptions) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o MonitoringOptions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Monitor) {
+	if !IsNil(o.Monitor) {
 		toSerialize["monitor"] = o.Monitor
 	}
 	if o.BooksToMonitor != nil {
 		toSerialize["booksToMonitor"] = o.BooksToMonitor
 	}
-	if !isNil(o.Monitored) {
+	if !IsNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMonitoringOptions struct {

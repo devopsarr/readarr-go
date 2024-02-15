@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Ratings type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Ratings{}
+
 // Ratings struct for Ratings
 type Ratings struct {
 	Votes *int32 `json:"votes,omitempty"`
@@ -40,7 +43,7 @@ func NewRatingsWithDefaults() *Ratings {
 
 // GetVotes returns the Votes field value if set, zero value otherwise.
 func (o *Ratings) GetVotes() int32 {
-	if o == nil || isNil(o.Votes) {
+	if o == nil || IsNil(o.Votes) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *Ratings) GetVotes() int32 {
 // GetVotesOk returns a tuple with the Votes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ratings) GetVotesOk() (*int32, bool) {
-	if o == nil || isNil(o.Votes) {
-    return nil, false
+	if o == nil || IsNil(o.Votes) {
+		return nil, false
 	}
 	return o.Votes, true
 }
 
 // HasVotes returns a boolean if a field has been set.
 func (o *Ratings) HasVotes() bool {
-	if o != nil && !isNil(o.Votes) {
+	if o != nil && !IsNil(o.Votes) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *Ratings) SetVotes(v int32) {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *Ratings) GetValue() float64 {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		var ret float64
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *Ratings) GetValue() float64 {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ratings) GetValueOk() (*float64, bool) {
-	if o == nil || isNil(o.Value) {
-    return nil, false
+	if o == nil || IsNil(o.Value) {
+		return nil, false
 	}
 	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *Ratings) HasValue() bool {
-	if o != nil && !isNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *Ratings) SetValue(v float64) {
 
 // GetPopularity returns the Popularity field value if set, zero value otherwise.
 func (o *Ratings) GetPopularity() float64 {
-	if o == nil || isNil(o.Popularity) {
+	if o == nil || IsNil(o.Popularity) {
 		var ret float64
 		return ret
 	}
@@ -114,15 +117,15 @@ func (o *Ratings) GetPopularity() float64 {
 // GetPopularityOk returns a tuple with the Popularity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ratings) GetPopularityOk() (*float64, bool) {
-	if o == nil || isNil(o.Popularity) {
-    return nil, false
+	if o == nil || IsNil(o.Popularity) {
+		return nil, false
 	}
 	return o.Popularity, true
 }
 
 // HasPopularity returns a boolean if a field has been set.
 func (o *Ratings) HasPopularity() bool {
-	if o != nil && !isNil(o.Popularity) {
+	if o != nil && !IsNil(o.Popularity) {
 		return true
 	}
 
@@ -135,17 +138,25 @@ func (o *Ratings) SetPopularity(v float64) {
 }
 
 func (o Ratings) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Votes) {
-		toSerialize["votes"] = o.Votes
-	}
-	if !isNil(o.Value) {
-		toSerialize["value"] = o.Value
-	}
-	if !isNil(o.Popularity) {
-		toSerialize["popularity"] = o.Popularity
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o Ratings) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Votes) {
+		toSerialize["votes"] = o.Votes
+	}
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
+	}
+	if !IsNil(o.Popularity) {
+		toSerialize["popularity"] = o.Popularity
+	}
+	return toSerialize, nil
 }
 
 type NullableRatings struct {

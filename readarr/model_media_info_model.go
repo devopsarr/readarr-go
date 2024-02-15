@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MediaInfoModel type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MediaInfoModel{}
+
 // MediaInfoModel struct for MediaInfoModel
 type MediaInfoModel struct {
 	AudioFormat NullableString `json:"audioFormat,omitempty"`
@@ -42,7 +45,7 @@ func NewMediaInfoModelWithDefaults() *MediaInfoModel {
 
 // GetAudioFormat returns the AudioFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaInfoModel) GetAudioFormat() string {
-	if o == nil || isNil(o.AudioFormat.Get()) {
+	if o == nil || IsNil(o.AudioFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -54,7 +57,7 @@ func (o *MediaInfoModel) GetAudioFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaInfoModel) GetAudioFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AudioFormat.Get(), o.AudioFormat.IsSet()
 }
@@ -84,7 +87,7 @@ func (o *MediaInfoModel) UnsetAudioFormat() {
 
 // GetAudioBitrate returns the AudioBitrate field value if set, zero value otherwise.
 func (o *MediaInfoModel) GetAudioBitrate() int32 {
-	if o == nil || isNil(o.AudioBitrate) {
+	if o == nil || IsNil(o.AudioBitrate) {
 		var ret int32
 		return ret
 	}
@@ -94,15 +97,15 @@ func (o *MediaInfoModel) GetAudioBitrate() int32 {
 // GetAudioBitrateOk returns a tuple with the AudioBitrate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaInfoModel) GetAudioBitrateOk() (*int32, bool) {
-	if o == nil || isNil(o.AudioBitrate) {
-    return nil, false
+	if o == nil || IsNil(o.AudioBitrate) {
+		return nil, false
 	}
 	return o.AudioBitrate, true
 }
 
 // HasAudioBitrate returns a boolean if a field has been set.
 func (o *MediaInfoModel) HasAudioBitrate() bool {
-	if o != nil && !isNil(o.AudioBitrate) {
+	if o != nil && !IsNil(o.AudioBitrate) {
 		return true
 	}
 
@@ -116,7 +119,7 @@ func (o *MediaInfoModel) SetAudioBitrate(v int32) {
 
 // GetAudioChannels returns the AudioChannels field value if set, zero value otherwise.
 func (o *MediaInfoModel) GetAudioChannels() int32 {
-	if o == nil || isNil(o.AudioChannels) {
+	if o == nil || IsNil(o.AudioChannels) {
 		var ret int32
 		return ret
 	}
@@ -126,15 +129,15 @@ func (o *MediaInfoModel) GetAudioChannels() int32 {
 // GetAudioChannelsOk returns a tuple with the AudioChannels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaInfoModel) GetAudioChannelsOk() (*int32, bool) {
-	if o == nil || isNil(o.AudioChannels) {
-    return nil, false
+	if o == nil || IsNil(o.AudioChannels) {
+		return nil, false
 	}
 	return o.AudioChannels, true
 }
 
 // HasAudioChannels returns a boolean if a field has been set.
 func (o *MediaInfoModel) HasAudioChannels() bool {
-	if o != nil && !isNil(o.AudioChannels) {
+	if o != nil && !IsNil(o.AudioChannels) {
 		return true
 	}
 
@@ -148,7 +151,7 @@ func (o *MediaInfoModel) SetAudioChannels(v int32) {
 
 // GetAudioBits returns the AudioBits field value if set, zero value otherwise.
 func (o *MediaInfoModel) GetAudioBits() int32 {
-	if o == nil || isNil(o.AudioBits) {
+	if o == nil || IsNil(o.AudioBits) {
 		var ret int32
 		return ret
 	}
@@ -158,15 +161,15 @@ func (o *MediaInfoModel) GetAudioBits() int32 {
 // GetAudioBitsOk returns a tuple with the AudioBits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaInfoModel) GetAudioBitsOk() (*int32, bool) {
-	if o == nil || isNil(o.AudioBits) {
-    return nil, false
+	if o == nil || IsNil(o.AudioBits) {
+		return nil, false
 	}
 	return o.AudioBits, true
 }
 
 // HasAudioBits returns a boolean if a field has been set.
 func (o *MediaInfoModel) HasAudioBits() bool {
-	if o != nil && !isNil(o.AudioBits) {
+	if o != nil && !IsNil(o.AudioBits) {
 		return true
 	}
 
@@ -180,7 +183,7 @@ func (o *MediaInfoModel) SetAudioBits(v int32) {
 
 // GetAudioSampleRate returns the AudioSampleRate field value if set, zero value otherwise.
 func (o *MediaInfoModel) GetAudioSampleRate() int32 {
-	if o == nil || isNil(o.AudioSampleRate) {
+	if o == nil || IsNil(o.AudioSampleRate) {
 		var ret int32
 		return ret
 	}
@@ -190,15 +193,15 @@ func (o *MediaInfoModel) GetAudioSampleRate() int32 {
 // GetAudioSampleRateOk returns a tuple with the AudioSampleRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaInfoModel) GetAudioSampleRateOk() (*int32, bool) {
-	if o == nil || isNil(o.AudioSampleRate) {
-    return nil, false
+	if o == nil || IsNil(o.AudioSampleRate) {
+		return nil, false
 	}
 	return o.AudioSampleRate, true
 }
 
 // HasAudioSampleRate returns a boolean if a field has been set.
 func (o *MediaInfoModel) HasAudioSampleRate() bool {
-	if o != nil && !isNil(o.AudioSampleRate) {
+	if o != nil && !IsNil(o.AudioSampleRate) {
 		return true
 	}
 
@@ -211,23 +214,31 @@ func (o *MediaInfoModel) SetAudioSampleRate(v int32) {
 }
 
 func (o MediaInfoModel) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o MediaInfoModel) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AudioFormat.IsSet() {
 		toSerialize["audioFormat"] = o.AudioFormat.Get()
 	}
-	if !isNil(o.AudioBitrate) {
+	if !IsNil(o.AudioBitrate) {
 		toSerialize["audioBitrate"] = o.AudioBitrate
 	}
-	if !isNil(o.AudioChannels) {
+	if !IsNil(o.AudioChannels) {
 		toSerialize["audioChannels"] = o.AudioChannels
 	}
-	if !isNil(o.AudioBits) {
+	if !IsNil(o.AudioBits) {
 		toSerialize["audioBits"] = o.AudioBits
 	}
-	if !isNil(o.AudioSampleRate) {
+	if !IsNil(o.AudioSampleRate) {
 		toSerialize["audioSampleRate"] = o.AudioSampleRate
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMediaInfoModel struct {

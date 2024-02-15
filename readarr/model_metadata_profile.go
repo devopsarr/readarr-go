@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MetadataProfile type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MetadataProfile{}
+
 // MetadataProfile struct for MetadataProfile
 type MetadataProfile struct {
 	Id *int32 `json:"id,omitempty"`
@@ -25,7 +28,7 @@ type MetadataProfile struct {
 	SkipSeriesSecondary *bool `json:"skipSeriesSecondary,omitempty"`
 	AllowedLanguages NullableString `json:"allowedLanguages,omitempty"`
 	MinPages *int32 `json:"minPages,omitempty"`
-	Ignored []*string `json:"ignored,omitempty"`
+	Ignored []string `json:"ignored,omitempty"`
 }
 
 // NewMetadataProfile instantiates a new MetadataProfile object
@@ -47,7 +50,7 @@ func NewMetadataProfileWithDefaults() *MetadataProfile {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *MetadataProfile) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -57,15 +60,15 @@ func (o *MetadataProfile) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProfile) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *MetadataProfile) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -79,7 +82,7 @@ func (o *MetadataProfile) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MetadataProfile) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -91,7 +94,7 @@ func (o *MetadataProfile) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MetadataProfile) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -121,7 +124,7 @@ func (o *MetadataProfile) UnsetName() {
 
 // GetMinPopularity returns the MinPopularity field value if set, zero value otherwise.
 func (o *MetadataProfile) GetMinPopularity() float64 {
-	if o == nil || isNil(o.MinPopularity) {
+	if o == nil || IsNil(o.MinPopularity) {
 		var ret float64
 		return ret
 	}
@@ -131,15 +134,15 @@ func (o *MetadataProfile) GetMinPopularity() float64 {
 // GetMinPopularityOk returns a tuple with the MinPopularity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProfile) GetMinPopularityOk() (*float64, bool) {
-	if o == nil || isNil(o.MinPopularity) {
-    return nil, false
+	if o == nil || IsNil(o.MinPopularity) {
+		return nil, false
 	}
 	return o.MinPopularity, true
 }
 
 // HasMinPopularity returns a boolean if a field has been set.
 func (o *MetadataProfile) HasMinPopularity() bool {
-	if o != nil && !isNil(o.MinPopularity) {
+	if o != nil && !IsNil(o.MinPopularity) {
 		return true
 	}
 
@@ -153,7 +156,7 @@ func (o *MetadataProfile) SetMinPopularity(v float64) {
 
 // GetSkipMissingDate returns the SkipMissingDate field value if set, zero value otherwise.
 func (o *MetadataProfile) GetSkipMissingDate() bool {
-	if o == nil || isNil(o.SkipMissingDate) {
+	if o == nil || IsNil(o.SkipMissingDate) {
 		var ret bool
 		return ret
 	}
@@ -163,15 +166,15 @@ func (o *MetadataProfile) GetSkipMissingDate() bool {
 // GetSkipMissingDateOk returns a tuple with the SkipMissingDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProfile) GetSkipMissingDateOk() (*bool, bool) {
-	if o == nil || isNil(o.SkipMissingDate) {
-    return nil, false
+	if o == nil || IsNil(o.SkipMissingDate) {
+		return nil, false
 	}
 	return o.SkipMissingDate, true
 }
 
 // HasSkipMissingDate returns a boolean if a field has been set.
 func (o *MetadataProfile) HasSkipMissingDate() bool {
-	if o != nil && !isNil(o.SkipMissingDate) {
+	if o != nil && !IsNil(o.SkipMissingDate) {
 		return true
 	}
 
@@ -185,7 +188,7 @@ func (o *MetadataProfile) SetSkipMissingDate(v bool) {
 
 // GetSkipMissingIsbn returns the SkipMissingIsbn field value if set, zero value otherwise.
 func (o *MetadataProfile) GetSkipMissingIsbn() bool {
-	if o == nil || isNil(o.SkipMissingIsbn) {
+	if o == nil || IsNil(o.SkipMissingIsbn) {
 		var ret bool
 		return ret
 	}
@@ -195,15 +198,15 @@ func (o *MetadataProfile) GetSkipMissingIsbn() bool {
 // GetSkipMissingIsbnOk returns a tuple with the SkipMissingIsbn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProfile) GetSkipMissingIsbnOk() (*bool, bool) {
-	if o == nil || isNil(o.SkipMissingIsbn) {
-    return nil, false
+	if o == nil || IsNil(o.SkipMissingIsbn) {
+		return nil, false
 	}
 	return o.SkipMissingIsbn, true
 }
 
 // HasSkipMissingIsbn returns a boolean if a field has been set.
 func (o *MetadataProfile) HasSkipMissingIsbn() bool {
-	if o != nil && !isNil(o.SkipMissingIsbn) {
+	if o != nil && !IsNil(o.SkipMissingIsbn) {
 		return true
 	}
 
@@ -217,7 +220,7 @@ func (o *MetadataProfile) SetSkipMissingIsbn(v bool) {
 
 // GetSkipPartsAndSets returns the SkipPartsAndSets field value if set, zero value otherwise.
 func (o *MetadataProfile) GetSkipPartsAndSets() bool {
-	if o == nil || isNil(o.SkipPartsAndSets) {
+	if o == nil || IsNil(o.SkipPartsAndSets) {
 		var ret bool
 		return ret
 	}
@@ -227,15 +230,15 @@ func (o *MetadataProfile) GetSkipPartsAndSets() bool {
 // GetSkipPartsAndSetsOk returns a tuple with the SkipPartsAndSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProfile) GetSkipPartsAndSetsOk() (*bool, bool) {
-	if o == nil || isNil(o.SkipPartsAndSets) {
-    return nil, false
+	if o == nil || IsNil(o.SkipPartsAndSets) {
+		return nil, false
 	}
 	return o.SkipPartsAndSets, true
 }
 
 // HasSkipPartsAndSets returns a boolean if a field has been set.
 func (o *MetadataProfile) HasSkipPartsAndSets() bool {
-	if o != nil && !isNil(o.SkipPartsAndSets) {
+	if o != nil && !IsNil(o.SkipPartsAndSets) {
 		return true
 	}
 
@@ -249,7 +252,7 @@ func (o *MetadataProfile) SetSkipPartsAndSets(v bool) {
 
 // GetSkipSeriesSecondary returns the SkipSeriesSecondary field value if set, zero value otherwise.
 func (o *MetadataProfile) GetSkipSeriesSecondary() bool {
-	if o == nil || isNil(o.SkipSeriesSecondary) {
+	if o == nil || IsNil(o.SkipSeriesSecondary) {
 		var ret bool
 		return ret
 	}
@@ -259,15 +262,15 @@ func (o *MetadataProfile) GetSkipSeriesSecondary() bool {
 // GetSkipSeriesSecondaryOk returns a tuple with the SkipSeriesSecondary field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProfile) GetSkipSeriesSecondaryOk() (*bool, bool) {
-	if o == nil || isNil(o.SkipSeriesSecondary) {
-    return nil, false
+	if o == nil || IsNil(o.SkipSeriesSecondary) {
+		return nil, false
 	}
 	return o.SkipSeriesSecondary, true
 }
 
 // HasSkipSeriesSecondary returns a boolean if a field has been set.
 func (o *MetadataProfile) HasSkipSeriesSecondary() bool {
-	if o != nil && !isNil(o.SkipSeriesSecondary) {
+	if o != nil && !IsNil(o.SkipSeriesSecondary) {
 		return true
 	}
 
@@ -281,7 +284,7 @@ func (o *MetadataProfile) SetSkipSeriesSecondary(v bool) {
 
 // GetAllowedLanguages returns the AllowedLanguages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MetadataProfile) GetAllowedLanguages() string {
-	if o == nil || isNil(o.AllowedLanguages.Get()) {
+	if o == nil || IsNil(o.AllowedLanguages.Get()) {
 		var ret string
 		return ret
 	}
@@ -293,7 +296,7 @@ func (o *MetadataProfile) GetAllowedLanguages() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MetadataProfile) GetAllowedLanguagesOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedLanguages.Get(), o.AllowedLanguages.IsSet()
 }
@@ -323,7 +326,7 @@ func (o *MetadataProfile) UnsetAllowedLanguages() {
 
 // GetMinPages returns the MinPages field value if set, zero value otherwise.
 func (o *MetadataProfile) GetMinPages() int32 {
-	if o == nil || isNil(o.MinPages) {
+	if o == nil || IsNil(o.MinPages) {
 		var ret int32
 		return ret
 	}
@@ -333,15 +336,15 @@ func (o *MetadataProfile) GetMinPages() int32 {
 // GetMinPagesOk returns a tuple with the MinPages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProfile) GetMinPagesOk() (*int32, bool) {
-	if o == nil || isNil(o.MinPages) {
-    return nil, false
+	if o == nil || IsNil(o.MinPages) {
+		return nil, false
 	}
 	return o.MinPages, true
 }
 
 // HasMinPages returns a boolean if a field has been set.
 func (o *MetadataProfile) HasMinPages() bool {
-	if o != nil && !isNil(o.MinPages) {
+	if o != nil && !IsNil(o.MinPages) {
 		return true
 	}
 
@@ -354,9 +357,9 @@ func (o *MetadataProfile) SetMinPages(v int32) {
 }
 
 // GetIgnored returns the Ignored field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MetadataProfile) GetIgnored() []*string {
+func (o *MetadataProfile) GetIgnored() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.Ignored
@@ -365,16 +368,16 @@ func (o *MetadataProfile) GetIgnored() []*string {
 // GetIgnoredOk returns a tuple with the Ignored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MetadataProfile) GetIgnoredOk() ([]*string, bool) {
-	if o == nil || isNil(o.Ignored) {
-    return nil, false
+func (o *MetadataProfile) GetIgnoredOk() ([]string, bool) {
+	if o == nil || IsNil(o.Ignored) {
+		return nil, false
 	}
 	return o.Ignored, true
 }
 
 // HasIgnored returns a boolean if a field has been set.
 func (o *MetadataProfile) HasIgnored() bool {
-	if o != nil && isNil(o.Ignored) {
+	if o != nil && IsNil(o.Ignored) {
 		return true
 	}
 
@@ -382,43 +385,51 @@ func (o *MetadataProfile) HasIgnored() bool {
 }
 
 // SetIgnored gets a reference to the given []string and assigns it to the Ignored field.
-func (o *MetadataProfile) SetIgnored(v []*string) {
+func (o *MetadataProfile) SetIgnored(v []string) {
 	o.Ignored = v
 }
 
 func (o MetadataProfile) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o MetadataProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.MinPopularity) {
+	if !IsNil(o.MinPopularity) {
 		toSerialize["minPopularity"] = o.MinPopularity
 	}
-	if !isNil(o.SkipMissingDate) {
+	if !IsNil(o.SkipMissingDate) {
 		toSerialize["skipMissingDate"] = o.SkipMissingDate
 	}
-	if !isNil(o.SkipMissingIsbn) {
+	if !IsNil(o.SkipMissingIsbn) {
 		toSerialize["skipMissingIsbn"] = o.SkipMissingIsbn
 	}
-	if !isNil(o.SkipPartsAndSets) {
+	if !IsNil(o.SkipPartsAndSets) {
 		toSerialize["skipPartsAndSets"] = o.SkipPartsAndSets
 	}
-	if !isNil(o.SkipSeriesSecondary) {
+	if !IsNil(o.SkipSeriesSecondary) {
 		toSerialize["skipSeriesSecondary"] = o.SkipSeriesSecondary
 	}
 	if o.AllowedLanguages.IsSet() {
 		toSerialize["allowedLanguages"] = o.AllowedLanguages.Get()
 	}
-	if !isNil(o.MinPages) {
+	if !IsNil(o.MinPages) {
 		toSerialize["minPages"] = o.MinPages
 	}
 	if o.Ignored != nil {
 		toSerialize["ignored"] = o.Ignored
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMetadataProfile struct {

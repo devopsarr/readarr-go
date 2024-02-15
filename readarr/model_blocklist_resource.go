@@ -15,14 +15,17 @@ import (
 	"time"
 )
 
+// checks if the BlocklistResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BlocklistResource{}
+
 // BlocklistResource struct for BlocklistResource
 type BlocklistResource struct {
 	Id *int32 `json:"id,omitempty"`
 	AuthorId *int32 `json:"authorId,omitempty"`
-	BookIds []*int32 `json:"bookIds,omitempty"`
+	BookIds []int32 `json:"bookIds,omitempty"`
 	SourceTitle NullableString `json:"sourceTitle,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
 	Date *time.Time `json:"date,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	Indexer NullableString `json:"indexer,omitempty"`
@@ -49,7 +52,7 @@ func NewBlocklistResourceWithDefaults() *BlocklistResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *BlocklistResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -59,15 +62,15 @@ func (o *BlocklistResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *BlocklistResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -81,7 +84,7 @@ func (o *BlocklistResource) SetId(v int32) {
 
 // GetAuthorId returns the AuthorId field value if set, zero value otherwise.
 func (o *BlocklistResource) GetAuthorId() int32 {
-	if o == nil || isNil(o.AuthorId) {
+	if o == nil || IsNil(o.AuthorId) {
 		var ret int32
 		return ret
 	}
@@ -91,15 +94,15 @@ func (o *BlocklistResource) GetAuthorId() int32 {
 // GetAuthorIdOk returns a tuple with the AuthorId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetAuthorIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AuthorId) {
-    return nil, false
+	if o == nil || IsNil(o.AuthorId) {
+		return nil, false
 	}
 	return o.AuthorId, true
 }
 
 // HasAuthorId returns a boolean if a field has been set.
 func (o *BlocklistResource) HasAuthorId() bool {
-	if o != nil && !isNil(o.AuthorId) {
+	if o != nil && !IsNil(o.AuthorId) {
 		return true
 	}
 
@@ -112,9 +115,9 @@ func (o *BlocklistResource) SetAuthorId(v int32) {
 }
 
 // GetBookIds returns the BookIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BlocklistResource) GetBookIds() []*int32 {
+func (o *BlocklistResource) GetBookIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.BookIds
@@ -123,16 +126,16 @@ func (o *BlocklistResource) GetBookIds() []*int32 {
 // GetBookIdsOk returns a tuple with the BookIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BlocklistResource) GetBookIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.BookIds) {
-    return nil, false
+func (o *BlocklistResource) GetBookIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.BookIds) {
+		return nil, false
 	}
 	return o.BookIds, true
 }
 
 // HasBookIds returns a boolean if a field has been set.
 func (o *BlocklistResource) HasBookIds() bool {
-	if o != nil && isNil(o.BookIds) {
+	if o != nil && IsNil(o.BookIds) {
 		return true
 	}
 
@@ -140,13 +143,13 @@ func (o *BlocklistResource) HasBookIds() bool {
 }
 
 // SetBookIds gets a reference to the given []int32 and assigns it to the BookIds field.
-func (o *BlocklistResource) SetBookIds(v []*int32) {
+func (o *BlocklistResource) SetBookIds(v []int32) {
 	o.BookIds = v
 }
 
 // GetSourceTitle returns the SourceTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BlocklistResource) GetSourceTitle() string {
-	if o == nil || isNil(o.SourceTitle.Get()) {
+	if o == nil || IsNil(o.SourceTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -158,7 +161,7 @@ func (o *BlocklistResource) GetSourceTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BlocklistResource) GetSourceTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SourceTitle.Get(), o.SourceTitle.IsSet()
 }
@@ -188,7 +191,7 @@ func (o *BlocklistResource) UnsetSourceTitle() {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *BlocklistResource) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -198,15 +201,15 @@ func (o *BlocklistResource) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *BlocklistResource) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -219,9 +222,9 @@ func (o *BlocklistResource) SetQuality(v QualityModel) {
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BlocklistResource) GetCustomFormats() []*CustomFormatResource {
+func (o *BlocklistResource) GetCustomFormats() []CustomFormatResource {
 	if o == nil {
-		var ret []*CustomFormatResource
+		var ret []CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -230,16 +233,16 @@ func (o *BlocklistResource) GetCustomFormats() []*CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BlocklistResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
-	if o == nil || isNil(o.CustomFormats) {
-    return nil, false
+func (o *BlocklistResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+	if o == nil || IsNil(o.CustomFormats) {
+		return nil, false
 	}
 	return o.CustomFormats, true
 }
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *BlocklistResource) HasCustomFormats() bool {
-	if o != nil && isNil(o.CustomFormats) {
+	if o != nil && IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -247,13 +250,13 @@ func (o *BlocklistResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *BlocklistResource) SetCustomFormats(v []*CustomFormatResource) {
+func (o *BlocklistResource) SetCustomFormats(v []CustomFormatResource) {
 	o.CustomFormats = v
 }
 
 // GetDate returns the Date field value if set, zero value otherwise.
 func (o *BlocklistResource) GetDate() time.Time {
-	if o == nil || isNil(o.Date) {
+	if o == nil || IsNil(o.Date) {
 		var ret time.Time
 		return ret
 	}
@@ -263,15 +266,15 @@ func (o *BlocklistResource) GetDate() time.Time {
 // GetDateOk returns a tuple with the Date field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetDateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Date) {
-    return nil, false
+	if o == nil || IsNil(o.Date) {
+		return nil, false
 	}
 	return o.Date, true
 }
 
 // HasDate returns a boolean if a field has been set.
 func (o *BlocklistResource) HasDate() bool {
-	if o != nil && !isNil(o.Date) {
+	if o != nil && !IsNil(o.Date) {
 		return true
 	}
 
@@ -285,7 +288,7 @@ func (o *BlocklistResource) SetDate(v time.Time) {
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
 func (o *BlocklistResource) GetProtocol() DownloadProtocol {
-	if o == nil || isNil(o.Protocol) {
+	if o == nil || IsNil(o.Protocol) {
 		var ret DownloadProtocol
 		return ret
 	}
@@ -295,15 +298,15 @@ func (o *BlocklistResource) GetProtocol() DownloadProtocol {
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetProtocolOk() (*DownloadProtocol, bool) {
-	if o == nil || isNil(o.Protocol) {
-    return nil, false
+	if o == nil || IsNil(o.Protocol) {
+		return nil, false
 	}
 	return o.Protocol, true
 }
 
 // HasProtocol returns a boolean if a field has been set.
 func (o *BlocklistResource) HasProtocol() bool {
-	if o != nil && !isNil(o.Protocol) {
+	if o != nil && !IsNil(o.Protocol) {
 		return true
 	}
 
@@ -317,7 +320,7 @@ func (o *BlocklistResource) SetProtocol(v DownloadProtocol) {
 
 // GetIndexer returns the Indexer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BlocklistResource) GetIndexer() string {
-	if o == nil || isNil(o.Indexer.Get()) {
+	if o == nil || IsNil(o.Indexer.Get()) {
 		var ret string
 		return ret
 	}
@@ -329,7 +332,7 @@ func (o *BlocklistResource) GetIndexer() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BlocklistResource) GetIndexerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Indexer.Get(), o.Indexer.IsSet()
 }
@@ -359,7 +362,7 @@ func (o *BlocklistResource) UnsetIndexer() {
 
 // GetMessage returns the Message field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BlocklistResource) GetMessage() string {
-	if o == nil || isNil(o.Message.Get()) {
+	if o == nil || IsNil(o.Message.Get()) {
 		var ret string
 		return ret
 	}
@@ -371,7 +374,7 @@ func (o *BlocklistResource) GetMessage() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BlocklistResource) GetMessageOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Message.Get(), o.Message.IsSet()
 }
@@ -401,7 +404,7 @@ func (o *BlocklistResource) UnsetMessage() {
 
 // GetAuthor returns the Author field value if set, zero value otherwise.
 func (o *BlocklistResource) GetAuthor() AuthorResource {
-	if o == nil || isNil(o.Author) {
+	if o == nil || IsNil(o.Author) {
 		var ret AuthorResource
 		return ret
 	}
@@ -411,15 +414,15 @@ func (o *BlocklistResource) GetAuthor() AuthorResource {
 // GetAuthorOk returns a tuple with the Author field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetAuthorOk() (*AuthorResource, bool) {
-	if o == nil || isNil(o.Author) {
-    return nil, false
+	if o == nil || IsNil(o.Author) {
+		return nil, false
 	}
 	return o.Author, true
 }
 
 // HasAuthor returns a boolean if a field has been set.
 func (o *BlocklistResource) HasAuthor() bool {
-	if o != nil && !isNil(o.Author) {
+	if o != nil && !IsNil(o.Author) {
 		return true
 	}
 
@@ -432,11 +435,19 @@ func (o *BlocklistResource) SetAuthor(v AuthorResource) {
 }
 
 func (o BlocklistResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BlocklistResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.AuthorId) {
+	if !IsNil(o.AuthorId) {
 		toSerialize["authorId"] = o.AuthorId
 	}
 	if o.BookIds != nil {
@@ -445,16 +456,16 @@ func (o BlocklistResource) MarshalJSON() ([]byte, error) {
 	if o.SourceTitle.IsSet() {
 		toSerialize["sourceTitle"] = o.SourceTitle.Get()
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
 	}
-	if !isNil(o.Date) {
+	if !IsNil(o.Date) {
 		toSerialize["date"] = o.Date
 	}
-	if !isNil(o.Protocol) {
+	if !IsNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
 	}
 	if o.Indexer.IsSet() {
@@ -463,10 +474,10 @@ func (o BlocklistResource) MarshalJSON() ([]byte, error) {
 	if o.Message.IsSet() {
 		toSerialize["message"] = o.Message.Get()
 	}
-	if !isNil(o.Author) {
+	if !IsNil(o.Author) {
 		toSerialize["author"] = o.Author
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBlocklistResource struct {

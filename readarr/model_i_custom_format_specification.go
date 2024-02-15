@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ICustomFormatSpecification type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ICustomFormatSpecification{}
+
 // ICustomFormatSpecification struct for ICustomFormatSpecification
 type ICustomFormatSpecification struct {
 	Order *int32 `json:"order,omitempty"`
@@ -43,7 +46,7 @@ func NewICustomFormatSpecificationWithDefaults() *ICustomFormatSpecification {
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *ICustomFormatSpecification) GetOrder() int32 {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *ICustomFormatSpecification) GetOrder() int32 {
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ICustomFormatSpecification) GetOrderOk() (*int32, bool) {
-	if o == nil || isNil(o.Order) {
-    return nil, false
+	if o == nil || IsNil(o.Order) {
+		return nil, false
 	}
 	return o.Order, true
 }
 
 // HasOrder returns a boolean if a field has been set.
 func (o *ICustomFormatSpecification) HasOrder() bool {
-	if o != nil && !isNil(o.Order) {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *ICustomFormatSpecification) SetOrder(v int32) {
 
 // GetInfoLink returns the InfoLink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ICustomFormatSpecification) GetInfoLink() string {
-	if o == nil || isNil(o.InfoLink.Get()) {
+	if o == nil || IsNil(o.InfoLink.Get()) {
 		var ret string
 		return ret
 	}
@@ -87,7 +90,7 @@ func (o *ICustomFormatSpecification) GetInfoLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ICustomFormatSpecification) GetInfoLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InfoLink.Get(), o.InfoLink.IsSet()
 }
@@ -117,7 +120,7 @@ func (o *ICustomFormatSpecification) UnsetInfoLink() {
 
 // GetImplementationName returns the ImplementationName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ICustomFormatSpecification) GetImplementationName() string {
-	if o == nil || isNil(o.ImplementationName.Get()) {
+	if o == nil || IsNil(o.ImplementationName.Get()) {
 		var ret string
 		return ret
 	}
@@ -129,7 +132,7 @@ func (o *ICustomFormatSpecification) GetImplementationName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ICustomFormatSpecification) GetImplementationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImplementationName.Get(), o.ImplementationName.IsSet()
 }
@@ -159,7 +162,7 @@ func (o *ICustomFormatSpecification) UnsetImplementationName() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ICustomFormatSpecification) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -171,7 +174,7 @@ func (o *ICustomFormatSpecification) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ICustomFormatSpecification) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -201,7 +204,7 @@ func (o *ICustomFormatSpecification) UnsetName() {
 
 // GetNegate returns the Negate field value if set, zero value otherwise.
 func (o *ICustomFormatSpecification) GetNegate() bool {
-	if o == nil || isNil(o.Negate) {
+	if o == nil || IsNil(o.Negate) {
 		var ret bool
 		return ret
 	}
@@ -211,15 +214,15 @@ func (o *ICustomFormatSpecification) GetNegate() bool {
 // GetNegateOk returns a tuple with the Negate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ICustomFormatSpecification) GetNegateOk() (*bool, bool) {
-	if o == nil || isNil(o.Negate) {
-    return nil, false
+	if o == nil || IsNil(o.Negate) {
+		return nil, false
 	}
 	return o.Negate, true
 }
 
 // HasNegate returns a boolean if a field has been set.
 func (o *ICustomFormatSpecification) HasNegate() bool {
-	if o != nil && !isNil(o.Negate) {
+	if o != nil && !IsNil(o.Negate) {
 		return true
 	}
 
@@ -233,7 +236,7 @@ func (o *ICustomFormatSpecification) SetNegate(v bool) {
 
 // GetRequired returns the Required field value if set, zero value otherwise.
 func (o *ICustomFormatSpecification) GetRequired() bool {
-	if o == nil || isNil(o.Required) {
+	if o == nil || IsNil(o.Required) {
 		var ret bool
 		return ret
 	}
@@ -243,15 +246,15 @@ func (o *ICustomFormatSpecification) GetRequired() bool {
 // GetRequiredOk returns a tuple with the Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ICustomFormatSpecification) GetRequiredOk() (*bool, bool) {
-	if o == nil || isNil(o.Required) {
-    return nil, false
+	if o == nil || IsNil(o.Required) {
+		return nil, false
 	}
 	return o.Required, true
 }
 
 // HasRequired returns a boolean if a field has been set.
 func (o *ICustomFormatSpecification) HasRequired() bool {
-	if o != nil && !isNil(o.Required) {
+	if o != nil && !IsNil(o.Required) {
 		return true
 	}
 
@@ -264,8 +267,16 @@ func (o *ICustomFormatSpecification) SetRequired(v bool) {
 }
 
 func (o ICustomFormatSpecification) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ICustomFormatSpecification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Order) {
+	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
 	if o.InfoLink.IsSet() {
@@ -277,13 +288,13 @@ func (o ICustomFormatSpecification) MarshalJSON() ([]byte, error) {
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.Negate) {
+	if !IsNil(o.Negate) {
 		toSerialize["negate"] = o.Negate
 	}
-	if !isNil(o.Required) {
+	if !IsNil(o.Required) {
 		toSerialize["required"] = o.Required
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableICustomFormatSpecification struct {

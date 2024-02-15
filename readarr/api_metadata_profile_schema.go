@@ -21,6 +21,7 @@ import (
 
 // MetadataProfileSchemaAPIService MetadataProfileSchemaAPI service
 type MetadataProfileSchemaAPIService service
+
 type ApiGetMetadataprofileSchemaRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileSchemaAPIService

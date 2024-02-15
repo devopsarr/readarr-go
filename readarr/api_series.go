@@ -21,6 +21,7 @@ import (
 
 // SeriesAPIService SeriesAPI service
 type SeriesAPIService service
+
 type ApiListSeriesRequest struct {
 	ctx context.Context
 	ApiService *SeriesAPIService
@@ -32,7 +33,7 @@ func (r ApiListSeriesRequest) AuthorId(authorId int32) ApiListSeriesRequest {
 	return r
 }
 
-func (r ApiListSeriesRequest) Execute() ([]*SeriesResource, *http.Response, error) {
+func (r ApiListSeriesRequest) Execute() ([]SeriesResource, *http.Response, error) {
 	return r.ApiService.ListSeriesExecute(r)
 }
 
@@ -51,12 +52,12 @@ func (a *SeriesAPIService) ListSeries(ctx context.Context) ApiListSeriesRequest 
 
 // Execute executes the request
 //  @return []SeriesResource
-func (a *SeriesAPIService) ListSeriesExecute(r ApiListSeriesRequest) ([]*SeriesResource, *http.Response, error) {
+func (a *SeriesAPIService) ListSeriesExecute(r ApiListSeriesRequest) ([]SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*SeriesResource
+		localVarReturnValue  []SeriesResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesAPIService.ListSeries")
@@ -71,7 +72,7 @@ func (a *SeriesAPIService) ListSeriesExecute(r ApiListSeriesRequest) ([]*SeriesR
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		localVarQueryParams.Add("authorId", parameterToString(*r.authorId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

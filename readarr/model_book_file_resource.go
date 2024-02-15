@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the BookFileResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BookFileResource{}
+
 // BookFileResource struct for BookFileResource
 type BookFileResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -49,7 +52,7 @@ func NewBookFileResourceWithDefaults() *BookFileResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *BookFileResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -59,15 +62,15 @@ func (o *BookFileResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookFileResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *BookFileResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -81,7 +84,7 @@ func (o *BookFileResource) SetId(v int32) {
 
 // GetAuthorId returns the AuthorId field value if set, zero value otherwise.
 func (o *BookFileResource) GetAuthorId() int32 {
-	if o == nil || isNil(o.AuthorId) {
+	if o == nil || IsNil(o.AuthorId) {
 		var ret int32
 		return ret
 	}
@@ -91,15 +94,15 @@ func (o *BookFileResource) GetAuthorId() int32 {
 // GetAuthorIdOk returns a tuple with the AuthorId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookFileResource) GetAuthorIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AuthorId) {
-    return nil, false
+	if o == nil || IsNil(o.AuthorId) {
+		return nil, false
 	}
 	return o.AuthorId, true
 }
 
 // HasAuthorId returns a boolean if a field has been set.
 func (o *BookFileResource) HasAuthorId() bool {
-	if o != nil && !isNil(o.AuthorId) {
+	if o != nil && !IsNil(o.AuthorId) {
 		return true
 	}
 
@@ -113,7 +116,7 @@ func (o *BookFileResource) SetAuthorId(v int32) {
 
 // GetBookId returns the BookId field value if set, zero value otherwise.
 func (o *BookFileResource) GetBookId() int32 {
-	if o == nil || isNil(o.BookId) {
+	if o == nil || IsNil(o.BookId) {
 		var ret int32
 		return ret
 	}
@@ -123,15 +126,15 @@ func (o *BookFileResource) GetBookId() int32 {
 // GetBookIdOk returns a tuple with the BookId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookFileResource) GetBookIdOk() (*int32, bool) {
-	if o == nil || isNil(o.BookId) {
-    return nil, false
+	if o == nil || IsNil(o.BookId) {
+		return nil, false
 	}
 	return o.BookId, true
 }
 
 // HasBookId returns a boolean if a field has been set.
 func (o *BookFileResource) HasBookId() bool {
-	if o != nil && !isNil(o.BookId) {
+	if o != nil && !IsNil(o.BookId) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *BookFileResource) SetBookId(v int32) {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BookFileResource) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -157,7 +160,7 @@ func (o *BookFileResource) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BookFileResource) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -187,7 +190,7 @@ func (o *BookFileResource) UnsetPath() {
 
 // GetSize returns the Size field value if set, zero value otherwise.
 func (o *BookFileResource) GetSize() int64 {
-	if o == nil || isNil(o.Size) {
+	if o == nil || IsNil(o.Size) {
 		var ret int64
 		return ret
 	}
@@ -197,15 +200,15 @@ func (o *BookFileResource) GetSize() int64 {
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookFileResource) GetSizeOk() (*int64, bool) {
-	if o == nil || isNil(o.Size) {
-    return nil, false
+	if o == nil || IsNil(o.Size) {
+		return nil, false
 	}
 	return o.Size, true
 }
 
 // HasSize returns a boolean if a field has been set.
 func (o *BookFileResource) HasSize() bool {
-	if o != nil && !isNil(o.Size) {
+	if o != nil && !IsNil(o.Size) {
 		return true
 	}
 
@@ -219,7 +222,7 @@ func (o *BookFileResource) SetSize(v int64) {
 
 // GetDateAdded returns the DateAdded field value if set, zero value otherwise.
 func (o *BookFileResource) GetDateAdded() time.Time {
-	if o == nil || isNil(o.DateAdded) {
+	if o == nil || IsNil(o.DateAdded) {
 		var ret time.Time
 		return ret
 	}
@@ -229,15 +232,15 @@ func (o *BookFileResource) GetDateAdded() time.Time {
 // GetDateAddedOk returns a tuple with the DateAdded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookFileResource) GetDateAddedOk() (*time.Time, bool) {
-	if o == nil || isNil(o.DateAdded) {
-    return nil, false
+	if o == nil || IsNil(o.DateAdded) {
+		return nil, false
 	}
 	return o.DateAdded, true
 }
 
 // HasDateAdded returns a boolean if a field has been set.
 func (o *BookFileResource) HasDateAdded() bool {
-	if o != nil && !isNil(o.DateAdded) {
+	if o != nil && !IsNil(o.DateAdded) {
 		return true
 	}
 
@@ -251,7 +254,7 @@ func (o *BookFileResource) SetDateAdded(v time.Time) {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *BookFileResource) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -261,15 +264,15 @@ func (o *BookFileResource) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookFileResource) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *BookFileResource) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -283,7 +286,7 @@ func (o *BookFileResource) SetQuality(v QualityModel) {
 
 // GetQualityWeight returns the QualityWeight field value if set, zero value otherwise.
 func (o *BookFileResource) GetQualityWeight() int32 {
-	if o == nil || isNil(o.QualityWeight) {
+	if o == nil || IsNil(o.QualityWeight) {
 		var ret int32
 		return ret
 	}
@@ -293,15 +296,15 @@ func (o *BookFileResource) GetQualityWeight() int32 {
 // GetQualityWeightOk returns a tuple with the QualityWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookFileResource) GetQualityWeightOk() (*int32, bool) {
-	if o == nil || isNil(o.QualityWeight) {
-    return nil, false
+	if o == nil || IsNil(o.QualityWeight) {
+		return nil, false
 	}
 	return o.QualityWeight, true
 }
 
 // HasQualityWeight returns a boolean if a field has been set.
 func (o *BookFileResource) HasQualityWeight() bool {
-	if o != nil && !isNil(o.QualityWeight) {
+	if o != nil && !IsNil(o.QualityWeight) {
 		return true
 	}
 
@@ -315,7 +318,7 @@ func (o *BookFileResource) SetQualityWeight(v int32) {
 
 // GetMediaInfo returns the MediaInfo field value if set, zero value otherwise.
 func (o *BookFileResource) GetMediaInfo() MediaInfoResource {
-	if o == nil || isNil(o.MediaInfo) {
+	if o == nil || IsNil(o.MediaInfo) {
 		var ret MediaInfoResource
 		return ret
 	}
@@ -325,15 +328,15 @@ func (o *BookFileResource) GetMediaInfo() MediaInfoResource {
 // GetMediaInfoOk returns a tuple with the MediaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookFileResource) GetMediaInfoOk() (*MediaInfoResource, bool) {
-	if o == nil || isNil(o.MediaInfo) {
-    return nil, false
+	if o == nil || IsNil(o.MediaInfo) {
+		return nil, false
 	}
 	return o.MediaInfo, true
 }
 
 // HasMediaInfo returns a boolean if a field has been set.
 func (o *BookFileResource) HasMediaInfo() bool {
-	if o != nil && !isNil(o.MediaInfo) {
+	if o != nil && !IsNil(o.MediaInfo) {
 		return true
 	}
 
@@ -347,7 +350,7 @@ func (o *BookFileResource) SetMediaInfo(v MediaInfoResource) {
 
 // GetQualityCutoffNotMet returns the QualityCutoffNotMet field value if set, zero value otherwise.
 func (o *BookFileResource) GetQualityCutoffNotMet() bool {
-	if o == nil || isNil(o.QualityCutoffNotMet) {
+	if o == nil || IsNil(o.QualityCutoffNotMet) {
 		var ret bool
 		return ret
 	}
@@ -357,15 +360,15 @@ func (o *BookFileResource) GetQualityCutoffNotMet() bool {
 // GetQualityCutoffNotMetOk returns a tuple with the QualityCutoffNotMet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookFileResource) GetQualityCutoffNotMetOk() (*bool, bool) {
-	if o == nil || isNil(o.QualityCutoffNotMet) {
-    return nil, false
+	if o == nil || IsNil(o.QualityCutoffNotMet) {
+		return nil, false
 	}
 	return o.QualityCutoffNotMet, true
 }
 
 // HasQualityCutoffNotMet returns a boolean if a field has been set.
 func (o *BookFileResource) HasQualityCutoffNotMet() bool {
-	if o != nil && !isNil(o.QualityCutoffNotMet) {
+	if o != nil && !IsNil(o.QualityCutoffNotMet) {
 		return true
 	}
 
@@ -379,7 +382,7 @@ func (o *BookFileResource) SetQualityCutoffNotMet(v bool) {
 
 // GetAudioTags returns the AudioTags field value if set, zero value otherwise.
 func (o *BookFileResource) GetAudioTags() ParsedTrackInfo {
-	if o == nil || isNil(o.AudioTags) {
+	if o == nil || IsNil(o.AudioTags) {
 		var ret ParsedTrackInfo
 		return ret
 	}
@@ -389,15 +392,15 @@ func (o *BookFileResource) GetAudioTags() ParsedTrackInfo {
 // GetAudioTagsOk returns a tuple with the AudioTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookFileResource) GetAudioTagsOk() (*ParsedTrackInfo, bool) {
-	if o == nil || isNil(o.AudioTags) {
-    return nil, false
+	if o == nil || IsNil(o.AudioTags) {
+		return nil, false
 	}
 	return o.AudioTags, true
 }
 
 // HasAudioTags returns a boolean if a field has been set.
 func (o *BookFileResource) HasAudioTags() bool {
-	if o != nil && !isNil(o.AudioTags) {
+	if o != nil && !IsNil(o.AudioTags) {
 		return true
 	}
 
@@ -410,41 +413,49 @@ func (o *BookFileResource) SetAudioTags(v ParsedTrackInfo) {
 }
 
 func (o BookFileResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BookFileResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.AuthorId) {
+	if !IsNil(o.AuthorId) {
 		toSerialize["authorId"] = o.AuthorId
 	}
-	if !isNil(o.BookId) {
+	if !IsNil(o.BookId) {
 		toSerialize["bookId"] = o.BookId
 	}
 	if o.Path.IsSet() {
 		toSerialize["path"] = o.Path.Get()
 	}
-	if !isNil(o.Size) {
+	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
 	}
-	if !isNil(o.DateAdded) {
+	if !IsNil(o.DateAdded) {
 		toSerialize["dateAdded"] = o.DateAdded
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
-	if !isNil(o.QualityWeight) {
+	if !IsNil(o.QualityWeight) {
 		toSerialize["qualityWeight"] = o.QualityWeight
 	}
-	if !isNil(o.MediaInfo) {
+	if !IsNil(o.MediaInfo) {
 		toSerialize["mediaInfo"] = o.MediaInfo
 	}
-	if !isNil(o.QualityCutoffNotMet) {
+	if !IsNil(o.QualityCutoffNotMet) {
 		toSerialize["qualityCutoffNotMet"] = o.QualityCutoffNotMet
 	}
-	if !isNil(o.AudioTags) {
+	if !IsNil(o.AudioTags) {
 		toSerialize["audioTags"] = o.AudioTags
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBookFileResource struct {

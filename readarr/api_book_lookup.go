@@ -21,6 +21,7 @@ import (
 
 // BookLookupAPIService BookLookupAPI service
 type BookLookupAPIService service
+
 type ApiGetBookLookupRequest struct {
 	ctx context.Context
 	ApiService *BookLookupAPIService
@@ -69,7 +70,7 @@ func (a *BookLookupAPIService) GetBookLookupExecute(r ApiGetBookLookupRequest) (
 	localVarFormParams := url.Values{}
 
 	if r.term != nil {
-		localVarQueryParams.Add("term", parameterToString(*r.term, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "term", r.term, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParsedBookInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParsedBookInfo{}
+
 // ParsedBookInfo struct for ParsedBookInfo
 type ParsedBookInfo struct {
 	BookTitle NullableString `json:"bookTitle,omitempty"`
@@ -49,7 +52,7 @@ func NewParsedBookInfoWithDefaults() *ParsedBookInfo {
 
 // GetBookTitle returns the BookTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedBookInfo) GetBookTitle() string {
-	if o == nil || isNil(o.BookTitle.Get()) {
+	if o == nil || IsNil(o.BookTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -61,7 +64,7 @@ func (o *ParsedBookInfo) GetBookTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedBookInfo) GetBookTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BookTitle.Get(), o.BookTitle.IsSet()
 }
@@ -91,7 +94,7 @@ func (o *ParsedBookInfo) UnsetBookTitle() {
 
 // GetAuthorName returns the AuthorName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedBookInfo) GetAuthorName() string {
-	if o == nil || isNil(o.AuthorName.Get()) {
+	if o == nil || IsNil(o.AuthorName.Get()) {
 		var ret string
 		return ret
 	}
@@ -103,7 +106,7 @@ func (o *ParsedBookInfo) GetAuthorName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedBookInfo) GetAuthorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AuthorName.Get(), o.AuthorName.IsSet()
 }
@@ -133,7 +136,7 @@ func (o *ParsedBookInfo) UnsetAuthorName() {
 
 // GetAuthorTitleInfo returns the AuthorTitleInfo field value if set, zero value otherwise.
 func (o *ParsedBookInfo) GetAuthorTitleInfo() AuthorTitleInfo {
-	if o == nil || isNil(o.AuthorTitleInfo) {
+	if o == nil || IsNil(o.AuthorTitleInfo) {
 		var ret AuthorTitleInfo
 		return ret
 	}
@@ -143,15 +146,15 @@ func (o *ParsedBookInfo) GetAuthorTitleInfo() AuthorTitleInfo {
 // GetAuthorTitleInfoOk returns a tuple with the AuthorTitleInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedBookInfo) GetAuthorTitleInfoOk() (*AuthorTitleInfo, bool) {
-	if o == nil || isNil(o.AuthorTitleInfo) {
-    return nil, false
+	if o == nil || IsNil(o.AuthorTitleInfo) {
+		return nil, false
 	}
 	return o.AuthorTitleInfo, true
 }
 
 // HasAuthorTitleInfo returns a boolean if a field has been set.
 func (o *ParsedBookInfo) HasAuthorTitleInfo() bool {
-	if o != nil && !isNil(o.AuthorTitleInfo) {
+	if o != nil && !IsNil(o.AuthorTitleInfo) {
 		return true
 	}
 
@@ -165,7 +168,7 @@ func (o *ParsedBookInfo) SetAuthorTitleInfo(v AuthorTitleInfo) {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *ParsedBookInfo) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -175,15 +178,15 @@ func (o *ParsedBookInfo) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedBookInfo) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *ParsedBookInfo) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *ParsedBookInfo) SetQuality(v QualityModel) {
 
 // GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedBookInfo) GetReleaseDate() string {
-	if o == nil || isNil(o.ReleaseDate.Get()) {
+	if o == nil || IsNil(o.ReleaseDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -209,7 +212,7 @@ func (o *ParsedBookInfo) GetReleaseDate() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedBookInfo) GetReleaseDateOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseDate.Get(), o.ReleaseDate.IsSet()
 }
@@ -239,7 +242,7 @@ func (o *ParsedBookInfo) UnsetReleaseDate() {
 
 // GetDiscography returns the Discography field value if set, zero value otherwise.
 func (o *ParsedBookInfo) GetDiscography() bool {
-	if o == nil || isNil(o.Discography) {
+	if o == nil || IsNil(o.Discography) {
 		var ret bool
 		return ret
 	}
@@ -249,15 +252,15 @@ func (o *ParsedBookInfo) GetDiscography() bool {
 // GetDiscographyOk returns a tuple with the Discography field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedBookInfo) GetDiscographyOk() (*bool, bool) {
-	if o == nil || isNil(o.Discography) {
-    return nil, false
+	if o == nil || IsNil(o.Discography) {
+		return nil, false
 	}
 	return o.Discography, true
 }
 
 // HasDiscography returns a boolean if a field has been set.
 func (o *ParsedBookInfo) HasDiscography() bool {
-	if o != nil && !isNil(o.Discography) {
+	if o != nil && !IsNil(o.Discography) {
 		return true
 	}
 
@@ -271,7 +274,7 @@ func (o *ParsedBookInfo) SetDiscography(v bool) {
 
 // GetDiscographyStart returns the DiscographyStart field value if set, zero value otherwise.
 func (o *ParsedBookInfo) GetDiscographyStart() int32 {
-	if o == nil || isNil(o.DiscographyStart) {
+	if o == nil || IsNil(o.DiscographyStart) {
 		var ret int32
 		return ret
 	}
@@ -281,15 +284,15 @@ func (o *ParsedBookInfo) GetDiscographyStart() int32 {
 // GetDiscographyStartOk returns a tuple with the DiscographyStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedBookInfo) GetDiscographyStartOk() (*int32, bool) {
-	if o == nil || isNil(o.DiscographyStart) {
-    return nil, false
+	if o == nil || IsNil(o.DiscographyStart) {
+		return nil, false
 	}
 	return o.DiscographyStart, true
 }
 
 // HasDiscographyStart returns a boolean if a field has been set.
 func (o *ParsedBookInfo) HasDiscographyStart() bool {
-	if o != nil && !isNil(o.DiscographyStart) {
+	if o != nil && !IsNil(o.DiscographyStart) {
 		return true
 	}
 
@@ -303,7 +306,7 @@ func (o *ParsedBookInfo) SetDiscographyStart(v int32) {
 
 // GetDiscographyEnd returns the DiscographyEnd field value if set, zero value otherwise.
 func (o *ParsedBookInfo) GetDiscographyEnd() int32 {
-	if o == nil || isNil(o.DiscographyEnd) {
+	if o == nil || IsNil(o.DiscographyEnd) {
 		var ret int32
 		return ret
 	}
@@ -313,15 +316,15 @@ func (o *ParsedBookInfo) GetDiscographyEnd() int32 {
 // GetDiscographyEndOk returns a tuple with the DiscographyEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedBookInfo) GetDiscographyEndOk() (*int32, bool) {
-	if o == nil || isNil(o.DiscographyEnd) {
-    return nil, false
+	if o == nil || IsNil(o.DiscographyEnd) {
+		return nil, false
 	}
 	return o.DiscographyEnd, true
 }
 
 // HasDiscographyEnd returns a boolean if a field has been set.
 func (o *ParsedBookInfo) HasDiscographyEnd() bool {
-	if o != nil && !isNil(o.DiscographyEnd) {
+	if o != nil && !IsNil(o.DiscographyEnd) {
 		return true
 	}
 
@@ -335,7 +338,7 @@ func (o *ParsedBookInfo) SetDiscographyEnd(v int32) {
 
 // GetReleaseGroup returns the ReleaseGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedBookInfo) GetReleaseGroup() string {
-	if o == nil || isNil(o.ReleaseGroup.Get()) {
+	if o == nil || IsNil(o.ReleaseGroup.Get()) {
 		var ret string
 		return ret
 	}
@@ -347,7 +350,7 @@ func (o *ParsedBookInfo) GetReleaseGroup() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedBookInfo) GetReleaseGroupOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseGroup.Get(), o.ReleaseGroup.IsSet()
 }
@@ -377,7 +380,7 @@ func (o *ParsedBookInfo) UnsetReleaseGroup() {
 
 // GetReleaseHash returns the ReleaseHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedBookInfo) GetReleaseHash() string {
-	if o == nil || isNil(o.ReleaseHash.Get()) {
+	if o == nil || IsNil(o.ReleaseHash.Get()) {
 		var ret string
 		return ret
 	}
@@ -389,7 +392,7 @@ func (o *ParsedBookInfo) GetReleaseHash() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedBookInfo) GetReleaseHashOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseHash.Get(), o.ReleaseHash.IsSet()
 }
@@ -419,7 +422,7 @@ func (o *ParsedBookInfo) UnsetReleaseHash() {
 
 // GetReleaseVersion returns the ReleaseVersion field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedBookInfo) GetReleaseVersion() string {
-	if o == nil || isNil(o.ReleaseVersion.Get()) {
+	if o == nil || IsNil(o.ReleaseVersion.Get()) {
 		var ret string
 		return ret
 	}
@@ -431,7 +434,7 @@ func (o *ParsedBookInfo) GetReleaseVersion() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedBookInfo) GetReleaseVersionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseVersion.Get(), o.ReleaseVersion.IsSet()
 }
@@ -461,7 +464,7 @@ func (o *ParsedBookInfo) UnsetReleaseVersion() {
 
 // GetReleaseTitle returns the ReleaseTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedBookInfo) GetReleaseTitle() string {
-	if o == nil || isNil(o.ReleaseTitle.Get()) {
+	if o == nil || IsNil(o.ReleaseTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -473,7 +476,7 @@ func (o *ParsedBookInfo) GetReleaseTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedBookInfo) GetReleaseTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseTitle.Get(), o.ReleaseTitle.IsSet()
 }
@@ -502,6 +505,14 @@ func (o *ParsedBookInfo) UnsetReleaseTitle() {
 }
 
 func (o ParsedBookInfo) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ParsedBookInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BookTitle.IsSet() {
 		toSerialize["bookTitle"] = o.BookTitle.Get()
@@ -509,22 +520,22 @@ func (o ParsedBookInfo) MarshalJSON() ([]byte, error) {
 	if o.AuthorName.IsSet() {
 		toSerialize["authorName"] = o.AuthorName.Get()
 	}
-	if !isNil(o.AuthorTitleInfo) {
+	if !IsNil(o.AuthorTitleInfo) {
 		toSerialize["authorTitleInfo"] = o.AuthorTitleInfo
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.ReleaseDate.IsSet() {
 		toSerialize["releaseDate"] = o.ReleaseDate.Get()
 	}
-	if !isNil(o.Discography) {
+	if !IsNil(o.Discography) {
 		toSerialize["discography"] = o.Discography
 	}
-	if !isNil(o.DiscographyStart) {
+	if !IsNil(o.DiscographyStart) {
 		toSerialize["discographyStart"] = o.DiscographyStart
 	}
-	if !isNil(o.DiscographyEnd) {
+	if !IsNil(o.DiscographyEnd) {
 		toSerialize["discographyEnd"] = o.DiscographyEnd
 	}
 	if o.ReleaseGroup.IsSet() {
@@ -539,7 +550,7 @@ func (o ParsedBookInfo) MarshalJSON() ([]byte, error) {
 	if o.ReleaseTitle.IsSet() {
 		toSerialize["releaseTitle"] = o.ReleaseTitle.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableParsedBookInfo struct {

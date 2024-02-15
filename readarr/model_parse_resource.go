@@ -14,13 +14,16 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParseResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParseResource{}
+
 // ParseResource struct for ParseResource
 type ParseResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	ParsedBookInfo *ParsedBookInfo `json:"parsedBookInfo,omitempty"`
 	Author *AuthorResource `json:"author,omitempty"`
-	Books []*BookResource `json:"books,omitempty"`
+	Books []BookResource `json:"books,omitempty"`
 }
 
 // NewParseResource instantiates a new ParseResource object
@@ -42,7 +45,7 @@ func NewParseResourceWithDefaults() *ParseResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ParseResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *ParseResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParseResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ParseResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *ParseResource) SetId(v int32) {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParseResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *ParseResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParseResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -116,7 +119,7 @@ func (o *ParseResource) UnsetTitle() {
 
 // GetParsedBookInfo returns the ParsedBookInfo field value if set, zero value otherwise.
 func (o *ParseResource) GetParsedBookInfo() ParsedBookInfo {
-	if o == nil || isNil(o.ParsedBookInfo) {
+	if o == nil || IsNil(o.ParsedBookInfo) {
 		var ret ParsedBookInfo
 		return ret
 	}
@@ -126,15 +129,15 @@ func (o *ParseResource) GetParsedBookInfo() ParsedBookInfo {
 // GetParsedBookInfoOk returns a tuple with the ParsedBookInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParseResource) GetParsedBookInfoOk() (*ParsedBookInfo, bool) {
-	if o == nil || isNil(o.ParsedBookInfo) {
-    return nil, false
+	if o == nil || IsNil(o.ParsedBookInfo) {
+		return nil, false
 	}
 	return o.ParsedBookInfo, true
 }
 
 // HasParsedBookInfo returns a boolean if a field has been set.
 func (o *ParseResource) HasParsedBookInfo() bool {
-	if o != nil && !isNil(o.ParsedBookInfo) {
+	if o != nil && !IsNil(o.ParsedBookInfo) {
 		return true
 	}
 
@@ -148,7 +151,7 @@ func (o *ParseResource) SetParsedBookInfo(v ParsedBookInfo) {
 
 // GetAuthor returns the Author field value if set, zero value otherwise.
 func (o *ParseResource) GetAuthor() AuthorResource {
-	if o == nil || isNil(o.Author) {
+	if o == nil || IsNil(o.Author) {
 		var ret AuthorResource
 		return ret
 	}
@@ -158,15 +161,15 @@ func (o *ParseResource) GetAuthor() AuthorResource {
 // GetAuthorOk returns a tuple with the Author field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParseResource) GetAuthorOk() (*AuthorResource, bool) {
-	if o == nil || isNil(o.Author) {
-    return nil, false
+	if o == nil || IsNil(o.Author) {
+		return nil, false
 	}
 	return o.Author, true
 }
 
 // HasAuthor returns a boolean if a field has been set.
 func (o *ParseResource) HasAuthor() bool {
-	if o != nil && !isNil(o.Author) {
+	if o != nil && !IsNil(o.Author) {
 		return true
 	}
 
@@ -179,9 +182,9 @@ func (o *ParseResource) SetAuthor(v AuthorResource) {
 }
 
 // GetBooks returns the Books field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParseResource) GetBooks() []*BookResource {
+func (o *ParseResource) GetBooks() []BookResource {
 	if o == nil {
-		var ret []*BookResource
+		var ret []BookResource
 		return ret
 	}
 	return o.Books
@@ -190,16 +193,16 @@ func (o *ParseResource) GetBooks() []*BookResource {
 // GetBooksOk returns a tuple with the Books field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParseResource) GetBooksOk() ([]*BookResource, bool) {
-	if o == nil || isNil(o.Books) {
-    return nil, false
+func (o *ParseResource) GetBooksOk() ([]BookResource, bool) {
+	if o == nil || IsNil(o.Books) {
+		return nil, false
 	}
 	return o.Books, true
 }
 
 // HasBooks returns a boolean if a field has been set.
 func (o *ParseResource) HasBooks() bool {
-	if o != nil && isNil(o.Books) {
+	if o != nil && IsNil(o.Books) {
 		return true
 	}
 
@@ -207,28 +210,36 @@ func (o *ParseResource) HasBooks() bool {
 }
 
 // SetBooks gets a reference to the given []BookResource and assigns it to the Books field.
-func (o *ParseResource) SetBooks(v []*BookResource) {
+func (o *ParseResource) SetBooks(v []BookResource) {
 	o.Books = v
 }
 
 func (o ParseResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ParseResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
-	if !isNil(o.ParsedBookInfo) {
+	if !IsNil(o.ParsedBookInfo) {
 		toSerialize["parsedBookInfo"] = o.ParsedBookInfo
 	}
-	if !isNil(o.Author) {
+	if !IsNil(o.Author) {
 		toSerialize["author"] = o.Author
 	}
 	if o.Books != nil {
 		toSerialize["books"] = o.Books
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableParseResource struct {

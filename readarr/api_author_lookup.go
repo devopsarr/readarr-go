@@ -21,6 +21,7 @@ import (
 
 // AuthorLookupAPIService AuthorLookupAPI service
 type AuthorLookupAPIService service
+
 type ApiGetAuthorLookupRequest struct {
 	ctx context.Context
 	ApiService *AuthorLookupAPIService
@@ -69,7 +70,7 @@ func (a *AuthorLookupAPIService) GetAuthorLookupExecute(r ApiGetAuthorLookupRequ
 	localVarFormParams := url.Values{}
 
 	if r.term != nil {
-		localVarQueryParams.Add("term", parameterToString(*r.term, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "term", r.term, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

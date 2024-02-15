@@ -14,12 +14,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the SeriesResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SeriesResource{}
+
 // SeriesResource struct for SeriesResource
 type SeriesResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	Description NullableString `json:"description,omitempty"`
-	Links []*SeriesBookLinkResource `json:"links,omitempty"`
+	Links []SeriesBookLinkResource `json:"links,omitempty"`
 }
 
 // NewSeriesResource instantiates a new SeriesResource object
@@ -41,7 +44,7 @@ func NewSeriesResourceWithDefaults() *SeriesResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *SeriesResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -51,15 +54,15 @@ func (o *SeriesResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeriesResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *SeriesResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *SeriesResource) SetId(v int32) {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SeriesResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -85,7 +88,7 @@ func (o *SeriesResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SeriesResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -115,7 +118,7 @@ func (o *SeriesResource) UnsetTitle() {
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SeriesResource) GetDescription() string {
-	if o == nil || isNil(o.Description.Get()) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
@@ -127,7 +130,7 @@ func (o *SeriesResource) GetDescription() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SeriesResource) GetDescriptionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Description.Get(), o.Description.IsSet()
 }
@@ -156,9 +159,9 @@ func (o *SeriesResource) UnsetDescription() {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesResource) GetLinks() []*SeriesBookLinkResource {
+func (o *SeriesResource) GetLinks() []SeriesBookLinkResource {
 	if o == nil {
-		var ret []*SeriesBookLinkResource
+		var ret []SeriesBookLinkResource
 		return ret
 	}
 	return o.Links
@@ -167,16 +170,16 @@ func (o *SeriesResource) GetLinks() []*SeriesBookLinkResource {
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesResource) GetLinksOk() ([]*SeriesBookLinkResource, bool) {
-	if o == nil || isNil(o.Links) {
-    return nil, false
+func (o *SeriesResource) GetLinksOk() ([]SeriesBookLinkResource, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
 	}
 	return o.Links, true
 }
 
 // HasLinks returns a boolean if a field has been set.
 func (o *SeriesResource) HasLinks() bool {
-	if o != nil && isNil(o.Links) {
+	if o != nil && IsNil(o.Links) {
 		return true
 	}
 
@@ -184,13 +187,21 @@ func (o *SeriesResource) HasLinks() bool {
 }
 
 // SetLinks gets a reference to the given []SeriesBookLinkResource and assigns it to the Links field.
-func (o *SeriesResource) SetLinks(v []*SeriesBookLinkResource) {
+func (o *SeriesResource) SetLinks(v []SeriesBookLinkResource) {
 	o.Links = v
 }
 
 func (o SeriesResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SeriesResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Title.IsSet() {
@@ -202,7 +213,7 @@ func (o SeriesResource) MarshalJSON() ([]byte, error) {
 	if o.Links != nil {
 		toSerialize["links"] = o.Links
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSeriesResource struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ImportListExclusionResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ImportListExclusionResource{}
+
 // ImportListExclusionResource struct for ImportListExclusionResource
 type ImportListExclusionResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -40,7 +43,7 @@ func NewImportListExclusionResourceWithDefaults() *ImportListExclusionResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ImportListExclusionResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *ImportListExclusionResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListExclusionResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ImportListExclusionResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *ImportListExclusionResource) SetId(v int32) {
 
 // GetForeignId returns the ForeignId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListExclusionResource) GetForeignId() string {
-	if o == nil || isNil(o.ForeignId.Get()) {
+	if o == nil || IsNil(o.ForeignId.Get()) {
 		var ret string
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *ImportListExclusionResource) GetForeignId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListExclusionResource) GetForeignIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ForeignId.Get(), o.ForeignId.IsSet()
 }
@@ -114,7 +117,7 @@ func (o *ImportListExclusionResource) UnsetForeignId() {
 
 // GetAuthorName returns the AuthorName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListExclusionResource) GetAuthorName() string {
-	if o == nil || isNil(o.AuthorName.Get()) {
+	if o == nil || IsNil(o.AuthorName.Get()) {
 		var ret string
 		return ret
 	}
@@ -126,7 +129,7 @@ func (o *ImportListExclusionResource) GetAuthorName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListExclusionResource) GetAuthorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AuthorName.Get(), o.AuthorName.IsSet()
 }
@@ -155,8 +158,16 @@ func (o *ImportListExclusionResource) UnsetAuthorName() {
 }
 
 func (o ImportListExclusionResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ImportListExclusionResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.ForeignId.IsSet() {
@@ -165,7 +176,7 @@ func (o ImportListExclusionResource) MarshalJSON() ([]byte, error) {
 	if o.AuthorName.IsSet() {
 		toSerialize["authorName"] = o.AuthorName.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableImportListExclusionResource struct {

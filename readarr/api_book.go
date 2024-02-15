@@ -23,6 +23,7 @@ import (
 
 // BookAPIService BookAPI service
 type BookAPIService service
+
 type ApiCreateBookRequest struct {
 	ctx context.Context
 	ApiService *BookAPIService
@@ -155,6 +156,7 @@ func (a *BookAPIService) CreateBookExecute(r ApiCreateBookRequest) (*BookResourc
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteBookRequest struct {
 	ctx context.Context
 	ApiService *BookAPIService
@@ -206,17 +208,23 @@ func (a *BookAPIService) DeleteBookExecute(r ApiDeleteBookRequest) (*http.Respon
 	}
 
 	localVarPath := localBasePath + "/api/v1/book/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+	} else {
+		var defaultValue bool = false
+		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
-		localVarQueryParams.Add("addImportListExclusion", parameterToString(*r.addImportListExclusion, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "")
+	} else {
+		var defaultValue bool = false
+		r.addImportListExclusion = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -290,6 +298,7 @@ func (a *BookAPIService) DeleteBookExecute(r ApiDeleteBookRequest) (*http.Respon
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetBookByIdRequest struct {
 	ctx context.Context
 	ApiService *BookAPIService
@@ -331,7 +340,7 @@ func (a *BookAPIService) GetBookByIdExecute(r ApiGetBookByIdRequest) (*BookResou
 	}
 
 	localVarPath := localBasePath + "/api/v1/book/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -418,6 +427,7 @@ func (a *BookAPIService) GetBookByIdExecute(r ApiGetBookByIdRequest) (*BookResou
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetBookOverviewRequest struct {
 	ctx context.Context
 	ApiService *BookAPIService
@@ -457,7 +467,7 @@ func (a *BookAPIService) GetBookOverviewExecute(r ApiGetBookOverviewRequest) (*h
 	}
 
 	localVarPath := localBasePath + "/api/v1/book/{id}/overview"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -535,6 +545,7 @@ func (a *BookAPIService) GetBookOverviewExecute(r ApiGetBookOverviewRequest) (*h
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiListBookRequest struct {
 	ctx context.Context
 	ApiService *BookAPIService
@@ -564,7 +575,7 @@ func (r ApiListBookRequest) IncludeAllAuthorBooks(includeAllAuthorBooks bool) Ap
 	return r
 }
 
-func (r ApiListBookRequest) Execute() ([]*BookResource, *http.Response, error) {
+func (r ApiListBookRequest) Execute() ([]BookResource, *http.Response, error) {
 	return r.ApiService.ListBookExecute(r)
 }
 
@@ -583,12 +594,12 @@ func (a *BookAPIService) ListBook(ctx context.Context) ApiListBookRequest {
 
 // Execute executes the request
 //  @return []BookResource
-func (a *BookAPIService) ListBookExecute(r ApiListBookRequest) ([]*BookResource, *http.Response, error) {
+func (a *BookAPIService) ListBookExecute(r ApiListBookRequest) ([]BookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*BookResource
+		localVarReturnValue  []BookResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookAPIService.ListBook")
@@ -603,24 +614,27 @@ func (a *BookAPIService) ListBookExecute(r ApiListBookRequest) ([]*BookResource,
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		localVarQueryParams.Add("authorId", parameterToString(*r.authorId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
 	}
 	if r.bookIds != nil {
 		t := *r.bookIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("bookIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("bookIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", t, "multi")
 		}
 	}
 	if r.titleSlug != nil {
-		localVarQueryParams.Add("titleSlug", parameterToString(*r.titleSlug, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "titleSlug", r.titleSlug, "")
 	}
 	if r.includeAllAuthorBooks != nil {
-		localVarQueryParams.Add("includeAllAuthorBooks", parameterToString(*r.includeAllAuthorBooks, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAllAuthorBooks", r.includeAllAuthorBooks, "")
+	} else {
+		var defaultValue bool = false
+		r.includeAllAuthorBooks = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -703,6 +717,7 @@ func (a *BookAPIService) ListBookExecute(r ApiListBookRequest) ([]*BookResource,
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutBookMonitorRequest struct {
 	ctx context.Context
 	ApiService *BookAPIService
@@ -824,6 +839,7 @@ func (a *BookAPIService) PutBookMonitorExecute(r ApiPutBookMonitorRequest) (*htt
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateBookRequest struct {
 	ctx context.Context
 	ApiService *BookAPIService
@@ -871,7 +887,7 @@ func (a *BookAPIService) UpdateBookExecute(r ApiUpdateBookRequest) (*BookResourc
 	}
 
 	localVarPath := localBasePath + "/api/v1/book/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

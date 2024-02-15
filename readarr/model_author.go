@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the Author type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Author{}
+
 // Author struct for Author
 type Author struct {
 	Id *int32 `json:"id,omitempty"`
@@ -28,7 +31,7 @@ type Author struct {
 	Added *time.Time `json:"added,omitempty"`
 	QualityProfileId *int32 `json:"qualityProfileId,omitempty"`
 	MetadataProfileId *int32 `json:"metadataProfileId,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
 	AddOptions *AddAuthorOptions `json:"addOptions,omitempty"`
 	Metadata *AuthorMetadataLazyLoaded `json:"metadata,omitempty"`
 	QualityProfile *QualityProfileLazyLoaded `json:"qualityProfile,omitempty"`
@@ -58,7 +61,7 @@ func NewAuthorWithDefaults() *Author {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *Author) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -68,15 +71,15 @@ func (o *Author) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *Author) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *Author) SetId(v int32) {
 
 // GetAuthorMetadataId returns the AuthorMetadataId field value if set, zero value otherwise.
 func (o *Author) GetAuthorMetadataId() int32 {
-	if o == nil || isNil(o.AuthorMetadataId) {
+	if o == nil || IsNil(o.AuthorMetadataId) {
 		var ret int32
 		return ret
 	}
@@ -100,15 +103,15 @@ func (o *Author) GetAuthorMetadataId() int32 {
 // GetAuthorMetadataIdOk returns a tuple with the AuthorMetadataId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetAuthorMetadataIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AuthorMetadataId) {
-    return nil, false
+	if o == nil || IsNil(o.AuthorMetadataId) {
+		return nil, false
 	}
 	return o.AuthorMetadataId, true
 }
 
 // HasAuthorMetadataId returns a boolean if a field has been set.
 func (o *Author) HasAuthorMetadataId() bool {
-	if o != nil && !isNil(o.AuthorMetadataId) {
+	if o != nil && !IsNil(o.AuthorMetadataId) {
 		return true
 	}
 
@@ -122,7 +125,7 @@ func (o *Author) SetAuthorMetadataId(v int32) {
 
 // GetCleanName returns the CleanName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Author) GetCleanName() string {
-	if o == nil || isNil(o.CleanName.Get()) {
+	if o == nil || IsNil(o.CleanName.Get()) {
 		var ret string
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *Author) GetCleanName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Author) GetCleanNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.CleanName.Get(), o.CleanName.IsSet()
 }
@@ -164,7 +167,7 @@ func (o *Author) UnsetCleanName() {
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
 func (o *Author) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored) {
+	if o == nil || IsNil(o.Monitored) {
 		var ret bool
 		return ret
 	}
@@ -174,15 +177,15 @@ func (o *Author) GetMonitored() bool {
 // GetMonitoredOk returns a tuple with the Monitored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetMonitoredOk() (*bool, bool) {
-	if o == nil || isNil(o.Monitored) {
-    return nil, false
+	if o == nil || IsNil(o.Monitored) {
+		return nil, false
 	}
 	return o.Monitored, true
 }
 
 // HasMonitored returns a boolean if a field has been set.
 func (o *Author) HasMonitored() bool {
-	if o != nil && !isNil(o.Monitored) {
+	if o != nil && !IsNil(o.Monitored) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *Author) SetMonitored(v bool) {
 
 // GetMonitorNewItems returns the MonitorNewItems field value if set, zero value otherwise.
 func (o *Author) GetMonitorNewItems() NewItemMonitorTypes {
-	if o == nil || isNil(o.MonitorNewItems) {
+	if o == nil || IsNil(o.MonitorNewItems) {
 		var ret NewItemMonitorTypes
 		return ret
 	}
@@ -206,15 +209,15 @@ func (o *Author) GetMonitorNewItems() NewItemMonitorTypes {
 // GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool) {
-	if o == nil || isNil(o.MonitorNewItems) {
-    return nil, false
+	if o == nil || IsNil(o.MonitorNewItems) {
+		return nil, false
 	}
 	return o.MonitorNewItems, true
 }
 
 // HasMonitorNewItems returns a boolean if a field has been set.
 func (o *Author) HasMonitorNewItems() bool {
-	if o != nil && !isNil(o.MonitorNewItems) {
+	if o != nil && !IsNil(o.MonitorNewItems) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *Author) SetMonitorNewItems(v NewItemMonitorTypes) {
 
 // GetLastInfoSync returns the LastInfoSync field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Author) GetLastInfoSync() time.Time {
-	if o == nil || isNil(o.LastInfoSync.Get()) {
+	if o == nil || IsNil(o.LastInfoSync.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *Author) GetLastInfoSync() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Author) GetLastInfoSyncOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LastInfoSync.Get(), o.LastInfoSync.IsSet()
 }
@@ -270,7 +273,7 @@ func (o *Author) UnsetLastInfoSync() {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Author) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -282,7 +285,7 @@ func (o *Author) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Author) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -312,7 +315,7 @@ func (o *Author) UnsetPath() {
 
 // GetRootFolderPath returns the RootFolderPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Author) GetRootFolderPath() string {
-	if o == nil || isNil(o.RootFolderPath.Get()) {
+	if o == nil || IsNil(o.RootFolderPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -324,7 +327,7 @@ func (o *Author) GetRootFolderPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Author) GetRootFolderPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RootFolderPath.Get(), o.RootFolderPath.IsSet()
 }
@@ -354,7 +357,7 @@ func (o *Author) UnsetRootFolderPath() {
 
 // GetAdded returns the Added field value if set, zero value otherwise.
 func (o *Author) GetAdded() time.Time {
-	if o == nil || isNil(o.Added) {
+	if o == nil || IsNil(o.Added) {
 		var ret time.Time
 		return ret
 	}
@@ -364,15 +367,15 @@ func (o *Author) GetAdded() time.Time {
 // GetAddedOk returns a tuple with the Added field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetAddedOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Added) {
-    return nil, false
+	if o == nil || IsNil(o.Added) {
+		return nil, false
 	}
 	return o.Added, true
 }
 
 // HasAdded returns a boolean if a field has been set.
 func (o *Author) HasAdded() bool {
-	if o != nil && !isNil(o.Added) {
+	if o != nil && !IsNil(o.Added) {
 		return true
 	}
 
@@ -386,7 +389,7 @@ func (o *Author) SetAdded(v time.Time) {
 
 // GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise.
 func (o *Author) GetQualityProfileId() int32 {
-	if o == nil || isNil(o.QualityProfileId) {
+	if o == nil || IsNil(o.QualityProfileId) {
 		var ret int32
 		return ret
 	}
@@ -396,15 +399,15 @@ func (o *Author) GetQualityProfileId() int32 {
 // GetQualityProfileIdOk returns a tuple with the QualityProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetQualityProfileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.QualityProfileId) {
-    return nil, false
+	if o == nil || IsNil(o.QualityProfileId) {
+		return nil, false
 	}
 	return o.QualityProfileId, true
 }
 
 // HasQualityProfileId returns a boolean if a field has been set.
 func (o *Author) HasQualityProfileId() bool {
-	if o != nil && !isNil(o.QualityProfileId) {
+	if o != nil && !IsNil(o.QualityProfileId) {
 		return true
 	}
 
@@ -418,7 +421,7 @@ func (o *Author) SetQualityProfileId(v int32) {
 
 // GetMetadataProfileId returns the MetadataProfileId field value if set, zero value otherwise.
 func (o *Author) GetMetadataProfileId() int32 {
-	if o == nil || isNil(o.MetadataProfileId) {
+	if o == nil || IsNil(o.MetadataProfileId) {
 		var ret int32
 		return ret
 	}
@@ -428,15 +431,15 @@ func (o *Author) GetMetadataProfileId() int32 {
 // GetMetadataProfileIdOk returns a tuple with the MetadataProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetMetadataProfileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MetadataProfileId) {
-    return nil, false
+	if o == nil || IsNil(o.MetadataProfileId) {
+		return nil, false
 	}
 	return o.MetadataProfileId, true
 }
 
 // HasMetadataProfileId returns a boolean if a field has been set.
 func (o *Author) HasMetadataProfileId() bool {
-	if o != nil && !isNil(o.MetadataProfileId) {
+	if o != nil && !IsNil(o.MetadataProfileId) {
 		return true
 	}
 
@@ -449,9 +452,9 @@ func (o *Author) SetMetadataProfileId(v int32) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Author) GetTags() []*int32 {
+func (o *Author) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -460,16 +463,16 @@ func (o *Author) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Author) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *Author) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *Author) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -477,13 +480,13 @@ func (o *Author) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *Author) SetTags(v []*int32) {
+func (o *Author) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetAddOptions returns the AddOptions field value if set, zero value otherwise.
 func (o *Author) GetAddOptions() AddAuthorOptions {
-	if o == nil || isNil(o.AddOptions) {
+	if o == nil || IsNil(o.AddOptions) {
 		var ret AddAuthorOptions
 		return ret
 	}
@@ -493,15 +496,15 @@ func (o *Author) GetAddOptions() AddAuthorOptions {
 // GetAddOptionsOk returns a tuple with the AddOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetAddOptionsOk() (*AddAuthorOptions, bool) {
-	if o == nil || isNil(o.AddOptions) {
-    return nil, false
+	if o == nil || IsNil(o.AddOptions) {
+		return nil, false
 	}
 	return o.AddOptions, true
 }
 
 // HasAddOptions returns a boolean if a field has been set.
 func (o *Author) HasAddOptions() bool {
-	if o != nil && !isNil(o.AddOptions) {
+	if o != nil && !IsNil(o.AddOptions) {
 		return true
 	}
 
@@ -515,7 +518,7 @@ func (o *Author) SetAddOptions(v AddAuthorOptions) {
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
 func (o *Author) GetMetadata() AuthorMetadataLazyLoaded {
-	if o == nil || isNil(o.Metadata) {
+	if o == nil || IsNil(o.Metadata) {
 		var ret AuthorMetadataLazyLoaded
 		return ret
 	}
@@ -525,15 +528,15 @@ func (o *Author) GetMetadata() AuthorMetadataLazyLoaded {
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetMetadataOk() (*AuthorMetadataLazyLoaded, bool) {
-	if o == nil || isNil(o.Metadata) {
-    return nil, false
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
 	}
 	return o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *Author) HasMetadata() bool {
-	if o != nil && !isNil(o.Metadata) {
+	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
 
@@ -547,7 +550,7 @@ func (o *Author) SetMetadata(v AuthorMetadataLazyLoaded) {
 
 // GetQualityProfile returns the QualityProfile field value if set, zero value otherwise.
 func (o *Author) GetQualityProfile() QualityProfileLazyLoaded {
-	if o == nil || isNil(o.QualityProfile) {
+	if o == nil || IsNil(o.QualityProfile) {
 		var ret QualityProfileLazyLoaded
 		return ret
 	}
@@ -557,15 +560,15 @@ func (o *Author) GetQualityProfile() QualityProfileLazyLoaded {
 // GetQualityProfileOk returns a tuple with the QualityProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetQualityProfileOk() (*QualityProfileLazyLoaded, bool) {
-	if o == nil || isNil(o.QualityProfile) {
-    return nil, false
+	if o == nil || IsNil(o.QualityProfile) {
+		return nil, false
 	}
 	return o.QualityProfile, true
 }
 
 // HasQualityProfile returns a boolean if a field has been set.
 func (o *Author) HasQualityProfile() bool {
-	if o != nil && !isNil(o.QualityProfile) {
+	if o != nil && !IsNil(o.QualityProfile) {
 		return true
 	}
 
@@ -579,7 +582,7 @@ func (o *Author) SetQualityProfile(v QualityProfileLazyLoaded) {
 
 // GetMetadataProfile returns the MetadataProfile field value if set, zero value otherwise.
 func (o *Author) GetMetadataProfile() MetadataProfileLazyLoaded {
-	if o == nil || isNil(o.MetadataProfile) {
+	if o == nil || IsNil(o.MetadataProfile) {
 		var ret MetadataProfileLazyLoaded
 		return ret
 	}
@@ -589,15 +592,15 @@ func (o *Author) GetMetadataProfile() MetadataProfileLazyLoaded {
 // GetMetadataProfileOk returns a tuple with the MetadataProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetMetadataProfileOk() (*MetadataProfileLazyLoaded, bool) {
-	if o == nil || isNil(o.MetadataProfile) {
-    return nil, false
+	if o == nil || IsNil(o.MetadataProfile) {
+		return nil, false
 	}
 	return o.MetadataProfile, true
 }
 
 // HasMetadataProfile returns a boolean if a field has been set.
 func (o *Author) HasMetadataProfile() bool {
-	if o != nil && !isNil(o.MetadataProfile) {
+	if o != nil && !IsNil(o.MetadataProfile) {
 		return true
 	}
 
@@ -611,7 +614,7 @@ func (o *Author) SetMetadataProfile(v MetadataProfileLazyLoaded) {
 
 // GetBooks returns the Books field value if set, zero value otherwise.
 func (o *Author) GetBooks() BookListLazyLoaded {
-	if o == nil || isNil(o.Books) {
+	if o == nil || IsNil(o.Books) {
 		var ret BookListLazyLoaded
 		return ret
 	}
@@ -621,15 +624,15 @@ func (o *Author) GetBooks() BookListLazyLoaded {
 // GetBooksOk returns a tuple with the Books field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetBooksOk() (*BookListLazyLoaded, bool) {
-	if o == nil || isNil(o.Books) {
-    return nil, false
+	if o == nil || IsNil(o.Books) {
+		return nil, false
 	}
 	return o.Books, true
 }
 
 // HasBooks returns a boolean if a field has been set.
 func (o *Author) HasBooks() bool {
-	if o != nil && !isNil(o.Books) {
+	if o != nil && !IsNil(o.Books) {
 		return true
 	}
 
@@ -643,7 +646,7 @@ func (o *Author) SetBooks(v BookListLazyLoaded) {
 
 // GetSeries returns the Series field value if set, zero value otherwise.
 func (o *Author) GetSeries() SeriesListLazyLoaded {
-	if o == nil || isNil(o.Series) {
+	if o == nil || IsNil(o.Series) {
 		var ret SeriesListLazyLoaded
 		return ret
 	}
@@ -653,15 +656,15 @@ func (o *Author) GetSeries() SeriesListLazyLoaded {
 // GetSeriesOk returns a tuple with the Series field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Author) GetSeriesOk() (*SeriesListLazyLoaded, bool) {
-	if o == nil || isNil(o.Series) {
-    return nil, false
+	if o == nil || IsNil(o.Series) {
+		return nil, false
 	}
 	return o.Series, true
 }
 
 // HasSeries returns a boolean if a field has been set.
 func (o *Author) HasSeries() bool {
-	if o != nil && !isNil(o.Series) {
+	if o != nil && !IsNil(o.Series) {
 		return true
 	}
 
@@ -675,7 +678,7 @@ func (o *Author) SetSeries(v SeriesListLazyLoaded) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Author) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -687,7 +690,7 @@ func (o *Author) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Author) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -717,7 +720,7 @@ func (o *Author) UnsetName() {
 
 // GetForeignAuthorId returns the ForeignAuthorId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Author) GetForeignAuthorId() string {
-	if o == nil || isNil(o.ForeignAuthorId.Get()) {
+	if o == nil || IsNil(o.ForeignAuthorId.Get()) {
 		var ret string
 		return ret
 	}
@@ -729,7 +732,7 @@ func (o *Author) GetForeignAuthorId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Author) GetForeignAuthorIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ForeignAuthorId.Get(), o.ForeignAuthorId.IsSet()
 }
@@ -758,20 +761,28 @@ func (o *Author) UnsetForeignAuthorId() {
 }
 
 func (o Author) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o Author) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.AuthorMetadataId) {
+	if !IsNil(o.AuthorMetadataId) {
 		toSerialize["authorMetadataId"] = o.AuthorMetadataId
 	}
 	if o.CleanName.IsSet() {
 		toSerialize["cleanName"] = o.CleanName.Get()
 	}
-	if !isNil(o.Monitored) {
+	if !IsNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
 	}
-	if !isNil(o.MonitorNewItems) {
+	if !IsNil(o.MonitorNewItems) {
 		toSerialize["monitorNewItems"] = o.MonitorNewItems
 	}
 	if o.LastInfoSync.IsSet() {
@@ -783,34 +794,34 @@ func (o Author) MarshalJSON() ([]byte, error) {
 	if o.RootFolderPath.IsSet() {
 		toSerialize["rootFolderPath"] = o.RootFolderPath.Get()
 	}
-	if !isNil(o.Added) {
+	if !IsNil(o.Added) {
 		toSerialize["added"] = o.Added
 	}
-	if !isNil(o.QualityProfileId) {
+	if !IsNil(o.QualityProfileId) {
 		toSerialize["qualityProfileId"] = o.QualityProfileId
 	}
-	if !isNil(o.MetadataProfileId) {
+	if !IsNil(o.MetadataProfileId) {
 		toSerialize["metadataProfileId"] = o.MetadataProfileId
 	}
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	if !isNil(o.AddOptions) {
+	if !IsNil(o.AddOptions) {
 		toSerialize["addOptions"] = o.AddOptions
 	}
-	if !isNil(o.Metadata) {
+	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
-	if !isNil(o.QualityProfile) {
+	if !IsNil(o.QualityProfile) {
 		toSerialize["qualityProfile"] = o.QualityProfile
 	}
-	if !isNil(o.MetadataProfile) {
+	if !IsNil(o.MetadataProfile) {
 		toSerialize["metadataProfile"] = o.MetadataProfile
 	}
-	if !isNil(o.Books) {
+	if !IsNil(o.Books) {
 		toSerialize["books"] = o.Books
 	}
-	if !isNil(o.Series) {
+	if !IsNil(o.Series) {
 		toSerialize["series"] = o.Series
 	}
 	if o.Name.IsSet() {
@@ -819,7 +830,7 @@ func (o Author) MarshalJSON() ([]byte, error) {
 	if o.ForeignAuthorId.IsSet() {
 		toSerialize["foreignAuthorId"] = o.ForeignAuthorId.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAuthor struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IsoCountry type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IsoCountry{}
+
 // IsoCountry struct for IsoCountry
 type IsoCountry struct {
 	TwoLetterCode NullableString `json:"twoLetterCode,omitempty"`
@@ -39,7 +42,7 @@ func NewIsoCountryWithDefaults() *IsoCountry {
 
 // GetTwoLetterCode returns the TwoLetterCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IsoCountry) GetTwoLetterCode() string {
-	if o == nil || isNil(o.TwoLetterCode.Get()) {
+	if o == nil || IsNil(o.TwoLetterCode.Get()) {
 		var ret string
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *IsoCountry) GetTwoLetterCode() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IsoCountry) GetTwoLetterCodeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TwoLetterCode.Get(), o.TwoLetterCode.IsSet()
 }
@@ -81,7 +84,7 @@ func (o *IsoCountry) UnsetTwoLetterCode() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IsoCountry) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *IsoCountry) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IsoCountry) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -122,6 +125,14 @@ func (o *IsoCountry) UnsetName() {
 }
 
 func (o IsoCountry) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IsoCountry) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.TwoLetterCode.IsSet() {
 		toSerialize["twoLetterCode"] = o.TwoLetterCode.Get()
@@ -129,7 +140,7 @@ func (o IsoCountry) MarshalJSON() ([]byte, error) {
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIsoCountry struct {
