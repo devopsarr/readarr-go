@@ -22,6 +22,7 @@ import (
 
 // AuthorAPIService AuthorAPI service
 type AuthorAPIService service
+
 type ApiCreateAuthorRequest struct {
 	ctx context.Context
 	ApiService *AuthorAPIService
@@ -154,6 +155,7 @@ func (a *AuthorAPIService) CreateAuthorExecute(r ApiCreateAuthorRequest) (*Autho
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteAuthorRequest struct {
 	ctx context.Context
 	ApiService *AuthorAPIService
@@ -205,17 +207,23 @@ func (a *AuthorAPIService) DeleteAuthorExecute(r ApiDeleteAuthorRequest) (*http.
 	}
 
 	localVarPath := localBasePath + "/api/v1/author/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+	} else {
+		var defaultValue bool = false
+		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
-		localVarQueryParams.Add("addImportListExclusion", parameterToString(*r.addImportListExclusion, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "")
+	} else {
+		var defaultValue bool = false
+		r.addImportListExclusion = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -289,6 +297,7 @@ func (a *AuthorAPIService) DeleteAuthorExecute(r ApiDeleteAuthorRequest) (*http.
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetAuthorByIdRequest struct {
 	ctx context.Context
 	ApiService *AuthorAPIService
@@ -330,7 +339,7 @@ func (a *AuthorAPIService) GetAuthorByIdExecute(r ApiGetAuthorByIdRequest) (*Aut
 	}
 
 	localVarPath := localBasePath + "/api/v1/author/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -417,12 +426,13 @@ func (a *AuthorAPIService) GetAuthorByIdExecute(r ApiGetAuthorByIdRequest) (*Aut
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListAuthorRequest struct {
 	ctx context.Context
 	ApiService *AuthorAPIService
 }
 
-func (r ApiListAuthorRequest) Execute() ([]*AuthorResource, *http.Response, error) {
+func (r ApiListAuthorRequest) Execute() ([]AuthorResource, *http.Response, error) {
 	return r.ApiService.ListAuthorExecute(r)
 }
 
@@ -441,12 +451,12 @@ func (a *AuthorAPIService) ListAuthor(ctx context.Context) ApiListAuthorRequest 
 
 // Execute executes the request
 //  @return []AuthorResource
-func (a *AuthorAPIService) ListAuthorExecute(r ApiListAuthorRequest) ([]*AuthorResource, *http.Response, error) {
+func (a *AuthorAPIService) ListAuthorExecute(r ApiListAuthorRequest) ([]AuthorResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*AuthorResource
+		localVarReturnValue  []AuthorResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorAPIService.ListAuthor")
@@ -541,6 +551,7 @@ func (a *AuthorAPIService) ListAuthorExecute(r ApiListAuthorRequest) ([]*AuthorR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateAuthorRequest struct {
 	ctx context.Context
 	ApiService *AuthorAPIService
@@ -594,14 +605,17 @@ func (a *AuthorAPIService) UpdateAuthorExecute(r ApiUpdateAuthorRequest) (*Autho
 	}
 
 	localVarPath := localBasePath + "/api/v1/author/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.moveFiles != nil {
-		localVarQueryParams.Add("moveFiles", parameterToString(*r.moveFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "")
+	} else {
+		var defaultValue bool = false
+		r.moveFiles = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}

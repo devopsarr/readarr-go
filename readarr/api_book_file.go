@@ -23,6 +23,7 @@ import (
 
 // BookFileAPIService BookFileAPI service
 type BookFileAPIService service
+
 type ApiDeleteBookFileRequest struct {
 	ctx context.Context
 	ApiService *BookFileAPIService
@@ -62,7 +63,7 @@ func (a *BookFileAPIService) DeleteBookFileExecute(r ApiDeleteBookFileRequest) (
 	}
 
 	localVarPath := localBasePath + "/api/v1/bookfile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -140,6 +141,7 @@ func (a *BookFileAPIService) DeleteBookFileExecute(r ApiDeleteBookFileRequest) (
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteBookFileBulkRequest struct {
 	ctx context.Context
 	ApiService *BookFileAPIService
@@ -261,6 +263,7 @@ func (a *BookFileAPIService) DeleteBookFileBulkExecute(r ApiDeleteBookFileBulkRe
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetBookFileByIdRequest struct {
 	ctx context.Context
 	ApiService *BookFileAPIService
@@ -302,7 +305,7 @@ func (a *BookFileAPIService) GetBookFileByIdExecute(r ApiGetBookFileByIdRequest)
 	}
 
 	localVarPath := localBasePath + "/api/v1/bookfile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -389,6 +392,7 @@ func (a *BookFileAPIService) GetBookFileByIdExecute(r ApiGetBookFileByIdRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListBookFileRequest struct {
 	ctx context.Context
 	ApiService *BookFileAPIService
@@ -418,7 +422,7 @@ func (r ApiListBookFileRequest) Unmapped(unmapped bool) ApiListBookFileRequest {
 	return r
 }
 
-func (r ApiListBookFileRequest) Execute() ([]*BookFileResource, *http.Response, error) {
+func (r ApiListBookFileRequest) Execute() ([]BookFileResource, *http.Response, error) {
 	return r.ApiService.ListBookFileExecute(r)
 }
 
@@ -437,12 +441,12 @@ func (a *BookFileAPIService) ListBookFile(ctx context.Context) ApiListBookFileRe
 
 // Execute executes the request
 //  @return []BookFileResource
-func (a *BookFileAPIService) ListBookFileExecute(r ApiListBookFileRequest) ([]*BookFileResource, *http.Response, error) {
+func (a *BookFileAPIService) ListBookFileExecute(r ApiListBookFileRequest) ([]BookFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*BookFileResource
+		localVarReturnValue  []BookFileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BookFileAPIService.ListBookFile")
@@ -457,17 +461,17 @@ func (a *BookFileAPIService) ListBookFileExecute(r ApiListBookFileRequest) ([]*B
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		localVarQueryParams.Add("authorId", parameterToString(*r.authorId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
 	}
 	if r.bookFileIds != nil {
 		t := *r.bookFileIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("bookFileIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bookFileIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("bookFileIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "bookFileIds", t, "multi")
 		}
 	}
 	if r.bookId != nil {
@@ -475,14 +479,14 @@ func (a *BookFileAPIService) ListBookFileExecute(r ApiListBookFileRequest) ([]*B
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("bookId", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("bookId", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", t, "multi")
 		}
 	}
 	if r.unmapped != nil {
-		localVarQueryParams.Add("unmapped", parameterToString(*r.unmapped, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmapped", r.unmapped, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -565,6 +569,7 @@ func (a *BookFileAPIService) ListBookFileExecute(r ApiListBookFileRequest) ([]*B
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutBookFileEditorRequest struct {
 	ctx context.Context
 	ApiService *BookFileAPIService
@@ -686,6 +691,7 @@ func (a *BookFileAPIService) PutBookFileEditorExecute(r ApiPutBookFileEditorRequ
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateBookFileRequest struct {
 	ctx context.Context
 	ApiService *BookFileAPIService
@@ -733,7 +739,7 @@ func (a *BookFileAPIService) UpdateBookFileExecute(r ApiUpdateBookFileRequest) (
 	}
 
 	localVarPath := localBasePath + "/api/v1/bookfile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

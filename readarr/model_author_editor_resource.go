@@ -14,15 +14,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the AuthorEditorResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AuthorEditorResource{}
+
 // AuthorEditorResource struct for AuthorEditorResource
 type AuthorEditorResource struct {
-	AuthorIds []*int32 `json:"authorIds,omitempty"`
+	AuthorIds []int32 `json:"authorIds,omitempty"`
 	Monitored NullableBool `json:"monitored,omitempty"`
 	MonitorNewItems *NewItemMonitorTypes `json:"monitorNewItems,omitempty"`
 	QualityProfileId NullableInt32 `json:"qualityProfileId,omitempty"`
 	MetadataProfileId NullableInt32 `json:"metadataProfileId,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
 	MoveFiles *bool `json:"moveFiles,omitempty"`
 	DeleteFiles *bool `json:"deleteFiles,omitempty"`
@@ -46,9 +49,9 @@ func NewAuthorEditorResourceWithDefaults() *AuthorEditorResource {
 }
 
 // GetAuthorIds returns the AuthorIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AuthorEditorResource) GetAuthorIds() []*int32 {
+func (o *AuthorEditorResource) GetAuthorIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.AuthorIds
@@ -57,16 +60,16 @@ func (o *AuthorEditorResource) GetAuthorIds() []*int32 {
 // GetAuthorIdsOk returns a tuple with the AuthorIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AuthorEditorResource) GetAuthorIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.AuthorIds) {
-    return nil, false
+func (o *AuthorEditorResource) GetAuthorIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.AuthorIds) {
+		return nil, false
 	}
 	return o.AuthorIds, true
 }
 
 // HasAuthorIds returns a boolean if a field has been set.
 func (o *AuthorEditorResource) HasAuthorIds() bool {
-	if o != nil && isNil(o.AuthorIds) {
+	if o != nil && IsNil(o.AuthorIds) {
 		return true
 	}
 
@@ -74,13 +77,13 @@ func (o *AuthorEditorResource) HasAuthorIds() bool {
 }
 
 // SetAuthorIds gets a reference to the given []int32 and assigns it to the AuthorIds field.
-func (o *AuthorEditorResource) SetAuthorIds(v []*int32) {
+func (o *AuthorEditorResource) SetAuthorIds(v []int32) {
 	o.AuthorIds = v
 }
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorEditorResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored.Get()) {
+	if o == nil || IsNil(o.Monitored.Get()) {
 		var ret bool
 		return ret
 	}
@@ -92,7 +95,7 @@ func (o *AuthorEditorResource) GetMonitored() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorEditorResource) GetMonitoredOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Monitored.Get(), o.Monitored.IsSet()
 }
@@ -122,7 +125,7 @@ func (o *AuthorEditorResource) UnsetMonitored() {
 
 // GetMonitorNewItems returns the MonitorNewItems field value if set, zero value otherwise.
 func (o *AuthorEditorResource) GetMonitorNewItems() NewItemMonitorTypes {
-	if o == nil || isNil(o.MonitorNewItems) {
+	if o == nil || IsNil(o.MonitorNewItems) {
 		var ret NewItemMonitorTypes
 		return ret
 	}
@@ -132,15 +135,15 @@ func (o *AuthorEditorResource) GetMonitorNewItems() NewItemMonitorTypes {
 // GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorEditorResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool) {
-	if o == nil || isNil(o.MonitorNewItems) {
-    return nil, false
+	if o == nil || IsNil(o.MonitorNewItems) {
+		return nil, false
 	}
 	return o.MonitorNewItems, true
 }
 
 // HasMonitorNewItems returns a boolean if a field has been set.
 func (o *AuthorEditorResource) HasMonitorNewItems() bool {
-	if o != nil && !isNil(o.MonitorNewItems) {
+	if o != nil && !IsNil(o.MonitorNewItems) {
 		return true
 	}
 
@@ -154,7 +157,7 @@ func (o *AuthorEditorResource) SetMonitorNewItems(v NewItemMonitorTypes) {
 
 // GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorEditorResource) GetQualityProfileId() int32 {
-	if o == nil || isNil(o.QualityProfileId.Get()) {
+	if o == nil || IsNil(o.QualityProfileId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AuthorEditorResource) GetQualityProfileId() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorEditorResource) GetQualityProfileIdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.QualityProfileId.Get(), o.QualityProfileId.IsSet()
 }
@@ -196,7 +199,7 @@ func (o *AuthorEditorResource) UnsetQualityProfileId() {
 
 // GetMetadataProfileId returns the MetadataProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorEditorResource) GetMetadataProfileId() int32 {
-	if o == nil || isNil(o.MetadataProfileId.Get()) {
+	if o == nil || IsNil(o.MetadataProfileId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *AuthorEditorResource) GetMetadataProfileId() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorEditorResource) GetMetadataProfileIdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MetadataProfileId.Get(), o.MetadataProfileId.IsSet()
 }
@@ -238,7 +241,7 @@ func (o *AuthorEditorResource) UnsetMetadataProfileId() {
 
 // GetRootFolderPath returns the RootFolderPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorEditorResource) GetRootFolderPath() string {
-	if o == nil || isNil(o.RootFolderPath.Get()) {
+	if o == nil || IsNil(o.RootFolderPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -250,7 +253,7 @@ func (o *AuthorEditorResource) GetRootFolderPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorEditorResource) GetRootFolderPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RootFolderPath.Get(), o.RootFolderPath.IsSet()
 }
@@ -279,9 +282,9 @@ func (o *AuthorEditorResource) UnsetRootFolderPath() {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AuthorEditorResource) GetTags() []*int32 {
+func (o *AuthorEditorResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -290,16 +293,16 @@ func (o *AuthorEditorResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AuthorEditorResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *AuthorEditorResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *AuthorEditorResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -307,13 +310,13 @@ func (o *AuthorEditorResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *AuthorEditorResource) SetTags(v []*int32) {
+func (o *AuthorEditorResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetApplyTags returns the ApplyTags field value if set, zero value otherwise.
 func (o *AuthorEditorResource) GetApplyTags() ApplyTags {
-	if o == nil || isNil(o.ApplyTags) {
+	if o == nil || IsNil(o.ApplyTags) {
 		var ret ApplyTags
 		return ret
 	}
@@ -323,15 +326,15 @@ func (o *AuthorEditorResource) GetApplyTags() ApplyTags {
 // GetApplyTagsOk returns a tuple with the ApplyTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorEditorResource) GetApplyTagsOk() (*ApplyTags, bool) {
-	if o == nil || isNil(o.ApplyTags) {
-    return nil, false
+	if o == nil || IsNil(o.ApplyTags) {
+		return nil, false
 	}
 	return o.ApplyTags, true
 }
 
 // HasApplyTags returns a boolean if a field has been set.
 func (o *AuthorEditorResource) HasApplyTags() bool {
-	if o != nil && !isNil(o.ApplyTags) {
+	if o != nil && !IsNil(o.ApplyTags) {
 		return true
 	}
 
@@ -345,7 +348,7 @@ func (o *AuthorEditorResource) SetApplyTags(v ApplyTags) {
 
 // GetMoveFiles returns the MoveFiles field value if set, zero value otherwise.
 func (o *AuthorEditorResource) GetMoveFiles() bool {
-	if o == nil || isNil(o.MoveFiles) {
+	if o == nil || IsNil(o.MoveFiles) {
 		var ret bool
 		return ret
 	}
@@ -355,15 +358,15 @@ func (o *AuthorEditorResource) GetMoveFiles() bool {
 // GetMoveFilesOk returns a tuple with the MoveFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorEditorResource) GetMoveFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.MoveFiles) {
-    return nil, false
+	if o == nil || IsNil(o.MoveFiles) {
+		return nil, false
 	}
 	return o.MoveFiles, true
 }
 
 // HasMoveFiles returns a boolean if a field has been set.
 func (o *AuthorEditorResource) HasMoveFiles() bool {
-	if o != nil && !isNil(o.MoveFiles) {
+	if o != nil && !IsNil(o.MoveFiles) {
 		return true
 	}
 
@@ -377,7 +380,7 @@ func (o *AuthorEditorResource) SetMoveFiles(v bool) {
 
 // GetDeleteFiles returns the DeleteFiles field value if set, zero value otherwise.
 func (o *AuthorEditorResource) GetDeleteFiles() bool {
-	if o == nil || isNil(o.DeleteFiles) {
+	if o == nil || IsNil(o.DeleteFiles) {
 		var ret bool
 		return ret
 	}
@@ -387,15 +390,15 @@ func (o *AuthorEditorResource) GetDeleteFiles() bool {
 // GetDeleteFilesOk returns a tuple with the DeleteFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorEditorResource) GetDeleteFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.DeleteFiles) {
-    return nil, false
+	if o == nil || IsNil(o.DeleteFiles) {
+		return nil, false
 	}
 	return o.DeleteFiles, true
 }
 
 // HasDeleteFiles returns a boolean if a field has been set.
 func (o *AuthorEditorResource) HasDeleteFiles() bool {
-	if o != nil && !isNil(o.DeleteFiles) {
+	if o != nil && !IsNil(o.DeleteFiles) {
 		return true
 	}
 
@@ -408,6 +411,14 @@ func (o *AuthorEditorResource) SetDeleteFiles(v bool) {
 }
 
 func (o AuthorEditorResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AuthorEditorResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AuthorIds != nil {
 		toSerialize["authorIds"] = o.AuthorIds
@@ -415,7 +426,7 @@ func (o AuthorEditorResource) MarshalJSON() ([]byte, error) {
 	if o.Monitored.IsSet() {
 		toSerialize["monitored"] = o.Monitored.Get()
 	}
-	if !isNil(o.MonitorNewItems) {
+	if !IsNil(o.MonitorNewItems) {
 		toSerialize["monitorNewItems"] = o.MonitorNewItems
 	}
 	if o.QualityProfileId.IsSet() {
@@ -430,16 +441,16 @@ func (o AuthorEditorResource) MarshalJSON() ([]byte, error) {
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	if !isNil(o.ApplyTags) {
+	if !IsNil(o.ApplyTags) {
 		toSerialize["applyTags"] = o.ApplyTags
 	}
-	if !isNil(o.MoveFiles) {
+	if !IsNil(o.MoveFiles) {
 		toSerialize["moveFiles"] = o.MoveFiles
 	}
-	if !isNil(o.DeleteFiles) {
+	if !IsNil(o.DeleteFiles) {
 		toSerialize["deleteFiles"] = o.DeleteFiles
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAuthorEditorResource struct {

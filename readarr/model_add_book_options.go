@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddBookOptions type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddBookOptions{}
+
 // AddBookOptions struct for AddBookOptions
 type AddBookOptions struct {
 	AddType *BookAddType `json:"addType,omitempty"`
@@ -39,7 +42,7 @@ func NewAddBookOptionsWithDefaults() *AddBookOptions {
 
 // GetAddType returns the AddType field value if set, zero value otherwise.
 func (o *AddBookOptions) GetAddType() BookAddType {
-	if o == nil || isNil(o.AddType) {
+	if o == nil || IsNil(o.AddType) {
 		var ret BookAddType
 		return ret
 	}
@@ -49,15 +52,15 @@ func (o *AddBookOptions) GetAddType() BookAddType {
 // GetAddTypeOk returns a tuple with the AddType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddBookOptions) GetAddTypeOk() (*BookAddType, bool) {
-	if o == nil || isNil(o.AddType) {
-    return nil, false
+	if o == nil || IsNil(o.AddType) {
+		return nil, false
 	}
 	return o.AddType, true
 }
 
 // HasAddType returns a boolean if a field has been set.
 func (o *AddBookOptions) HasAddType() bool {
-	if o != nil && !isNil(o.AddType) {
+	if o != nil && !IsNil(o.AddType) {
 		return true
 	}
 
@@ -71,7 +74,7 @@ func (o *AddBookOptions) SetAddType(v BookAddType) {
 
 // GetSearchForNewBook returns the SearchForNewBook field value if set, zero value otherwise.
 func (o *AddBookOptions) GetSearchForNewBook() bool {
-	if o == nil || isNil(o.SearchForNewBook) {
+	if o == nil || IsNil(o.SearchForNewBook) {
 		var ret bool
 		return ret
 	}
@@ -81,15 +84,15 @@ func (o *AddBookOptions) GetSearchForNewBook() bool {
 // GetSearchForNewBookOk returns a tuple with the SearchForNewBook field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddBookOptions) GetSearchForNewBookOk() (*bool, bool) {
-	if o == nil || isNil(o.SearchForNewBook) {
-    return nil, false
+	if o == nil || IsNil(o.SearchForNewBook) {
+		return nil, false
 	}
 	return o.SearchForNewBook, true
 }
 
 // HasSearchForNewBook returns a boolean if a field has been set.
 func (o *AddBookOptions) HasSearchForNewBook() bool {
-	if o != nil && !isNil(o.SearchForNewBook) {
+	if o != nil && !IsNil(o.SearchForNewBook) {
 		return true
 	}
 
@@ -102,14 +105,22 @@ func (o *AddBookOptions) SetSearchForNewBook(v bool) {
 }
 
 func (o AddBookOptions) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.AddType) {
-		toSerialize["addType"] = o.AddType
-	}
-	if !isNil(o.SearchForNewBook) {
-		toSerialize["searchForNewBook"] = o.SearchForNewBook
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddBookOptions) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AddType) {
+		toSerialize["addType"] = o.AddType
+	}
+	if !IsNil(o.SearchForNewBook) {
+		toSerialize["searchForNewBook"] = o.SearchForNewBook
+	}
+	return toSerialize, nil
 }
 
 type NullableAddBookOptions struct {

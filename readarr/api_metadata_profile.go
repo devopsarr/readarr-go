@@ -22,6 +22,7 @@ import (
 
 // MetadataProfileAPIService MetadataProfileAPI service
 type MetadataProfileAPIService service
+
 type ApiCreateMetadataProfileRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileAPIService
@@ -154,6 +155,7 @@ func (a *MetadataProfileAPIService) CreateMetadataProfileExecute(r ApiCreateMeta
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteMetadataProfileRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileAPIService
@@ -193,7 +195,7 @@ func (a *MetadataProfileAPIService) DeleteMetadataProfileExecute(r ApiDeleteMeta
 	}
 
 	localVarPath := localBasePath + "/api/v1/metadataprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *MetadataProfileAPIService) DeleteMetadataProfileExecute(r ApiDeleteMeta
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetMetadataProfileByIdRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileAPIService
@@ -312,7 +315,7 @@ func (a *MetadataProfileAPIService) GetMetadataProfileByIdExecute(r ApiGetMetada
 	}
 
 	localVarPath := localBasePath + "/api/v1/metadataprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *MetadataProfileAPIService) GetMetadataProfileByIdExecute(r ApiGetMetada
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListMetadataProfileRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileAPIService
 }
 
-func (r ApiListMetadataProfileRequest) Execute() ([]*MetadataProfileResource, *http.Response, error) {
+func (r ApiListMetadataProfileRequest) Execute() ([]MetadataProfileResource, *http.Response, error) {
 	return r.ApiService.ListMetadataProfileExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *MetadataProfileAPIService) ListMetadataProfile(ctx context.Context) Api
 
 // Execute executes the request
 //  @return []MetadataProfileResource
-func (a *MetadataProfileAPIService) ListMetadataProfileExecute(r ApiListMetadataProfileRequest) ([]*MetadataProfileResource, *http.Response, error) {
+func (a *MetadataProfileAPIService) ListMetadataProfileExecute(r ApiListMetadataProfileRequest) ([]MetadataProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*MetadataProfileResource
+		localVarReturnValue  []MetadataProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataProfileAPIService.ListMetadataProfile")
@@ -523,6 +527,7 @@ func (a *MetadataProfileAPIService) ListMetadataProfileExecute(r ApiListMetadata
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateMetadataProfileRequest struct {
 	ctx context.Context
 	ApiService *MetadataProfileAPIService
@@ -570,7 +575,7 @@ func (a *MetadataProfileAPIService) UpdateMetadataProfileExecute(r ApiUpdateMeta
 	}
 
 	localVarPath := localBasePath + "/api/v1/metadataprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

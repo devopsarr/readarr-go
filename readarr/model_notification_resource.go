@@ -14,18 +14,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the NotificationResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &NotificationResource{}
+
 // NotificationResource struct for NotificationResource
 type NotificationResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
-	Fields []*Field `json:"fields,omitempty"`
+	Fields []Field `json:"fields,omitempty"`
 	ImplementationName NullableString `json:"implementationName,omitempty"`
 	Implementation NullableString `json:"implementation,omitempty"`
 	ConfigContract NullableString `json:"configContract,omitempty"`
 	InfoLink NullableString `json:"infoLink,omitempty"`
 	Message *ProviderMessage `json:"message,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
-	Presets []*NotificationResource `json:"presets,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
+	Presets []NotificationResource `json:"presets,omitempty"`
 	Link NullableString `json:"link,omitempty"`
 	OnGrab *bool `json:"onGrab,omitempty"`
 	OnReleaseImport *bool `json:"onReleaseImport,omitempty"`
@@ -78,7 +81,7 @@ func NewNotificationResourceWithDefaults() *NotificationResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *NotificationResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -88,15 +91,15 @@ func (o *NotificationResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *NotificationResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -110,7 +113,7 @@ func (o *NotificationResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NotificationResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -122,7 +125,7 @@ func (o *NotificationResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NotificationResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -151,9 +154,9 @@ func (o *NotificationResource) UnsetName() {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NotificationResource) GetFields() []*Field {
+func (o *NotificationResource) GetFields() []Field {
 	if o == nil {
-		var ret []*Field
+		var ret []Field
 		return ret
 	}
 	return o.Fields
@@ -162,16 +165,16 @@ func (o *NotificationResource) GetFields() []*Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NotificationResource) GetFieldsOk() ([]*Field, bool) {
-	if o == nil || isNil(o.Fields) {
-    return nil, false
+func (o *NotificationResource) GetFieldsOk() ([]Field, bool) {
+	if o == nil || IsNil(o.Fields) {
+		return nil, false
 	}
 	return o.Fields, true
 }
 
 // HasFields returns a boolean if a field has been set.
 func (o *NotificationResource) HasFields() bool {
-	if o != nil && isNil(o.Fields) {
+	if o != nil && IsNil(o.Fields) {
 		return true
 	}
 
@@ -179,13 +182,13 @@ func (o *NotificationResource) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *NotificationResource) SetFields(v []*Field) {
+func (o *NotificationResource) SetFields(v []Field) {
 	o.Fields = v
 }
 
 // GetImplementationName returns the ImplementationName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NotificationResource) GetImplementationName() string {
-	if o == nil || isNil(o.ImplementationName.Get()) {
+	if o == nil || IsNil(o.ImplementationName.Get()) {
 		var ret string
 		return ret
 	}
@@ -197,7 +200,7 @@ func (o *NotificationResource) GetImplementationName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NotificationResource) GetImplementationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImplementationName.Get(), o.ImplementationName.IsSet()
 }
@@ -227,7 +230,7 @@ func (o *NotificationResource) UnsetImplementationName() {
 
 // GetImplementation returns the Implementation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NotificationResource) GetImplementation() string {
-	if o == nil || isNil(o.Implementation.Get()) {
+	if o == nil || IsNil(o.Implementation.Get()) {
 		var ret string
 		return ret
 	}
@@ -239,7 +242,7 @@ func (o *NotificationResource) GetImplementation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NotificationResource) GetImplementationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Implementation.Get(), o.Implementation.IsSet()
 }
@@ -269,7 +272,7 @@ func (o *NotificationResource) UnsetImplementation() {
 
 // GetConfigContract returns the ConfigContract field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NotificationResource) GetConfigContract() string {
-	if o == nil || isNil(o.ConfigContract.Get()) {
+	if o == nil || IsNil(o.ConfigContract.Get()) {
 		var ret string
 		return ret
 	}
@@ -281,7 +284,7 @@ func (o *NotificationResource) GetConfigContract() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NotificationResource) GetConfigContractOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ConfigContract.Get(), o.ConfigContract.IsSet()
 }
@@ -311,7 +314,7 @@ func (o *NotificationResource) UnsetConfigContract() {
 
 // GetInfoLink returns the InfoLink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NotificationResource) GetInfoLink() string {
-	if o == nil || isNil(o.InfoLink.Get()) {
+	if o == nil || IsNil(o.InfoLink.Get()) {
 		var ret string
 		return ret
 	}
@@ -323,7 +326,7 @@ func (o *NotificationResource) GetInfoLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NotificationResource) GetInfoLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InfoLink.Get(), o.InfoLink.IsSet()
 }
@@ -353,7 +356,7 @@ func (o *NotificationResource) UnsetInfoLink() {
 
 // GetMessage returns the Message field value if set, zero value otherwise.
 func (o *NotificationResource) GetMessage() ProviderMessage {
-	if o == nil || isNil(o.Message) {
+	if o == nil || IsNil(o.Message) {
 		var ret ProviderMessage
 		return ret
 	}
@@ -363,15 +366,15 @@ func (o *NotificationResource) GetMessage() ProviderMessage {
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetMessageOk() (*ProviderMessage, bool) {
-	if o == nil || isNil(o.Message) {
-    return nil, false
+	if o == nil || IsNil(o.Message) {
+		return nil, false
 	}
 	return o.Message, true
 }
 
 // HasMessage returns a boolean if a field has been set.
 func (o *NotificationResource) HasMessage() bool {
-	if o != nil && !isNil(o.Message) {
+	if o != nil && !IsNil(o.Message) {
 		return true
 	}
 
@@ -384,9 +387,9 @@ func (o *NotificationResource) SetMessage(v ProviderMessage) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NotificationResource) GetTags() []*int32 {
+func (o *NotificationResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -395,16 +398,16 @@ func (o *NotificationResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NotificationResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *NotificationResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *NotificationResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -412,14 +415,14 @@ func (o *NotificationResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *NotificationResource) SetTags(v []*int32) {
+func (o *NotificationResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetPresets returns the Presets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *NotificationResource) GetPresets() []*NotificationResource {
+func (o *NotificationResource) GetPresets() []NotificationResource {
 	if o == nil {
-		var ret []*NotificationResource
+		var ret []NotificationResource
 		return ret
 	}
 	return o.Presets
@@ -428,16 +431,16 @@ func (o *NotificationResource) GetPresets() []*NotificationResource {
 // GetPresetsOk returns a tuple with the Presets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *NotificationResource) GetPresetsOk() ([]*NotificationResource, bool) {
-	if o == nil || isNil(o.Presets) {
-    return nil, false
+func (o *NotificationResource) GetPresetsOk() ([]NotificationResource, bool) {
+	if o == nil || IsNil(o.Presets) {
+		return nil, false
 	}
 	return o.Presets, true
 }
 
 // HasPresets returns a boolean if a field has been set.
 func (o *NotificationResource) HasPresets() bool {
-	if o != nil && isNil(o.Presets) {
+	if o != nil && IsNil(o.Presets) {
 		return true
 	}
 
@@ -445,13 +448,13 @@ func (o *NotificationResource) HasPresets() bool {
 }
 
 // SetPresets gets a reference to the given []NotificationResource and assigns it to the Presets field.
-func (o *NotificationResource) SetPresets(v []*NotificationResource) {
+func (o *NotificationResource) SetPresets(v []NotificationResource) {
 	o.Presets = v
 }
 
 // GetLink returns the Link field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NotificationResource) GetLink() string {
-	if o == nil || isNil(o.Link.Get()) {
+	if o == nil || IsNil(o.Link.Get()) {
 		var ret string
 		return ret
 	}
@@ -463,7 +466,7 @@ func (o *NotificationResource) GetLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NotificationResource) GetLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Link.Get(), o.Link.IsSet()
 }
@@ -493,7 +496,7 @@ func (o *NotificationResource) UnsetLink() {
 
 // GetOnGrab returns the OnGrab field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnGrab() bool {
-	if o == nil || isNil(o.OnGrab) {
+	if o == nil || IsNil(o.OnGrab) {
 		var ret bool
 		return ret
 	}
@@ -503,15 +506,15 @@ func (o *NotificationResource) GetOnGrab() bool {
 // GetOnGrabOk returns a tuple with the OnGrab field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnGrabOk() (*bool, bool) {
-	if o == nil || isNil(o.OnGrab) {
-    return nil, false
+	if o == nil || IsNil(o.OnGrab) {
+		return nil, false
 	}
 	return o.OnGrab, true
 }
 
 // HasOnGrab returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnGrab() bool {
-	if o != nil && !isNil(o.OnGrab) {
+	if o != nil && !IsNil(o.OnGrab) {
 		return true
 	}
 
@@ -525,7 +528,7 @@ func (o *NotificationResource) SetOnGrab(v bool) {
 
 // GetOnReleaseImport returns the OnReleaseImport field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnReleaseImport() bool {
-	if o == nil || isNil(o.OnReleaseImport) {
+	if o == nil || IsNil(o.OnReleaseImport) {
 		var ret bool
 		return ret
 	}
@@ -535,15 +538,15 @@ func (o *NotificationResource) GetOnReleaseImport() bool {
 // GetOnReleaseImportOk returns a tuple with the OnReleaseImport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnReleaseImportOk() (*bool, bool) {
-	if o == nil || isNil(o.OnReleaseImport) {
-    return nil, false
+	if o == nil || IsNil(o.OnReleaseImport) {
+		return nil, false
 	}
 	return o.OnReleaseImport, true
 }
 
 // HasOnReleaseImport returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnReleaseImport() bool {
-	if o != nil && !isNil(o.OnReleaseImport) {
+	if o != nil && !IsNil(o.OnReleaseImport) {
 		return true
 	}
 
@@ -557,7 +560,7 @@ func (o *NotificationResource) SetOnReleaseImport(v bool) {
 
 // GetOnUpgrade returns the OnUpgrade field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnUpgrade() bool {
-	if o == nil || isNil(o.OnUpgrade) {
+	if o == nil || IsNil(o.OnUpgrade) {
 		var ret bool
 		return ret
 	}
@@ -567,15 +570,15 @@ func (o *NotificationResource) GetOnUpgrade() bool {
 // GetOnUpgradeOk returns a tuple with the OnUpgrade field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnUpgradeOk() (*bool, bool) {
-	if o == nil || isNil(o.OnUpgrade) {
-    return nil, false
+	if o == nil || IsNil(o.OnUpgrade) {
+		return nil, false
 	}
 	return o.OnUpgrade, true
 }
 
 // HasOnUpgrade returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnUpgrade() bool {
-	if o != nil && !isNil(o.OnUpgrade) {
+	if o != nil && !IsNil(o.OnUpgrade) {
 		return true
 	}
 
@@ -589,7 +592,7 @@ func (o *NotificationResource) SetOnUpgrade(v bool) {
 
 // GetOnRename returns the OnRename field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnRename() bool {
-	if o == nil || isNil(o.OnRename) {
+	if o == nil || IsNil(o.OnRename) {
 		var ret bool
 		return ret
 	}
@@ -599,15 +602,15 @@ func (o *NotificationResource) GetOnRename() bool {
 // GetOnRenameOk returns a tuple with the OnRename field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnRenameOk() (*bool, bool) {
-	if o == nil || isNil(o.OnRename) {
-    return nil, false
+	if o == nil || IsNil(o.OnRename) {
+		return nil, false
 	}
 	return o.OnRename, true
 }
 
 // HasOnRename returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnRename() bool {
-	if o != nil && !isNil(o.OnRename) {
+	if o != nil && !IsNil(o.OnRename) {
 		return true
 	}
 
@@ -621,7 +624,7 @@ func (o *NotificationResource) SetOnRename(v bool) {
 
 // GetOnAuthorAdded returns the OnAuthorAdded field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnAuthorAdded() bool {
-	if o == nil || isNil(o.OnAuthorAdded) {
+	if o == nil || IsNil(o.OnAuthorAdded) {
 		var ret bool
 		return ret
 	}
@@ -631,15 +634,15 @@ func (o *NotificationResource) GetOnAuthorAdded() bool {
 // GetOnAuthorAddedOk returns a tuple with the OnAuthorAdded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnAuthorAddedOk() (*bool, bool) {
-	if o == nil || isNil(o.OnAuthorAdded) {
-    return nil, false
+	if o == nil || IsNil(o.OnAuthorAdded) {
+		return nil, false
 	}
 	return o.OnAuthorAdded, true
 }
 
 // HasOnAuthorAdded returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnAuthorAdded() bool {
-	if o != nil && !isNil(o.OnAuthorAdded) {
+	if o != nil && !IsNil(o.OnAuthorAdded) {
 		return true
 	}
 
@@ -653,7 +656,7 @@ func (o *NotificationResource) SetOnAuthorAdded(v bool) {
 
 // GetOnAuthorDelete returns the OnAuthorDelete field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnAuthorDelete() bool {
-	if o == nil || isNil(o.OnAuthorDelete) {
+	if o == nil || IsNil(o.OnAuthorDelete) {
 		var ret bool
 		return ret
 	}
@@ -663,15 +666,15 @@ func (o *NotificationResource) GetOnAuthorDelete() bool {
 // GetOnAuthorDeleteOk returns a tuple with the OnAuthorDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnAuthorDeleteOk() (*bool, bool) {
-	if o == nil || isNil(o.OnAuthorDelete) {
-    return nil, false
+	if o == nil || IsNil(o.OnAuthorDelete) {
+		return nil, false
 	}
 	return o.OnAuthorDelete, true
 }
 
 // HasOnAuthorDelete returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnAuthorDelete() bool {
-	if o != nil && !isNil(o.OnAuthorDelete) {
+	if o != nil && !IsNil(o.OnAuthorDelete) {
 		return true
 	}
 
@@ -685,7 +688,7 @@ func (o *NotificationResource) SetOnAuthorDelete(v bool) {
 
 // GetOnBookDelete returns the OnBookDelete field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnBookDelete() bool {
-	if o == nil || isNil(o.OnBookDelete) {
+	if o == nil || IsNil(o.OnBookDelete) {
 		var ret bool
 		return ret
 	}
@@ -695,15 +698,15 @@ func (o *NotificationResource) GetOnBookDelete() bool {
 // GetOnBookDeleteOk returns a tuple with the OnBookDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnBookDeleteOk() (*bool, bool) {
-	if o == nil || isNil(o.OnBookDelete) {
-    return nil, false
+	if o == nil || IsNil(o.OnBookDelete) {
+		return nil, false
 	}
 	return o.OnBookDelete, true
 }
 
 // HasOnBookDelete returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnBookDelete() bool {
-	if o != nil && !isNil(o.OnBookDelete) {
+	if o != nil && !IsNil(o.OnBookDelete) {
 		return true
 	}
 
@@ -717,7 +720,7 @@ func (o *NotificationResource) SetOnBookDelete(v bool) {
 
 // GetOnBookFileDelete returns the OnBookFileDelete field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnBookFileDelete() bool {
-	if o == nil || isNil(o.OnBookFileDelete) {
+	if o == nil || IsNil(o.OnBookFileDelete) {
 		var ret bool
 		return ret
 	}
@@ -727,15 +730,15 @@ func (o *NotificationResource) GetOnBookFileDelete() bool {
 // GetOnBookFileDeleteOk returns a tuple with the OnBookFileDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnBookFileDeleteOk() (*bool, bool) {
-	if o == nil || isNil(o.OnBookFileDelete) {
-    return nil, false
+	if o == nil || IsNil(o.OnBookFileDelete) {
+		return nil, false
 	}
 	return o.OnBookFileDelete, true
 }
 
 // HasOnBookFileDelete returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnBookFileDelete() bool {
-	if o != nil && !isNil(o.OnBookFileDelete) {
+	if o != nil && !IsNil(o.OnBookFileDelete) {
 		return true
 	}
 
@@ -749,7 +752,7 @@ func (o *NotificationResource) SetOnBookFileDelete(v bool) {
 
 // GetOnBookFileDeleteForUpgrade returns the OnBookFileDeleteForUpgrade field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnBookFileDeleteForUpgrade() bool {
-	if o == nil || isNil(o.OnBookFileDeleteForUpgrade) {
+	if o == nil || IsNil(o.OnBookFileDeleteForUpgrade) {
 		var ret bool
 		return ret
 	}
@@ -759,15 +762,15 @@ func (o *NotificationResource) GetOnBookFileDeleteForUpgrade() bool {
 // GetOnBookFileDeleteForUpgradeOk returns a tuple with the OnBookFileDeleteForUpgrade field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnBookFileDeleteForUpgradeOk() (*bool, bool) {
-	if o == nil || isNil(o.OnBookFileDeleteForUpgrade) {
-    return nil, false
+	if o == nil || IsNil(o.OnBookFileDeleteForUpgrade) {
+		return nil, false
 	}
 	return o.OnBookFileDeleteForUpgrade, true
 }
 
 // HasOnBookFileDeleteForUpgrade returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnBookFileDeleteForUpgrade() bool {
-	if o != nil && !isNil(o.OnBookFileDeleteForUpgrade) {
+	if o != nil && !IsNil(o.OnBookFileDeleteForUpgrade) {
 		return true
 	}
 
@@ -781,7 +784,7 @@ func (o *NotificationResource) SetOnBookFileDeleteForUpgrade(v bool) {
 
 // GetOnHealthIssue returns the OnHealthIssue field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnHealthIssue() bool {
-	if o == nil || isNil(o.OnHealthIssue) {
+	if o == nil || IsNil(o.OnHealthIssue) {
 		var ret bool
 		return ret
 	}
@@ -791,15 +794,15 @@ func (o *NotificationResource) GetOnHealthIssue() bool {
 // GetOnHealthIssueOk returns a tuple with the OnHealthIssue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnHealthIssueOk() (*bool, bool) {
-	if o == nil || isNil(o.OnHealthIssue) {
-    return nil, false
+	if o == nil || IsNil(o.OnHealthIssue) {
+		return nil, false
 	}
 	return o.OnHealthIssue, true
 }
 
 // HasOnHealthIssue returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnHealthIssue() bool {
-	if o != nil && !isNil(o.OnHealthIssue) {
+	if o != nil && !IsNil(o.OnHealthIssue) {
 		return true
 	}
 
@@ -813,7 +816,7 @@ func (o *NotificationResource) SetOnHealthIssue(v bool) {
 
 // GetOnDownloadFailure returns the OnDownloadFailure field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnDownloadFailure() bool {
-	if o == nil || isNil(o.OnDownloadFailure) {
+	if o == nil || IsNil(o.OnDownloadFailure) {
 		var ret bool
 		return ret
 	}
@@ -823,15 +826,15 @@ func (o *NotificationResource) GetOnDownloadFailure() bool {
 // GetOnDownloadFailureOk returns a tuple with the OnDownloadFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnDownloadFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.OnDownloadFailure) {
-    return nil, false
+	if o == nil || IsNil(o.OnDownloadFailure) {
+		return nil, false
 	}
 	return o.OnDownloadFailure, true
 }
 
 // HasOnDownloadFailure returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnDownloadFailure() bool {
-	if o != nil && !isNil(o.OnDownloadFailure) {
+	if o != nil && !IsNil(o.OnDownloadFailure) {
 		return true
 	}
 
@@ -845,7 +848,7 @@ func (o *NotificationResource) SetOnDownloadFailure(v bool) {
 
 // GetOnImportFailure returns the OnImportFailure field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnImportFailure() bool {
-	if o == nil || isNil(o.OnImportFailure) {
+	if o == nil || IsNil(o.OnImportFailure) {
 		var ret bool
 		return ret
 	}
@@ -855,15 +858,15 @@ func (o *NotificationResource) GetOnImportFailure() bool {
 // GetOnImportFailureOk returns a tuple with the OnImportFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnImportFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.OnImportFailure) {
-    return nil, false
+	if o == nil || IsNil(o.OnImportFailure) {
+		return nil, false
 	}
 	return o.OnImportFailure, true
 }
 
 // HasOnImportFailure returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnImportFailure() bool {
-	if o != nil && !isNil(o.OnImportFailure) {
+	if o != nil && !IsNil(o.OnImportFailure) {
 		return true
 	}
 
@@ -877,7 +880,7 @@ func (o *NotificationResource) SetOnImportFailure(v bool) {
 
 // GetOnBookRetag returns the OnBookRetag field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnBookRetag() bool {
-	if o == nil || isNil(o.OnBookRetag) {
+	if o == nil || IsNil(o.OnBookRetag) {
 		var ret bool
 		return ret
 	}
@@ -887,15 +890,15 @@ func (o *NotificationResource) GetOnBookRetag() bool {
 // GetOnBookRetagOk returns a tuple with the OnBookRetag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnBookRetagOk() (*bool, bool) {
-	if o == nil || isNil(o.OnBookRetag) {
-    return nil, false
+	if o == nil || IsNil(o.OnBookRetag) {
+		return nil, false
 	}
 	return o.OnBookRetag, true
 }
 
 // HasOnBookRetag returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnBookRetag() bool {
-	if o != nil && !isNil(o.OnBookRetag) {
+	if o != nil && !IsNil(o.OnBookRetag) {
 		return true
 	}
 
@@ -909,7 +912,7 @@ func (o *NotificationResource) SetOnBookRetag(v bool) {
 
 // GetOnApplicationUpdate returns the OnApplicationUpdate field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnApplicationUpdate() bool {
-	if o == nil || isNil(o.OnApplicationUpdate) {
+	if o == nil || IsNil(o.OnApplicationUpdate) {
 		var ret bool
 		return ret
 	}
@@ -919,15 +922,15 @@ func (o *NotificationResource) GetOnApplicationUpdate() bool {
 // GetOnApplicationUpdateOk returns a tuple with the OnApplicationUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetOnApplicationUpdateOk() (*bool, bool) {
-	if o == nil || isNil(o.OnApplicationUpdate) {
-    return nil, false
+	if o == nil || IsNil(o.OnApplicationUpdate) {
+		return nil, false
 	}
 	return o.OnApplicationUpdate, true
 }
 
 // HasOnApplicationUpdate returns a boolean if a field has been set.
 func (o *NotificationResource) HasOnApplicationUpdate() bool {
-	if o != nil && !isNil(o.OnApplicationUpdate) {
+	if o != nil && !IsNil(o.OnApplicationUpdate) {
 		return true
 	}
 
@@ -941,7 +944,7 @@ func (o *NotificationResource) SetOnApplicationUpdate(v bool) {
 
 // GetSupportsOnGrab returns the SupportsOnGrab field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnGrab() bool {
-	if o == nil || isNil(o.SupportsOnGrab) {
+	if o == nil || IsNil(o.SupportsOnGrab) {
 		var ret bool
 		return ret
 	}
@@ -951,15 +954,15 @@ func (o *NotificationResource) GetSupportsOnGrab() bool {
 // GetSupportsOnGrabOk returns a tuple with the SupportsOnGrab field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnGrabOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnGrab) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnGrab) {
+		return nil, false
 	}
 	return o.SupportsOnGrab, true
 }
 
 // HasSupportsOnGrab returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnGrab() bool {
-	if o != nil && !isNil(o.SupportsOnGrab) {
+	if o != nil && !IsNil(o.SupportsOnGrab) {
 		return true
 	}
 
@@ -973,7 +976,7 @@ func (o *NotificationResource) SetSupportsOnGrab(v bool) {
 
 // GetSupportsOnReleaseImport returns the SupportsOnReleaseImport field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnReleaseImport() bool {
-	if o == nil || isNil(o.SupportsOnReleaseImport) {
+	if o == nil || IsNil(o.SupportsOnReleaseImport) {
 		var ret bool
 		return ret
 	}
@@ -983,15 +986,15 @@ func (o *NotificationResource) GetSupportsOnReleaseImport() bool {
 // GetSupportsOnReleaseImportOk returns a tuple with the SupportsOnReleaseImport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnReleaseImportOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnReleaseImport) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnReleaseImport) {
+		return nil, false
 	}
 	return o.SupportsOnReleaseImport, true
 }
 
 // HasSupportsOnReleaseImport returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnReleaseImport() bool {
-	if o != nil && !isNil(o.SupportsOnReleaseImport) {
+	if o != nil && !IsNil(o.SupportsOnReleaseImport) {
 		return true
 	}
 
@@ -1005,7 +1008,7 @@ func (o *NotificationResource) SetSupportsOnReleaseImport(v bool) {
 
 // GetSupportsOnUpgrade returns the SupportsOnUpgrade field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnUpgrade() bool {
-	if o == nil || isNil(o.SupportsOnUpgrade) {
+	if o == nil || IsNil(o.SupportsOnUpgrade) {
 		var ret bool
 		return ret
 	}
@@ -1015,15 +1018,15 @@ func (o *NotificationResource) GetSupportsOnUpgrade() bool {
 // GetSupportsOnUpgradeOk returns a tuple with the SupportsOnUpgrade field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnUpgradeOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnUpgrade) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnUpgrade) {
+		return nil, false
 	}
 	return o.SupportsOnUpgrade, true
 }
 
 // HasSupportsOnUpgrade returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnUpgrade() bool {
-	if o != nil && !isNil(o.SupportsOnUpgrade) {
+	if o != nil && !IsNil(o.SupportsOnUpgrade) {
 		return true
 	}
 
@@ -1037,7 +1040,7 @@ func (o *NotificationResource) SetSupportsOnUpgrade(v bool) {
 
 // GetSupportsOnRename returns the SupportsOnRename field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnRename() bool {
-	if o == nil || isNil(o.SupportsOnRename) {
+	if o == nil || IsNil(o.SupportsOnRename) {
 		var ret bool
 		return ret
 	}
@@ -1047,15 +1050,15 @@ func (o *NotificationResource) GetSupportsOnRename() bool {
 // GetSupportsOnRenameOk returns a tuple with the SupportsOnRename field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnRenameOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnRename) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnRename) {
+		return nil, false
 	}
 	return o.SupportsOnRename, true
 }
 
 // HasSupportsOnRename returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnRename() bool {
-	if o != nil && !isNil(o.SupportsOnRename) {
+	if o != nil && !IsNil(o.SupportsOnRename) {
 		return true
 	}
 
@@ -1069,7 +1072,7 @@ func (o *NotificationResource) SetSupportsOnRename(v bool) {
 
 // GetSupportsOnAuthorAdded returns the SupportsOnAuthorAdded field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnAuthorAdded() bool {
-	if o == nil || isNil(o.SupportsOnAuthorAdded) {
+	if o == nil || IsNil(o.SupportsOnAuthorAdded) {
 		var ret bool
 		return ret
 	}
@@ -1079,15 +1082,15 @@ func (o *NotificationResource) GetSupportsOnAuthorAdded() bool {
 // GetSupportsOnAuthorAddedOk returns a tuple with the SupportsOnAuthorAdded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnAuthorAddedOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnAuthorAdded) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnAuthorAdded) {
+		return nil, false
 	}
 	return o.SupportsOnAuthorAdded, true
 }
 
 // HasSupportsOnAuthorAdded returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnAuthorAdded() bool {
-	if o != nil && !isNil(o.SupportsOnAuthorAdded) {
+	if o != nil && !IsNil(o.SupportsOnAuthorAdded) {
 		return true
 	}
 
@@ -1101,7 +1104,7 @@ func (o *NotificationResource) SetSupportsOnAuthorAdded(v bool) {
 
 // GetSupportsOnAuthorDelete returns the SupportsOnAuthorDelete field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnAuthorDelete() bool {
-	if o == nil || isNil(o.SupportsOnAuthorDelete) {
+	if o == nil || IsNil(o.SupportsOnAuthorDelete) {
 		var ret bool
 		return ret
 	}
@@ -1111,15 +1114,15 @@ func (o *NotificationResource) GetSupportsOnAuthorDelete() bool {
 // GetSupportsOnAuthorDeleteOk returns a tuple with the SupportsOnAuthorDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnAuthorDeleteOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnAuthorDelete) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnAuthorDelete) {
+		return nil, false
 	}
 	return o.SupportsOnAuthorDelete, true
 }
 
 // HasSupportsOnAuthorDelete returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnAuthorDelete() bool {
-	if o != nil && !isNil(o.SupportsOnAuthorDelete) {
+	if o != nil && !IsNil(o.SupportsOnAuthorDelete) {
 		return true
 	}
 
@@ -1133,7 +1136,7 @@ func (o *NotificationResource) SetSupportsOnAuthorDelete(v bool) {
 
 // GetSupportsOnBookDelete returns the SupportsOnBookDelete field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnBookDelete() bool {
-	if o == nil || isNil(o.SupportsOnBookDelete) {
+	if o == nil || IsNil(o.SupportsOnBookDelete) {
 		var ret bool
 		return ret
 	}
@@ -1143,15 +1146,15 @@ func (o *NotificationResource) GetSupportsOnBookDelete() bool {
 // GetSupportsOnBookDeleteOk returns a tuple with the SupportsOnBookDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnBookDeleteOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnBookDelete) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnBookDelete) {
+		return nil, false
 	}
 	return o.SupportsOnBookDelete, true
 }
 
 // HasSupportsOnBookDelete returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnBookDelete() bool {
-	if o != nil && !isNil(o.SupportsOnBookDelete) {
+	if o != nil && !IsNil(o.SupportsOnBookDelete) {
 		return true
 	}
 
@@ -1165,7 +1168,7 @@ func (o *NotificationResource) SetSupportsOnBookDelete(v bool) {
 
 // GetSupportsOnBookFileDelete returns the SupportsOnBookFileDelete field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnBookFileDelete() bool {
-	if o == nil || isNil(o.SupportsOnBookFileDelete) {
+	if o == nil || IsNil(o.SupportsOnBookFileDelete) {
 		var ret bool
 		return ret
 	}
@@ -1175,15 +1178,15 @@ func (o *NotificationResource) GetSupportsOnBookFileDelete() bool {
 // GetSupportsOnBookFileDeleteOk returns a tuple with the SupportsOnBookFileDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnBookFileDeleteOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnBookFileDelete) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnBookFileDelete) {
+		return nil, false
 	}
 	return o.SupportsOnBookFileDelete, true
 }
 
 // HasSupportsOnBookFileDelete returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnBookFileDelete() bool {
-	if o != nil && !isNil(o.SupportsOnBookFileDelete) {
+	if o != nil && !IsNil(o.SupportsOnBookFileDelete) {
 		return true
 	}
 
@@ -1197,7 +1200,7 @@ func (o *NotificationResource) SetSupportsOnBookFileDelete(v bool) {
 
 // GetSupportsOnBookFileDeleteForUpgrade returns the SupportsOnBookFileDeleteForUpgrade field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnBookFileDeleteForUpgrade() bool {
-	if o == nil || isNil(o.SupportsOnBookFileDeleteForUpgrade) {
+	if o == nil || IsNil(o.SupportsOnBookFileDeleteForUpgrade) {
 		var ret bool
 		return ret
 	}
@@ -1207,15 +1210,15 @@ func (o *NotificationResource) GetSupportsOnBookFileDeleteForUpgrade() bool {
 // GetSupportsOnBookFileDeleteForUpgradeOk returns a tuple with the SupportsOnBookFileDeleteForUpgrade field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnBookFileDeleteForUpgradeOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnBookFileDeleteForUpgrade) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnBookFileDeleteForUpgrade) {
+		return nil, false
 	}
 	return o.SupportsOnBookFileDeleteForUpgrade, true
 }
 
 // HasSupportsOnBookFileDeleteForUpgrade returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnBookFileDeleteForUpgrade() bool {
-	if o != nil && !isNil(o.SupportsOnBookFileDeleteForUpgrade) {
+	if o != nil && !IsNil(o.SupportsOnBookFileDeleteForUpgrade) {
 		return true
 	}
 
@@ -1229,7 +1232,7 @@ func (o *NotificationResource) SetSupportsOnBookFileDeleteForUpgrade(v bool) {
 
 // GetSupportsOnHealthIssue returns the SupportsOnHealthIssue field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnHealthIssue() bool {
-	if o == nil || isNil(o.SupportsOnHealthIssue) {
+	if o == nil || IsNil(o.SupportsOnHealthIssue) {
 		var ret bool
 		return ret
 	}
@@ -1239,15 +1242,15 @@ func (o *NotificationResource) GetSupportsOnHealthIssue() bool {
 // GetSupportsOnHealthIssueOk returns a tuple with the SupportsOnHealthIssue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnHealthIssueOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnHealthIssue) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnHealthIssue) {
+		return nil, false
 	}
 	return o.SupportsOnHealthIssue, true
 }
 
 // HasSupportsOnHealthIssue returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnHealthIssue() bool {
-	if o != nil && !isNil(o.SupportsOnHealthIssue) {
+	if o != nil && !IsNil(o.SupportsOnHealthIssue) {
 		return true
 	}
 
@@ -1261,7 +1264,7 @@ func (o *NotificationResource) SetSupportsOnHealthIssue(v bool) {
 
 // GetIncludeHealthWarnings returns the IncludeHealthWarnings field value if set, zero value otherwise.
 func (o *NotificationResource) GetIncludeHealthWarnings() bool {
-	if o == nil || isNil(o.IncludeHealthWarnings) {
+	if o == nil || IsNil(o.IncludeHealthWarnings) {
 		var ret bool
 		return ret
 	}
@@ -1271,15 +1274,15 @@ func (o *NotificationResource) GetIncludeHealthWarnings() bool {
 // GetIncludeHealthWarningsOk returns a tuple with the IncludeHealthWarnings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetIncludeHealthWarningsOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeHealthWarnings) {
-    return nil, false
+	if o == nil || IsNil(o.IncludeHealthWarnings) {
+		return nil, false
 	}
 	return o.IncludeHealthWarnings, true
 }
 
 // HasIncludeHealthWarnings returns a boolean if a field has been set.
 func (o *NotificationResource) HasIncludeHealthWarnings() bool {
-	if o != nil && !isNil(o.IncludeHealthWarnings) {
+	if o != nil && !IsNil(o.IncludeHealthWarnings) {
 		return true
 	}
 
@@ -1293,7 +1296,7 @@ func (o *NotificationResource) SetIncludeHealthWarnings(v bool) {
 
 // GetSupportsOnDownloadFailure returns the SupportsOnDownloadFailure field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnDownloadFailure() bool {
-	if o == nil || isNil(o.SupportsOnDownloadFailure) {
+	if o == nil || IsNil(o.SupportsOnDownloadFailure) {
 		var ret bool
 		return ret
 	}
@@ -1303,15 +1306,15 @@ func (o *NotificationResource) GetSupportsOnDownloadFailure() bool {
 // GetSupportsOnDownloadFailureOk returns a tuple with the SupportsOnDownloadFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnDownloadFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnDownloadFailure) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnDownloadFailure) {
+		return nil, false
 	}
 	return o.SupportsOnDownloadFailure, true
 }
 
 // HasSupportsOnDownloadFailure returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnDownloadFailure() bool {
-	if o != nil && !isNil(o.SupportsOnDownloadFailure) {
+	if o != nil && !IsNil(o.SupportsOnDownloadFailure) {
 		return true
 	}
 
@@ -1325,7 +1328,7 @@ func (o *NotificationResource) SetSupportsOnDownloadFailure(v bool) {
 
 // GetSupportsOnImportFailure returns the SupportsOnImportFailure field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnImportFailure() bool {
-	if o == nil || isNil(o.SupportsOnImportFailure) {
+	if o == nil || IsNil(o.SupportsOnImportFailure) {
 		var ret bool
 		return ret
 	}
@@ -1335,15 +1338,15 @@ func (o *NotificationResource) GetSupportsOnImportFailure() bool {
 // GetSupportsOnImportFailureOk returns a tuple with the SupportsOnImportFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnImportFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnImportFailure) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnImportFailure) {
+		return nil, false
 	}
 	return o.SupportsOnImportFailure, true
 }
 
 // HasSupportsOnImportFailure returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnImportFailure() bool {
-	if o != nil && !isNil(o.SupportsOnImportFailure) {
+	if o != nil && !IsNil(o.SupportsOnImportFailure) {
 		return true
 	}
 
@@ -1357,7 +1360,7 @@ func (o *NotificationResource) SetSupportsOnImportFailure(v bool) {
 
 // GetSupportsOnBookRetag returns the SupportsOnBookRetag field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnBookRetag() bool {
-	if o == nil || isNil(o.SupportsOnBookRetag) {
+	if o == nil || IsNil(o.SupportsOnBookRetag) {
 		var ret bool
 		return ret
 	}
@@ -1367,15 +1370,15 @@ func (o *NotificationResource) GetSupportsOnBookRetag() bool {
 // GetSupportsOnBookRetagOk returns a tuple with the SupportsOnBookRetag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnBookRetagOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnBookRetag) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnBookRetag) {
+		return nil, false
 	}
 	return o.SupportsOnBookRetag, true
 }
 
 // HasSupportsOnBookRetag returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnBookRetag() bool {
-	if o != nil && !isNil(o.SupportsOnBookRetag) {
+	if o != nil && !IsNil(o.SupportsOnBookRetag) {
 		return true
 	}
 
@@ -1389,7 +1392,7 @@ func (o *NotificationResource) SetSupportsOnBookRetag(v bool) {
 
 // GetSupportsOnApplicationUpdate returns the SupportsOnApplicationUpdate field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnApplicationUpdate() bool {
-	if o == nil || isNil(o.SupportsOnApplicationUpdate) {
+	if o == nil || IsNil(o.SupportsOnApplicationUpdate) {
 		var ret bool
 		return ret
 	}
@@ -1399,15 +1402,15 @@ func (o *NotificationResource) GetSupportsOnApplicationUpdate() bool {
 // GetSupportsOnApplicationUpdateOk returns a tuple with the SupportsOnApplicationUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationResource) GetSupportsOnApplicationUpdateOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnApplicationUpdate) {
-    return nil, false
+	if o == nil || IsNil(o.SupportsOnApplicationUpdate) {
+		return nil, false
 	}
 	return o.SupportsOnApplicationUpdate, true
 }
 
 // HasSupportsOnApplicationUpdate returns a boolean if a field has been set.
 func (o *NotificationResource) HasSupportsOnApplicationUpdate() bool {
-	if o != nil && !isNil(o.SupportsOnApplicationUpdate) {
+	if o != nil && !IsNil(o.SupportsOnApplicationUpdate) {
 		return true
 	}
 
@@ -1421,7 +1424,7 @@ func (o *NotificationResource) SetSupportsOnApplicationUpdate(v bool) {
 
 // GetTestCommand returns the TestCommand field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NotificationResource) GetTestCommand() string {
-	if o == nil || isNil(o.TestCommand.Get()) {
+	if o == nil || IsNil(o.TestCommand.Get()) {
 		var ret string
 		return ret
 	}
@@ -1433,7 +1436,7 @@ func (o *NotificationResource) GetTestCommand() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NotificationResource) GetTestCommandOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TestCommand.Get(), o.TestCommand.IsSet()
 }
@@ -1462,8 +1465,16 @@ func (o *NotificationResource) UnsetTestCommand() {
 }
 
 func (o NotificationResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o NotificationResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -1484,7 +1495,7 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	if o.InfoLink.IsSet() {
 		toSerialize["infoLink"] = o.InfoLink.Get()
 	}
-	if !isNil(o.Message) {
+	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
 	}
 	if o.Tags != nil {
@@ -1496,97 +1507,97 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	if o.Link.IsSet() {
 		toSerialize["link"] = o.Link.Get()
 	}
-	if !isNil(o.OnGrab) {
+	if !IsNil(o.OnGrab) {
 		toSerialize["onGrab"] = o.OnGrab
 	}
-	if !isNil(o.OnReleaseImport) {
+	if !IsNil(o.OnReleaseImport) {
 		toSerialize["onReleaseImport"] = o.OnReleaseImport
 	}
-	if !isNil(o.OnUpgrade) {
+	if !IsNil(o.OnUpgrade) {
 		toSerialize["onUpgrade"] = o.OnUpgrade
 	}
-	if !isNil(o.OnRename) {
+	if !IsNil(o.OnRename) {
 		toSerialize["onRename"] = o.OnRename
 	}
-	if !isNil(o.OnAuthorAdded) {
+	if !IsNil(o.OnAuthorAdded) {
 		toSerialize["onAuthorAdded"] = o.OnAuthorAdded
 	}
-	if !isNil(o.OnAuthorDelete) {
+	if !IsNil(o.OnAuthorDelete) {
 		toSerialize["onAuthorDelete"] = o.OnAuthorDelete
 	}
-	if !isNil(o.OnBookDelete) {
+	if !IsNil(o.OnBookDelete) {
 		toSerialize["onBookDelete"] = o.OnBookDelete
 	}
-	if !isNil(o.OnBookFileDelete) {
+	if !IsNil(o.OnBookFileDelete) {
 		toSerialize["onBookFileDelete"] = o.OnBookFileDelete
 	}
-	if !isNil(o.OnBookFileDeleteForUpgrade) {
+	if !IsNil(o.OnBookFileDeleteForUpgrade) {
 		toSerialize["onBookFileDeleteForUpgrade"] = o.OnBookFileDeleteForUpgrade
 	}
-	if !isNil(o.OnHealthIssue) {
+	if !IsNil(o.OnHealthIssue) {
 		toSerialize["onHealthIssue"] = o.OnHealthIssue
 	}
-	if !isNil(o.OnDownloadFailure) {
+	if !IsNil(o.OnDownloadFailure) {
 		toSerialize["onDownloadFailure"] = o.OnDownloadFailure
 	}
-	if !isNil(o.OnImportFailure) {
+	if !IsNil(o.OnImportFailure) {
 		toSerialize["onImportFailure"] = o.OnImportFailure
 	}
-	if !isNil(o.OnBookRetag) {
+	if !IsNil(o.OnBookRetag) {
 		toSerialize["onBookRetag"] = o.OnBookRetag
 	}
-	if !isNil(o.OnApplicationUpdate) {
+	if !IsNil(o.OnApplicationUpdate) {
 		toSerialize["onApplicationUpdate"] = o.OnApplicationUpdate
 	}
-	if !isNil(o.SupportsOnGrab) {
+	if !IsNil(o.SupportsOnGrab) {
 		toSerialize["supportsOnGrab"] = o.SupportsOnGrab
 	}
-	if !isNil(o.SupportsOnReleaseImport) {
+	if !IsNil(o.SupportsOnReleaseImport) {
 		toSerialize["supportsOnReleaseImport"] = o.SupportsOnReleaseImport
 	}
-	if !isNil(o.SupportsOnUpgrade) {
+	if !IsNil(o.SupportsOnUpgrade) {
 		toSerialize["supportsOnUpgrade"] = o.SupportsOnUpgrade
 	}
-	if !isNil(o.SupportsOnRename) {
+	if !IsNil(o.SupportsOnRename) {
 		toSerialize["supportsOnRename"] = o.SupportsOnRename
 	}
-	if !isNil(o.SupportsOnAuthorAdded) {
+	if !IsNil(o.SupportsOnAuthorAdded) {
 		toSerialize["supportsOnAuthorAdded"] = o.SupportsOnAuthorAdded
 	}
-	if !isNil(o.SupportsOnAuthorDelete) {
+	if !IsNil(o.SupportsOnAuthorDelete) {
 		toSerialize["supportsOnAuthorDelete"] = o.SupportsOnAuthorDelete
 	}
-	if !isNil(o.SupportsOnBookDelete) {
+	if !IsNil(o.SupportsOnBookDelete) {
 		toSerialize["supportsOnBookDelete"] = o.SupportsOnBookDelete
 	}
-	if !isNil(o.SupportsOnBookFileDelete) {
+	if !IsNil(o.SupportsOnBookFileDelete) {
 		toSerialize["supportsOnBookFileDelete"] = o.SupportsOnBookFileDelete
 	}
-	if !isNil(o.SupportsOnBookFileDeleteForUpgrade) {
+	if !IsNil(o.SupportsOnBookFileDeleteForUpgrade) {
 		toSerialize["supportsOnBookFileDeleteForUpgrade"] = o.SupportsOnBookFileDeleteForUpgrade
 	}
-	if !isNil(o.SupportsOnHealthIssue) {
+	if !IsNil(o.SupportsOnHealthIssue) {
 		toSerialize["supportsOnHealthIssue"] = o.SupportsOnHealthIssue
 	}
-	if !isNil(o.IncludeHealthWarnings) {
+	if !IsNil(o.IncludeHealthWarnings) {
 		toSerialize["includeHealthWarnings"] = o.IncludeHealthWarnings
 	}
-	if !isNil(o.SupportsOnDownloadFailure) {
+	if !IsNil(o.SupportsOnDownloadFailure) {
 		toSerialize["supportsOnDownloadFailure"] = o.SupportsOnDownloadFailure
 	}
-	if !isNil(o.SupportsOnImportFailure) {
+	if !IsNil(o.SupportsOnImportFailure) {
 		toSerialize["supportsOnImportFailure"] = o.SupportsOnImportFailure
 	}
-	if !isNil(o.SupportsOnBookRetag) {
+	if !IsNil(o.SupportsOnBookRetag) {
 		toSerialize["supportsOnBookRetag"] = o.SupportsOnBookRetag
 	}
-	if !isNil(o.SupportsOnApplicationUpdate) {
+	if !IsNil(o.SupportsOnApplicationUpdate) {
 		toSerialize["supportsOnApplicationUpdate"] = o.SupportsOnApplicationUpdate
 	}
 	if o.TestCommand.IsSet() {
 		toSerialize["testCommand"] = o.TestCommand.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableNotificationResource struct {

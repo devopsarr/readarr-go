@@ -21,6 +21,7 @@ import (
 
 // BookshelfAPIService BookshelfAPI service
 type BookshelfAPIService service
+
 type ApiCreateBookshelfRequest struct {
 	ctx context.Context
 	ApiService *BookshelfAPIService

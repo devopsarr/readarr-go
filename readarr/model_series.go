@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Series type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Series{}
+
 // Series struct for Series
 type Series struct {
 	Id *int32 `json:"id,omitempty"`
@@ -47,7 +50,7 @@ func NewSeriesWithDefaults() *Series {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *Series) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -57,15 +60,15 @@ func (o *Series) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Series) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *Series) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -79,7 +82,7 @@ func (o *Series) SetId(v int32) {
 
 // GetForeignSeriesId returns the ForeignSeriesId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Series) GetForeignSeriesId() string {
-	if o == nil || isNil(o.ForeignSeriesId.Get()) {
+	if o == nil || IsNil(o.ForeignSeriesId.Get()) {
 		var ret string
 		return ret
 	}
@@ -91,7 +94,7 @@ func (o *Series) GetForeignSeriesId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Series) GetForeignSeriesIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ForeignSeriesId.Get(), o.ForeignSeriesId.IsSet()
 }
@@ -121,7 +124,7 @@ func (o *Series) UnsetForeignSeriesId() {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Series) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -133,7 +136,7 @@ func (o *Series) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Series) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -163,7 +166,7 @@ func (o *Series) UnsetTitle() {
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Series) GetDescription() string {
-	if o == nil || isNil(o.Description.Get()) {
+	if o == nil || IsNil(o.Description.Get()) {
 		var ret string
 		return ret
 	}
@@ -175,7 +178,7 @@ func (o *Series) GetDescription() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Series) GetDescriptionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Description.Get(), o.Description.IsSet()
 }
@@ -205,7 +208,7 @@ func (o *Series) UnsetDescription() {
 
 // GetNumbered returns the Numbered field value if set, zero value otherwise.
 func (o *Series) GetNumbered() bool {
-	if o == nil || isNil(o.Numbered) {
+	if o == nil || IsNil(o.Numbered) {
 		var ret bool
 		return ret
 	}
@@ -215,15 +218,15 @@ func (o *Series) GetNumbered() bool {
 // GetNumberedOk returns a tuple with the Numbered field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Series) GetNumberedOk() (*bool, bool) {
-	if o == nil || isNil(o.Numbered) {
-    return nil, false
+	if o == nil || IsNil(o.Numbered) {
+		return nil, false
 	}
 	return o.Numbered, true
 }
 
 // HasNumbered returns a boolean if a field has been set.
 func (o *Series) HasNumbered() bool {
-	if o != nil && !isNil(o.Numbered) {
+	if o != nil && !IsNil(o.Numbered) {
 		return true
 	}
 
@@ -237,7 +240,7 @@ func (o *Series) SetNumbered(v bool) {
 
 // GetWorkCount returns the WorkCount field value if set, zero value otherwise.
 func (o *Series) GetWorkCount() int32 {
-	if o == nil || isNil(o.WorkCount) {
+	if o == nil || IsNil(o.WorkCount) {
 		var ret int32
 		return ret
 	}
@@ -247,15 +250,15 @@ func (o *Series) GetWorkCount() int32 {
 // GetWorkCountOk returns a tuple with the WorkCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Series) GetWorkCountOk() (*int32, bool) {
-	if o == nil || isNil(o.WorkCount) {
-    return nil, false
+	if o == nil || IsNil(o.WorkCount) {
+		return nil, false
 	}
 	return o.WorkCount, true
 }
 
 // HasWorkCount returns a boolean if a field has been set.
 func (o *Series) HasWorkCount() bool {
-	if o != nil && !isNil(o.WorkCount) {
+	if o != nil && !IsNil(o.WorkCount) {
 		return true
 	}
 
@@ -269,7 +272,7 @@ func (o *Series) SetWorkCount(v int32) {
 
 // GetPrimaryWorkCount returns the PrimaryWorkCount field value if set, zero value otherwise.
 func (o *Series) GetPrimaryWorkCount() int32 {
-	if o == nil || isNil(o.PrimaryWorkCount) {
+	if o == nil || IsNil(o.PrimaryWorkCount) {
 		var ret int32
 		return ret
 	}
@@ -279,15 +282,15 @@ func (o *Series) GetPrimaryWorkCount() int32 {
 // GetPrimaryWorkCountOk returns a tuple with the PrimaryWorkCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Series) GetPrimaryWorkCountOk() (*int32, bool) {
-	if o == nil || isNil(o.PrimaryWorkCount) {
-    return nil, false
+	if o == nil || IsNil(o.PrimaryWorkCount) {
+		return nil, false
 	}
 	return o.PrimaryWorkCount, true
 }
 
 // HasPrimaryWorkCount returns a boolean if a field has been set.
 func (o *Series) HasPrimaryWorkCount() bool {
-	if o != nil && !isNil(o.PrimaryWorkCount) {
+	if o != nil && !IsNil(o.PrimaryWorkCount) {
 		return true
 	}
 
@@ -301,7 +304,7 @@ func (o *Series) SetPrimaryWorkCount(v int32) {
 
 // GetLinkItems returns the LinkItems field value if set, zero value otherwise.
 func (o *Series) GetLinkItems() SeriesBookLinkListLazyLoaded {
-	if o == nil || isNil(o.LinkItems) {
+	if o == nil || IsNil(o.LinkItems) {
 		var ret SeriesBookLinkListLazyLoaded
 		return ret
 	}
@@ -311,15 +314,15 @@ func (o *Series) GetLinkItems() SeriesBookLinkListLazyLoaded {
 // GetLinkItemsOk returns a tuple with the LinkItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Series) GetLinkItemsOk() (*SeriesBookLinkListLazyLoaded, bool) {
-	if o == nil || isNil(o.LinkItems) {
-    return nil, false
+	if o == nil || IsNil(o.LinkItems) {
+		return nil, false
 	}
 	return o.LinkItems, true
 }
 
 // HasLinkItems returns a boolean if a field has been set.
 func (o *Series) HasLinkItems() bool {
-	if o != nil && !isNil(o.LinkItems) {
+	if o != nil && !IsNil(o.LinkItems) {
 		return true
 	}
 
@@ -333,7 +336,7 @@ func (o *Series) SetLinkItems(v SeriesBookLinkListLazyLoaded) {
 
 // GetBooks returns the Books field value if set, zero value otherwise.
 func (o *Series) GetBooks() BookListLazyLoaded {
-	if o == nil || isNil(o.Books) {
+	if o == nil || IsNil(o.Books) {
 		var ret BookListLazyLoaded
 		return ret
 	}
@@ -343,15 +346,15 @@ func (o *Series) GetBooks() BookListLazyLoaded {
 // GetBooksOk returns a tuple with the Books field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Series) GetBooksOk() (*BookListLazyLoaded, bool) {
-	if o == nil || isNil(o.Books) {
-    return nil, false
+	if o == nil || IsNil(o.Books) {
+		return nil, false
 	}
 	return o.Books, true
 }
 
 // HasBooks returns a boolean if a field has been set.
 func (o *Series) HasBooks() bool {
-	if o != nil && !isNil(o.Books) {
+	if o != nil && !IsNil(o.Books) {
 		return true
 	}
 
@@ -365,7 +368,7 @@ func (o *Series) SetBooks(v BookListLazyLoaded) {
 
 // GetForeignAuthorId returns the ForeignAuthorId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Series) GetForeignAuthorId() string {
-	if o == nil || isNil(o.ForeignAuthorId.Get()) {
+	if o == nil || IsNil(o.ForeignAuthorId.Get()) {
 		var ret string
 		return ret
 	}
@@ -377,7 +380,7 @@ func (o *Series) GetForeignAuthorId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Series) GetForeignAuthorIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ForeignAuthorId.Get(), o.ForeignAuthorId.IsSet()
 }
@@ -406,8 +409,16 @@ func (o *Series) UnsetForeignAuthorId() {
 }
 
 func (o Series) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o Series) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.ForeignSeriesId.IsSet() {
@@ -419,25 +430,25 @@ func (o Series) MarshalJSON() ([]byte, error) {
 	if o.Description.IsSet() {
 		toSerialize["description"] = o.Description.Get()
 	}
-	if !isNil(o.Numbered) {
+	if !IsNil(o.Numbered) {
 		toSerialize["numbered"] = o.Numbered
 	}
-	if !isNil(o.WorkCount) {
+	if !IsNil(o.WorkCount) {
 		toSerialize["workCount"] = o.WorkCount
 	}
-	if !isNil(o.PrimaryWorkCount) {
+	if !IsNil(o.PrimaryWorkCount) {
 		toSerialize["primaryWorkCount"] = o.PrimaryWorkCount
 	}
-	if !isNil(o.LinkItems) {
+	if !IsNil(o.LinkItems) {
 		toSerialize["linkItems"] = o.LinkItems
 	}
-	if !isNil(o.Books) {
+	if !IsNil(o.Books) {
 		toSerialize["books"] = o.Books
 	}
 	if o.ForeignAuthorId.IsSet() {
 		toSerialize["foreignAuthorId"] = o.ForeignAuthorId.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSeries struct {

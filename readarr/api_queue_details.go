@@ -22,6 +22,7 @@ import (
 
 // QueueDetailsAPIService QueueDetailsAPI service
 type QueueDetailsAPIService service
+
 type ApiListQueueDetailsRequest struct {
 	ctx context.Context
 	ApiService *QueueDetailsAPIService
@@ -51,7 +52,7 @@ func (r ApiListQueueDetailsRequest) IncludeBook(includeBook bool) ApiListQueueDe
 	return r
 }
 
-func (r ApiListQueueDetailsRequest) Execute() ([]*QueueResource, *http.Response, error) {
+func (r ApiListQueueDetailsRequest) Execute() ([]QueueResource, *http.Response, error) {
 	return r.ApiService.ListQueueDetailsExecute(r)
 }
 
@@ -70,12 +71,12 @@ func (a *QueueDetailsAPIService) ListQueueDetails(ctx context.Context) ApiListQu
 
 // Execute executes the request
 //  @return []QueueResource
-func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRequest) ([]*QueueResource, *http.Response, error) {
+func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRequest) ([]QueueResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*QueueResource
+		localVarReturnValue  []QueueResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueDetailsAPIService.ListQueueDetails")
@@ -90,24 +91,30 @@ func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRe
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		localVarQueryParams.Add("authorId", parameterToString(*r.authorId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
 	}
 	if r.bookIds != nil {
 		t := *r.bookIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("bookIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("bookIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", t, "multi")
 		}
 	}
 	if r.includeAuthor != nil {
-		localVarQueryParams.Add("includeAuthor", parameterToString(*r.includeAuthor, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "")
+	} else {
+		var defaultValue bool = false
+		r.includeAuthor = &defaultValue
 	}
 	if r.includeBook != nil {
-		localVarQueryParams.Add("includeBook", parameterToString(*r.includeBook, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "")
+	} else {
+		var defaultValue bool = true
+		r.includeBook = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

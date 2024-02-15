@@ -14,9 +14,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the BookshelfResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BookshelfResource{}
+
 // BookshelfResource struct for BookshelfResource
 type BookshelfResource struct {
-	Authors []*BookshelfAuthorResource `json:"authors,omitempty"`
+	Authors []BookshelfAuthorResource `json:"authors,omitempty"`
 	MonitoringOptions *MonitoringOptions `json:"monitoringOptions,omitempty"`
 	MonitorNewItems *NewItemMonitorTypes `json:"monitorNewItems,omitempty"`
 }
@@ -39,9 +42,9 @@ func NewBookshelfResourceWithDefaults() *BookshelfResource {
 }
 
 // GetAuthors returns the Authors field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BookshelfResource) GetAuthors() []*BookshelfAuthorResource {
+func (o *BookshelfResource) GetAuthors() []BookshelfAuthorResource {
 	if o == nil {
-		var ret []*BookshelfAuthorResource
+		var ret []BookshelfAuthorResource
 		return ret
 	}
 	return o.Authors
@@ -50,16 +53,16 @@ func (o *BookshelfResource) GetAuthors() []*BookshelfAuthorResource {
 // GetAuthorsOk returns a tuple with the Authors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BookshelfResource) GetAuthorsOk() ([]*BookshelfAuthorResource, bool) {
-	if o == nil || isNil(o.Authors) {
-    return nil, false
+func (o *BookshelfResource) GetAuthorsOk() ([]BookshelfAuthorResource, bool) {
+	if o == nil || IsNil(o.Authors) {
+		return nil, false
 	}
 	return o.Authors, true
 }
 
 // HasAuthors returns a boolean if a field has been set.
 func (o *BookshelfResource) HasAuthors() bool {
-	if o != nil && isNil(o.Authors) {
+	if o != nil && IsNil(o.Authors) {
 		return true
 	}
 
@@ -67,13 +70,13 @@ func (o *BookshelfResource) HasAuthors() bool {
 }
 
 // SetAuthors gets a reference to the given []BookshelfAuthorResource and assigns it to the Authors field.
-func (o *BookshelfResource) SetAuthors(v []*BookshelfAuthorResource) {
+func (o *BookshelfResource) SetAuthors(v []BookshelfAuthorResource) {
 	o.Authors = v
 }
 
 // GetMonitoringOptions returns the MonitoringOptions field value if set, zero value otherwise.
 func (o *BookshelfResource) GetMonitoringOptions() MonitoringOptions {
-	if o == nil || isNil(o.MonitoringOptions) {
+	if o == nil || IsNil(o.MonitoringOptions) {
 		var ret MonitoringOptions
 		return ret
 	}
@@ -83,15 +86,15 @@ func (o *BookshelfResource) GetMonitoringOptions() MonitoringOptions {
 // GetMonitoringOptionsOk returns a tuple with the MonitoringOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookshelfResource) GetMonitoringOptionsOk() (*MonitoringOptions, bool) {
-	if o == nil || isNil(o.MonitoringOptions) {
-    return nil, false
+	if o == nil || IsNil(o.MonitoringOptions) {
+		return nil, false
 	}
 	return o.MonitoringOptions, true
 }
 
 // HasMonitoringOptions returns a boolean if a field has been set.
 func (o *BookshelfResource) HasMonitoringOptions() bool {
-	if o != nil && !isNil(o.MonitoringOptions) {
+	if o != nil && !IsNil(o.MonitoringOptions) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *BookshelfResource) SetMonitoringOptions(v MonitoringOptions) {
 
 // GetMonitorNewItems returns the MonitorNewItems field value if set, zero value otherwise.
 func (o *BookshelfResource) GetMonitorNewItems() NewItemMonitorTypes {
-	if o == nil || isNil(o.MonitorNewItems) {
+	if o == nil || IsNil(o.MonitorNewItems) {
 		var ret NewItemMonitorTypes
 		return ret
 	}
@@ -115,15 +118,15 @@ func (o *BookshelfResource) GetMonitorNewItems() NewItemMonitorTypes {
 // GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookshelfResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool) {
-	if o == nil || isNil(o.MonitorNewItems) {
-    return nil, false
+	if o == nil || IsNil(o.MonitorNewItems) {
+		return nil, false
 	}
 	return o.MonitorNewItems, true
 }
 
 // HasMonitorNewItems returns a boolean if a field has been set.
 func (o *BookshelfResource) HasMonitorNewItems() bool {
-	if o != nil && !isNil(o.MonitorNewItems) {
+	if o != nil && !IsNil(o.MonitorNewItems) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *BookshelfResource) SetMonitorNewItems(v NewItemMonitorTypes) {
 }
 
 func (o BookshelfResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BookshelfResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Authors != nil {
 		toSerialize["authors"] = o.Authors
 	}
-	if !isNil(o.MonitoringOptions) {
+	if !IsNil(o.MonitoringOptions) {
 		toSerialize["monitoringOptions"] = o.MonitoringOptions
 	}
-	if !isNil(o.MonitorNewItems) {
+	if !IsNil(o.MonitorNewItems) {
 		toSerialize["monitorNewItems"] = o.MonitorNewItems
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBookshelfResource struct {

@@ -21,6 +21,7 @@ import (
 
 // RenameBookAPIService RenameBookAPI service
 type RenameBookAPIService service
+
 type ApiListRenameRequest struct {
 	ctx context.Context
 	ApiService *RenameBookAPIService
@@ -38,7 +39,7 @@ func (r ApiListRenameRequest) BookId(bookId int32) ApiListRenameRequest {
 	return r
 }
 
-func (r ApiListRenameRequest) Execute() ([]*RenameBookResource, *http.Response, error) {
+func (r ApiListRenameRequest) Execute() ([]RenameBookResource, *http.Response, error) {
 	return r.ApiService.ListRenameExecute(r)
 }
 
@@ -57,12 +58,12 @@ func (a *RenameBookAPIService) ListRename(ctx context.Context) ApiListRenameRequ
 
 // Execute executes the request
 //  @return []RenameBookResource
-func (a *RenameBookAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameBookResource, *http.Response, error) {
+func (a *RenameBookAPIService) ListRenameExecute(r ApiListRenameRequest) ([]RenameBookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*RenameBookResource
+		localVarReturnValue  []RenameBookResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameBookAPIService.ListRename")
@@ -77,10 +78,10 @@ func (a *RenameBookAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*Ren
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		localVarQueryParams.Add("authorId", parameterToString(*r.authorId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
 	}
 	if r.bookId != nil {
-		localVarQueryParams.Add("bookId", parameterToString(*r.bookId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", r.bookId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

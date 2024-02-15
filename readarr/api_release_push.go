@@ -21,6 +21,7 @@ import (
 
 // ReleasePushAPIService ReleasePushAPI service
 type ReleasePushAPIService service
+
 type ApiCreateReleasePushRequest struct {
 	ctx context.Context
 	ApiService *ReleasePushAPIService

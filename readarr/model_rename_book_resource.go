@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RenameBookResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RenameBookResource{}
+
 // RenameBookResource struct for RenameBookResource
 type RenameBookResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -43,7 +46,7 @@ func NewRenameBookResourceWithDefaults() *RenameBookResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *RenameBookResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *RenameBookResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameBookResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *RenameBookResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *RenameBookResource) SetId(v int32) {
 
 // GetAuthorId returns the AuthorId field value if set, zero value otherwise.
 func (o *RenameBookResource) GetAuthorId() int32 {
-	if o == nil || isNil(o.AuthorId) {
+	if o == nil || IsNil(o.AuthorId) {
 		var ret int32
 		return ret
 	}
@@ -85,15 +88,15 @@ func (o *RenameBookResource) GetAuthorId() int32 {
 // GetAuthorIdOk returns a tuple with the AuthorId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameBookResource) GetAuthorIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AuthorId) {
-    return nil, false
+	if o == nil || IsNil(o.AuthorId) {
+		return nil, false
 	}
 	return o.AuthorId, true
 }
 
 // HasAuthorId returns a boolean if a field has been set.
 func (o *RenameBookResource) HasAuthorId() bool {
-	if o != nil && !isNil(o.AuthorId) {
+	if o != nil && !IsNil(o.AuthorId) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *RenameBookResource) SetAuthorId(v int32) {
 
 // GetBookId returns the BookId field value if set, zero value otherwise.
 func (o *RenameBookResource) GetBookId() int32 {
-	if o == nil || isNil(o.BookId) {
+	if o == nil || IsNil(o.BookId) {
 		var ret int32
 		return ret
 	}
@@ -117,15 +120,15 @@ func (o *RenameBookResource) GetBookId() int32 {
 // GetBookIdOk returns a tuple with the BookId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameBookResource) GetBookIdOk() (*int32, bool) {
-	if o == nil || isNil(o.BookId) {
-    return nil, false
+	if o == nil || IsNil(o.BookId) {
+		return nil, false
 	}
 	return o.BookId, true
 }
 
 // HasBookId returns a boolean if a field has been set.
 func (o *RenameBookResource) HasBookId() bool {
-	if o != nil && !isNil(o.BookId) {
+	if o != nil && !IsNil(o.BookId) {
 		return true
 	}
 
@@ -139,7 +142,7 @@ func (o *RenameBookResource) SetBookId(v int32) {
 
 // GetBookFileId returns the BookFileId field value if set, zero value otherwise.
 func (o *RenameBookResource) GetBookFileId() int32 {
-	if o == nil || isNil(o.BookFileId) {
+	if o == nil || IsNil(o.BookFileId) {
 		var ret int32
 		return ret
 	}
@@ -149,15 +152,15 @@ func (o *RenameBookResource) GetBookFileId() int32 {
 // GetBookFileIdOk returns a tuple with the BookFileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameBookResource) GetBookFileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.BookFileId) {
-    return nil, false
+	if o == nil || IsNil(o.BookFileId) {
+		return nil, false
 	}
 	return o.BookFileId, true
 }
 
 // HasBookFileId returns a boolean if a field has been set.
 func (o *RenameBookResource) HasBookFileId() bool {
-	if o != nil && !isNil(o.BookFileId) {
+	if o != nil && !IsNil(o.BookFileId) {
 		return true
 	}
 
@@ -171,7 +174,7 @@ func (o *RenameBookResource) SetBookFileId(v int32) {
 
 // GetExistingPath returns the ExistingPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RenameBookResource) GetExistingPath() string {
-	if o == nil || isNil(o.ExistingPath.Get()) {
+	if o == nil || IsNil(o.ExistingPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -183,7 +186,7 @@ func (o *RenameBookResource) GetExistingPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RenameBookResource) GetExistingPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ExistingPath.Get(), o.ExistingPath.IsSet()
 }
@@ -213,7 +216,7 @@ func (o *RenameBookResource) UnsetExistingPath() {
 
 // GetNewPath returns the NewPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RenameBookResource) GetNewPath() string {
-	if o == nil || isNil(o.NewPath.Get()) {
+	if o == nil || IsNil(o.NewPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -225,7 +228,7 @@ func (o *RenameBookResource) GetNewPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RenameBookResource) GetNewPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.NewPath.Get(), o.NewPath.IsSet()
 }
@@ -254,17 +257,25 @@ func (o *RenameBookResource) UnsetNewPath() {
 }
 
 func (o RenameBookResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RenameBookResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.AuthorId) {
+	if !IsNil(o.AuthorId) {
 		toSerialize["authorId"] = o.AuthorId
 	}
-	if !isNil(o.BookId) {
+	if !IsNil(o.BookId) {
 		toSerialize["bookId"] = o.BookId
 	}
-	if !isNil(o.BookFileId) {
+	if !IsNil(o.BookFileId) {
 		toSerialize["bookFileId"] = o.BookFileId
 	}
 	if o.ExistingPath.IsSet() {
@@ -273,7 +284,7 @@ func (o RenameBookResource) MarshalJSON() ([]byte, error) {
 	if o.NewPath.IsSet() {
 		toSerialize["newPath"] = o.NewPath.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRenameBookResource struct {

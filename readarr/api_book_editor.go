@@ -21,6 +21,7 @@ import (
 
 // BookEditorAPIService BookEditorAPI service
 type BookEditorAPIService service
+
 type ApiDeleteBookEditorRequest struct {
 	ctx context.Context
 	ApiService *BookEditorAPIService
@@ -142,6 +143,7 @@ func (a *BookEditorAPIService) DeleteBookEditorExecute(r ApiDeleteBookEditorRequ
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiPutBookEditorRequest struct {
 	ctx context.Context
 	ApiService *BookEditorAPIService

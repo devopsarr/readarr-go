@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the EditionLazyLoaded type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &EditionLazyLoaded{}
+
 // EditionLazyLoaded struct for EditionLazyLoaded
 type EditionLazyLoaded struct {
 	Value *Edition `json:"value,omitempty"`
@@ -39,7 +42,7 @@ func NewEditionLazyLoadedWithDefaults() *EditionLazyLoaded {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *EditionLazyLoaded) GetValue() Edition {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		var ret Edition
 		return ret
 	}
@@ -49,15 +52,15 @@ func (o *EditionLazyLoaded) GetValue() Edition {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EditionLazyLoaded) GetValueOk() (*Edition, bool) {
-	if o == nil || isNil(o.Value) {
-    return nil, false
+	if o == nil || IsNil(o.Value) {
+		return nil, false
 	}
 	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *EditionLazyLoaded) HasValue() bool {
-	if o != nil && !isNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
@@ -71,7 +74,7 @@ func (o *EditionLazyLoaded) SetValue(v Edition) {
 
 // GetIsLoaded returns the IsLoaded field value if set, zero value otherwise.
 func (o *EditionLazyLoaded) GetIsLoaded() bool {
-	if o == nil || isNil(o.IsLoaded) {
+	if o == nil || IsNil(o.IsLoaded) {
 		var ret bool
 		return ret
 	}
@@ -81,15 +84,15 @@ func (o *EditionLazyLoaded) GetIsLoaded() bool {
 // GetIsLoadedOk returns a tuple with the IsLoaded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EditionLazyLoaded) GetIsLoadedOk() (*bool, bool) {
-	if o == nil || isNil(o.IsLoaded) {
-    return nil, false
+	if o == nil || IsNil(o.IsLoaded) {
+		return nil, false
 	}
 	return o.IsLoaded, true
 }
 
 // HasIsLoaded returns a boolean if a field has been set.
 func (o *EditionLazyLoaded) HasIsLoaded() bool {
-	if o != nil && !isNil(o.IsLoaded) {
+	if o != nil && !IsNil(o.IsLoaded) {
 		return true
 	}
 
@@ -102,14 +105,22 @@ func (o *EditionLazyLoaded) SetIsLoaded(v bool) {
 }
 
 func (o EditionLazyLoaded) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Value) {
-		toSerialize["value"] = o.Value
-	}
-	if !isNil(o.IsLoaded) {
-		toSerialize["isLoaded"] = o.IsLoaded
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o EditionLazyLoaded) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
+	}
+	if !IsNil(o.IsLoaded) {
+		toSerialize["isLoaded"] = o.IsLoaded
+	}
+	return toSerialize, nil
 }
 
 type NullableEditionLazyLoaded struct {

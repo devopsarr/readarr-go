@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the QualityProfile type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &QualityProfile{}
+
 // QualityProfile struct for QualityProfile
 type QualityProfile struct {
 	Id *int32 `json:"id,omitempty"`
@@ -22,8 +25,8 @@ type QualityProfile struct {
 	Cutoff *int32 `json:"cutoff,omitempty"`
 	MinFormatScore *int32 `json:"minFormatScore,omitempty"`
 	CutoffFormatScore *int32 `json:"cutoffFormatScore,omitempty"`
-	FormatItems []*ProfileFormatItem `json:"formatItems,omitempty"`
-	Items []*QualityProfileQualityItem `json:"items,omitempty"`
+	FormatItems []ProfileFormatItem `json:"formatItems,omitempty"`
+	Items []QualityProfileQualityItem `json:"items,omitempty"`
 }
 
 // NewQualityProfile instantiates a new QualityProfile object
@@ -45,7 +48,7 @@ func NewQualityProfileWithDefaults() *QualityProfile {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *QualityProfile) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -55,15 +58,15 @@ func (o *QualityProfile) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityProfile) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *QualityProfile) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -77,7 +80,7 @@ func (o *QualityProfile) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QualityProfile) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -89,7 +92,7 @@ func (o *QualityProfile) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QualityProfile) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -119,7 +122,7 @@ func (o *QualityProfile) UnsetName() {
 
 // GetUpgradeAllowed returns the UpgradeAllowed field value if set, zero value otherwise.
 func (o *QualityProfile) GetUpgradeAllowed() bool {
-	if o == nil || isNil(o.UpgradeAllowed) {
+	if o == nil || IsNil(o.UpgradeAllowed) {
 		var ret bool
 		return ret
 	}
@@ -129,15 +132,15 @@ func (o *QualityProfile) GetUpgradeAllowed() bool {
 // GetUpgradeAllowedOk returns a tuple with the UpgradeAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityProfile) GetUpgradeAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.UpgradeAllowed) {
-    return nil, false
+	if o == nil || IsNil(o.UpgradeAllowed) {
+		return nil, false
 	}
 	return o.UpgradeAllowed, true
 }
 
 // HasUpgradeAllowed returns a boolean if a field has been set.
 func (o *QualityProfile) HasUpgradeAllowed() bool {
-	if o != nil && !isNil(o.UpgradeAllowed) {
+	if o != nil && !IsNil(o.UpgradeAllowed) {
 		return true
 	}
 
@@ -151,7 +154,7 @@ func (o *QualityProfile) SetUpgradeAllowed(v bool) {
 
 // GetCutoff returns the Cutoff field value if set, zero value otherwise.
 func (o *QualityProfile) GetCutoff() int32 {
-	if o == nil || isNil(o.Cutoff) {
+	if o == nil || IsNil(o.Cutoff) {
 		var ret int32
 		return ret
 	}
@@ -161,15 +164,15 @@ func (o *QualityProfile) GetCutoff() int32 {
 // GetCutoffOk returns a tuple with the Cutoff field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityProfile) GetCutoffOk() (*int32, bool) {
-	if o == nil || isNil(o.Cutoff) {
-    return nil, false
+	if o == nil || IsNil(o.Cutoff) {
+		return nil, false
 	}
 	return o.Cutoff, true
 }
 
 // HasCutoff returns a boolean if a field has been set.
 func (o *QualityProfile) HasCutoff() bool {
-	if o != nil && !isNil(o.Cutoff) {
+	if o != nil && !IsNil(o.Cutoff) {
 		return true
 	}
 
@@ -183,7 +186,7 @@ func (o *QualityProfile) SetCutoff(v int32) {
 
 // GetMinFormatScore returns the MinFormatScore field value if set, zero value otherwise.
 func (o *QualityProfile) GetMinFormatScore() int32 {
-	if o == nil || isNil(o.MinFormatScore) {
+	if o == nil || IsNil(o.MinFormatScore) {
 		var ret int32
 		return ret
 	}
@@ -193,15 +196,15 @@ func (o *QualityProfile) GetMinFormatScore() int32 {
 // GetMinFormatScoreOk returns a tuple with the MinFormatScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityProfile) GetMinFormatScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.MinFormatScore) {
-    return nil, false
+	if o == nil || IsNil(o.MinFormatScore) {
+		return nil, false
 	}
 	return o.MinFormatScore, true
 }
 
 // HasMinFormatScore returns a boolean if a field has been set.
 func (o *QualityProfile) HasMinFormatScore() bool {
-	if o != nil && !isNil(o.MinFormatScore) {
+	if o != nil && !IsNil(o.MinFormatScore) {
 		return true
 	}
 
@@ -215,7 +218,7 @@ func (o *QualityProfile) SetMinFormatScore(v int32) {
 
 // GetCutoffFormatScore returns the CutoffFormatScore field value if set, zero value otherwise.
 func (o *QualityProfile) GetCutoffFormatScore() int32 {
-	if o == nil || isNil(o.CutoffFormatScore) {
+	if o == nil || IsNil(o.CutoffFormatScore) {
 		var ret int32
 		return ret
 	}
@@ -225,15 +228,15 @@ func (o *QualityProfile) GetCutoffFormatScore() int32 {
 // GetCutoffFormatScoreOk returns a tuple with the CutoffFormatScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityProfile) GetCutoffFormatScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.CutoffFormatScore) {
-    return nil, false
+	if o == nil || IsNil(o.CutoffFormatScore) {
+		return nil, false
 	}
 	return o.CutoffFormatScore, true
 }
 
 // HasCutoffFormatScore returns a boolean if a field has been set.
 func (o *QualityProfile) HasCutoffFormatScore() bool {
-	if o != nil && !isNil(o.CutoffFormatScore) {
+	if o != nil && !IsNil(o.CutoffFormatScore) {
 		return true
 	}
 
@@ -246,9 +249,9 @@ func (o *QualityProfile) SetCutoffFormatScore(v int32) {
 }
 
 // GetFormatItems returns the FormatItems field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QualityProfile) GetFormatItems() []*ProfileFormatItem {
+func (o *QualityProfile) GetFormatItems() []ProfileFormatItem {
 	if o == nil {
-		var ret []*ProfileFormatItem
+		var ret []ProfileFormatItem
 		return ret
 	}
 	return o.FormatItems
@@ -257,16 +260,16 @@ func (o *QualityProfile) GetFormatItems() []*ProfileFormatItem {
 // GetFormatItemsOk returns a tuple with the FormatItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QualityProfile) GetFormatItemsOk() ([]*ProfileFormatItem, bool) {
-	if o == nil || isNil(o.FormatItems) {
-    return nil, false
+func (o *QualityProfile) GetFormatItemsOk() ([]ProfileFormatItem, bool) {
+	if o == nil || IsNil(o.FormatItems) {
+		return nil, false
 	}
 	return o.FormatItems, true
 }
 
 // HasFormatItems returns a boolean if a field has been set.
 func (o *QualityProfile) HasFormatItems() bool {
-	if o != nil && isNil(o.FormatItems) {
+	if o != nil && IsNil(o.FormatItems) {
 		return true
 	}
 
@@ -274,14 +277,14 @@ func (o *QualityProfile) HasFormatItems() bool {
 }
 
 // SetFormatItems gets a reference to the given []ProfileFormatItem and assigns it to the FormatItems field.
-func (o *QualityProfile) SetFormatItems(v []*ProfileFormatItem) {
+func (o *QualityProfile) SetFormatItems(v []ProfileFormatItem) {
 	o.FormatItems = v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QualityProfile) GetItems() []*QualityProfileQualityItem {
+func (o *QualityProfile) GetItems() []QualityProfileQualityItem {
 	if o == nil {
-		var ret []*QualityProfileQualityItem
+		var ret []QualityProfileQualityItem
 		return ret
 	}
 	return o.Items
@@ -290,16 +293,16 @@ func (o *QualityProfile) GetItems() []*QualityProfileQualityItem {
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QualityProfile) GetItemsOk() ([]*QualityProfileQualityItem, bool) {
-	if o == nil || isNil(o.Items) {
-    return nil, false
+func (o *QualityProfile) GetItemsOk() ([]QualityProfileQualityItem, bool) {
+	if o == nil || IsNil(o.Items) {
+		return nil, false
 	}
 	return o.Items, true
 }
 
 // HasItems returns a boolean if a field has been set.
 func (o *QualityProfile) HasItems() bool {
-	if o != nil && isNil(o.Items) {
+	if o != nil && IsNil(o.Items) {
 		return true
 	}
 
@@ -307,28 +310,36 @@ func (o *QualityProfile) HasItems() bool {
 }
 
 // SetItems gets a reference to the given []QualityProfileQualityItem and assigns it to the Items field.
-func (o *QualityProfile) SetItems(v []*QualityProfileQualityItem) {
+func (o *QualityProfile) SetItems(v []QualityProfileQualityItem) {
 	o.Items = v
 }
 
 func (o QualityProfile) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o QualityProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.UpgradeAllowed) {
+	if !IsNil(o.UpgradeAllowed) {
 		toSerialize["upgradeAllowed"] = o.UpgradeAllowed
 	}
-	if !isNil(o.Cutoff) {
+	if !IsNil(o.Cutoff) {
 		toSerialize["cutoff"] = o.Cutoff
 	}
-	if !isNil(o.MinFormatScore) {
+	if !IsNil(o.MinFormatScore) {
 		toSerialize["minFormatScore"] = o.MinFormatScore
 	}
-	if !isNil(o.CutoffFormatScore) {
+	if !IsNil(o.CutoffFormatScore) {
 		toSerialize["cutoffFormatScore"] = o.CutoffFormatScore
 	}
 	if o.FormatItems != nil {
@@ -337,7 +348,7 @@ func (o QualityProfile) MarshalJSON() ([]byte, error) {
 	if o.Items != nil {
 		toSerialize["items"] = o.Items
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableQualityProfile struct {

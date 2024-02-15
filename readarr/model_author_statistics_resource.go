@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AuthorStatisticsResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AuthorStatisticsResource{}
+
 // AuthorStatisticsResource struct for AuthorStatisticsResource
 type AuthorStatisticsResource struct {
 	BookFileCount *int32 `json:"bookFileCount,omitempty"`
@@ -43,7 +46,7 @@ func NewAuthorStatisticsResourceWithDefaults() *AuthorStatisticsResource {
 
 // GetBookFileCount returns the BookFileCount field value if set, zero value otherwise.
 func (o *AuthorStatisticsResource) GetBookFileCount() int32 {
-	if o == nil || isNil(o.BookFileCount) {
+	if o == nil || IsNil(o.BookFileCount) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *AuthorStatisticsResource) GetBookFileCount() int32 {
 // GetBookFileCountOk returns a tuple with the BookFileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorStatisticsResource) GetBookFileCountOk() (*int32, bool) {
-	if o == nil || isNil(o.BookFileCount) {
-    return nil, false
+	if o == nil || IsNil(o.BookFileCount) {
+		return nil, false
 	}
 	return o.BookFileCount, true
 }
 
 // HasBookFileCount returns a boolean if a field has been set.
 func (o *AuthorStatisticsResource) HasBookFileCount() bool {
-	if o != nil && !isNil(o.BookFileCount) {
+	if o != nil && !IsNil(o.BookFileCount) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *AuthorStatisticsResource) SetBookFileCount(v int32) {
 
 // GetBookCount returns the BookCount field value if set, zero value otherwise.
 func (o *AuthorStatisticsResource) GetBookCount() int32 {
-	if o == nil || isNil(o.BookCount) {
+	if o == nil || IsNil(o.BookCount) {
 		var ret int32
 		return ret
 	}
@@ -85,15 +88,15 @@ func (o *AuthorStatisticsResource) GetBookCount() int32 {
 // GetBookCountOk returns a tuple with the BookCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorStatisticsResource) GetBookCountOk() (*int32, bool) {
-	if o == nil || isNil(o.BookCount) {
-    return nil, false
+	if o == nil || IsNil(o.BookCount) {
+		return nil, false
 	}
 	return o.BookCount, true
 }
 
 // HasBookCount returns a boolean if a field has been set.
 func (o *AuthorStatisticsResource) HasBookCount() bool {
-	if o != nil && !isNil(o.BookCount) {
+	if o != nil && !IsNil(o.BookCount) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *AuthorStatisticsResource) SetBookCount(v int32) {
 
 // GetAvailableBookCount returns the AvailableBookCount field value if set, zero value otherwise.
 func (o *AuthorStatisticsResource) GetAvailableBookCount() int32 {
-	if o == nil || isNil(o.AvailableBookCount) {
+	if o == nil || IsNil(o.AvailableBookCount) {
 		var ret int32
 		return ret
 	}
@@ -117,15 +120,15 @@ func (o *AuthorStatisticsResource) GetAvailableBookCount() int32 {
 // GetAvailableBookCountOk returns a tuple with the AvailableBookCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorStatisticsResource) GetAvailableBookCountOk() (*int32, bool) {
-	if o == nil || isNil(o.AvailableBookCount) {
-    return nil, false
+	if o == nil || IsNil(o.AvailableBookCount) {
+		return nil, false
 	}
 	return o.AvailableBookCount, true
 }
 
 // HasAvailableBookCount returns a boolean if a field has been set.
 func (o *AuthorStatisticsResource) HasAvailableBookCount() bool {
-	if o != nil && !isNil(o.AvailableBookCount) {
+	if o != nil && !IsNil(o.AvailableBookCount) {
 		return true
 	}
 
@@ -139,7 +142,7 @@ func (o *AuthorStatisticsResource) SetAvailableBookCount(v int32) {
 
 // GetTotalBookCount returns the TotalBookCount field value if set, zero value otherwise.
 func (o *AuthorStatisticsResource) GetTotalBookCount() int32 {
-	if o == nil || isNil(o.TotalBookCount) {
+	if o == nil || IsNil(o.TotalBookCount) {
 		var ret int32
 		return ret
 	}
@@ -149,15 +152,15 @@ func (o *AuthorStatisticsResource) GetTotalBookCount() int32 {
 // GetTotalBookCountOk returns a tuple with the TotalBookCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorStatisticsResource) GetTotalBookCountOk() (*int32, bool) {
-	if o == nil || isNil(o.TotalBookCount) {
-    return nil, false
+	if o == nil || IsNil(o.TotalBookCount) {
+		return nil, false
 	}
 	return o.TotalBookCount, true
 }
 
 // HasTotalBookCount returns a boolean if a field has been set.
 func (o *AuthorStatisticsResource) HasTotalBookCount() bool {
-	if o != nil && !isNil(o.TotalBookCount) {
+	if o != nil && !IsNil(o.TotalBookCount) {
 		return true
 	}
 
@@ -171,7 +174,7 @@ func (o *AuthorStatisticsResource) SetTotalBookCount(v int32) {
 
 // GetSizeOnDisk returns the SizeOnDisk field value if set, zero value otherwise.
 func (o *AuthorStatisticsResource) GetSizeOnDisk() int64 {
-	if o == nil || isNil(o.SizeOnDisk) {
+	if o == nil || IsNil(o.SizeOnDisk) {
 		var ret int64
 		return ret
 	}
@@ -181,15 +184,15 @@ func (o *AuthorStatisticsResource) GetSizeOnDisk() int64 {
 // GetSizeOnDiskOk returns a tuple with the SizeOnDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorStatisticsResource) GetSizeOnDiskOk() (*int64, bool) {
-	if o == nil || isNil(o.SizeOnDisk) {
-    return nil, false
+	if o == nil || IsNil(o.SizeOnDisk) {
+		return nil, false
 	}
 	return o.SizeOnDisk, true
 }
 
 // HasSizeOnDisk returns a boolean if a field has been set.
 func (o *AuthorStatisticsResource) HasSizeOnDisk() bool {
-	if o != nil && !isNil(o.SizeOnDisk) {
+	if o != nil && !IsNil(o.SizeOnDisk) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *AuthorStatisticsResource) SetSizeOnDisk(v int64) {
 
 // GetPercentOfBooks returns the PercentOfBooks field value if set, zero value otherwise.
 func (o *AuthorStatisticsResource) GetPercentOfBooks() float64 {
-	if o == nil || isNil(o.PercentOfBooks) {
+	if o == nil || IsNil(o.PercentOfBooks) {
 		var ret float64
 		return ret
 	}
@@ -213,15 +216,15 @@ func (o *AuthorStatisticsResource) GetPercentOfBooks() float64 {
 // GetPercentOfBooksOk returns a tuple with the PercentOfBooks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorStatisticsResource) GetPercentOfBooksOk() (*float64, bool) {
-	if o == nil || isNil(o.PercentOfBooks) {
-    return nil, false
+	if o == nil || IsNil(o.PercentOfBooks) {
+		return nil, false
 	}
 	return o.PercentOfBooks, true
 }
 
 // HasPercentOfBooks returns a boolean if a field has been set.
 func (o *AuthorStatisticsResource) HasPercentOfBooks() bool {
-	if o != nil && !isNil(o.PercentOfBooks) {
+	if o != nil && !IsNil(o.PercentOfBooks) {
 		return true
 	}
 
@@ -234,26 +237,34 @@ func (o *AuthorStatisticsResource) SetPercentOfBooks(v float64) {
 }
 
 func (o AuthorStatisticsResource) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.BookFileCount) {
-		toSerialize["bookFileCount"] = o.BookFileCount
-	}
-	if !isNil(o.BookCount) {
-		toSerialize["bookCount"] = o.BookCount
-	}
-	if !isNil(o.AvailableBookCount) {
-		toSerialize["availableBookCount"] = o.AvailableBookCount
-	}
-	if !isNil(o.TotalBookCount) {
-		toSerialize["totalBookCount"] = o.TotalBookCount
-	}
-	if !isNil(o.SizeOnDisk) {
-		toSerialize["sizeOnDisk"] = o.SizeOnDisk
-	}
-	if !isNil(o.PercentOfBooks) {
-		toSerialize["percentOfBooks"] = o.PercentOfBooks
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AuthorStatisticsResource) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BookFileCount) {
+		toSerialize["bookFileCount"] = o.BookFileCount
+	}
+	if !IsNil(o.BookCount) {
+		toSerialize["bookCount"] = o.BookCount
+	}
+	if !IsNil(o.AvailableBookCount) {
+		toSerialize["availableBookCount"] = o.AvailableBookCount
+	}
+	if !IsNil(o.TotalBookCount) {
+		toSerialize["totalBookCount"] = o.TotalBookCount
+	}
+	if !IsNil(o.SizeOnDisk) {
+		toSerialize["sizeOnDisk"] = o.SizeOnDisk
+	}
+	if !IsNil(o.PercentOfBooks) {
+		toSerialize["percentOfBooks"] = o.PercentOfBooks
+	}
+	return toSerialize, nil
 }
 
 type NullableAuthorStatisticsResource struct {

@@ -24,6 +24,7 @@ import (
 
 // HistoryAPIService HistoryAPI service
 type HistoryAPIService service
+
 type ApiCreateHistoryFailedByIdRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
@@ -63,7 +64,7 @@ func (a *HistoryAPIService) CreateHistoryFailedByIdExecute(r ApiCreateHistoryFai
 	}
 
 	localVarPath := localBasePath + "/api/v1/history/failed/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -141,6 +142,7 @@ func (a *HistoryAPIService) CreateHistoryFailedByIdExecute(r ApiCreateHistoryFai
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetHistoryRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
@@ -239,39 +241,45 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+	} else {
+		var defaultValue int32 = 1
+		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+	} else {
+		var defaultValue int32 = 10
+		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
 	}
 	if r.sortDirection != nil {
-		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
 	}
 	if r.includeAuthor != nil {
-		localVarQueryParams.Add("includeAuthor", parameterToString(*r.includeAuthor, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "")
 	}
 	if r.includeBook != nil {
-		localVarQueryParams.Add("includeBook", parameterToString(*r.includeBook, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "")
 	}
 	if r.eventType != nil {
 		t := *r.eventType
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("eventType", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("eventType", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", t, "multi")
 		}
 	}
 	if r.bookId != nil {
-		localVarQueryParams.Add("bookId", parameterToString(*r.bookId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", r.bookId, "")
 	}
 	if r.downloadId != nil {
-		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -354,6 +362,7 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListHistoryAuthorRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
@@ -389,7 +398,7 @@ func (r ApiListHistoryAuthorRequest) IncludeBook(includeBook bool) ApiListHistor
 	return r
 }
 
-func (r ApiListHistoryAuthorRequest) Execute() ([]*HistoryResource, *http.Response, error) {
+func (r ApiListHistoryAuthorRequest) Execute() ([]HistoryResource, *http.Response, error) {
 	return r.ApiService.ListHistoryAuthorExecute(r)
 }
 
@@ -408,12 +417,12 @@ func (a *HistoryAPIService) ListHistoryAuthor(ctx context.Context) ApiListHistor
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryAPIService) ListHistoryAuthorExecute(r ApiListHistoryAuthorRequest) ([]*HistoryResource, *http.Response, error) {
+func (a *HistoryAPIService) ListHistoryAuthorExecute(r ApiListHistoryAuthorRequest) ([]HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*HistoryResource
+		localVarReturnValue  []HistoryResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.ListHistoryAuthor")
@@ -428,19 +437,25 @@ func (a *HistoryAPIService) ListHistoryAuthorExecute(r ApiListHistoryAuthorReque
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		localVarQueryParams.Add("authorId", parameterToString(*r.authorId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
 	}
 	if r.bookId != nil {
-		localVarQueryParams.Add("bookId", parameterToString(*r.bookId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", r.bookId, "")
 	}
 	if r.eventType != nil {
-		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
 	}
 	if r.includeAuthor != nil {
-		localVarQueryParams.Add("includeAuthor", parameterToString(*r.includeAuthor, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "")
+	} else {
+		var defaultValue bool = false
+		r.includeAuthor = &defaultValue
 	}
 	if r.includeBook != nil {
-		localVarQueryParams.Add("includeBook", parameterToString(*r.includeBook, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "")
+	} else {
+		var defaultValue bool = false
+		r.includeBook = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -523,6 +538,7 @@ func (a *HistoryAPIService) ListHistoryAuthorExecute(r ApiListHistoryAuthorReque
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListHistorySinceRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
@@ -552,7 +568,7 @@ func (r ApiListHistorySinceRequest) IncludeBook(includeBook bool) ApiListHistory
 	return r
 }
 
-func (r ApiListHistorySinceRequest) Execute() ([]*HistoryResource, *http.Response, error) {
+func (r ApiListHistorySinceRequest) Execute() ([]HistoryResource, *http.Response, error) {
 	return r.ApiService.ListHistorySinceExecute(r)
 }
 
@@ -571,12 +587,12 @@ func (a *HistoryAPIService) ListHistorySince(ctx context.Context) ApiListHistory
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest) ([]*HistoryResource, *http.Response, error) {
+func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest) ([]HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*HistoryResource
+		localVarReturnValue  []HistoryResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.ListHistorySince")
@@ -591,16 +607,22 @@ func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 	localVarFormParams := url.Values{}
 
 	if r.date != nil {
-		localVarQueryParams.Add("date", parameterToString(*r.date, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "")
 	}
 	if r.eventType != nil {
-		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
 	}
 	if r.includeAuthor != nil {
-		localVarQueryParams.Add("includeAuthor", parameterToString(*r.includeAuthor, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "")
+	} else {
+		var defaultValue bool = false
+		r.includeAuthor = &defaultValue
 	}
 	if r.includeBook != nil {
-		localVarQueryParams.Add("includeBook", parameterToString(*r.includeBook, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "")
+	} else {
+		var defaultValue bool = false
+		r.includeBook = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

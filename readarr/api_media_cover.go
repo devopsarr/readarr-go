@@ -22,6 +22,7 @@ import (
 
 // MediaCoverAPIService MediaCoverAPI service
 type MediaCoverAPIService service
+
 type ApiGetMediaCoverAuthorByFilenameRequest struct {
 	ctx context.Context
 	ApiService *MediaCoverAPIService
@@ -64,8 +65,8 @@ func (a *MediaCoverAPIService) GetMediaCoverAuthorByFilenameExecute(r ApiGetMedi
 	}
 
 	localVarPath := localBasePath + "/api/v1/mediacover/author/{authorId}/{filename}"
-	localVarPath = strings.Replace(localVarPath, "{"+"authorId"+"}", url.PathEscape(parameterToString(r.authorId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterToString(r.filename, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"authorId"+"}", url.PathEscape(parameterValueToString(r.authorId, "authorId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterValueToString(r.filename, "filename")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -143,6 +144,7 @@ func (a *MediaCoverAPIService) GetMediaCoverAuthorByFilenameExecute(r ApiGetMedi
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetMediaCoverBookByFilenameRequest struct {
 	ctx context.Context
 	ApiService *MediaCoverAPIService
@@ -185,8 +187,8 @@ func (a *MediaCoverAPIService) GetMediaCoverBookByFilenameExecute(r ApiGetMediaC
 	}
 
 	localVarPath := localBasePath + "/api/v1/mediacover/book/{bookId}/{filename}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bookId"+"}", url.PathEscape(parameterToString(r.bookId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterToString(r.filename, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bookId"+"}", url.PathEscape(parameterValueToString(r.bookId, "bookId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterValueToString(r.filename, "filename")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

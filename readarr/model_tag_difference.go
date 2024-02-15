@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the TagDifference type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TagDifference{}
+
 // TagDifference struct for TagDifference
 type TagDifference struct {
 	Field NullableString `json:"field,omitempty"`
@@ -40,7 +43,7 @@ func NewTagDifferenceWithDefaults() *TagDifference {
 
 // GetField returns the Field field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TagDifference) GetField() string {
-	if o == nil || isNil(o.Field.Get()) {
+	if o == nil || IsNil(o.Field.Get()) {
 		var ret string
 		return ret
 	}
@@ -52,7 +55,7 @@ func (o *TagDifference) GetField() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TagDifference) GetFieldOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Field.Get(), o.Field.IsSet()
 }
@@ -82,7 +85,7 @@ func (o *TagDifference) UnsetField() {
 
 // GetOldValue returns the OldValue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TagDifference) GetOldValue() string {
-	if o == nil || isNil(o.OldValue.Get()) {
+	if o == nil || IsNil(o.OldValue.Get()) {
 		var ret string
 		return ret
 	}
@@ -94,7 +97,7 @@ func (o *TagDifference) GetOldValue() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TagDifference) GetOldValueOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.OldValue.Get(), o.OldValue.IsSet()
 }
@@ -124,7 +127,7 @@ func (o *TagDifference) UnsetOldValue() {
 
 // GetNewValue returns the NewValue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TagDifference) GetNewValue() string {
-	if o == nil || isNil(o.NewValue.Get()) {
+	if o == nil || IsNil(o.NewValue.Get()) {
 		var ret string
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *TagDifference) GetNewValue() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TagDifference) GetNewValueOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.NewValue.Get(), o.NewValue.IsSet()
 }
@@ -165,6 +168,14 @@ func (o *TagDifference) UnsetNewValue() {
 }
 
 func (o TagDifference) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o TagDifference) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Field.IsSet() {
 		toSerialize["field"] = o.Field.Get()
@@ -175,7 +186,7 @@ func (o TagDifference) MarshalJSON() ([]byte, error) {
 	if o.NewValue.IsSet() {
 		toSerialize["newValue"] = o.NewValue.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableTagDifference struct {

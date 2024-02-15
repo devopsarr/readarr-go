@@ -21,6 +21,7 @@ import (
 
 // RetagBookAPIService RetagBookAPI service
 type RetagBookAPIService service
+
 type ApiListRetagRequest struct {
 	ctx context.Context
 	ApiService *RetagBookAPIService
@@ -38,7 +39,7 @@ func (r ApiListRetagRequest) BookId(bookId int32) ApiListRetagRequest {
 	return r
 }
 
-func (r ApiListRetagRequest) Execute() ([]*RetagBookResource, *http.Response, error) {
+func (r ApiListRetagRequest) Execute() ([]RetagBookResource, *http.Response, error) {
 	return r.ApiService.ListRetagExecute(r)
 }
 
@@ -57,12 +58,12 @@ func (a *RetagBookAPIService) ListRetag(ctx context.Context) ApiListRetagRequest
 
 // Execute executes the request
 //  @return []RetagBookResource
-func (a *RetagBookAPIService) ListRetagExecute(r ApiListRetagRequest) ([]*RetagBookResource, *http.Response, error) {
+func (a *RetagBookAPIService) ListRetagExecute(r ApiListRetagRequest) ([]RetagBookResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*RetagBookResource
+		localVarReturnValue  []RetagBookResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetagBookAPIService.ListRetag")
@@ -77,10 +78,10 @@ func (a *RetagBookAPIService) ListRetagExecute(r ApiListRetagRequest) ([]*RetagB
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		localVarQueryParams.Add("authorId", parameterToString(*r.authorId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
 	}
 	if r.bookId != nil {
-		localVarQueryParams.Add("bookId", parameterToString(*r.bookId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", r.bookId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

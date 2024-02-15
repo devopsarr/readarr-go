@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the EditionResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &EditionResource{}
+
 // EditionResource struct for EditionResource
 type EditionResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -32,8 +35,8 @@ type EditionResource struct {
 	Publisher NullableString `json:"publisher,omitempty"`
 	PageCount *int32 `json:"pageCount,omitempty"`
 	ReleaseDate NullableTime `json:"releaseDate,omitempty"`
-	Images []*MediaCover `json:"images,omitempty"`
-	Links []*Links `json:"links,omitempty"`
+	Images []MediaCover `json:"images,omitempty"`
+	Links []Links `json:"links,omitempty"`
 	Ratings *Ratings `json:"ratings,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 	ManualAdd *bool `json:"manualAdd,omitempty"`
@@ -60,7 +63,7 @@ func NewEditionResourceWithDefaults() *EditionResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *EditionResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -70,15 +73,15 @@ func (o *EditionResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EditionResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *EditionResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *EditionResource) SetId(v int32) {
 
 // GetBookId returns the BookId field value if set, zero value otherwise.
 func (o *EditionResource) GetBookId() int32 {
-	if o == nil || isNil(o.BookId) {
+	if o == nil || IsNil(o.BookId) {
 		var ret int32
 		return ret
 	}
@@ -102,15 +105,15 @@ func (o *EditionResource) GetBookId() int32 {
 // GetBookIdOk returns a tuple with the BookId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EditionResource) GetBookIdOk() (*int32, bool) {
-	if o == nil || isNil(o.BookId) {
-    return nil, false
+	if o == nil || IsNil(o.BookId) {
+		return nil, false
 	}
 	return o.BookId, true
 }
 
 // HasBookId returns a boolean if a field has been set.
 func (o *EditionResource) HasBookId() bool {
-	if o != nil && !isNil(o.BookId) {
+	if o != nil && !IsNil(o.BookId) {
 		return true
 	}
 
@@ -124,7 +127,7 @@ func (o *EditionResource) SetBookId(v int32) {
 
 // GetForeignEditionId returns the ForeignEditionId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetForeignEditionId() string {
-	if o == nil || isNil(o.ForeignEditionId.Get()) {
+	if o == nil || IsNil(o.ForeignEditionId.Get()) {
 		var ret string
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *EditionResource) GetForeignEditionId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetForeignEditionIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ForeignEditionId.Get(), o.ForeignEditionId.IsSet()
 }
@@ -166,7 +169,7 @@ func (o *EditionResource) UnsetForeignEditionId() {
 
 // GetTitleSlug returns the TitleSlug field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetTitleSlug() string {
-	if o == nil || isNil(o.TitleSlug.Get()) {
+	if o == nil || IsNil(o.TitleSlug.Get()) {
 		var ret string
 		return ret
 	}
@@ -178,7 +181,7 @@ func (o *EditionResource) GetTitleSlug() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetTitleSlugOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TitleSlug.Get(), o.TitleSlug.IsSet()
 }
@@ -208,7 +211,7 @@ func (o *EditionResource) UnsetTitleSlug() {
 
 // GetIsbn13 returns the Isbn13 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetIsbn13() string {
-	if o == nil || isNil(o.Isbn13.Get()) {
+	if o == nil || IsNil(o.Isbn13.Get()) {
 		var ret string
 		return ret
 	}
@@ -220,7 +223,7 @@ func (o *EditionResource) GetIsbn13() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetIsbn13Ok() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Isbn13.Get(), o.Isbn13.IsSet()
 }
@@ -250,7 +253,7 @@ func (o *EditionResource) UnsetIsbn13() {
 
 // GetAsin returns the Asin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetAsin() string {
-	if o == nil || isNil(o.Asin.Get()) {
+	if o == nil || IsNil(o.Asin.Get()) {
 		var ret string
 		return ret
 	}
@@ -262,7 +265,7 @@ func (o *EditionResource) GetAsin() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetAsinOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Asin.Get(), o.Asin.IsSet()
 }
@@ -292,7 +295,7 @@ func (o *EditionResource) UnsetAsin() {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -304,7 +307,7 @@ func (o *EditionResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -334,7 +337,7 @@ func (o *EditionResource) UnsetTitle() {
 
 // GetLanguage returns the Language field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetLanguage() string {
-	if o == nil || isNil(o.Language.Get()) {
+	if o == nil || IsNil(o.Language.Get()) {
 		var ret string
 		return ret
 	}
@@ -346,7 +349,7 @@ func (o *EditionResource) GetLanguage() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetLanguageOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Language.Get(), o.Language.IsSet()
 }
@@ -376,7 +379,7 @@ func (o *EditionResource) UnsetLanguage() {
 
 // GetOverview returns the Overview field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetOverview() string {
-	if o == nil || isNil(o.Overview.Get()) {
+	if o == nil || IsNil(o.Overview.Get()) {
 		var ret string
 		return ret
 	}
@@ -388,7 +391,7 @@ func (o *EditionResource) GetOverview() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetOverviewOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Overview.Get(), o.Overview.IsSet()
 }
@@ -418,7 +421,7 @@ func (o *EditionResource) UnsetOverview() {
 
 // GetFormat returns the Format field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetFormat() string {
-	if o == nil || isNil(o.Format.Get()) {
+	if o == nil || IsNil(o.Format.Get()) {
 		var ret string
 		return ret
 	}
@@ -430,7 +433,7 @@ func (o *EditionResource) GetFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Format.Get(), o.Format.IsSet()
 }
@@ -460,7 +463,7 @@ func (o *EditionResource) UnsetFormat() {
 
 // GetIsEbook returns the IsEbook field value if set, zero value otherwise.
 func (o *EditionResource) GetIsEbook() bool {
-	if o == nil || isNil(o.IsEbook) {
+	if o == nil || IsNil(o.IsEbook) {
 		var ret bool
 		return ret
 	}
@@ -470,15 +473,15 @@ func (o *EditionResource) GetIsEbook() bool {
 // GetIsEbookOk returns a tuple with the IsEbook field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EditionResource) GetIsEbookOk() (*bool, bool) {
-	if o == nil || isNil(o.IsEbook) {
-    return nil, false
+	if o == nil || IsNil(o.IsEbook) {
+		return nil, false
 	}
 	return o.IsEbook, true
 }
 
 // HasIsEbook returns a boolean if a field has been set.
 func (o *EditionResource) HasIsEbook() bool {
-	if o != nil && !isNil(o.IsEbook) {
+	if o != nil && !IsNil(o.IsEbook) {
 		return true
 	}
 
@@ -492,7 +495,7 @@ func (o *EditionResource) SetIsEbook(v bool) {
 
 // GetDisambiguation returns the Disambiguation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetDisambiguation() string {
-	if o == nil || isNil(o.Disambiguation.Get()) {
+	if o == nil || IsNil(o.Disambiguation.Get()) {
 		var ret string
 		return ret
 	}
@@ -504,7 +507,7 @@ func (o *EditionResource) GetDisambiguation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetDisambiguationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Disambiguation.Get(), o.Disambiguation.IsSet()
 }
@@ -534,7 +537,7 @@ func (o *EditionResource) UnsetDisambiguation() {
 
 // GetPublisher returns the Publisher field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetPublisher() string {
-	if o == nil || isNil(o.Publisher.Get()) {
+	if o == nil || IsNil(o.Publisher.Get()) {
 		var ret string
 		return ret
 	}
@@ -546,7 +549,7 @@ func (o *EditionResource) GetPublisher() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetPublisherOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Publisher.Get(), o.Publisher.IsSet()
 }
@@ -576,7 +579,7 @@ func (o *EditionResource) UnsetPublisher() {
 
 // GetPageCount returns the PageCount field value if set, zero value otherwise.
 func (o *EditionResource) GetPageCount() int32 {
-	if o == nil || isNil(o.PageCount) {
+	if o == nil || IsNil(o.PageCount) {
 		var ret int32
 		return ret
 	}
@@ -586,15 +589,15 @@ func (o *EditionResource) GetPageCount() int32 {
 // GetPageCountOk returns a tuple with the PageCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EditionResource) GetPageCountOk() (*int32, bool) {
-	if o == nil || isNil(o.PageCount) {
-    return nil, false
+	if o == nil || IsNil(o.PageCount) {
+		return nil, false
 	}
 	return o.PageCount, true
 }
 
 // HasPageCount returns a boolean if a field has been set.
 func (o *EditionResource) HasPageCount() bool {
-	if o != nil && !isNil(o.PageCount) {
+	if o != nil && !IsNil(o.PageCount) {
 		return true
 	}
 
@@ -608,7 +611,7 @@ func (o *EditionResource) SetPageCount(v int32) {
 
 // GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetReleaseDate() time.Time {
-	if o == nil || isNil(o.ReleaseDate.Get()) {
+	if o == nil || IsNil(o.ReleaseDate.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -620,7 +623,7 @@ func (o *EditionResource) GetReleaseDate() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetReleaseDateOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseDate.Get(), o.ReleaseDate.IsSet()
 }
@@ -649,9 +652,9 @@ func (o *EditionResource) UnsetReleaseDate() {
 }
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EditionResource) GetImages() []*MediaCover {
+func (o *EditionResource) GetImages() []MediaCover {
 	if o == nil {
-		var ret []*MediaCover
+		var ret []MediaCover
 		return ret
 	}
 	return o.Images
@@ -660,16 +663,16 @@ func (o *EditionResource) GetImages() []*MediaCover {
 // GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EditionResource) GetImagesOk() ([]*MediaCover, bool) {
-	if o == nil || isNil(o.Images) {
-    return nil, false
+func (o *EditionResource) GetImagesOk() ([]MediaCover, bool) {
+	if o == nil || IsNil(o.Images) {
+		return nil, false
 	}
 	return o.Images, true
 }
 
 // HasImages returns a boolean if a field has been set.
 func (o *EditionResource) HasImages() bool {
-	if o != nil && isNil(o.Images) {
+	if o != nil && IsNil(o.Images) {
 		return true
 	}
 
@@ -677,14 +680,14 @@ func (o *EditionResource) HasImages() bool {
 }
 
 // SetImages gets a reference to the given []MediaCover and assigns it to the Images field.
-func (o *EditionResource) SetImages(v []*MediaCover) {
+func (o *EditionResource) SetImages(v []MediaCover) {
 	o.Images = v
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EditionResource) GetLinks() []*Links {
+func (o *EditionResource) GetLinks() []Links {
 	if o == nil {
-		var ret []*Links
+		var ret []Links
 		return ret
 	}
 	return o.Links
@@ -693,16 +696,16 @@ func (o *EditionResource) GetLinks() []*Links {
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EditionResource) GetLinksOk() ([]*Links, bool) {
-	if o == nil || isNil(o.Links) {
-    return nil, false
+func (o *EditionResource) GetLinksOk() ([]Links, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
 	}
 	return o.Links, true
 }
 
 // HasLinks returns a boolean if a field has been set.
 func (o *EditionResource) HasLinks() bool {
-	if o != nil && isNil(o.Links) {
+	if o != nil && IsNil(o.Links) {
 		return true
 	}
 
@@ -710,13 +713,13 @@ func (o *EditionResource) HasLinks() bool {
 }
 
 // SetLinks gets a reference to the given []Links and assigns it to the Links field.
-func (o *EditionResource) SetLinks(v []*Links) {
+func (o *EditionResource) SetLinks(v []Links) {
 	o.Links = v
 }
 
 // GetRatings returns the Ratings field value if set, zero value otherwise.
 func (o *EditionResource) GetRatings() Ratings {
-	if o == nil || isNil(o.Ratings) {
+	if o == nil || IsNil(o.Ratings) {
 		var ret Ratings
 		return ret
 	}
@@ -726,15 +729,15 @@ func (o *EditionResource) GetRatings() Ratings {
 // GetRatingsOk returns a tuple with the Ratings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EditionResource) GetRatingsOk() (*Ratings, bool) {
-	if o == nil || isNil(o.Ratings) {
-    return nil, false
+	if o == nil || IsNil(o.Ratings) {
+		return nil, false
 	}
 	return o.Ratings, true
 }
 
 // HasRatings returns a boolean if a field has been set.
 func (o *EditionResource) HasRatings() bool {
-	if o != nil && !isNil(o.Ratings) {
+	if o != nil && !IsNil(o.Ratings) {
 		return true
 	}
 
@@ -748,7 +751,7 @@ func (o *EditionResource) SetRatings(v Ratings) {
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
 func (o *EditionResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored) {
+	if o == nil || IsNil(o.Monitored) {
 		var ret bool
 		return ret
 	}
@@ -758,15 +761,15 @@ func (o *EditionResource) GetMonitored() bool {
 // GetMonitoredOk returns a tuple with the Monitored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EditionResource) GetMonitoredOk() (*bool, bool) {
-	if o == nil || isNil(o.Monitored) {
-    return nil, false
+	if o == nil || IsNil(o.Monitored) {
+		return nil, false
 	}
 	return o.Monitored, true
 }
 
 // HasMonitored returns a boolean if a field has been set.
 func (o *EditionResource) HasMonitored() bool {
-	if o != nil && !isNil(o.Monitored) {
+	if o != nil && !IsNil(o.Monitored) {
 		return true
 	}
 
@@ -780,7 +783,7 @@ func (o *EditionResource) SetMonitored(v bool) {
 
 // GetManualAdd returns the ManualAdd field value if set, zero value otherwise.
 func (o *EditionResource) GetManualAdd() bool {
-	if o == nil || isNil(o.ManualAdd) {
+	if o == nil || IsNil(o.ManualAdd) {
 		var ret bool
 		return ret
 	}
@@ -790,15 +793,15 @@ func (o *EditionResource) GetManualAdd() bool {
 // GetManualAddOk returns a tuple with the ManualAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EditionResource) GetManualAddOk() (*bool, bool) {
-	if o == nil || isNil(o.ManualAdd) {
-    return nil, false
+	if o == nil || IsNil(o.ManualAdd) {
+		return nil, false
 	}
 	return o.ManualAdd, true
 }
 
 // HasManualAdd returns a boolean if a field has been set.
 func (o *EditionResource) HasManualAdd() bool {
-	if o != nil && !isNil(o.ManualAdd) {
+	if o != nil && !IsNil(o.ManualAdd) {
 		return true
 	}
 
@@ -812,7 +815,7 @@ func (o *EditionResource) SetManualAdd(v bool) {
 
 // GetRemoteCover returns the RemoteCover field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EditionResource) GetRemoteCover() string {
-	if o == nil || isNil(o.RemoteCover.Get()) {
+	if o == nil || IsNil(o.RemoteCover.Get()) {
 		var ret string
 		return ret
 	}
@@ -824,7 +827,7 @@ func (o *EditionResource) GetRemoteCover() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EditionResource) GetRemoteCoverOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RemoteCover.Get(), o.RemoteCover.IsSet()
 }
@@ -854,7 +857,7 @@ func (o *EditionResource) UnsetRemoteCover() {
 
 // GetGrabbed returns the Grabbed field value if set, zero value otherwise.
 func (o *EditionResource) GetGrabbed() bool {
-	if o == nil || isNil(o.Grabbed) {
+	if o == nil || IsNil(o.Grabbed) {
 		var ret bool
 		return ret
 	}
@@ -864,15 +867,15 @@ func (o *EditionResource) GetGrabbed() bool {
 // GetGrabbedOk returns a tuple with the Grabbed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EditionResource) GetGrabbedOk() (*bool, bool) {
-	if o == nil || isNil(o.Grabbed) {
-    return nil, false
+	if o == nil || IsNil(o.Grabbed) {
+		return nil, false
 	}
 	return o.Grabbed, true
 }
 
 // HasGrabbed returns a boolean if a field has been set.
 func (o *EditionResource) HasGrabbed() bool {
-	if o != nil && !isNil(o.Grabbed) {
+	if o != nil && !IsNil(o.Grabbed) {
 		return true
 	}
 
@@ -885,11 +888,19 @@ func (o *EditionResource) SetGrabbed(v bool) {
 }
 
 func (o EditionResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o EditionResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.BookId) {
+	if !IsNil(o.BookId) {
 		toSerialize["bookId"] = o.BookId
 	}
 	if o.ForeignEditionId.IsSet() {
@@ -916,7 +927,7 @@ func (o EditionResource) MarshalJSON() ([]byte, error) {
 	if o.Format.IsSet() {
 		toSerialize["format"] = o.Format.Get()
 	}
-	if !isNil(o.IsEbook) {
+	if !IsNil(o.IsEbook) {
 		toSerialize["isEbook"] = o.IsEbook
 	}
 	if o.Disambiguation.IsSet() {
@@ -925,7 +936,7 @@ func (o EditionResource) MarshalJSON() ([]byte, error) {
 	if o.Publisher.IsSet() {
 		toSerialize["publisher"] = o.Publisher.Get()
 	}
-	if !isNil(o.PageCount) {
+	if !IsNil(o.PageCount) {
 		toSerialize["pageCount"] = o.PageCount
 	}
 	if o.ReleaseDate.IsSet() {
@@ -937,22 +948,22 @@ func (o EditionResource) MarshalJSON() ([]byte, error) {
 	if o.Links != nil {
 		toSerialize["links"] = o.Links
 	}
-	if !isNil(o.Ratings) {
+	if !IsNil(o.Ratings) {
 		toSerialize["ratings"] = o.Ratings
 	}
-	if !isNil(o.Monitored) {
+	if !IsNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
 	}
-	if !isNil(o.ManualAdd) {
+	if !IsNil(o.ManualAdd) {
 		toSerialize["manualAdd"] = o.ManualAdd
 	}
 	if o.RemoteCover.IsSet() {
 		toSerialize["remoteCover"] = o.RemoteCover.Get()
 	}
-	if !isNil(o.Grabbed) {
+	if !IsNil(o.Grabbed) {
 		toSerialize["grabbed"] = o.Grabbed
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableEditionResource struct {

@@ -14,15 +14,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the RetagBookResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RetagBookResource{}
+
 // RetagBookResource struct for RetagBookResource
 type RetagBookResource struct {
 	Id *int32 `json:"id,omitempty"`
 	AuthorId *int32 `json:"authorId,omitempty"`
 	BookId *int32 `json:"bookId,omitempty"`
-	TrackNumbers []*int32 `json:"trackNumbers,omitempty"`
+	TrackNumbers []int32 `json:"trackNumbers,omitempty"`
 	BookFileId *int32 `json:"bookFileId,omitempty"`
 	Path NullableString `json:"path,omitempty"`
-	Changes []*TagDifference `json:"changes,omitempty"`
+	Changes []TagDifference `json:"changes,omitempty"`
 }
 
 // NewRetagBookResource instantiates a new RetagBookResource object
@@ -44,7 +47,7 @@ func NewRetagBookResourceWithDefaults() *RetagBookResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *RetagBookResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,15 +57,15 @@ func (o *RetagBookResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetagBookResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *RetagBookResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +79,7 @@ func (o *RetagBookResource) SetId(v int32) {
 
 // GetAuthorId returns the AuthorId field value if set, zero value otherwise.
 func (o *RetagBookResource) GetAuthorId() int32 {
-	if o == nil || isNil(o.AuthorId) {
+	if o == nil || IsNil(o.AuthorId) {
 		var ret int32
 		return ret
 	}
@@ -86,15 +89,15 @@ func (o *RetagBookResource) GetAuthorId() int32 {
 // GetAuthorIdOk returns a tuple with the AuthorId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetagBookResource) GetAuthorIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AuthorId) {
-    return nil, false
+	if o == nil || IsNil(o.AuthorId) {
+		return nil, false
 	}
 	return o.AuthorId, true
 }
 
 // HasAuthorId returns a boolean if a field has been set.
 func (o *RetagBookResource) HasAuthorId() bool {
-	if o != nil && !isNil(o.AuthorId) {
+	if o != nil && !IsNil(o.AuthorId) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *RetagBookResource) SetAuthorId(v int32) {
 
 // GetBookId returns the BookId field value if set, zero value otherwise.
 func (o *RetagBookResource) GetBookId() int32 {
-	if o == nil || isNil(o.BookId) {
+	if o == nil || IsNil(o.BookId) {
 		var ret int32
 		return ret
 	}
@@ -118,15 +121,15 @@ func (o *RetagBookResource) GetBookId() int32 {
 // GetBookIdOk returns a tuple with the BookId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetagBookResource) GetBookIdOk() (*int32, bool) {
-	if o == nil || isNil(o.BookId) {
-    return nil, false
+	if o == nil || IsNil(o.BookId) {
+		return nil, false
 	}
 	return o.BookId, true
 }
 
 // HasBookId returns a boolean if a field has been set.
 func (o *RetagBookResource) HasBookId() bool {
-	if o != nil && !isNil(o.BookId) {
+	if o != nil && !IsNil(o.BookId) {
 		return true
 	}
 
@@ -139,9 +142,9 @@ func (o *RetagBookResource) SetBookId(v int32) {
 }
 
 // GetTrackNumbers returns the TrackNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RetagBookResource) GetTrackNumbers() []*int32 {
+func (o *RetagBookResource) GetTrackNumbers() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.TrackNumbers
@@ -150,16 +153,16 @@ func (o *RetagBookResource) GetTrackNumbers() []*int32 {
 // GetTrackNumbersOk returns a tuple with the TrackNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RetagBookResource) GetTrackNumbersOk() ([]*int32, bool) {
-	if o == nil || isNil(o.TrackNumbers) {
-    return nil, false
+func (o *RetagBookResource) GetTrackNumbersOk() ([]int32, bool) {
+	if o == nil || IsNil(o.TrackNumbers) {
+		return nil, false
 	}
 	return o.TrackNumbers, true
 }
 
 // HasTrackNumbers returns a boolean if a field has been set.
 func (o *RetagBookResource) HasTrackNumbers() bool {
-	if o != nil && isNil(o.TrackNumbers) {
+	if o != nil && IsNil(o.TrackNumbers) {
 		return true
 	}
 
@@ -167,13 +170,13 @@ func (o *RetagBookResource) HasTrackNumbers() bool {
 }
 
 // SetTrackNumbers gets a reference to the given []int32 and assigns it to the TrackNumbers field.
-func (o *RetagBookResource) SetTrackNumbers(v []*int32) {
+func (o *RetagBookResource) SetTrackNumbers(v []int32) {
 	o.TrackNumbers = v
 }
 
 // GetBookFileId returns the BookFileId field value if set, zero value otherwise.
 func (o *RetagBookResource) GetBookFileId() int32 {
-	if o == nil || isNil(o.BookFileId) {
+	if o == nil || IsNil(o.BookFileId) {
 		var ret int32
 		return ret
 	}
@@ -183,15 +186,15 @@ func (o *RetagBookResource) GetBookFileId() int32 {
 // GetBookFileIdOk returns a tuple with the BookFileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetagBookResource) GetBookFileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.BookFileId) {
-    return nil, false
+	if o == nil || IsNil(o.BookFileId) {
+		return nil, false
 	}
 	return o.BookFileId, true
 }
 
 // HasBookFileId returns a boolean if a field has been set.
 func (o *RetagBookResource) HasBookFileId() bool {
-	if o != nil && !isNil(o.BookFileId) {
+	if o != nil && !IsNil(o.BookFileId) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *RetagBookResource) SetBookFileId(v int32) {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RetagBookResource) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -217,7 +220,7 @@ func (o *RetagBookResource) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RetagBookResource) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -246,9 +249,9 @@ func (o *RetagBookResource) UnsetPath() {
 }
 
 // GetChanges returns the Changes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RetagBookResource) GetChanges() []*TagDifference {
+func (o *RetagBookResource) GetChanges() []TagDifference {
 	if o == nil {
-		var ret []*TagDifference
+		var ret []TagDifference
 		return ret
 	}
 	return o.Changes
@@ -257,16 +260,16 @@ func (o *RetagBookResource) GetChanges() []*TagDifference {
 // GetChangesOk returns a tuple with the Changes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RetagBookResource) GetChangesOk() ([]*TagDifference, bool) {
-	if o == nil || isNil(o.Changes) {
-    return nil, false
+func (o *RetagBookResource) GetChangesOk() ([]TagDifference, bool) {
+	if o == nil || IsNil(o.Changes) {
+		return nil, false
 	}
 	return o.Changes, true
 }
 
 // HasChanges returns a boolean if a field has been set.
 func (o *RetagBookResource) HasChanges() bool {
-	if o != nil && isNil(o.Changes) {
+	if o != nil && IsNil(o.Changes) {
 		return true
 	}
 
@@ -274,25 +277,33 @@ func (o *RetagBookResource) HasChanges() bool {
 }
 
 // SetChanges gets a reference to the given []TagDifference and assigns it to the Changes field.
-func (o *RetagBookResource) SetChanges(v []*TagDifference) {
+func (o *RetagBookResource) SetChanges(v []TagDifference) {
 	o.Changes = v
 }
 
 func (o RetagBookResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RetagBookResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.AuthorId) {
+	if !IsNil(o.AuthorId) {
 		toSerialize["authorId"] = o.AuthorId
 	}
-	if !isNil(o.BookId) {
+	if !IsNil(o.BookId) {
 		toSerialize["bookId"] = o.BookId
 	}
 	if o.TrackNumbers != nil {
 		toSerialize["trackNumbers"] = o.TrackNumbers
 	}
-	if !isNil(o.BookFileId) {
+	if !IsNil(o.BookFileId) {
 		toSerialize["bookFileId"] = o.BookFileId
 	}
 	if o.Path.IsSet() {
@@ -301,7 +312,7 @@ func (o RetagBookResource) MarshalJSON() ([]byte, error) {
 	if o.Changes != nil {
 		toSerialize["changes"] = o.Changes
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRetagBookResource struct {

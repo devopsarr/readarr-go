@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the AuthorMetadata type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AuthorMetadata{}
+
 // AuthorMetadata struct for AuthorMetadata
 type AuthorMetadata struct {
 	Id *int32 `json:"id,omitempty"`
@@ -24,7 +27,7 @@ type AuthorMetadata struct {
 	SortName NullableString `json:"sortName,omitempty"`
 	NameLastFirst NullableString `json:"nameLastFirst,omitempty"`
 	SortNameLastFirst NullableString `json:"sortNameLastFirst,omitempty"`
-	Aliases []*string `json:"aliases,omitempty"`
+	Aliases []string `json:"aliases,omitempty"`
 	Overview NullableString `json:"overview,omitempty"`
 	Disambiguation NullableString `json:"disambiguation,omitempty"`
 	Gender NullableString `json:"gender,omitempty"`
@@ -32,9 +35,9 @@ type AuthorMetadata struct {
 	Born NullableTime `json:"born,omitempty"`
 	Died NullableTime `json:"died,omitempty"`
 	Status *AuthorStatusType `json:"status,omitempty"`
-	Images []*MediaCover `json:"images,omitempty"`
-	Links []*Links `json:"links,omitempty"`
-	Genres []*string `json:"genres,omitempty"`
+	Images []MediaCover `json:"images,omitempty"`
+	Links []Links `json:"links,omitempty"`
+	Genres []string `json:"genres,omitempty"`
 	Ratings *Ratings `json:"ratings,omitempty"`
 }
 
@@ -57,7 +60,7 @@ func NewAuthorMetadataWithDefaults() *AuthorMetadata {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *AuthorMetadata) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -67,15 +70,15 @@ func (o *AuthorMetadata) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorMetadata) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *AuthorMetadata) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *AuthorMetadata) SetId(v int32) {
 
 // GetForeignAuthorId returns the ForeignAuthorId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetForeignAuthorId() string {
-	if o == nil || isNil(o.ForeignAuthorId.Get()) {
+	if o == nil || IsNil(o.ForeignAuthorId.Get()) {
 		var ret string
 		return ret
 	}
@@ -101,7 +104,7 @@ func (o *AuthorMetadata) GetForeignAuthorId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetForeignAuthorIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ForeignAuthorId.Get(), o.ForeignAuthorId.IsSet()
 }
@@ -131,7 +134,7 @@ func (o *AuthorMetadata) UnsetForeignAuthorId() {
 
 // GetTitleSlug returns the TitleSlug field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetTitleSlug() string {
-	if o == nil || isNil(o.TitleSlug.Get()) {
+	if o == nil || IsNil(o.TitleSlug.Get()) {
 		var ret string
 		return ret
 	}
@@ -143,7 +146,7 @@ func (o *AuthorMetadata) GetTitleSlug() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetTitleSlugOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TitleSlug.Get(), o.TitleSlug.IsSet()
 }
@@ -173,7 +176,7 @@ func (o *AuthorMetadata) UnsetTitleSlug() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -185,7 +188,7 @@ func (o *AuthorMetadata) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -215,7 +218,7 @@ func (o *AuthorMetadata) UnsetName() {
 
 // GetSortName returns the SortName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetSortName() string {
-	if o == nil || isNil(o.SortName.Get()) {
+	if o == nil || IsNil(o.SortName.Get()) {
 		var ret string
 		return ret
 	}
@@ -227,7 +230,7 @@ func (o *AuthorMetadata) GetSortName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetSortNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SortName.Get(), o.SortName.IsSet()
 }
@@ -257,7 +260,7 @@ func (o *AuthorMetadata) UnsetSortName() {
 
 // GetNameLastFirst returns the NameLastFirst field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetNameLastFirst() string {
-	if o == nil || isNil(o.NameLastFirst.Get()) {
+	if o == nil || IsNil(o.NameLastFirst.Get()) {
 		var ret string
 		return ret
 	}
@@ -269,7 +272,7 @@ func (o *AuthorMetadata) GetNameLastFirst() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetNameLastFirstOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.NameLastFirst.Get(), o.NameLastFirst.IsSet()
 }
@@ -299,7 +302,7 @@ func (o *AuthorMetadata) UnsetNameLastFirst() {
 
 // GetSortNameLastFirst returns the SortNameLastFirst field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetSortNameLastFirst() string {
-	if o == nil || isNil(o.SortNameLastFirst.Get()) {
+	if o == nil || IsNil(o.SortNameLastFirst.Get()) {
 		var ret string
 		return ret
 	}
@@ -311,7 +314,7 @@ func (o *AuthorMetadata) GetSortNameLastFirst() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetSortNameLastFirstOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SortNameLastFirst.Get(), o.SortNameLastFirst.IsSet()
 }
@@ -340,9 +343,9 @@ func (o *AuthorMetadata) UnsetSortNameLastFirst() {
 }
 
 // GetAliases returns the Aliases field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AuthorMetadata) GetAliases() []*string {
+func (o *AuthorMetadata) GetAliases() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.Aliases
@@ -351,16 +354,16 @@ func (o *AuthorMetadata) GetAliases() []*string {
 // GetAliasesOk returns a tuple with the Aliases field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AuthorMetadata) GetAliasesOk() ([]*string, bool) {
-	if o == nil || isNil(o.Aliases) {
-    return nil, false
+func (o *AuthorMetadata) GetAliasesOk() ([]string, bool) {
+	if o == nil || IsNil(o.Aliases) {
+		return nil, false
 	}
 	return o.Aliases, true
 }
 
 // HasAliases returns a boolean if a field has been set.
 func (o *AuthorMetadata) HasAliases() bool {
-	if o != nil && isNil(o.Aliases) {
+	if o != nil && IsNil(o.Aliases) {
 		return true
 	}
 
@@ -368,13 +371,13 @@ func (o *AuthorMetadata) HasAliases() bool {
 }
 
 // SetAliases gets a reference to the given []string and assigns it to the Aliases field.
-func (o *AuthorMetadata) SetAliases(v []*string) {
+func (o *AuthorMetadata) SetAliases(v []string) {
 	o.Aliases = v
 }
 
 // GetOverview returns the Overview field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetOverview() string {
-	if o == nil || isNil(o.Overview.Get()) {
+	if o == nil || IsNil(o.Overview.Get()) {
 		var ret string
 		return ret
 	}
@@ -386,7 +389,7 @@ func (o *AuthorMetadata) GetOverview() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetOverviewOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Overview.Get(), o.Overview.IsSet()
 }
@@ -416,7 +419,7 @@ func (o *AuthorMetadata) UnsetOverview() {
 
 // GetDisambiguation returns the Disambiguation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetDisambiguation() string {
-	if o == nil || isNil(o.Disambiguation.Get()) {
+	if o == nil || IsNil(o.Disambiguation.Get()) {
 		var ret string
 		return ret
 	}
@@ -428,7 +431,7 @@ func (o *AuthorMetadata) GetDisambiguation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetDisambiguationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Disambiguation.Get(), o.Disambiguation.IsSet()
 }
@@ -458,7 +461,7 @@ func (o *AuthorMetadata) UnsetDisambiguation() {
 
 // GetGender returns the Gender field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetGender() string {
-	if o == nil || isNil(o.Gender.Get()) {
+	if o == nil || IsNil(o.Gender.Get()) {
 		var ret string
 		return ret
 	}
@@ -470,7 +473,7 @@ func (o *AuthorMetadata) GetGender() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetGenderOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Gender.Get(), o.Gender.IsSet()
 }
@@ -500,7 +503,7 @@ func (o *AuthorMetadata) UnsetGender() {
 
 // GetHometown returns the Hometown field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetHometown() string {
-	if o == nil || isNil(o.Hometown.Get()) {
+	if o == nil || IsNil(o.Hometown.Get()) {
 		var ret string
 		return ret
 	}
@@ -512,7 +515,7 @@ func (o *AuthorMetadata) GetHometown() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetHometownOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Hometown.Get(), o.Hometown.IsSet()
 }
@@ -542,7 +545,7 @@ func (o *AuthorMetadata) UnsetHometown() {
 
 // GetBorn returns the Born field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetBorn() time.Time {
-	if o == nil || isNil(o.Born.Get()) {
+	if o == nil || IsNil(o.Born.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -554,7 +557,7 @@ func (o *AuthorMetadata) GetBorn() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetBornOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Born.Get(), o.Born.IsSet()
 }
@@ -584,7 +587,7 @@ func (o *AuthorMetadata) UnsetBorn() {
 
 // GetDied returns the Died field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorMetadata) GetDied() time.Time {
-	if o == nil || isNil(o.Died.Get()) {
+	if o == nil || IsNil(o.Died.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -596,7 +599,7 @@ func (o *AuthorMetadata) GetDied() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorMetadata) GetDiedOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Died.Get(), o.Died.IsSet()
 }
@@ -626,7 +629,7 @@ func (o *AuthorMetadata) UnsetDied() {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *AuthorMetadata) GetStatus() AuthorStatusType {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		var ret AuthorStatusType
 		return ret
 	}
@@ -636,15 +639,15 @@ func (o *AuthorMetadata) GetStatus() AuthorStatusType {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorMetadata) GetStatusOk() (*AuthorStatusType, bool) {
-	if o == nil || isNil(o.Status) {
-    return nil, false
+	if o == nil || IsNil(o.Status) {
+		return nil, false
 	}
 	return o.Status, true
 }
 
 // HasStatus returns a boolean if a field has been set.
 func (o *AuthorMetadata) HasStatus() bool {
-	if o != nil && !isNil(o.Status) {
+	if o != nil && !IsNil(o.Status) {
 		return true
 	}
 
@@ -657,9 +660,9 @@ func (o *AuthorMetadata) SetStatus(v AuthorStatusType) {
 }
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AuthorMetadata) GetImages() []*MediaCover {
+func (o *AuthorMetadata) GetImages() []MediaCover {
 	if o == nil {
-		var ret []*MediaCover
+		var ret []MediaCover
 		return ret
 	}
 	return o.Images
@@ -668,16 +671,16 @@ func (o *AuthorMetadata) GetImages() []*MediaCover {
 // GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AuthorMetadata) GetImagesOk() ([]*MediaCover, bool) {
-	if o == nil || isNil(o.Images) {
-    return nil, false
+func (o *AuthorMetadata) GetImagesOk() ([]MediaCover, bool) {
+	if o == nil || IsNil(o.Images) {
+		return nil, false
 	}
 	return o.Images, true
 }
 
 // HasImages returns a boolean if a field has been set.
 func (o *AuthorMetadata) HasImages() bool {
-	if o != nil && isNil(o.Images) {
+	if o != nil && IsNil(o.Images) {
 		return true
 	}
 
@@ -685,14 +688,14 @@ func (o *AuthorMetadata) HasImages() bool {
 }
 
 // SetImages gets a reference to the given []MediaCover and assigns it to the Images field.
-func (o *AuthorMetadata) SetImages(v []*MediaCover) {
+func (o *AuthorMetadata) SetImages(v []MediaCover) {
 	o.Images = v
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AuthorMetadata) GetLinks() []*Links {
+func (o *AuthorMetadata) GetLinks() []Links {
 	if o == nil {
-		var ret []*Links
+		var ret []Links
 		return ret
 	}
 	return o.Links
@@ -701,16 +704,16 @@ func (o *AuthorMetadata) GetLinks() []*Links {
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AuthorMetadata) GetLinksOk() ([]*Links, bool) {
-	if o == nil || isNil(o.Links) {
-    return nil, false
+func (o *AuthorMetadata) GetLinksOk() ([]Links, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
 	}
 	return o.Links, true
 }
 
 // HasLinks returns a boolean if a field has been set.
 func (o *AuthorMetadata) HasLinks() bool {
-	if o != nil && isNil(o.Links) {
+	if o != nil && IsNil(o.Links) {
 		return true
 	}
 
@@ -718,14 +721,14 @@ func (o *AuthorMetadata) HasLinks() bool {
 }
 
 // SetLinks gets a reference to the given []Links and assigns it to the Links field.
-func (o *AuthorMetadata) SetLinks(v []*Links) {
+func (o *AuthorMetadata) SetLinks(v []Links) {
 	o.Links = v
 }
 
 // GetGenres returns the Genres field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AuthorMetadata) GetGenres() []*string {
+func (o *AuthorMetadata) GetGenres() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.Genres
@@ -734,16 +737,16 @@ func (o *AuthorMetadata) GetGenres() []*string {
 // GetGenresOk returns a tuple with the Genres field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AuthorMetadata) GetGenresOk() ([]*string, bool) {
-	if o == nil || isNil(o.Genres) {
-    return nil, false
+func (o *AuthorMetadata) GetGenresOk() ([]string, bool) {
+	if o == nil || IsNil(o.Genres) {
+		return nil, false
 	}
 	return o.Genres, true
 }
 
 // HasGenres returns a boolean if a field has been set.
 func (o *AuthorMetadata) HasGenres() bool {
-	if o != nil && isNil(o.Genres) {
+	if o != nil && IsNil(o.Genres) {
 		return true
 	}
 
@@ -751,13 +754,13 @@ func (o *AuthorMetadata) HasGenres() bool {
 }
 
 // SetGenres gets a reference to the given []string and assigns it to the Genres field.
-func (o *AuthorMetadata) SetGenres(v []*string) {
+func (o *AuthorMetadata) SetGenres(v []string) {
 	o.Genres = v
 }
 
 // GetRatings returns the Ratings field value if set, zero value otherwise.
 func (o *AuthorMetadata) GetRatings() Ratings {
-	if o == nil || isNil(o.Ratings) {
+	if o == nil || IsNil(o.Ratings) {
 		var ret Ratings
 		return ret
 	}
@@ -767,15 +770,15 @@ func (o *AuthorMetadata) GetRatings() Ratings {
 // GetRatingsOk returns a tuple with the Ratings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorMetadata) GetRatingsOk() (*Ratings, bool) {
-	if o == nil || isNil(o.Ratings) {
-    return nil, false
+	if o == nil || IsNil(o.Ratings) {
+		return nil, false
 	}
 	return o.Ratings, true
 }
 
 // HasRatings returns a boolean if a field has been set.
 func (o *AuthorMetadata) HasRatings() bool {
-	if o != nil && !isNil(o.Ratings) {
+	if o != nil && !IsNil(o.Ratings) {
 		return true
 	}
 
@@ -788,8 +791,16 @@ func (o *AuthorMetadata) SetRatings(v Ratings) {
 }
 
 func (o AuthorMetadata) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AuthorMetadata) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.ForeignAuthorId.IsSet() {
@@ -831,7 +842,7 @@ func (o AuthorMetadata) MarshalJSON() ([]byte, error) {
 	if o.Died.IsSet() {
 		toSerialize["died"] = o.Died.Get()
 	}
-	if !isNil(o.Status) {
+	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
 	if o.Images != nil {
@@ -843,10 +854,10 @@ func (o AuthorMetadata) MarshalJSON() ([]byte, error) {
 	if o.Genres != nil {
 		toSerialize["genres"] = o.Genres
 	}
-	if !isNil(o.Ratings) {
+	if !IsNil(o.Ratings) {
 		toSerialize["ratings"] = o.Ratings
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAuthorMetadata struct {

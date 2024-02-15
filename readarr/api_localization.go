@@ -21,6 +21,7 @@ import (
 
 // LocalizationAPIService LocalizationAPI service
 type LocalizationAPIService service
+
 type ApiGetLocalizationRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService

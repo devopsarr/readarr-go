@@ -22,6 +22,7 @@ import (
 
 // NamingConfigAPIService NamingConfigAPI service
 type NamingConfigAPIService service
+
 type ApiGetNamingConfigRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigAPIService
@@ -146,6 +147,7 @@ func (a *NamingConfigAPIService) GetNamingConfigExecute(r ApiGetNamingConfigRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetNamingConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigAPIService
@@ -187,7 +189,7 @@ func (a *NamingConfigAPIService) GetNamingConfigByIdExecute(r ApiGetNamingConfig
 	}
 
 	localVarPath := localBasePath + "/api/v1/config/naming/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -274,6 +276,7 @@ func (a *NamingConfigAPIService) GetNamingConfigByIdExecute(r ApiGetNamingConfig
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetNamingConfigExamplesRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigAPIService
@@ -394,43 +397,43 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	localVarFormParams := url.Values{}
 
 	if r.renameBooks != nil {
-		localVarQueryParams.Add("renameBooks", parameterToString(*r.renameBooks, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "renameBooks", r.renameBooks, "")
 	}
 	if r.replaceIllegalCharacters != nil {
-		localVarQueryParams.Add("replaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceIllegalCharacters", r.replaceIllegalCharacters, "")
 	}
 	if r.colonReplacementFormat != nil {
-		localVarQueryParams.Add("colonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "colonReplacementFormat", r.colonReplacementFormat, "")
 	}
 	if r.standardBookFormat != nil {
-		localVarQueryParams.Add("standardBookFormat", parameterToString(*r.standardBookFormat, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "standardBookFormat", r.standardBookFormat, "")
 	}
 	if r.authorFolderFormat != nil {
-		localVarQueryParams.Add("authorFolderFormat", parameterToString(*r.authorFolderFormat, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorFolderFormat", r.authorFolderFormat, "")
 	}
 	if r.includeAuthorName != nil {
-		localVarQueryParams.Add("includeAuthorName", parameterToString(*r.includeAuthorName, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthorName", r.includeAuthorName, "")
 	}
 	if r.includeBookTitle != nil {
-		localVarQueryParams.Add("includeBookTitle", parameterToString(*r.includeBookTitle, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBookTitle", r.includeBookTitle, "")
 	}
 	if r.includeQuality != nil {
-		localVarQueryParams.Add("includeQuality", parameterToString(*r.includeQuality, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeQuality", r.includeQuality, "")
 	}
 	if r.replaceSpaces != nil {
-		localVarQueryParams.Add("replaceSpaces", parameterToString(*r.replaceSpaces, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceSpaces", r.replaceSpaces, "")
 	}
 	if r.separator != nil {
-		localVarQueryParams.Add("separator", parameterToString(*r.separator, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "separator", r.separator, "")
 	}
 	if r.numberStyle != nil {
-		localVarQueryParams.Add("numberStyle", parameterToString(*r.numberStyle, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "numberStyle", r.numberStyle, "")
 	}
 	if r.id != nil {
-		localVarQueryParams.Add("id", parameterToString(*r.id, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
 	}
 	if r.resourceName != nil {
-		localVarQueryParams.Add("resourceName", parameterToString(*r.resourceName, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resourceName", r.resourceName, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -504,6 +507,7 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateNamingConfigRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigAPIService
@@ -551,7 +555,7 @@ func (a *NamingConfigAPIService) UpdateNamingConfigExecute(r ApiUpdateNamingConf
 	}
 
 	localVarPath := localBasePath + "/api/v1/config/naming/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

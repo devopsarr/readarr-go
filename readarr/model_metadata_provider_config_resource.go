@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MetadataProviderConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MetadataProviderConfigResource{}
+
 // MetadataProviderConfigResource struct for MetadataProviderConfigResource
 type MetadataProviderConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -43,7 +46,7 @@ func NewMetadataProviderConfigResourceWithDefaults() *MetadataProviderConfigReso
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *MetadataProviderConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *MetadataProviderConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProviderConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *MetadataProviderConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *MetadataProviderConfigResource) SetId(v int32) {
 
 // GetWriteAudioTags returns the WriteAudioTags field value if set, zero value otherwise.
 func (o *MetadataProviderConfigResource) GetWriteAudioTags() WriteAudioTagsType {
-	if o == nil || isNil(o.WriteAudioTags) {
+	if o == nil || IsNil(o.WriteAudioTags) {
 		var ret WriteAudioTagsType
 		return ret
 	}
@@ -85,15 +88,15 @@ func (o *MetadataProviderConfigResource) GetWriteAudioTags() WriteAudioTagsType 
 // GetWriteAudioTagsOk returns a tuple with the WriteAudioTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProviderConfigResource) GetWriteAudioTagsOk() (*WriteAudioTagsType, bool) {
-	if o == nil || isNil(o.WriteAudioTags) {
-    return nil, false
+	if o == nil || IsNil(o.WriteAudioTags) {
+		return nil, false
 	}
 	return o.WriteAudioTags, true
 }
 
 // HasWriteAudioTags returns a boolean if a field has been set.
 func (o *MetadataProviderConfigResource) HasWriteAudioTags() bool {
-	if o != nil && !isNil(o.WriteAudioTags) {
+	if o != nil && !IsNil(o.WriteAudioTags) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *MetadataProviderConfigResource) SetWriteAudioTags(v WriteAudioTagsType)
 
 // GetScrubAudioTags returns the ScrubAudioTags field value if set, zero value otherwise.
 func (o *MetadataProviderConfigResource) GetScrubAudioTags() bool {
-	if o == nil || isNil(o.ScrubAudioTags) {
+	if o == nil || IsNil(o.ScrubAudioTags) {
 		var ret bool
 		return ret
 	}
@@ -117,15 +120,15 @@ func (o *MetadataProviderConfigResource) GetScrubAudioTags() bool {
 // GetScrubAudioTagsOk returns a tuple with the ScrubAudioTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProviderConfigResource) GetScrubAudioTagsOk() (*bool, bool) {
-	if o == nil || isNil(o.ScrubAudioTags) {
-    return nil, false
+	if o == nil || IsNil(o.ScrubAudioTags) {
+		return nil, false
 	}
 	return o.ScrubAudioTags, true
 }
 
 // HasScrubAudioTags returns a boolean if a field has been set.
 func (o *MetadataProviderConfigResource) HasScrubAudioTags() bool {
-	if o != nil && !isNil(o.ScrubAudioTags) {
+	if o != nil && !IsNil(o.ScrubAudioTags) {
 		return true
 	}
 
@@ -139,7 +142,7 @@ func (o *MetadataProviderConfigResource) SetScrubAudioTags(v bool) {
 
 // GetWriteBookTags returns the WriteBookTags field value if set, zero value otherwise.
 func (o *MetadataProviderConfigResource) GetWriteBookTags() WriteBookTagsType {
-	if o == nil || isNil(o.WriteBookTags) {
+	if o == nil || IsNil(o.WriteBookTags) {
 		var ret WriteBookTagsType
 		return ret
 	}
@@ -149,15 +152,15 @@ func (o *MetadataProviderConfigResource) GetWriteBookTags() WriteBookTagsType {
 // GetWriteBookTagsOk returns a tuple with the WriteBookTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProviderConfigResource) GetWriteBookTagsOk() (*WriteBookTagsType, bool) {
-	if o == nil || isNil(o.WriteBookTags) {
-    return nil, false
+	if o == nil || IsNil(o.WriteBookTags) {
+		return nil, false
 	}
 	return o.WriteBookTags, true
 }
 
 // HasWriteBookTags returns a boolean if a field has been set.
 func (o *MetadataProviderConfigResource) HasWriteBookTags() bool {
-	if o != nil && !isNil(o.WriteBookTags) {
+	if o != nil && !IsNil(o.WriteBookTags) {
 		return true
 	}
 
@@ -171,7 +174,7 @@ func (o *MetadataProviderConfigResource) SetWriteBookTags(v WriteBookTagsType) {
 
 // GetUpdateCovers returns the UpdateCovers field value if set, zero value otherwise.
 func (o *MetadataProviderConfigResource) GetUpdateCovers() bool {
-	if o == nil || isNil(o.UpdateCovers) {
+	if o == nil || IsNil(o.UpdateCovers) {
 		var ret bool
 		return ret
 	}
@@ -181,15 +184,15 @@ func (o *MetadataProviderConfigResource) GetUpdateCovers() bool {
 // GetUpdateCoversOk returns a tuple with the UpdateCovers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProviderConfigResource) GetUpdateCoversOk() (*bool, bool) {
-	if o == nil || isNil(o.UpdateCovers) {
-    return nil, false
+	if o == nil || IsNil(o.UpdateCovers) {
+		return nil, false
 	}
 	return o.UpdateCovers, true
 }
 
 // HasUpdateCovers returns a boolean if a field has been set.
 func (o *MetadataProviderConfigResource) HasUpdateCovers() bool {
-	if o != nil && !isNil(o.UpdateCovers) {
+	if o != nil && !IsNil(o.UpdateCovers) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *MetadataProviderConfigResource) SetUpdateCovers(v bool) {
 
 // GetEmbedMetadata returns the EmbedMetadata field value if set, zero value otherwise.
 func (o *MetadataProviderConfigResource) GetEmbedMetadata() bool {
-	if o == nil || isNil(o.EmbedMetadata) {
+	if o == nil || IsNil(o.EmbedMetadata) {
 		var ret bool
 		return ret
 	}
@@ -213,15 +216,15 @@ func (o *MetadataProviderConfigResource) GetEmbedMetadata() bool {
 // GetEmbedMetadataOk returns a tuple with the EmbedMetadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProviderConfigResource) GetEmbedMetadataOk() (*bool, bool) {
-	if o == nil || isNil(o.EmbedMetadata) {
-    return nil, false
+	if o == nil || IsNil(o.EmbedMetadata) {
+		return nil, false
 	}
 	return o.EmbedMetadata, true
 }
 
 // HasEmbedMetadata returns a boolean if a field has been set.
 func (o *MetadataProviderConfigResource) HasEmbedMetadata() bool {
-	if o != nil && !isNil(o.EmbedMetadata) {
+	if o != nil && !IsNil(o.EmbedMetadata) {
 		return true
 	}
 
@@ -234,26 +237,34 @@ func (o *MetadataProviderConfigResource) SetEmbedMetadata(v bool) {
 }
 
 func (o MetadataProviderConfigResource) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.WriteAudioTags) {
-		toSerialize["writeAudioTags"] = o.WriteAudioTags
-	}
-	if !isNil(o.ScrubAudioTags) {
-		toSerialize["scrubAudioTags"] = o.ScrubAudioTags
-	}
-	if !isNil(o.WriteBookTags) {
-		toSerialize["writeBookTags"] = o.WriteBookTags
-	}
-	if !isNil(o.UpdateCovers) {
-		toSerialize["updateCovers"] = o.UpdateCovers
-	}
-	if !isNil(o.EmbedMetadata) {
-		toSerialize["embedMetadata"] = o.EmbedMetadata
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MetadataProviderConfigResource) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.WriteAudioTags) {
+		toSerialize["writeAudioTags"] = o.WriteAudioTags
+	}
+	if !IsNil(o.ScrubAudioTags) {
+		toSerialize["scrubAudioTags"] = o.ScrubAudioTags
+	}
+	if !IsNil(o.WriteBookTags) {
+		toSerialize["writeBookTags"] = o.WriteBookTags
+	}
+	if !IsNil(o.UpdateCovers) {
+		toSerialize["updateCovers"] = o.UpdateCovers
+	}
+	if !IsNil(o.EmbedMetadata) {
+		toSerialize["embedMetadata"] = o.EmbedMetadata
+	}
+	return toSerialize, nil
 }
 
 type NullableMetadataProviderConfigResource struct {

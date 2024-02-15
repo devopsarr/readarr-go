@@ -21,6 +21,7 @@ import (
 
 // SearchAPIService SearchAPI service
 type SearchAPIService service
+
 type ApiGetSearchRequest struct {
 	ctx context.Context
 	ApiService *SearchAPIService
@@ -69,7 +70,7 @@ func (a *SearchAPIService) GetSearchExecute(r ApiGetSearchRequest) (*http.Respon
 	localVarFormParams := url.Values{}
 
 	if r.term != nil {
-		localVarQueryParams.Add("term", parameterToString(*r.term, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "term", r.term, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

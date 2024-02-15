@@ -14,9 +14,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the BookEditorResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BookEditorResource{}
+
 // BookEditorResource struct for BookEditorResource
 type BookEditorResource struct {
-	BookIds []*int32 `json:"bookIds,omitempty"`
+	BookIds []int32 `json:"bookIds,omitempty"`
 	Monitored NullableBool `json:"monitored,omitempty"`
 	DeleteFiles NullableBool `json:"deleteFiles,omitempty"`
 	AddImportListExclusion NullableBool `json:"addImportListExclusion,omitempty"`
@@ -40,9 +43,9 @@ func NewBookEditorResourceWithDefaults() *BookEditorResource {
 }
 
 // GetBookIds returns the BookIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BookEditorResource) GetBookIds() []*int32 {
+func (o *BookEditorResource) GetBookIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.BookIds
@@ -51,16 +54,16 @@ func (o *BookEditorResource) GetBookIds() []*int32 {
 // GetBookIdsOk returns a tuple with the BookIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BookEditorResource) GetBookIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.BookIds) {
-    return nil, false
+func (o *BookEditorResource) GetBookIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.BookIds) {
+		return nil, false
 	}
 	return o.BookIds, true
 }
 
 // HasBookIds returns a boolean if a field has been set.
 func (o *BookEditorResource) HasBookIds() bool {
-	if o != nil && isNil(o.BookIds) {
+	if o != nil && IsNil(o.BookIds) {
 		return true
 	}
 
@@ -68,13 +71,13 @@ func (o *BookEditorResource) HasBookIds() bool {
 }
 
 // SetBookIds gets a reference to the given []int32 and assigns it to the BookIds field.
-func (o *BookEditorResource) SetBookIds(v []*int32) {
+func (o *BookEditorResource) SetBookIds(v []int32) {
 	o.BookIds = v
 }
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BookEditorResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored.Get()) {
+	if o == nil || IsNil(o.Monitored.Get()) {
 		var ret bool
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *BookEditorResource) GetMonitored() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BookEditorResource) GetMonitoredOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Monitored.Get(), o.Monitored.IsSet()
 }
@@ -116,7 +119,7 @@ func (o *BookEditorResource) UnsetMonitored() {
 
 // GetDeleteFiles returns the DeleteFiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BookEditorResource) GetDeleteFiles() bool {
-	if o == nil || isNil(o.DeleteFiles.Get()) {
+	if o == nil || IsNil(o.DeleteFiles.Get()) {
 		var ret bool
 		return ret
 	}
@@ -128,7 +131,7 @@ func (o *BookEditorResource) GetDeleteFiles() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BookEditorResource) GetDeleteFilesOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DeleteFiles.Get(), o.DeleteFiles.IsSet()
 }
@@ -158,7 +161,7 @@ func (o *BookEditorResource) UnsetDeleteFiles() {
 
 // GetAddImportListExclusion returns the AddImportListExclusion field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BookEditorResource) GetAddImportListExclusion() bool {
-	if o == nil || isNil(o.AddImportListExclusion.Get()) {
+	if o == nil || IsNil(o.AddImportListExclusion.Get()) {
 		var ret bool
 		return ret
 	}
@@ -170,7 +173,7 @@ func (o *BookEditorResource) GetAddImportListExclusion() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BookEditorResource) GetAddImportListExclusionOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AddImportListExclusion.Get(), o.AddImportListExclusion.IsSet()
 }
@@ -199,6 +202,14 @@ func (o *BookEditorResource) UnsetAddImportListExclusion() {
 }
 
 func (o BookEditorResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BookEditorResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BookIds != nil {
 		toSerialize["bookIds"] = o.BookIds
@@ -212,7 +223,7 @@ func (o BookEditorResource) MarshalJSON() ([]byte, error) {
 	if o.AddImportListExclusion.IsSet() {
 		toSerialize["addImportListExclusion"] = o.AddImportListExclusion.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBookEditorResource struct {

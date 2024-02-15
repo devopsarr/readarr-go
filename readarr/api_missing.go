@@ -22,6 +22,7 @@ import (
 
 // MissingAPIService MissingAPI service
 type MissingAPIService service
+
 type ApiGetWantedMissingRequest struct {
 	ctx context.Context
 	ApiService *MissingAPIService
@@ -102,22 +103,34 @@ func (a *MissingAPIService) GetWantedMissingExecute(r ApiGetWantedMissingRequest
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+	} else {
+		var defaultValue int32 = 1
+		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+	} else {
+		var defaultValue int32 = 10
+		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
 	}
 	if r.sortDirection != nil {
-		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
 	}
 	if r.includeAuthor != nil {
-		localVarQueryParams.Add("includeAuthor", parameterToString(*r.includeAuthor, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "")
+	} else {
+		var defaultValue bool = false
+		r.includeAuthor = &defaultValue
 	}
 	if r.monitored != nil {
-		localVarQueryParams.Add("monitored", parameterToString(*r.monitored, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "monitored", r.monitored, "")
+	} else {
+		var defaultValue bool = true
+		r.monitored = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -200,6 +213,7 @@ func (a *MissingAPIService) GetWantedMissingExecute(r ApiGetWantedMissingRequest
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetWantedMissingByIdRequest struct {
 	ctx context.Context
 	ApiService *MissingAPIService
@@ -241,7 +255,7 @@ func (a *MissingAPIService) GetWantedMissingByIdExecute(r ApiGetWantedMissingByI
 	}
 
 	localVarPath := localBasePath + "/api/v1/wanted/missing/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
