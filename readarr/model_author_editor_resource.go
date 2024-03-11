@@ -69,7 +69,7 @@ func (o *AuthorEditorResource) GetAuthorIdsOk() ([]int32, bool) {
 
 // HasAuthorIds returns a boolean if a field has been set.
 func (o *AuthorEditorResource) HasAuthorIds() bool {
-	if o != nil && IsNil(o.AuthorIds) {
+	if o != nil && !IsNil(o.AuthorIds) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *AuthorEditorResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *AuthorEditorResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 

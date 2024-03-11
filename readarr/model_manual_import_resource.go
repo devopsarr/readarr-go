@@ -477,7 +477,7 @@ func (o *ManualImportResource) GetRejectionsOk() ([]Rejection, bool) {
 
 // HasRejections returns a boolean if a field has been set.
 func (o *ManualImportResource) HasRejections() bool {
-	if o != nil && IsNil(o.Rejections) {
+	if o != nil && !IsNil(o.Rejections) {
 		return true
 	}
 

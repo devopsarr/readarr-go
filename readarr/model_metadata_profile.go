@@ -377,7 +377,7 @@ func (o *MetadataProfile) GetIgnoredOk() ([]string, bool) {
 
 // HasIgnored returns a boolean if a field has been set.
 func (o *MetadataProfile) HasIgnored() bool {
-	if o != nil && IsNil(o.Ignored) {
+	if o != nil && !IsNil(o.Ignored) {
 		return true
 	}
 

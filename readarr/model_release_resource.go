@@ -894,7 +894,7 @@ func (o *ReleaseResource) GetRejectionsOk() ([]string, bool) {
 
 // HasRejections returns a boolean if a field has been set.
 func (o *ReleaseResource) HasRejections() bool {
-	if o != nil && IsNil(o.Rejections) {
+	if o != nil && !IsNil(o.Rejections) {
 		return true
 	}
 
@@ -1149,7 +1149,7 @@ func (o *ReleaseResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *ReleaseResource) HasCustomFormats() bool {
-	if o != nil && IsNil(o.CustomFormats) {
+	if o != nil && !IsNil(o.CustomFormats) {
 		return true
 	}
 

@@ -179,7 +179,7 @@ func (o *SeriesResource) GetLinksOk() ([]SeriesBookLinkResource, bool) {
 
 // HasLinks returns a boolean if a field has been set.
 func (o *SeriesResource) HasLinks() bool {
-	if o != nil && IsNil(o.Links) {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 

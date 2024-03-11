@@ -244,7 +244,7 @@ func (o *HistoryResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *HistoryResource) HasCustomFormats() bool {
-	if o != nil && IsNil(o.CustomFormats) {
+	if o != nil && !IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -447,7 +447,7 @@ func (o *HistoryResource) GetDataOk() (*map[string]string, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *HistoryResource) HasData() bool {
-	if o != nil && IsNil(o.Data) {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 

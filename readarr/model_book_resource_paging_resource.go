@@ -235,7 +235,7 @@ func (o *BookResourcePagingResource) GetRecordsOk() ([]BookResource, bool) {
 
 // HasRecords returns a boolean if a field has been set.
 func (o *BookResourcePagingResource) HasRecords() bool {
-	if o != nil && IsNil(o.Records) {
+	if o != nil && !IsNil(o.Records) {
 		return true
 	}
 

@@ -363,7 +363,7 @@ func (o *AuthorMetadata) GetAliasesOk() ([]string, bool) {
 
 // HasAliases returns a boolean if a field has been set.
 func (o *AuthorMetadata) HasAliases() bool {
-	if o != nil && IsNil(o.Aliases) {
+	if o != nil && !IsNil(o.Aliases) {
 		return true
 	}
 
@@ -680,7 +680,7 @@ func (o *AuthorMetadata) GetImagesOk() ([]MediaCover, bool) {
 
 // HasImages returns a boolean if a field has been set.
 func (o *AuthorMetadata) HasImages() bool {
-	if o != nil && IsNil(o.Images) {
+	if o != nil && !IsNil(o.Images) {
 		return true
 	}
 
@@ -713,7 +713,7 @@ func (o *AuthorMetadata) GetLinksOk() ([]Links, bool) {
 
 // HasLinks returns a boolean if a field has been set.
 func (o *AuthorMetadata) HasLinks() bool {
-	if o != nil && IsNil(o.Links) {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
@@ -746,7 +746,7 @@ func (o *AuthorMetadata) GetGenresOk() ([]string, bool) {
 
 // HasGenres returns a boolean if a field has been set.
 func (o *AuthorMetadata) HasGenres() bool {
-	if o != nil && IsNil(o.Genres) {
+	if o != nil && !IsNil(o.Genres) {
 		return true
 	}
 

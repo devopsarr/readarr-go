@@ -655,7 +655,7 @@ func (o *BookResource) GetGenresOk() ([]string, bool) {
 
 // HasGenres returns a boolean if a field has been set.
 func (o *BookResource) HasGenres() bool {
-	if o != nil && IsNil(o.Genres) {
+	if o != nil && !IsNil(o.Genres) {
 		return true
 	}
 
@@ -720,7 +720,7 @@ func (o *BookResource) GetImagesOk() ([]MediaCover, bool) {
 
 // HasImages returns a boolean if a field has been set.
 func (o *BookResource) HasImages() bool {
-	if o != nil && IsNil(o.Images) {
+	if o != nil && !IsNil(o.Images) {
 		return true
 	}
 
@@ -753,7 +753,7 @@ func (o *BookResource) GetLinksOk() ([]Links, bool) {
 
 // HasLinks returns a boolean if a field has been set.
 func (o *BookResource) HasLinks() bool {
-	if o != nil && IsNil(o.Links) {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
@@ -934,7 +934,7 @@ func (o *BookResource) GetEditionsOk() ([]EditionResource, bool) {
 
 // HasEditions returns a boolean if a field has been set.
 func (o *BookResource) HasEditions() bool {
-	if o != nil && IsNil(o.Editions) {
+	if o != nil && !IsNil(o.Editions) {
 		return true
 	}
 

@@ -324,7 +324,7 @@ func (o *RootFolderResource) GetDefaultTagsOk() ([]int32, bool) {
 
 // HasDefaultTags returns a boolean if a field has been set.
 func (o *RootFolderResource) HasDefaultTags() bool {
-	if o != nil && IsNil(o.DefaultTags) {
+	if o != nil && !IsNil(o.DefaultTags) {
 		return true
 	}
 

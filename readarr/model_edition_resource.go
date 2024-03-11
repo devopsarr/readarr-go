@@ -672,7 +672,7 @@ func (o *EditionResource) GetImagesOk() ([]MediaCover, bool) {
 
 // HasImages returns a boolean if a field has been set.
 func (o *EditionResource) HasImages() bool {
-	if o != nil && IsNil(o.Images) {
+	if o != nil && !IsNil(o.Images) {
 		return true
 	}
 
@@ -705,7 +705,7 @@ func (o *EditionResource) GetLinksOk() ([]Links, bool) {
 
 // HasLinks returns a boolean if a field has been set.
 func (o *EditionResource) HasLinks() bool {
-	if o != nil && IsNil(o.Links) {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 

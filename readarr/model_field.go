@@ -359,7 +359,7 @@ func (o *Field) GetValueOk() (*interface{}, bool) {
 
 // HasValue returns a boolean if a field has been set.
 func (o *Field) HasValue() bool {
-	if o != nil && IsNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
@@ -466,7 +466,7 @@ func (o *Field) GetSelectOptionsOk() ([]SelectOption, bool) {
 
 // HasSelectOptions returns a boolean if a field has been set.
 func (o *Field) HasSelectOptions() bool {
-	if o != nil && IsNil(o.SelectOptions) {
+	if o != nil && !IsNil(o.SelectOptions) {
 		return true
 	}
 
