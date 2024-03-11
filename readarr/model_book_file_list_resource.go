@@ -61,7 +61,7 @@ func (o *BookFileListResource) GetBookFileIdsOk() ([]int32, bool) {
 
 // HasBookFileIds returns a boolean if a field has been set.
 func (o *BookFileListResource) HasBookFileIds() bool {
-	if o != nil && IsNil(o.BookFileIds) {
+	if o != nil && !IsNil(o.BookFileIds) {
 		return true
 	}
 

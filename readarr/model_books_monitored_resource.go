@@ -61,7 +61,7 @@ func (o *BooksMonitoredResource) GetBookIdsOk() ([]int32, bool) {
 
 // HasBookIds returns a boolean if a field has been set.
 func (o *BooksMonitoredResource) HasBookIds() bool {
-	if o != nil && IsNil(o.BookIds) {
+	if o != nil && !IsNil(o.BookIds) {
 		return true
 	}
 

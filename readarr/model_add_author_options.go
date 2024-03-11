@@ -95,7 +95,7 @@ func (o *AddAuthorOptions) GetBooksToMonitorOk() ([]string, bool) {
 
 // HasBooksToMonitor returns a boolean if a field has been set.
 func (o *AddAuthorOptions) HasBooksToMonitor() bool {
-	if o != nil && IsNil(o.BooksToMonitor) {
+	if o != nil && !IsNil(o.BooksToMonitor) {
 		return true
 	}
 

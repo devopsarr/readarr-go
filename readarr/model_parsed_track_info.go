@@ -174,7 +174,7 @@ func (o *ParsedTrackInfo) GetAuthorsOk() ([]string, bool) {
 
 // HasAuthors returns a boolean if a field has been set.
 func (o *ParsedTrackInfo) HasAuthors() bool {
-	if o != nil && IsNil(o.Authors) {
+	if o != nil && !IsNil(o.Authors) {
 		return true
 	}
 
@@ -1145,7 +1145,7 @@ func (o *ParsedTrackInfo) GetTrackNumbersOk() ([]int32, bool) {
 
 // HasTrackNumbers returns a boolean if a field has been set.
 func (o *ParsedTrackInfo) HasTrackNumbers() bool {
-	if o != nil && IsNil(o.TrackNumbers) {
+	if o != nil && !IsNil(o.TrackNumbers) {
 		return true
 	}
 

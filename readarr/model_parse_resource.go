@@ -202,7 +202,7 @@ func (o *ParseResource) GetBooksOk() ([]BookResource, bool) {
 
 // HasBooks returns a boolean if a field has been set.
 func (o *ParseResource) HasBooks() bool {
-	if o != nil && IsNil(o.Books) {
+	if o != nil && !IsNil(o.Books) {
 		return true
 	}
 

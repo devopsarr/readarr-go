@@ -142,7 +142,7 @@ func (o *TagDetailsResource) GetDelayProfileIdsOk() ([]int32, bool) {
 
 // HasDelayProfileIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasDelayProfileIds() bool {
-	if o != nil && IsNil(o.DelayProfileIds) {
+	if o != nil && !IsNil(o.DelayProfileIds) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *TagDetailsResource) GetImportListIdsOk() ([]int32, bool) {
 
 // HasImportListIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasImportListIds() bool {
-	if o != nil && IsNil(o.ImportListIds) {
+	if o != nil && !IsNil(o.ImportListIds) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *TagDetailsResource) GetNotificationIdsOk() ([]int32, bool) {
 
 // HasNotificationIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasNotificationIds() bool {
-	if o != nil && IsNil(o.NotificationIds) {
+	if o != nil && !IsNil(o.NotificationIds) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *TagDetailsResource) GetRestrictionIdsOk() ([]int32, bool) {
 
 // HasRestrictionIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasRestrictionIds() bool {
-	if o != nil && IsNil(o.RestrictionIds) {
+	if o != nil && !IsNil(o.RestrictionIds) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *TagDetailsResource) GetIndexerIdsOk() ([]int32, bool) {
 
 // HasIndexerIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasIndexerIds() bool {
-	if o != nil && IsNil(o.IndexerIds) {
+	if o != nil && !IsNil(o.IndexerIds) {
 		return true
 	}
 
@@ -307,7 +307,7 @@ func (o *TagDetailsResource) GetDownloadClientIdsOk() ([]int32, bool) {
 
 // HasDownloadClientIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasDownloadClientIds() bool {
-	if o != nil && IsNil(o.DownloadClientIds) {
+	if o != nil && !IsNil(o.DownloadClientIds) {
 		return true
 	}
 
@@ -340,7 +340,7 @@ func (o *TagDetailsResource) GetAuthorIdsOk() ([]int32, bool) {
 
 // HasAuthorIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasAuthorIds() bool {
-	if o != nil && IsNil(o.AuthorIds) {
+	if o != nil && !IsNil(o.AuthorIds) {
 		return true
 	}
 

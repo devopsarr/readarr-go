@@ -356,7 +356,7 @@ func (o *Book) GetLinksOk() ([]Links, bool) {
 
 // HasLinks returns a boolean if a field has been set.
 func (o *Book) HasLinks() bool {
-	if o != nil && IsNil(o.Links) {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
@@ -389,7 +389,7 @@ func (o *Book) GetGenresOk() ([]string, bool) {
 
 // HasGenres returns a boolean if a field has been set.
 func (o *Book) HasGenres() bool {
-	if o != nil && IsNil(o.Genres) {
+	if o != nil && !IsNil(o.Genres) {
 		return true
 	}
 
@@ -422,7 +422,7 @@ func (o *Book) GetRelatedBooksOk() ([]int32, bool) {
 
 // HasRelatedBooks returns a boolean if a field has been set.
 func (o *Book) HasRelatedBooks() bool {
-	if o != nil && IsNil(o.RelatedBooks) {
+	if o != nil && !IsNil(o.RelatedBooks) {
 		return true
 	}
 

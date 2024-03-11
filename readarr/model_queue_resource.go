@@ -297,7 +297,7 @@ func (o *QueueResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *QueueResource) HasCustomFormats() bool {
-	if o != nil && IsNil(o.CustomFormats) {
+	if o != nil && !IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -648,7 +648,7 @@ func (o *QueueResource) GetStatusMessagesOk() ([]TrackedDownloadStatusMessage, b
 
 // HasStatusMessages returns a boolean if a field has been set.
 func (o *QueueResource) HasStatusMessages() bool {
-	if o != nil && IsNil(o.StatusMessages) {
+	if o != nil && !IsNil(o.StatusMessages) {
 		return true
 	}
 

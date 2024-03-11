@@ -61,7 +61,7 @@ func (o *SeriesListLazyLoaded) GetValueOk() ([]Series, bool) {
 
 // HasValue returns a boolean if a field has been set.
 func (o *SeriesListLazyLoaded) HasValue() bool {
-	if o != nil && IsNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 

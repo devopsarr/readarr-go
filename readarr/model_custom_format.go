@@ -169,7 +169,7 @@ func (o *CustomFormat) GetSpecificationsOk() ([]ICustomFormatSpecification, bool
 
 // HasSpecifications returns a boolean if a field has been set.
 func (o *CustomFormat) HasSpecifications() bool {
-	if o != nil && IsNil(o.Specifications) {
+	if o != nil && !IsNil(o.Specifications) {
 		return true
 	}
 

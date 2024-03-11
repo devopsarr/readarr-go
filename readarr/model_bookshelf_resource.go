@@ -62,7 +62,7 @@ func (o *BookshelfResource) GetAuthorsOk() ([]BookshelfAuthorResource, bool) {
 
 // HasAuthors returns a boolean if a field has been set.
 func (o *BookshelfResource) HasAuthors() bool {
-	if o != nil && IsNil(o.Authors) {
+	if o != nil && !IsNil(o.Authors) {
 		return true
 	}
 

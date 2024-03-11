@@ -66,7 +66,7 @@ func (o *ImportListBulkResource) GetIdsOk() ([]int32, bool) {
 
 // HasIds returns a boolean if a field has been set.
 func (o *ImportListBulkResource) HasIds() bool {
-	if o != nil && IsNil(o.Ids) {
+	if o != nil && !IsNil(o.Ids) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *ImportListBulkResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *ImportListBulkResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 
