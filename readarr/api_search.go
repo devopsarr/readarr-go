@@ -70,7 +70,7 @@ func (a *SearchAPIService) GetSearchExecute(r ApiGetSearchRequest) (*http.Respon
 	localVarFormParams := url.Values{}
 
 	if r.term != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "term", r.term, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "term", r.term, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

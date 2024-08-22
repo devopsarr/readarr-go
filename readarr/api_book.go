@@ -215,13 +215,13 @@ func (a *BookAPIService) DeleteBookExecute(r ApiDeleteBookRequest) (*http.Respon
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.addImportListExclusion = &defaultValue
@@ -614,24 +614,24 @@ func (a *BookAPIService) ListBookExecute(r ApiListBookRequest) ([]BookResource, 
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "form", "")
 	}
 	if r.bookIds != nil {
 		t := *r.bookIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", t, "form", "multi")
 		}
 	}
 	if r.titleSlug != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "titleSlug", r.titleSlug, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "titleSlug", r.titleSlug, "form", "")
 	}
 	if r.includeAllAuthorBooks != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAllAuthorBooks", r.includeAllAuthorBooks, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAllAuthorBooks", r.includeAllAuthorBooks, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeAllAuthorBooks = &defaultValue

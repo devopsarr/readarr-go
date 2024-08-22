@@ -77,10 +77,10 @@ func (a *EditionAPIService) ListEditionExecute(r ApiListEditionRequest) ([]Editi
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header

@@ -461,17 +461,17 @@ func (a *BookFileAPIService) ListBookFileExecute(r ApiListBookFileRequest) ([]Bo
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "form", "")
 	}
 	if r.bookFileIds != nil {
 		t := *r.bookFileIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "bookFileIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bookFileIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "bookFileIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "bookFileIds", t, "form", "multi")
 		}
 	}
 	if r.bookId != nil {
@@ -479,14 +479,14 @@ func (a *BookFileAPIService) ListBookFileExecute(r ApiListBookFileRequest) ([]Bo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", t, "form", "multi")
 		}
 	}
 	if r.unmapped != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "unmapped", r.unmapped, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmapped", r.unmapped, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

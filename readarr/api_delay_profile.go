@@ -717,7 +717,7 @@ func (a *DelayProfileAPIService) UpdateDelayProfileReorderExecute(r ApiUpdateDel
 	localVarFormParams := url.Values{}
 
 	if r.afterId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "afterId", r.afterId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "afterId", r.afterId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

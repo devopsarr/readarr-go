@@ -78,10 +78,10 @@ func (a *RetagBookAPIService) ListRetagExecute(r ApiListRetagRequest) ([]RetagBo
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "form", "")
 	}
 	if r.bookId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", r.bookId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", r.bookId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -214,13 +214,13 @@ func (a *AuthorAPIService) DeleteAuthorExecute(r ApiDeleteAuthorRequest) (*http.
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.addImportListExclusion = &defaultValue
@@ -612,7 +612,7 @@ func (a *AuthorAPIService) UpdateAuthorExecute(r ApiUpdateAuthorRequest) (*Autho
 	localVarFormParams := url.Values{}
 
 	if r.moveFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.moveFiles = &defaultValue

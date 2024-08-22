@@ -88,25 +88,25 @@ func (a *CalendarFeedAPIService) GetFeedV1CalendarReadarrIcsExecute(r ApiGetFeed
 	localVarFormParams := url.Values{}
 
 	if r.pastDays != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pastDays", r.pastDays, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pastDays", r.pastDays, "form", "")
 	} else {
 		var defaultValue int32 = 7
 		r.pastDays = &defaultValue
 	}
 	if r.futureDays != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "futureDays", r.futureDays, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "futureDays", r.futureDays, "form", "")
 	} else {
 		var defaultValue int32 = 28
 		r.futureDays = &defaultValue
 	}
 	if r.tagList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tagList", r.tagList, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tagList", r.tagList, "form", "")
 	} else {
 		var defaultValue string = ""
 		r.tagList = &defaultValue
 	}
 	if r.unmonitored != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.unmonitored = &defaultValue

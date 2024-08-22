@@ -397,43 +397,43 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	localVarFormParams := url.Values{}
 
 	if r.renameBooks != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "renameBooks", r.renameBooks, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "renameBooks", r.renameBooks, "form", "")
 	}
 	if r.replaceIllegalCharacters != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceIllegalCharacters", r.replaceIllegalCharacters, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceIllegalCharacters", r.replaceIllegalCharacters, "form", "")
 	}
 	if r.colonReplacementFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "colonReplacementFormat", r.colonReplacementFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "colonReplacementFormat", r.colonReplacementFormat, "form", "")
 	}
 	if r.standardBookFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "standardBookFormat", r.standardBookFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "standardBookFormat", r.standardBookFormat, "form", "")
 	}
 	if r.authorFolderFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "authorFolderFormat", r.authorFolderFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorFolderFormat", r.authorFolderFormat, "form", "")
 	}
 	if r.includeAuthorName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthorName", r.includeAuthorName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthorName", r.includeAuthorName, "form", "")
 	}
 	if r.includeBookTitle != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBookTitle", r.includeBookTitle, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBookTitle", r.includeBookTitle, "form", "")
 	}
 	if r.includeQuality != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeQuality", r.includeQuality, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeQuality", r.includeQuality, "form", "")
 	}
 	if r.replaceSpaces != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceSpaces", r.replaceSpaces, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceSpaces", r.replaceSpaces, "form", "")
 	}
 	if r.separator != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "separator", r.separator, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "separator", r.separator, "form", "")
 	}
 	if r.numberStyle != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "numberStyle", r.numberStyle, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "numberStyle", r.numberStyle, "form", "")
 	}
 	if r.id != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "form", "")
 	}
 	if r.resourceName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "resourceName", r.resourceName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resourceName", r.resourceName, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

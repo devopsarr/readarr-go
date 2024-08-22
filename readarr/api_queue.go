@@ -93,25 +93,25 @@ func (a *QueueAPIService) DeleteQueueExecute(r ApiDeleteQueueRequest) (*http.Res
 	localVarFormParams := url.Values{}
 
 	if r.removeFromClient != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", r.removeFromClient, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", r.removeFromClient, "form", "")
 	} else {
 		var defaultValue bool = true
 		r.removeFromClient = &defaultValue
 	}
 	if r.blocklist != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", r.blocklist, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", r.blocklist, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.blocklist = &defaultValue
 	}
 	if r.skipRedownload != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", r.skipRedownload, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", r.skipRedownload, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.skipRedownload = &defaultValue
 	}
 	if r.changeCategory != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", r.changeCategory, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", r.changeCategory, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.changeCategory = &defaultValue
@@ -261,25 +261,25 @@ func (a *QueueAPIService) DeleteQueueBulkExecute(r ApiDeleteQueueBulkRequest) (*
 	localVarFormParams := url.Values{}
 
 	if r.removeFromClient != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", r.removeFromClient, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", r.removeFromClient, "form", "")
 	} else {
 		var defaultValue bool = true
 		r.removeFromClient = &defaultValue
 	}
 	if r.blocklist != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", r.blocklist, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", r.blocklist, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.blocklist = &defaultValue
 	}
 	if r.skipRedownload != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", r.skipRedownload, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", r.skipRedownload, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.skipRedownload = &defaultValue
 	}
 	if r.changeCategory != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", r.changeCategory, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", r.changeCategory, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.changeCategory = &defaultValue
@@ -445,37 +445,37 @@ func (a *QueueAPIService) GetQueueExecute(r ApiGetQueueRequest) (*QueueResourceP
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
 		var defaultValue int32 = 1
 		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
 		var defaultValue int32 = 10
 		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
 	}
 	if r.sortDirection != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "form", "")
 	}
 	if r.includeUnknownAuthorItems != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeUnknownAuthorItems", r.includeUnknownAuthorItems, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeUnknownAuthorItems", r.includeUnknownAuthorItems, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeUnknownAuthorItems = &defaultValue
 	}
 	if r.includeAuthor != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeAuthor = &defaultValue
 	}
 	if r.includeBook != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeBook = &defaultValue
