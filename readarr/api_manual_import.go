@@ -218,22 +218,22 @@ func (a *ManualImportAPIService) ListManualImportExecute(r ApiListManualImportRe
 	localVarFormParams := url.Values{}
 
 	if r.folder != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "folder", r.folder, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "folder", r.folder, "form", "")
 	}
 	if r.downloadId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "form", "")
 	}
 	if r.authorId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "form", "")
 	}
 	if r.filterExistingFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filterExistingFiles", r.filterExistingFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filterExistingFiles", r.filterExistingFiles, "form", "")
 	} else {
 		var defaultValue bool = true
 		r.filterExistingFiles = &defaultValue
 	}
 	if r.replaceExistingFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceExistingFiles", r.replaceExistingFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceExistingFiles", r.replaceExistingFiles, "form", "")
 	} else {
 		var defaultValue bool = true
 		r.replaceExistingFiles = &defaultValue

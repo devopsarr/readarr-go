@@ -91,27 +91,27 @@ func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRe
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "form", "")
 	}
 	if r.bookIds != nil {
 		t := *r.bookIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "bookIds", t, "form", "multi")
 		}
 	}
 	if r.includeAuthor != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeAuthor = &defaultValue
 	}
 	if r.includeBook != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "form", "")
 	} else {
 		var defaultValue bool = true
 		r.includeBook = &defaultValue

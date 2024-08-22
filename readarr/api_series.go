@@ -72,7 +72,7 @@ func (a *SeriesAPIService) ListSeriesExecute(r ApiListSeriesRequest) ([]SeriesRe
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -241,45 +241,45 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
 		var defaultValue int32 = 1
 		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
 		var defaultValue int32 = 10
 		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
 	}
 	if r.sortDirection != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "form", "")
 	}
 	if r.includeAuthor != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "form", "")
 	}
 	if r.includeBook != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "form", "")
 	}
 	if r.eventType != nil {
 		t := *r.eventType
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", t, "form", "multi")
 		}
 	}
 	if r.bookId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", r.bookId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", r.bookId, "form", "")
 	}
 	if r.downloadId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -437,22 +437,22 @@ func (a *HistoryAPIService) ListHistoryAuthorExecute(r ApiListHistoryAuthorReque
 	localVarFormParams := url.Values{}
 
 	if r.authorId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "authorId", r.authorId, "form", "")
 	}
 	if r.bookId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", r.bookId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "bookId", r.bookId, "form", "")
 	}
 	if r.eventType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "form", "")
 	}
 	if r.includeAuthor != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeAuthor = &defaultValue
 	}
 	if r.includeBook != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeBook = &defaultValue
@@ -607,19 +607,19 @@ func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 	localVarFormParams := url.Values{}
 
 	if r.date != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "form", "")
 	}
 	if r.eventType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "form", "")
 	}
 	if r.includeAuthor != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAuthor", r.includeAuthor, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeAuthor = &defaultValue
 	}
 	if r.includeBook != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeBook", r.includeBook, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeBook = &defaultValue
