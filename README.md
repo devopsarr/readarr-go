@@ -286,7 +286,6 @@ Class | Method | HTTP request | Description
 *RootFolderAPI* | [**UpdateRootFolder**](docs/RootFolderAPI.md#updaterootfolder) | **Put** /api/v1/rootfolder/{id} | 
 *SearchAPI* | [**GetSearch**](docs/SearchAPI.md#getsearch) | **Get** /api/v1/search | 
 *SeriesAPI* | [**ListSeries**](docs/SeriesAPI.md#listseries) | **Get** /api/v1/series | 
-*StaticResourceAPI* | [**Get**](docs/StaticResourceAPI.md#get) | **Get** / | 
 *StaticResourceAPI* | [**GetByPath**](docs/StaticResourceAPI.md#getbypath) | **Get** /{path} | 
 *StaticResourceAPI* | [**GetContentByPath**](docs/StaticResourceAPI.md#getcontentbypath) | **Get** /content/{path} | 
 *StaticResourceAPI* | [**GetLogin**](docs/StaticResourceAPI.md#getlogin) | **Get** /login | 
