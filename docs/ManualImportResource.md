@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
 **QualityWeight** | Pointer to **int32** |  | [optional] 
 **DownloadId** | Pointer to **NullableString** |  | [optional] 
+**IndexerFlags** | Pointer to **int32** |  | [optional] 
 **Rejections** | Pointer to [**[]Rejection**](Rejection.md) |  | [optional] 
 **AudioTags** | Pointer to [**ParsedTrackInfo**](ParsedTrackInfo.md) |  | [optional] 
 **AdditionalFile** | Pointer to **bool** |  | [optional] 
@@ -365,6 +366,31 @@ HasDownloadId returns a boolean if a field has been set.
 `func (o *ManualImportResource) UnsetDownloadId()`
 
 UnsetDownloadId ensures that no value is present for DownloadId, not even an explicit nil
+### GetIndexerFlags
+
+`func (o *ManualImportResource) GetIndexerFlags() int32`
+
+GetIndexerFlags returns the IndexerFlags field if non-nil, zero value otherwise.
+
+### GetIndexerFlagsOk
+
+`func (o *ManualImportResource) GetIndexerFlagsOk() (*int32, bool)`
+
+GetIndexerFlagsOk returns a tuple with the IndexerFlags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexerFlags
+
+`func (o *ManualImportResource) SetIndexerFlags(v int32)`
+
+SetIndexerFlags sets IndexerFlags field to given value.
+
+### HasIndexerFlags
+
+`func (o *ManualImportResource) HasIndexerFlags() bool`
+
+HasIndexerFlags returns a boolean if a field has been set.
+
 ### GetRejections
 
 `func (o *ManualImportResource) GetRejections() []Rejection`

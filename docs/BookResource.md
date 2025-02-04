@@ -28,7 +28,6 @@ Name | Type | Description | Notes
 **AddOptions** | Pointer to [**AddBookOptions**](AddBookOptions.md) |  | [optional] 
 **RemoteCover** | Pointer to **NullableString** |  | [optional] 
 **Editions** | Pointer to [**[]EditionResource**](EditionResource.md) |  | [optional] 
-**Grabbed** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -799,31 +798,6 @@ HasEditions returns a boolean if a field has been set.
 `func (o *BookResource) UnsetEditions()`
 
 UnsetEditions ensures that no value is present for Editions, not even an explicit nil
-### GetGrabbed
-
-`func (o *BookResource) GetGrabbed() bool`
-
-GetGrabbed returns the Grabbed field if non-nil, zero value otherwise.
-
-### GetGrabbedOk
-
-`func (o *BookResource) GetGrabbedOk() (*bool, bool)`
-
-GetGrabbedOk returns a tuple with the Grabbed field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGrabbed
-
-`func (o *BookResource) SetGrabbed(v bool)`
-
-SetGrabbed sets Grabbed field to given value.
-
-### HasGrabbed
-
-`func (o *BookResource) HasGrabbed() bool`
-
-HasGrabbed returns a boolean if a field has been set.
-
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

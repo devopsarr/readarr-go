@@ -11,9 +11,11 @@ Name | Type | Description | Notes
 **EnableSsl** | Pointer to **bool** |  | [optional] 
 **LaunchBrowser** | Pointer to **bool** |  | [optional] 
 **AuthenticationMethod** | Pointer to [**AuthenticationType**](AuthenticationType.md) |  | [optional] 
+**AuthenticationRequired** | Pointer to [**AuthenticationRequiredType**](AuthenticationRequiredType.md) |  | [optional] 
 **AnalyticsEnabled** | Pointer to **bool** |  | [optional] 
 **Username** | Pointer to **NullableString** |  | [optional] 
 **Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordConfirmation** | Pointer to **NullableString** |  | [optional] 
 **LogLevel** | Pointer to **NullableString** |  | [optional] 
 **ConsoleLogLevel** | Pointer to **NullableString** |  | [optional] 
 **Branch** | Pointer to **NullableString** |  | [optional] 
@@ -38,6 +40,7 @@ Name | Type | Description | Notes
 **BackupFolder** | Pointer to **NullableString** |  | [optional] 
 **BackupInterval** | Pointer to **int32** |  | [optional] 
 **BackupRetention** | Pointer to **int32** |  | [optional] 
+**TrustCgnatIpAddresses** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -243,6 +246,31 @@ SetAuthenticationMethod sets AuthenticationMethod field to given value.
 
 HasAuthenticationMethod returns a boolean if a field has been set.
 
+### GetAuthenticationRequired
+
+`func (o *HostConfigResource) GetAuthenticationRequired() AuthenticationRequiredType`
+
+GetAuthenticationRequired returns the AuthenticationRequired field if non-nil, zero value otherwise.
+
+### GetAuthenticationRequiredOk
+
+`func (o *HostConfigResource) GetAuthenticationRequiredOk() (*AuthenticationRequiredType, bool)`
+
+GetAuthenticationRequiredOk returns a tuple with the AuthenticationRequired field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthenticationRequired
+
+`func (o *HostConfigResource) SetAuthenticationRequired(v AuthenticationRequiredType)`
+
+SetAuthenticationRequired sets AuthenticationRequired field to given value.
+
+### HasAuthenticationRequired
+
+`func (o *HostConfigResource) HasAuthenticationRequired() bool`
+
+HasAuthenticationRequired returns a boolean if a field has been set.
+
 ### GetAnalyticsEnabled
 
 `func (o *HostConfigResource) GetAnalyticsEnabled() bool`
@@ -338,6 +366,41 @@ HasPassword returns a boolean if a field has been set.
 `func (o *HostConfigResource) UnsetPassword()`
 
 UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordConfirmation
+
+`func (o *HostConfigResource) GetPasswordConfirmation() string`
+
+GetPasswordConfirmation returns the PasswordConfirmation field if non-nil, zero value otherwise.
+
+### GetPasswordConfirmationOk
+
+`func (o *HostConfigResource) GetPasswordConfirmationOk() (*string, bool)`
+
+GetPasswordConfirmationOk returns a tuple with the PasswordConfirmation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPasswordConfirmation
+
+`func (o *HostConfigResource) SetPasswordConfirmation(v string)`
+
+SetPasswordConfirmation sets PasswordConfirmation field to given value.
+
+### HasPasswordConfirmation
+
+`func (o *HostConfigResource) HasPasswordConfirmation() bool`
+
+HasPasswordConfirmation returns a boolean if a field has been set.
+
+### SetPasswordConfirmationNil
+
+`func (o *HostConfigResource) SetPasswordConfirmationNil(b bool)`
+
+ SetPasswordConfirmationNil sets the value for PasswordConfirmation to be an explicit nil
+
+### UnsetPasswordConfirmation
+`func (o *HostConfigResource) UnsetPasswordConfirmation()`
+
+UnsetPasswordConfirmation ensures that no value is present for PasswordConfirmation, not even an explicit nil
 ### GetLogLevel
 
 `func (o *HostConfigResource) GetLogLevel() string`
@@ -1087,6 +1150,31 @@ SetBackupRetention sets BackupRetention field to given value.
 `func (o *HostConfigResource) HasBackupRetention() bool`
 
 HasBackupRetention returns a boolean if a field has been set.
+
+### GetTrustCgnatIpAddresses
+
+`func (o *HostConfigResource) GetTrustCgnatIpAddresses() bool`
+
+GetTrustCgnatIpAddresses returns the TrustCgnatIpAddresses field if non-nil, zero value otherwise.
+
+### GetTrustCgnatIpAddressesOk
+
+`func (o *HostConfigResource) GetTrustCgnatIpAddressesOk() (*bool, bool)`
+
+GetTrustCgnatIpAddressesOk returns a tuple with the TrustCgnatIpAddresses field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrustCgnatIpAddresses
+
+`func (o *HostConfigResource) SetTrustCgnatIpAddresses(v bool)`
+
+SetTrustCgnatIpAddresses sets TrustCgnatIpAddresses field to given value.
+
+### HasTrustCgnatIpAddresses
+
+`func (o *HostConfigResource) HasTrustCgnatIpAddresses() bool`
+
+HasTrustCgnatIpAddresses returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
