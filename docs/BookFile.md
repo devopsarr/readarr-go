@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **SceneName** | Pointer to **NullableString** |  | [optional] 
 **ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
+**IndexerFlags** | Pointer to [**IndexerFlags**](IndexerFlags.md) |  | [optional] 
 **MediaInfo** | Pointer to [**MediaInfoModel**](MediaInfoModel.md) |  | [optional] 
 **EditionId** | Pointer to **int32** |  | [optional] 
 **CalibreId** | Pointer to **int32** |  | [optional] 
@@ -304,6 +305,31 @@ SetQuality sets Quality field to given value.
 `func (o *BookFile) HasQuality() bool`
 
 HasQuality returns a boolean if a field has been set.
+
+### GetIndexerFlags
+
+`func (o *BookFile) GetIndexerFlags() IndexerFlags`
+
+GetIndexerFlags returns the IndexerFlags field if non-nil, zero value otherwise.
+
+### GetIndexerFlagsOk
+
+`func (o *BookFile) GetIndexerFlagsOk() (*IndexerFlags, bool)`
+
+GetIndexerFlagsOk returns a tuple with the IndexerFlags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexerFlags
+
+`func (o *BookFile) SetIndexerFlags(v IndexerFlags)`
+
+SetIndexerFlags sets IndexerFlags field to given value.
+
+### HasIndexerFlags
+
+`func (o *BookFile) HasIndexerFlags() bool`
+
+HasIndexerFlags returns a boolean if a field has been set.
 
 ### GetMediaInfo
 

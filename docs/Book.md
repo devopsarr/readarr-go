@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Genres** | Pointer to **[]string** |  | [optional] 
 **RelatedBooks** | Pointer to **[]int32** |  | [optional] 
 **Ratings** | Pointer to [**Ratings**](Ratings.md) |  | [optional] 
+**LastSearchTime** | Pointer to **NullableTime** |  | [optional] 
 **CleanTitle** | Pointer to **NullableString** |  | [optional] 
 **Monitored** | Pointer to **bool** |  | [optional] 
 **AnyEditionOk** | Pointer to **bool** |  | [optional] 
@@ -401,6 +402,41 @@ SetRatings sets Ratings field to given value.
 
 HasRatings returns a boolean if a field has been set.
 
+### GetLastSearchTime
+
+`func (o *Book) GetLastSearchTime() time.Time`
+
+GetLastSearchTime returns the LastSearchTime field if non-nil, zero value otherwise.
+
+### GetLastSearchTimeOk
+
+`func (o *Book) GetLastSearchTimeOk() (*time.Time, bool)`
+
+GetLastSearchTimeOk returns a tuple with the LastSearchTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastSearchTime
+
+`func (o *Book) SetLastSearchTime(v time.Time)`
+
+SetLastSearchTime sets LastSearchTime field to given value.
+
+### HasLastSearchTime
+
+`func (o *Book) HasLastSearchTime() bool`
+
+HasLastSearchTime returns a boolean if a field has been set.
+
+### SetLastSearchTimeNil
+
+`func (o *Book) SetLastSearchTimeNil(b bool)`
+
+ SetLastSearchTimeNil sets the value for LastSearchTime to be an explicit nil
+
+### UnsetLastSearchTime
+`func (o *Book) UnsetLastSearchTime()`
+
+UnsetLastSearchTime ensures that no value is present for LastSearchTime, not even an explicit nil
 ### GetCleanTitle
 
 `func (o *Book) GetCleanTitle() string`
