@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/devopsarr/readarr-go/compare/v1.1.0...v1.2.0) (2025-02-09)
+
+
+### Features
+
+* update readarr build job to v0.4.10.2734 ([fd89219](https://github.com/devopsarr/readarr-go/commit/fd89219de452b9e9bbd44956bc437da390d25583))
+
 ## [1.1.0](https://github.com/devopsarr/readarr-go/compare/v1.0.0...v1.1.0) (2025-01-20)
 
 
