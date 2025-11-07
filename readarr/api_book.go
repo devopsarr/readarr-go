@@ -217,14 +217,16 @@ func (a *BookAPIService) DeleteBookExecute(r ApiDeleteBookRequest) (*http.Respon
 	if r.deleteFiles != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.deleteFiles = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", defaultValue, "form", "")
+        r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.addImportListExclusion = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", defaultValue, "form", "")
+        r.addImportListExclusion = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -633,8 +635,9 @@ func (a *BookAPIService) ListBookExecute(r ApiListBookRequest) ([]BookResource, 
 	if r.includeAllAuthorBooks != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAllAuthorBooks", r.includeAllAuthorBooks, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeAllAuthorBooks = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeAllAuthorBooks", defaultValue, "form", "")
+        r.includeAllAuthorBooks = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
