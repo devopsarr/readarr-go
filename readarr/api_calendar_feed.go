@@ -90,30 +90,30 @@ func (a *CalendarFeedAPIService) GetFeedV1CalendarReadarrIcsExecute(r ApiGetFeed
 	if r.pastDays != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "pastDays", r.pastDays, "form", "")
 	} else {
-        var defaultValue int32 = 7
-        parameterAddToHeaderOrQuery(localVarQueryParams, "pastDays", defaultValue, "form", "")
-        r.pastDays = &defaultValue
+		var defaultValue int32 = 7
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pastDays", defaultValue, "form", "")
+		r.pastDays = &defaultValue
 	}
 	if r.futureDays != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "futureDays", r.futureDays, "form", "")
 	} else {
-        var defaultValue int32 = 28
-        parameterAddToHeaderOrQuery(localVarQueryParams, "futureDays", defaultValue, "form", "")
-        r.futureDays = &defaultValue
+		var defaultValue int32 = 28
+		parameterAddToHeaderOrQuery(localVarQueryParams, "futureDays", defaultValue, "form", "")
+		r.futureDays = &defaultValue
 	}
 	if r.tagList != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "tagList", r.tagList, "form", "")
 	} else {
-        var defaultValue string = ""
-        parameterAddToHeaderOrQuery(localVarQueryParams, "tagList", defaultValue, "form", "")
-        r.tagList = &defaultValue
+		var defaultValue string = ""
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tagList", defaultValue, "form", "")
+		r.tagList = &defaultValue
 	}
 	if r.unmonitored != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", defaultValue, "form", "")
-        r.unmonitored = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", defaultValue, "form", "")
+		r.unmonitored = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
