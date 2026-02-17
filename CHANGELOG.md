@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.2](https://github.com/devopsarr/readarr-go/compare/v1.2.1...v1.2.2) (2026-02-17)
+
+
+### Bug Fixes
+
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.17.0 ([ad5878b](https://github.com/devopsarr/readarr-go/commit/ad5878b045ce27e91bc59eafcff4cec730baac1f))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([a65023a](https://github.com/devopsarr/readarr-go/commit/a65023a08d130eec82dfb46e04a1191f7137b6da))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([ace2ad2](https://github.com/devopsarr/readarr-go/commit/ace2ad29dae1453e6ae3fd0052c75b5f8b451d9c))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([9e37a72](https://github.com/devopsarr/readarr-go/commit/9e37a72882eb6655f97e3a9886d3f96cb2501cfb))
+
 ## [1.2.1](https://github.com/devopsarr/readarr-go/compare/v1.2.0...v1.2.1) (2025-09-02)
 
 
