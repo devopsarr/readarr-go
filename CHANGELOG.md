@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.2.2 (2026-11-16)
+
+## What's Changed
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.16.0 by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/48
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.18.0 by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/50
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.19.0 by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/51
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.20.0 by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/52
+* chore: add files for relase please v4 migration by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/53
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.21.0 by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/54
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.22.0 by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/55
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.23.0 by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/56
+* fix: add .goreleaser.yml template and update Makefile for Go release by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/57
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.24.0 by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/58
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.25.0 by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/59
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.26.0 by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/60
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.27.0 by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/61
+* fix: add go releaser file version by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/62
+* chore: edit changelog type to github by @devopsarr[bot] in https://github.com/devopsarr/readarr-go/pull/63
+
+
+**Full Changelog**: https://github.com/devopsarr/readarr-go/compare/v1.2.1...v1.2.2
+
 ## [1.2.1](https://github.com/devopsarr/readarr-go/compare/v1.2.0...v1.2.1) (2025-09-02)
 
 
